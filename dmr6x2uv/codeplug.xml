@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<codeplug sparse="true">
+<codeplug>
   <meta>
     <name>BTECH DMR-6X2</name>
     <description>Documents the codeplug format for the BTECH DMR-6X2 UV device.</description>
@@ -106,9 +106,86 @@
         <bit><meta><name>Enable TX CTCSS tone</name></meta></bit>
         <bit><meta><name>Enable RX DCS tone</name></meta></bit>
         <bit><meta><name>Enable RX CTCSS tone</name></meta></bit>
+
+        <enum width=":10">
+          <meta>
+            <name>TX CTCSS frequency</name>
+            <incomplete/>
+          </meta>
+          <item value="0"><name>62.5 Hz</name></item>
+          <item value="1"><name>67.9 Hz</name></item>
+          <item value="2"><name>69.3 Hz</name></item>
+          <item value="3"><name>71.9 Hz</name></item>
+        </enum>
+        <enum width=":10">
+          <meta>
+            <name>RX CTCSS frequency</name>
+            <incomplete/>
+          </meta>
+          <item value="0"><name>62.5 Hz</name></item>
+          <item value="1"><name>67.9 Hz</name></item>
+          <item value="2"><name>69.3 Hz</name></item>
+          <item value="3"><name>71.9 Hz</name></item>
+        </enum>
+        <uint16 endian="little">
+          <meta><name>TX DCS code</name></meta>
+        </uint16>
+        <uint16 endian="little">
+          <meta><name>RX DCS code</name></meta>
+        </uint16>
+        <uint16 endian="little">
+          <meta><name>Custom CTCSS frequency</name></meta>
+        </uint16>
+        <uint16 endian="little">
+          <meta><name>2-tone decode index</name></meta>
+        </uint16>
+        <uint32 endian="little">
+          <meta><name>Contact index</name></meta>
+        </uint32>
+        <uint8>
+          <meta><name>Radio ID index</name></meta>
+        </uint8>
+        
+        <unused width=":1" value="0"/>
+        <enum width=":3">
+          <meta><name>Squelch mode</name></meta>
+          <item value="0"><name>Carrier</name></item>
+          <item value="1"><name>CTCSS/DCS</name></item>
+          <item value="2"><name>Optional signaling</name></item>
+          <item value="3"><name>CTCSS/DCS + optional signaling</name></item>
+        </enum>
+        <unused width=":4" value="0"/>
+
+        <unused width=":2" value="0"/>
+        <enum width=":2">
+          <meta><name>Optional signaling</name></meta>
+          <item value="0"><name>Off</name></item>
+          <item value="1"><name>DTMF</name></item>
+          <item value="2"><name>2-tone</name></item>
+          <item value="3"><name>5-tone</name></item>
+        </enum>
+        <unused width=":2" value="0"/>
+        <enum width=":2">
+          <meta><name>Transmit permit criterion</name></meta>
+          <item value="0"><name>always</name></item>
+          <item value="1"><name>colorcode</name></item>
+          <item value="2"><name>channel free</name></item>
+        </enum>
+        
+        <unused width=":5" value="0"/>
+        <bit><meta><name>Exclude channel from roaming</name></meta></bit>
+        <unused width=":1" value="0"/>
+        <bit><meta><name>Ranging</name></meta></bit>
+        
+        <uint8><meta><name>Group list index</name></meta></uint8>
+        <uint8><meta><name>2-tone ID</name></meta></uint8>
+        <uint8><meta><name>5-tone ID</name></meta></uint8>
+        <uint8><meta><name>DTMF ID</name></meta></uint8>
+        <uint8><meta><name>Color code</name></meta></uint8>
       </element>
     </repeat>
   </repeat>
+  
   <repeat at="02680000" min="1" max="10000">
    <meta>
      <name>Contact bank</name>
