@@ -5,7 +5,7 @@
     <name>BTECH DMR-6X2</name>
     <description>Documents the codeplug format for the BTECH DMR-6X2 UV device.</description>
   </meta>
-  <repeat at="80000h" step="4000h" min="1" max="32">
+  <repeat at="800000h" step="40000h" min="1" max="32">
     <meta>
       <name>Channel banks</name>
       <description>A series of channel banks.</description>
