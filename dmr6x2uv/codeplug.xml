@@ -4,7 +4,6 @@
   <meta>
     <name>BTECH DMR-6X2</name>
     <description>Documents the codeplug format for the BTECH DMR-6X2 UV device.</description>
-    <firmware>1.14</firmware>
   </meta>
   <repeat at="80000h" step="4000h" min="1" max="32">
     <meta>
@@ -323,6 +322,123 @@
             <name>Color code</name>
           </meta>
         </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable lone worker</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable enhanced encryption</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable RX DMR-APRS</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable adaptive TDMA</name>
+          </meta>
+        </int>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused bit</name>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable simplex TDMA</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable SMS confirm</name>
+          </meta>
+        </int>
+        <enum width="0h:1">
+          <meta>
+            <name>Time slot</name>
+          </meta>
+          <item value="0">
+            <name>Time slot 1</name>
+          </item>
+          <item value="1">
+            <name>Time slot 2</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>AES encryption key index</name>
+          </meta>
+        </int>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Channe name</name>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad byte</name>
+          </meta>00</unused>
+        <unused width="0h:5">
+          <meta>
+            <name>Unused bits</name>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Data ACK disable</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable through mode</name>
+          </meta>
+        </int>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused bit</name>
+          </meta>00</unused>
+        <unused width="1h">
+          <meta>
+            <name>Unused byte</name>
+          </meta>00</unused>
+        <repeat n="8">
+          <meta>
+            <name>New fixed repeat</name>
+          </meta>
+          <int width="1h" format="unsigned">
+            <meta>
+              <name>Scan list index</name>
+              <description>ffh if not set/used.</description>
+            </meta>
+          </int>
+        </repeat>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>APRS report channel index</name>
+          </meta>
+        </int>
+        <unused width="0h:6">
+          <meta>
+            <name>Unused bits</name>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable ranging</name>
+          </meta>
+        </int>
+        <enum width="0h:1">
+          <meta>
+            <name>APRS report type</name>
+          </meta>
+          <item value="0">
+            <name>DMR APRS</name>
+          </item>
+          <item value="1">
+            <name>FM APRS</name>
+          </item>
+        </enum>
       </element>
     </repeat>
   </repeat>
