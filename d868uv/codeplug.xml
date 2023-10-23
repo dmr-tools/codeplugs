@@ -57,4 +57,53 @@
       <unused width="ch"/>
     </element>
   </repeat>
+
+  <element at="01640800h">
+    <meta><name>Message byte-map</name></meta>
+    <repeat n="100">
+      <enum width="1">
+        <item value="0"><name>Invalid</name></item>
+        <item value="255"><name>Valid</name></item>
+      </enum>
+    </repeat>
+    <unused width="2eh"/>
+  </element>
+
+  <repeat at="02140000h" step="40000h" min="0" max="13">
+    <meta><name>Message banks</name></meta>
+    <repeat min="1" max="8">
+      <meta><name>Message bank</name></meta>
+      <element>
+        <meta><name>Message</name></meta>
+        <string format="ascii" width="99" pad="0"/>
+        <unused width="9dh"/>
+      </element>
+    </repeat>
+  </repeat>
+
+  <repeat at="02480000h" min="0" max="100">
+    <meta><name>FM broadcast channel frequencies</name></meta>
+    <int encoding="bcd" endian="little" width="4">
+      <meta><name>Channel frequency</name></meta>
+    </int>
+  </repeat>
+
+  <element at="02480200h">
+    <meta><name>FM broadcast VFO frequency</name></meta>
+    <int encoding="bcd" endian="little" width="4">
+      <meta><name>VFO frequency</name></meta>
+    </int>
+    <unused width="ch"/>
+  </element>
+
+  <element at="02480210">
+    <meta><name>FM broadcast channel bitmap</name></meta>
+    <repeat n="100">
+      <int width=":1">
+        <meta><name>Channel bit</name></meta>
+      </int>
+    </repeat>
+    <unused width="3:4"/>
+  </element>
+  
 </codeplug>
