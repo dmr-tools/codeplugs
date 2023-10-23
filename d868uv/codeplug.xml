@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>AnyTone AT-D868UV</name>
+    <description>Documents the codeplug format for the AnyTone AT-D868UV device.</description>
+  </meta>
+
+  <repeat at="800000h" step="40000h" min="1" max="32">
+    <meta>
+      <name>Channel banks</name>
+      <description>A series of channel banks.</description>
+    </meta>
+    <repeat min="1" max="128">
+    <unknown width="40h">
+      <meta>
+        <name>A channel element</name>
+      </meta>
+    </unknown>
+    </repeat>
+  </repeat>
+
+  <unknown at="00FC0800" width="40h"><meta><name>VFO Channel A</name></meta></unknown>
+  <unknown at="00FC0800" width="40h"><meta><name>VFO Channel B</name></meta></unknown>  
+
+  <repeat at="01000000h" step="200h" min="1" max="250">
+    <meta><name>Zone channel lists.</name></meta>
+    <repeat min="1" max="250">
+      <meta><name>Channel indices</name></meta>
+      <int width="2h" format="unsigned" endian="little">
+        <meta><name>Channel index</name></meta>
+      </int>
+    </repeat>
+  </repeat>
+
+  <repeat at="01080000h" step="40000h" min="0" max="16">
+    <meta><name>Scan list banks</name></meta>
+    <repeat step="200h" min="1" max="250">
+      <meta><name>Scan list bank</name></meta>
+      <unknown width="90h">
+        <meta><name>Scan list element</name></meta>
+      </unknown>
+    </repeat>
+  </repeat>
+
+  <repeat at="01640000h" min="0" max="100">
+    <meta><name>Message linked list</name></meta>
+    <element>
+      <meta><name>List element</name></meta>
+      <unused width="2h"/>
+      <int width="1h" format="unsigned">
+        <meta><name>Next index</name></meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta><name>Current index</name></meta>
+      </int>
+      <unused width="ch"/>
+    </element>
+  </repeat>
+</codeplug>
