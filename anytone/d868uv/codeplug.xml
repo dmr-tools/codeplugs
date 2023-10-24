@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<codeplug>
+  <meta>
+    <name>AnyTone AT-D868UV</name>
+    <description>The codeplug for the AnyTone AT-D868UV</description>
+    <version>1.24</version>
+  </meta>
+
+  <repeat at="800000h" step="40000h" min="1" max="32">
+    <meta>
+      <name>Channel banks</name>
+      <description>A series of channel banks.</description>
+    </meta>  
+    <instance ref="anytone.d868uv.channel-bank"/>
+  </repeat>
+  
+  <instance of="anytone.d868uv.vfo-channel" at="00FC0800h">
+    <meta><name>VFO A channel</name></meta>
+  </instance>
+  <instance of="anytone.d868uv.vfo-channel" at="00FC0800h">
+    <meta><name>VFO B channel</name></meta>
+  </instance>
+
+  <repeat at="01000000h" step="200h" min="1" max="250">
+    <meta><name>Zone channel lists.</name></meta>
+    <repeat min="1" max="250">
+      <meta><name>Channel indices</name></meta>
+      <int width="2h" format="unsigned" endian="little">
+        <meta><name>Channel index</name></meta>
+      </int>
+    </repeat>
+  </repeat>
+
+  <repeat at="01080000h" step="40000h" min="0" max="16">
+    <meta><name>Scan list banks</name></meta>
+    <instance of="anytone.scanlist-bank"/>
+  </repeat>
+
+</codeplug>

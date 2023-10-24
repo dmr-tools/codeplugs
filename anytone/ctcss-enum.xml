@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<enum width="1h">
+  <meta>
+    <name>TX CTCSS frequency</name>
+  </meta>
+
+  <item value="00"><name>62.5 Hz</name></item>
+  <item value="01"><name>67.9 Hz</name></item>
+  <item value="02"><name>69.3 Hz</name></item>
+  <item value="03"><name>71.9 Hz</name></item>
+  <item value="04"><name>74.4 Hz</name></item>
+  <item value="05"><name>77.0 Hz</name></item>
+  <item value="06"><name>79.7 Hz</name></item>
+  <item value="07"><name>82.5 Hz</name></item>
+  <item value="08"><name>85.4 Hz</name></item>
+  <item value="09"><name>88.5 Hz</name></item>
+  <item value="10"><name>91.5 Hz</name></item>
+  <item value="11"><name>95.8 Hz</name></item>
+  <item value="12"><name>97.4 Hz</name></item>
+  <item value="13"><name>100.0 Hz</name></item>
+  <item value="14"><name>103.5 Hz</name></item>
+  <item value="15"><name>107.2 Hz</name></item>
+  <item value="16"><name>110.9 Hz</name></item>
+  <item value="17"><name>114.8 Hz</name></item>
+  <item value="18"><name>118.8 Hz</name></item>
+  <item value="19"><name>123.0 Hz</name></item>
+  <item value="20"><name>127.3 Hz</name></item>
+  <item value="21"><name>131.8 Hz</name></item>
+  <item value="22"><name>136.5 Hz</name></item>
+  <item value="23"><name>141.3 Hz</name></item>
+  <item value="24"><name>146.2 Hz</name></item>
+  <item value="25"><name>151.4 Hz</name></item>
+  <item value="26"><name>156.7 Hz</name></item>
+  <item value="27"><name>159.8 Hz</name></item>
+  <item value="28"><name>162.2 Hz</name></item>
+  <item value="29"><name>165.5 Hz</name></item>
+  <item value="30"><name>167.9 Hz</name></item>
+  <item value="31"><name>171.2 Hz</name></item>
+  <item value="32"><name>173.8 Hz</name></item>
+  <item value="33"><name>177.3 Hz</name></item>
+  <item value="34"><name>179.9 Hz</name></item>
+  <item value="35"><name>183.5 Hz</name></item>
+  <item value="36"><name>186.2 Hz</name></item>
+  <item value="37"><name>189.9 Hz</name></item>
+  <item value="38"><name>192.8 Hz</name></item>
+  <item value="39"><name>196.6 Hz</name></item>
+  <item value="40"><name>199.9 Hz</name></item>
+  <item value="41"><name>203.5 Hz</name></item>
+  <item value="42"><name>206.5 Hz</name></item>
+  <item value="43"><name>210.7 Hz</name></item>
+  <item value="44"><name>218.1 Hz</name></item>
+  <item value="45"><name>225.7 Hz</name></item>
+  <item value="46"><name>229.1 Hz</name></item>
+  <item value="47"><name>233.6 Hz</name></item>
+  <item value="48"><name>241.8 Hz</name></item>
+  <item value="49"><name>250.3 Hz</name></item>
+  <item value="50"><name>254.1 Hz</name></item>
+  <item value="51"><name>Custom</name></item>
+</enum>

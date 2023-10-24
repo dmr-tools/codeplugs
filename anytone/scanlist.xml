@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<element>
+  <meta><name>Scan list</name></meta>
+
+  <unused width="1h">00</unused>
+  <enum width="1h">
+    <meta><name>Priority channel selection</name></meta>
+    <item value="0"><name>None</name></item>
+    <item value="1"><name>Primary</name></item>
+    <item value="2"><name>Secondary</name></item>
+    <item value="3"><name>Both</name></item>
+  </enum>
+  <int width="2h" encoding="unsigned" endian="little">
+    <meta><name>Primary channel index</name></meta>
+  </int>
+  <int width="2h" encoding="unsigned" endian="little">
+    <meta><name>Secondary channel index</name></meta>
+  </int>
+  <int width="2h" encoding="unsigned" endian="little">
+    <meta><name>Look back time A, in 10s</name></meta>
+  </int>
+  <int width="2h" encoding="unsigned" endian="little">
+    <meta><name>Look back time B, in 10s</name></meta>
+  </int>
+  <int width="2h" encoding="unsigned" endian="little">
+    <meta><name>Dropout delay, in 10s</name></meta>
+  </int>
+  <int width="2h" encoding="unsigned" endian="little">
+    <meta><name>Dwell time A, in 10s</name></meta>
+  </int>
+  <enum width="1h">
+    <meta><name>Revert channel type</name></meta>
+    <item value="0">Selected</item>
+    <item value="1">Selected and Active</item>
+    <item value="2">Primary</item>
+    <item value="3">Secondary</item>
+    <item value="4">Last called</item>
+    <item value="5">Last used</item>
+    <item value="6">Primary and active</item>
+    <item value="7">Secondary and active</item>
+  </enum>
+</element>
