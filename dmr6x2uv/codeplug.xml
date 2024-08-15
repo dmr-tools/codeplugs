@@ -442,10 +442,154 @@
       </element>
     </repeat>
   </repeat>
-  <repeat at="2680000h" min="1" max="10000">
+
+  <repeat at="fc0800h" n="2">
     <meta>
-      <name>Contact bank</name>
+      <name>VFO channels</name>
     </meta>
+    <element>
+      <meta>
+        <name>VFO channel</name>
+      </meta>
+      <unknown width="40h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+    </element>
+  </repeat>
+
+  <repeat at="01000000h" min="0" max="250" step="200h">
+    <meta>
+      <name>Zone channel lists</name>
+    </meta>
+
+    <repeat min="1" max="250">
+      <meta><name>Zone channel index list</name></meta>
+      <uint16le default="0"><meta><name>Channel index</name></meta></uint16le>
+    </repeat>
+  </repeat>
+
+  <repeat at="01040000h" min="0" max="250">
+    <meta><name>Roming channels</name></meta>
+    <element>
+      <meta><name>Roming channel</name></meta>
+      <unknown width="20h"/>
+    </element>
+  </repeat>
+
+  <element at="01042000h">
+    <meta><name>Roming channel bitmap block</name></meta>
+    <repeat n="250">
+      <meta><name>Roaming channel bitmap</name></meta>
+      <bit><meta><name>Roaming channel enable bit</name></meta></bit>
+    </repeat>
+    <unused width=":6"/>
+  </element>
+
+  <element at="01042080h">
+    <meta><name>Roming zones bitmap block</name></meta>
+    <repeat n="64">
+      <meta><name>Roaming zones bitmap</name></meta>
+      <bit><meta><name>Roaming zone enable bit</name></meta></bit>
+    </repeat>
+    <unused width="8h"/>
+  </element>
+
+  <repeat at="01043000h" min="0" max="64">
+    <meta><name>Roming zones</name></meta>
+    <element>
+      <meta><name>Roaming zone</name></meta>
+      <unknown width="80h"/>
+    </element>
+  </repeat>
+
+  <element at="24c1300h">
+    <meta>
+      <name>Zone bitmap block</name>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Zone bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Zone bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+
+  <element at="24c1500h">
+    <meta>
+      <name>Channel bitmap block</name>
+    </meta>
+    <repeat n="4000">
+      <meta>
+        <name></name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Channel bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="ch">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+
+  <element at="02500100">
+    <meta><name>Zone A/B index list block</name></meta>
+    <repeat n="250">
+      <meta><name>Zone A/B index list</name></meta>
+      <element>
+        <meta><name>Zone A/B index pair</name></meta>
+        <uint16le><meta><name>Channel A index</name></meta></uint16le>
+        <uint16le><meta><name>Channel B index</name></meta></uint16le>
+      </element>
+    </repeat>
+    <unused width="18h"/>
+  </element>
+
+  <repeat at="02540000h" min="0" max="250">
+    <meta>
+      <name>Zone names</name>
+    </meta>
+    <string format="ascii" width="32" pad="0"><meta><name>Zone name</name></meta></string>
+  </repeat>
+
+  <element at="025C0B10h">
+   <meta><name>Group list bitmap block</name></meta>
+   <repeat n="250">
+    <meta><name>Group list bitmap</name></meta>
+    <bit><meta><name>Group list enable bit</name></meta></bit>
+   </repeat>
+   <unused width="6"/>
+  </element>
+
+  <repeat at="02600000h" min="0" max="10000">
+    <meta><name>Contact index list</name></meta>
+    <uint32le><meta><name>Contact index</name></meta></uint32le>
+  </repeat>
+
+  <element at="02640000h">
+    <meta><name>Contact bitmap block</name></meta>
+    <repeat n="10000">
+      <meta><name>Contact bitmap</name></meta>
+      <bit><meta><name>Contact disable bit</name></meta></bit>
+    </repeat>
+  </element>
+
+  <repeat at="02680000h" min="0" max="10000">
+    <meta><name>Contact bank</name></meta>
     <element>
       <meta>
         <name>Contact</name>
@@ -457,4 +601,39 @@
       </int>
     </element>
   </repeat>
+
+  <repeat at="02900000h" n="128">
+    <meta><name>DTMF Contact index list</name></meta>
+    <uint8><meta><name>DTMF contact index</name></meta></uint8>
+  </repeat>
+
+  <repeat at="02900100h" n="128">
+    <meta><name>DTMF Contact bytemap</name></meta>
+    <uint8><meta><name>DTMF contact enable byte</name></meta></uint8>
+  </repeat>
+
+  <repeat at="02940000h" min="0" max="128">
+    <meta><name>DTMF Contacts</name></meta>
+    <element>
+      <meta><name>DTMF Contact</name></meta>
+      <unknown width="18h"/>
+    </element>
+  </repeat>
+
+  <repeat at="02980000h" step="200h" min="0" max="250">
+    <meta><name>Group lists</name></meta>
+    <element>
+      <meta><name>Group list</name></meta>
+      <unknown width="120h"/>
+    </element>
+  </repeat>
+
+  <repeat at="04340000h" min="0" max="10000">
+    <meta><name>Contact-DMR ID index</name></meta>
+    <element>
+      <uint32le/>
+      <uint32le/>
+    </element>
+  </repeat>
+
 </codeplug>
