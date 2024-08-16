@@ -526,25 +526,28 @@
     <repeat n="100">
       <uint8><meta><name>Message enable byte</name></meta></uint8>
     </repeat>
-    <unused width="2eh"/>
+    <unused width="2ch"/>
   </element>
 
   <repeat at="02140000h" step="40000h" min="0" max="12">
     <meta><name>Message banks</name></meta>
-    <repeat min="1" max="8">
+    <repeat step="100h" min="1" max="8">
       <meta><name>Message bank</name></meta>
-      <unknown width="100h"/>
+      <element>
+        <meta><name>Message</name></meta>
+        <string format="ascii" width="99"/>
+        <unused width="6dh"/>
+      </element>
     </repeat>
   </repeat>
 
-  <element at="02480000h">
-    <meta><name>FM broadcast channel block</name></meta>
-    <repeat n="100">
-      <meta><name>FM broadcast channels</name></meta>
+  <repeat at="02480000h" min="0" max="25">
+    <meta><name>FM broadcast channel banks</name></meta>
+    <repeat n="4">
+      <meta><name>FM broadcast channel bank</name></meta>
       <bcd8 endian="little"><meta><name>FM broadcast frequency in 100Hz</name></meta></bcd8>
     </repeat>
-    <unused width="70h"/>
-  </element>
+  </repeat>
 
   <element at="02480200h">
     <meta><name>FM VFO frequency block</name></meta>
@@ -555,7 +558,7 @@
   <element at="02480210h">
     <meta><name>FM broadcast channel bitmap block</name></meta>
     <repeat n="100"><bit><meta><name>FM Channel enable bit</name></meta></bit></repeat>
-    <unused width="13h:4"/>
+    <unused width="3h:4"/>
   </element>
   
   <element at="024C0000h">
