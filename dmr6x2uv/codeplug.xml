@@ -5,7 +5,6 @@
     <name>BTECH DMR-6X2</name>
     <description>Documents the codeplug format for the BTECH DMR-6X2 UV device.</description>
   </meta>
-
   <repeat at="800000h" step="40000h" min="1" max="32">
     <meta>
       <name>Channel banks</name>
@@ -443,7 +442,6 @@
       </element>
     </repeat>
   </repeat>
-
   <repeat at="fc0800h" n="2">
     <meta>
       <name>VFO channels</name>
@@ -459,149 +457,297 @@
       </unknown>
     </element>
   </repeat>
-
-  <repeat at="01000000h" min="0" max="250" step="200h">
+  <repeat at="1000000h" step="200h" min="0" max="250">
     <meta>
       <name>Zone channel lists</name>
     </meta>
-
     <repeat min="1" max="250">
-      <meta><name>Zone channel index list</name></meta>
-      <uint16le default="0"><meta><name>Channel index</name></meta></uint16le>
+      <meta>
+        <name>Zone channel index list</name>
+      </meta>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Channel index</name>
+        </meta>
+      </int>
     </repeat>
   </repeat>
-
-  <repeat at="01040000h" min="0" max="250">
-    <meta><name>Roming channels</name></meta>
+  <repeat at="1040000h" min="0" max="250">
+    <meta>
+      <name>Roming channels</name>
+    </meta>
     <element>
-      <meta><name>Roming channel</name></meta>
-      <unknown width="20h"/>
+      <meta>
+        <name>Roming channel</name>
+      </meta>
+      <unknown width="20h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
     </element>
   </repeat>
-
-  <element at="01042000h">
-    <meta><name>Roming channel bitmap block</name></meta>
+  <element at="1042000h">
+    <meta>
+      <name>Roming channel bitmap block</name>
+    </meta>
     <repeat n="250">
-      <meta><name>Roaming channel bitmap</name></meta>
-      <bit><meta><name>Roaming channel enable bit</name></meta></bit>
+      <meta>
+        <name>Roaming channel bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Roaming channel enable bit</name>
+        </meta>
+      </int>
     </repeat>
-    <unused width=":6"/>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <element at="01042080h">
-    <meta><name>Roming zones bitmap block</name></meta>
+  <element at="1042080h">
+    <meta>
+      <name>Roming zones bitmap block</name>
+    </meta>
     <repeat n="64">
-      <meta><name>Roaming zones bitmap</name></meta>
-      <bit><meta><name>Roaming zone enable bit</name></meta></bit>
+      <meta>
+        <name>Roaming zones bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Roaming zone enable bit</name>
+        </meta>
+      </int>
     </repeat>
-    <unused width="8h"/>
+    <unused width="8h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <repeat at="01043000h" min="0" max="64">
-    <meta><name>Roming zones</name></meta>
+  <repeat at="1043000h" min="0" max="64">
+    <meta>
+      <name>Roming zones</name>
+    </meta>
     <element>
-      <meta><name>Roaming zone</name></meta>
-      <unknown width="80h"/>
+      <meta>
+        <name>Roaming zone</name>
+      </meta>
+      <unknown width="80h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
     </element>
   </repeat>
-
-  <repeat at="01080000h" step="40000h" min="0" max="16">
-    <meta><name>Scan list banks</name></meta>
-    <repeat at="0h" step="200h" min="1" max="16">
-      <meta><name>Scan list bank</name></meta>
+  <repeat at="1080000h" step="40000h" min="0" max="16">
+    <meta>
+      <name>Scan list banks</name>
+    </meta>
+    <repeat step="200h" min="1" max="16">
+      <meta>
+        <name>Scan list bank</name>
+      </meta>
       <element>
-        <meta><name>Scan list</name></meta>
-        <unknown width="90h"/>
+        <meta>
+          <name>Scan list</name>
+        </meta>
+        <unknown width="90h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
       </element>
     </repeat>
   </repeat>
-
-  <repeat at="01640000h" min="1" max="100">
-    <meta><name>Message index list</name></meta>
-    <unknown width="10h"/>
+  <repeat at="1640000h" min="1" max="100">
+    <meta>
+      <name>Message index list</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </repeat>
-
-  <element at="01640800h">
-    <meta><name>Message bytemap block</name></meta>
+  <element at="1640800h">
+    <meta>
+      <name>Message bytemap block</name>
+    </meta>
     <repeat n="100">
-      <uint8><meta><name>Message enable byte</name></meta></uint8>
+      <meta>
+        <name></name>
+      </meta>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Message enable byte</name>
+        </meta>
+      </int>
     </repeat>
-    <unused width="2ch"/>
+    <unused width="2ch">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <repeat at="02140000h" step="40000h" min="0" max="12">
-    <meta><name>Message banks</name></meta>
+  <repeat at="2140000h" step="40000h" min="0" max="12">
+    <meta>
+      <name>Message banks</name>
+    </meta>
     <repeat step="100h" min="1" max="8">
-      <meta><name>Message bank</name></meta>
+      <meta>
+        <name>Message bank</name>
+      </meta>
       <element>
-        <meta><name>Message</name></meta>
-        <string format="ascii" width="99"/>
-        <unused width="6dh"/>
+        <meta>
+          <name>Message</name>
+        </meta>
+        <string format="ascii" width="99" pad="0">
+          <meta>
+            <name></name>
+          </meta>
+        </string>
+        <unused width="6dh">
+          <meta>
+            <name>Unused data</name>
+          </meta>
+        </unused>
       </element>
     </repeat>
   </repeat>
-
-  <repeat at="02480000h" min="0" max="25">
-    <meta><name>FM broadcast channel banks</name></meta>
+  <repeat at="2480000h" min="0" max="25">
+    <meta>
+      <name>FM broadcast channel banks</name>
+    </meta>
     <repeat n="4">
-      <meta><name>FM broadcast channel bank</name></meta>
-      <bcd8 endian="little"><meta><name>FM broadcast frequency in 100Hz</name></meta></bcd8>
+      <meta>
+        <name>FM broadcast channel bank</name>
+      </meta>
+      <int width="4h" format="bcd" endian="little">
+        <meta>
+          <name>FM broadcast frequency in 100Hz</name>
+        </meta>
+      </int>
     </repeat>
   </repeat>
-
-  <element at="02480200h">
-    <meta><name>FM VFO frequency block</name></meta>
-    <bcd8 endian="little"><meta><name>FM VFO frequency in 100Hz</name></meta></bcd8>
-    <unused width="0ch"/>
+  <element at="2480200h">
+    <meta>
+      <name>FM VFO frequency block</name>
+    </meta>
+    <int width="4h" format="bcd" endian="little">
+      <meta>
+        <name>FM VFO frequency in 100Hz</name>
+      </meta>
+    </int>
+    <unused width="ch">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <element at="02480210h">
-    <meta><name>FM broadcast channel bitmap block</name></meta>
-    <repeat n="100"><bit><meta><name>FM Channel enable bit</name></meta></bit></repeat>
-    <unused width="3h:4"/>
+  <element at="2480210h">
+    <meta>
+      <name>FM broadcast channel bitmap block</name>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name></name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>FM Channel enable bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="3h:4">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-  
-  <element at="024C0000h">
-    <meta><name>5-tone encoding</name></meta>
-    <unknown width="20h"/>
+  <element at="24c0000h">
+    <meta>
+      <name>5-tone encoding</name>
+    </meta>
+    <unknown width="20h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C0C80h">
-    <meta><name>5-tone encoding bitmap block</name></meta>
-    <unknown width="10h"/>
+  <element at="24c0c80h">
+    <meta>
+      <name>5-tone encoding bitmap block</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-  
-  <element at="024C0D00h">
-    <meta><name>5-tone ID list</name></meta>
-    <unknown width="200h"/>
+  <element at="24c0d00h">
+    <meta>
+      <name>5-tone ID list</name>
+    </meta>
+    <unknown width="200h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C1000h">
-    <meta><name>5-tone settings</name></meta>
-    <unknown width="80h"/>
+  <element at="24c1000h">
+    <meta>
+      <name>5-tone settings</name>
+    </meta>
+    <unknown width="80h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C1080h">
-    <meta><name>DTMF settings</name></meta>
-    <unknown width="50h"/>
+  <element at="24c1080h">
+    <meta>
+      <name>DTMF settings</name>
+    </meta>
+    <unknown width="50h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C1100h">
-    <meta><name>2-tone encoding</name></meta>
-    <unknown width="10h"/>
+  <element at="24c1100h">
+    <meta>
+      <name>2-tone encoding</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C1280h">
-    <meta><name>2-tone encoding bitmap block</name></meta>
-    <unknown width="10h"/>
+  <element at="24c1280h">
+    <meta>
+      <name>2-tone encoding bitmap block</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C1280h">
-    <meta><name>2-tone settings</name></meta>
-    <unknown width="10h"/>
+  <element at="24c1280h">
+    <meta>
+      <name>2-tone settings</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C1300h">
+  <element at="24c1300h">
     <meta>
       <name>Zone bitmap block</name>
     </meta>
@@ -621,8 +767,7 @@
       </meta>
     </unused>
   </element>
-  
-  <element at="024C1320h">
+  <element at="24c1320h">
     <meta>
       <name>Radio ID bitmap block</name>
     </meta>
@@ -642,26 +787,42 @@
       </meta>
     </unused>
   </element>
-  
-  <element at="024C1340h">
-    <meta><name>Scan list bitmap block</name></meta>
+  <element at="24c1340h">
+    <meta>
+      <name>Scan list bitmap block</name>
+    </meta>
     <repeat n="250">
-      <meta><name>Scan list bitmap</name></meta>  
-      <bit><meta><name>Scan list enable bit</name></meta></bit>
+      <meta>
+        <name>Scan list bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Scan list enable bit</name>
+        </meta>
+      </int>
     </repeat>
   </element>
-
-  <element at="024C1400h">
-    <meta><name>Alarm settings</name></meta>
-    <unknown width="20h"/>
+  <element at="24c1400h">
+    <meta>
+      <name>Alarm settings</name>
+    </meta>
+    <unknown width="20h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C1440h">
-    <meta><name>Digital alarm settings extension</name></meta>
-    <unknown width="30h"/>
+  <element at="24c1440h">
+    <meta>
+      <name>Digital alarm settings extension</name>
+    </meta>
+    <unknown width="30h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C1500h">
+  <element at="24c1500h">
     <meta>
       <name>Channel bitmap block</name>
     </meta>
@@ -681,161 +842,325 @@
       </meta>
     </unused>
   </element>
- 
-  <repeat at="024C1700h" n="32">
-    <meta><name>DMR encryption key IDs</name></meta>
-    <uint32be><meta><name>DMR encryption key ID</name></meta></uint32be>
+  <repeat at="24c1700h" n="32">
+    <meta>
+      <name>DMR encryption key IDs</name>
+    </meta>
+    <int width="4h" format="unsigned" endian="big">
+      <meta>
+        <name>DMR encryption key ID</name>
+      </meta>
+    </int>
   </repeat>
-
-  <repeat at="024C1800h" n="32">
-    <meta><name>DMR encryption key IDs</name></meta>
-    <unknown width="28h"/>
+  <repeat at="24c1800h" n="32">
+    <meta>
+      <name>DMR encryption key IDs</name>
+    </meta>
+    <unknown width="28h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </repeat>
-
-  <element at="024C2000h">
-    <meta><name>Auto-repeater offset frequency block</name></meta>
+  <element at="24c2000h">
+    <meta>
+      <name>Auto-repeater offset frequency block</name>
+    </meta>
     <repeat n="250">
-      <meta><name>Auto-repeater offset frequencies</name></meta>
-      <uint32le default="0"><meta><name>Offset frequency in 10Hz</name></meta></uint32le>
+      <meta>
+        <name>Auto-repeater offset frequencies</name>
+      </meta>
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Offset frequency in 10Hz</name>
+        </meta>
+      </int>
     </repeat>
-    <unused width="8h"/>
+    <unused width="8h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <element at="024C2400h">
-    <meta><name>2-tone decoding</name></meta>
-    <unknown width="10h"/>
+  <element at="24c2400h">
+    <meta>
+      <name>2-tone decoding</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="024C2600h">
-    <meta><name>2-tone decoding bitmap block</name></meta>
-    <unknown width="10h"/>
+  <element at="24c2600h">
+    <meta>
+      <name>2-tone decoding bitmap block</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <unknown at="024C2610h" width="20h"/>
-
-  <unknown at="024C2630h" width="20h"/>
-
-  <unknown at="024C3000h" width="20h"/>
-
-  <unknown at="024C5000h" width="20h"/>
-
-  <element at="02500000h">
-    <meta><name>General settings element</name></meta>
-    <unknown width="e0h"/>
+  <unknown at="24c2610h" width="20h">
+    <meta>
+      <name>Unknown data</name>
+    </meta>
+  </unknown>
+  <unknown at="24c2630h" width="20h">
+    <meta>
+      <name>Unknown data</name>
+    </meta>
+  </unknown>
+  <unknown at="24c3000h" width="20h">
+    <meta>
+      <name>Unknown data</name>
+    </meta>
+  </unknown>
+  <unknown at="24c5000h" width="20h">
+    <meta>
+      <name>Unknown data</name>
+    </meta>
+  </unknown>
+  <element at="2500000h">
+    <meta>
+      <name>General settings element</name>
+    </meta>
+    <unknown width="e0h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="02500100h">
-    <meta><name>Zone A/B index list block</name></meta>
+  <element at="2500100h">
+    <meta>
+      <name>Zone A/B index list block</name>
+    </meta>
     <repeat n="250">
-      <meta><name>Zone A/B index list</name></meta>
+      <meta>
+        <name>Zone A/B index list</name>
+      </meta>
       <element>
-        <meta><name>Zone A/B index pair</name></meta>
-        <uint16le><meta><name>Channel A index</name></meta></uint16le>
-        <uint16le><meta><name>Channel B index</name></meta></uint16le>
+        <meta>
+          <name>Zone A/B index pair</name>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Channel A index</name>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Channel B index</name>
+          </meta>
+        </int>
       </element>
     </repeat>
-    <unused width="18h"/>
+    <unused width="18h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <element at="02500500h">
-    <meta><name>DTMF List</name></meta>
-    <unknown width="100h"/>
+  <element at="2500500h">
+    <meta>
+      <name>DTMF List</name>
+    </meta>
+    <unknown width="100h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="02500600h">
-    <meta><name>Boot settings</name></meta>
-    <unknown width="30h"/>
+  <element at="2500600h">
+    <meta>
+      <name>Boot settings</name>
+    </meta>
+    <unknown width="30h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="02501000h">
-    <meta><name>APRS Settings</name></meta>
-    <unknown width="a0h"/>
+  <element at="2501000h">
+    <meta>
+      <name>APRS Settings</name>
+    </meta>
+    <unknown width="a0h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="02501200h">
-    <meta><name>APRS text block</name></meta>
-    <string format="ascii" width="60"/>
-    <unused width="4h"/>
+  <element at="2501200h">
+    <meta>
+      <name>APRS text block</name>
+    </meta>
+    <string format="ascii" width="60" pad="0">
+      <meta>
+        <name></name>
+      </meta>
+    </string>
+    <unused width="4h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <element at="02501280h">
-    <meta><name>DMR APRS message block</name></meta>
-    <string format="ascii" width="40"/>
-    <unused width="8h"/>
+  <element at="2501280h">
+    <meta>
+      <name>DMR APRS message block</name>
+    </meta>
+    <string format="ascii" width="40" pad="0">
+      <meta>
+        <name></name>
+      </meta>
+    </string>
+    <unused width="8h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <element at="02501400h">
-    <meta><name>Extended settings</name></meta>
-    <unknown width="30h"/>
+  <element at="2501400h">
+    <meta>
+      <name>Extended settings</name>
+    </meta>
+    <unknown width="30h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <repeat at="02540000h" min="0" max="250">
+  <repeat at="2540000h" min="0" max="250">
     <meta>
       <name>Zone names</name>
     </meta>
-    <string format="ascii" width="32" pad="0"><meta><name>Zone name</name></meta></string>
+    <string format="ascii" width="32" pad="0">
+      <meta>
+        <name>Zone name</name>
+      </meta>
+    </string>
   </repeat>
-
-  <repeat at="02580000h" min="1" max="250">
-    <meta><name>Radio IDs</name></meta>
+  <repeat at="2580000h" min="1" max="250">
+    <meta>
+      <name>Radio IDs</name>
+    </meta>
     <element>
-      <meta><name>Radio ID</name></meta>
-      <unknown width="20h"/>
+      <meta>
+        <name>Radio ID</name>
+      </meta>
+      <unknown width="20h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
     </element>
   </repeat>
-
-  <element at="025C0000h">
-    <meta><name>Analog quick call block</name></meta>
+  <element at="25c0000h">
+    <meta>
+      <name>Analog quick call block</name>
+    </meta>
     <repeat n="4">
-      <meta><name>Analog quick calls</name></meta>
-      <unknown width="4"/>
+      <meta>
+        <name>Analog quick calls</name>
+      </meta>
+      <unknown width="4h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
     </repeat>
   </element>
-
-  <repeat at="025C0100h" n="32">
-    <meta><name>Status messages</name></meta>
-    <unknown width="20h"/>
+  <repeat at="25c0100h" n="32">
+    <meta>
+      <name>Status messages</name>
+    </meta>
+    <unknown width="20h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </repeat>
-
-  <repeat at="025C0500h" n="18">
-    <meta><name>Hotkey settings</name></meta>
-    <unknown width="30"/>
+  <repeat at="25c0500h" n="18">
+    <meta>
+      <name>Hotkey settings</name>
+    </meta>
+    <unknown width="30h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </repeat>
-
-  <repeat at="025C1000h" n="256">
-    <meta><name>AES encryption keys</name></meta>
-    <unknown width="40h"></unknown>
+  <repeat at="25c1000h" n="256">
+    <meta>
+      <name>AES encryption keys</name>
+    </meta>
+    <unknown width="40h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </repeat>
-
-  <element at="025C0B00h">
-    <meta><name>Status message bitmap</name></meta>
-    <unknown width="10h"/>
+  <element at="25c0b00h">
+    <meta>
+      <name>Status message bitmap</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
-
-  <element at="025C0B10h">
-   <meta><name>Group list bitmap block</name></meta>
-   <repeat n="250">
-    <meta><name>Group list bitmap</name></meta>
-    <bit><meta><name>Group list enable bit</name></meta></bit>
-   </repeat>
-   <unused width="6"/>
+  <element at="25c0b10h">
+    <meta>
+      <name>Group list bitmap block</name>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Group list bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Group list enable bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="6h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
   </element>
-
-  <repeat at="02600000h" min="0" max="10000">
-    <meta><name>Contact index list</name></meta>
-    <uint32le><meta><name>Contact index</name></meta></uint32le>
+  <repeat at="2600000h" min="0" max="10000">
+    <meta>
+      <name>Contact index list</name>
+    </meta>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>Contact index</name>
+      </meta>
+    </int>
   </repeat>
-
-  <element at="02640000h">
-    <meta><name>Contact bitmap block</name></meta>
+  <element at="2640000h">
+    <meta>
+      <name>Contact bitmap block</name>
+    </meta>
     <repeat n="10000">
-      <meta><name>Contact bitmap</name></meta>
-      <bit><meta><name>Contact disable bit</name></meta></bit>
+      <meta>
+        <name>Contact bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Contact disable bit</name>
+        </meta>
+      </int>
     </repeat>
   </element>
-
-  <repeat at="02680000h" min="0" max="10000">
-    <meta><name>Contact bank</name></meta>
+  <repeat at="2680000h" min="0" max="10000">
+    <meta>
+      <name>Contact bank</name>
+    </meta>
     <element>
       <meta>
         <name>Contact</name>
@@ -847,39 +1172,74 @@
       </int>
     </element>
   </repeat>
-
-  <repeat at="02900000h" n="128">
-    <meta><name>DTMF Contact index list</name></meta>
-    <uint8><meta><name>DTMF contact index</name></meta></uint8>
+  <repeat at="2900000h" n="128">
+    <meta>
+      <name>DTMF Contact index list</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>DTMF contact index</name>
+      </meta>
+    </int>
   </repeat>
-
-  <repeat at="02900100h" n="128">
-    <meta><name>DTMF Contact bytemap</name></meta>
-    <uint8><meta><name>DTMF contact enable byte</name></meta></uint8>
+  <repeat at="2900100h" n="128">
+    <meta>
+      <name>DTMF Contact bytemap</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>DTMF contact enable byte</name>
+      </meta>
+    </int>
   </repeat>
-
-  <repeat at="02940000h" min="0" max="128">
-    <meta><name>DTMF Contacts</name></meta>
+  <repeat at="2940000h" min="0" max="128">
+    <meta>
+      <name>DTMF Contacts</name>
+    </meta>
     <element>
-      <meta><name>DTMF Contact</name></meta>
-      <unknown width="18h"/>
+      <meta>
+        <name>DTMF Contact</name>
+      </meta>
+      <unknown width="18h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
     </element>
   </repeat>
-
-  <repeat at="02980000h" step="200h" min="0" max="250">
-    <meta><name>Group lists</name></meta>
+  <repeat at="2980000h" step="200h" min="0" max="250">
+    <meta>
+      <name>Group lists</name>
+    </meta>
     <element>
-      <meta><name>Group list</name></meta>
-      <unknown width="120h"/>
+      <meta>
+        <name>Group list</name>
+      </meta>
+      <unknown width="120h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
     </element>
   </repeat>
-
-  <repeat at="04340000h" min="0" max="10000">
-    <meta><name>Contact-DMR ID index</name></meta>
+  <repeat at="4340000h" min="0" max="10000">
+    <meta>
+      <name>Contact-DMR ID index</name>
+    </meta>
     <element>
-      <uint32le/>
-      <uint32le/>
+      <meta>
+        <name></name>
+      </meta>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name></name>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name></name>
+        </meta>
+      </int>
     </element>
   </repeat>
-
 </codeplug>
