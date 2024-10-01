@@ -405,7 +405,7 @@
           </meta>00</unused>
         <repeat n="8">
           <meta>
-            <name>New fixed repeat</name>
+            <name>Scan list indices</name>
           </meta>
           <int width="1h" format="unsigned">
             <meta>
@@ -419,24 +419,65 @@
             <name>APRS report channel index</name>
           </meta>
         </int>
-        <unused width="0h:6">
+        <unused width="0h:2">
           <meta>
             <name>Unused bits</name>
           </meta>00</unused>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Enable ranging</name>
+            <name>Enable DMR-APRS RX</name>
+            <firmware>4.02</firmware>
+            <incomplete/>
           </meta>
         </int>
-        <enum width="0h:1">
+        <int width="0h:1" format="unsigned">
           <meta>
-            <name>APRS report type</name>
+            <name>Enable DMR-APRS PTT</name>
+            <firmware>4.02</firmware>
+            <incomplete/>
+          </meta>
+        </int>
+        <enum width="0h:2">
+          <meta>
+            <name>FM APRS PTT Mode</name>
+            <description>Specifies when the position is send via the associated FM-APRS system.</description>
+            <firmware>4.02</firmware>
+            <incomplete/>
           </meta>
           <item value="0">
-            <name>DMR APRS</name>
+            <name>Off</name>
+            <description>Disables FM APRS PTT</description>
+            <firmware>4.02</firmware>
+          </item>
+          <item value="1">
+            <name>Start</name>
+            <description>Transmits the postion via FM-APRS at the start of transmission.</description>
+            <firmware>4.02</firmware>
+          </item>
+          <item value="2">
+            <name>End</name>
+            <description>Transmits the position via FM-APRS at the end of the transmission.</description>
+            <firmware>4.02</firmware>
+          </item>
+        </enum>
+        <enum width="0h:2">
+          <meta>
+            <name>APRS mode</name>
+            <firmware>4.02</firmware>
+            <incomplete/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+            <firmware>4.02</firmware>
+            <done/>
           </item>
           <item value="1">
             <name>FM APRS</name>
+            <firmware>4.02</firmware>
+          </item>
+          <item value="2">
+            <name>DMR APRS</name>
+            <firmware>4.02</firmware>
           </item>
         </enum>
       </element>
