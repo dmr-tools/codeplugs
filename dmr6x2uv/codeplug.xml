@@ -828,6 +828,10 @@
         </meta>
       </int>
     </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
   </element>
   <element at="24c1400h">
     <meta>
@@ -953,7 +957,64 @@
     <meta>
       <name>General settings element</name>
     </meta>
-    <unknown width="e0h">
+    <unknown width="6h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Boot display</name>
+        <description>Specifies, what is show during boot.</description>
+        <firmware>2.04</firmware>
+      </meta>
+      <item value="0">
+        <name>Default Display</name>
+      </item>
+      <item value="1">
+        <name>Custom Text</name>
+      </item>
+      <item value="2">
+        <name>Custom Image</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Boot password enable</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <unknown width="c6h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Default boot channel enable</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Default Channel A Index</name>
+        <description>Index of channel within default zone. 0xff for VFO.</description>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Default Channel B Index</name>
+        <description>Channel index within default zone. If ffh, VFO is selected.</description>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <unknown width="dh">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -1002,30 +1063,25 @@
   <element at="2500600h">
     <meta>
       <name>Boot settings</name>
-      <firmware>4.10</firmware>
     </meta>
     <string format="ascii" width="16" pad="0">
       <meta>
         <name>Boot text line 1</name>
-        <firmware>4.10</firmware>
       </meta>
     </string>
     <string format="ascii" width="16" pad="0">
       <meta>
         <name>Boot text line 2</name>
-        <firmware>4.10</firmware>
       </meta>
     </string>
     <string format="ascii" width="8" pad="0">
       <meta>
         <name>Boot password</name>
-        <firmware>4.10</firmware>
       </meta>
     </string>
     <unused width="8h">
       <meta>
         <name>Unused data</name>
-        <firmware>4.10</firmware>
       </meta>00</unused>
   </element>
   <element at="2501000h">
@@ -1162,11 +1218,10 @@
         </meta>
       </int>
     </repeat>
-    <unused width="6h">
+    <unused width="0h:6">
       <meta>
         <name>Unused data</name>
-      </meta>
-    </unused>
+      </meta>00</unused>
   </element>
   <repeat at="25c1000h" n="256">
     <meta>
