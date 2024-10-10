@@ -426,58 +426,44 @@
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable DMR-APRS RX</name>
-            <firmware>4.02</firmware>
-            <incomplete/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable DMR-APRS PTT</name>
-            <firmware>4.02</firmware>
-            <incomplete/>
           </meta>
         </int>
         <enum width="0h:2">
           <meta>
             <name>FM APRS PTT Mode</name>
             <description>Specifies when the position is send via the associated FM-APRS system.</description>
-            <firmware>4.02</firmware>
-            <incomplete/>
           </meta>
           <item value="0">
             <name>Off</name>
             <description>Disables FM APRS PTT</description>
-            <firmware>4.02</firmware>
           </item>
           <item value="1">
             <name>Start</name>
             <description>Transmits the postion via FM-APRS at the start of transmission.</description>
-            <firmware>4.02</firmware>
           </item>
           <item value="2">
             <name>End</name>
             <description>Transmits the position via FM-APRS at the end of the transmission.</description>
-            <firmware>4.02</firmware>
           </item>
         </enum>
         <enum width="0h:2">
           <meta>
             <name>APRS mode</name>
-            <firmware>4.02</firmware>
-            <incomplete/>
           </meta>
           <item value="0">
             <name>Off</name>
-            <firmware>4.02</firmware>
             <done/>
           </item>
           <item value="1">
             <name>FM APRS</name>
-            <firmware>4.02</firmware>
           </item>
           <item value="2">
             <name>DMR APRS</name>
-            <firmware>4.02</firmware>
           </item>
         </enum>
       </element>
@@ -770,7 +756,7 @@
   </element>
   <element at="24c1280h">
     <meta>
-      <name>2-tone encoding bitmap block</name>
+      <name>2-tone settings</name>
     </meta>
     <unknown width="10h">
       <meta>
@@ -780,7 +766,7 @@
   </element>
   <element at="24c1280h">
     <meta>
-      <name>2-tone settings</name>
+      <name>2-tone encoding bitmap block</name>
     </meta>
     <unknown width="10h">
       <meta>
@@ -1016,12 +1002,31 @@
   <element at="2500600h">
     <meta>
       <name>Boot settings</name>
+      <firmware>4.10</firmware>
     </meta>
-    <unknown width="30h">
+    <string format="ascii" width="16" pad="0">
       <meta>
-        <name>Unknown data</name>
+        <name>Boot text line 1</name>
+        <firmware>4.10</firmware>
       </meta>
-    </unknown>
+    </string>
+    <string format="ascii" width="16" pad="0">
+      <meta>
+        <name>Boot text line 2</name>
+        <firmware>4.10</firmware>
+      </meta>
+    </string>
+    <string format="ascii" width="8" pad="0">
+      <meta>
+        <name>Boot password</name>
+        <firmware>4.10</firmware>
+      </meta>
+    </string>
+    <unused width="8h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>4.10</firmware>
+      </meta>00</unused>
   </element>
   <element at="2501000h">
     <meta>
@@ -1133,16 +1138,6 @@
       </meta>
     </unknown>
   </repeat>
-  <repeat at="25c1000h" n="256">
-    <meta>
-      <name>AES encryption keys</name>
-    </meta>
-    <unknown width="40h">
-      <meta>
-        <name>Unknown data</name>
-      </meta>
-    </unknown>
-  </repeat>
   <element at="25c0b00h">
     <meta>
       <name>Status message bitmap</name>
@@ -1173,6 +1168,16 @@
       </meta>
     </unused>
   </element>
+  <repeat at="25c1000h" n="256">
+    <meta>
+      <name>AES encryption keys</name>
+    </meta>
+    <unknown width="40h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </repeat>
   <repeat at="2600000h" min="0" max="10000">
     <meta>
       <name>Contact index list</name>
