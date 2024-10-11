@@ -957,7 +957,12 @@
     <meta>
       <name>General settings element</name>
     </meta>
-    <unknown width="6h">
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable key tone</name>
+      </meta>
+    </int>
+    <unknown width="5h">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -982,7 +987,70 @@
         <name>Boot password enable</name>
       </meta>
     </int>
-    <unknown width="21h">
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unused width="1h">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+    <unknown width="19h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Display brightness</name>
+        <description>Brightness level-1, levels=1, ..., 5.</description>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Backlight duration</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>Always</name>
+      </item>
+      <item value="1">
+        <name>5s</name>
+      </item>
+      <item value="2">
+        <name>10s</name>
+      </item>
+      <item value="3">
+        <name>15s</name>
+      </item>
+      <item value="4">
+        <name>20s</name>
+      </item>
+      <item value="5">
+        <name>25s</name>
+      </item>
+      <item value="6">
+        <name>30s</name>
+      </item>
+      <item value="7">
+        <name>1min</name>
+      </item>
+      <item value="8">
+        <name>2min</name>
+      </item>
+      <item value="9">
+        <name>3min</name>
+      </item>
+      <item value="10">
+        <name>4min</name>
+      </item>
+      <item value="11">
+        <name>5min</name>
+      </item>
+    </enum>
+    <unknown width="1h">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -990,7 +1058,6 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>SMS alert tone enable</name>
-        <firmware>2.10</firmware>
       </meta>
     </int>
     <unknown width="5h">
@@ -1001,7 +1068,6 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Call alert tone enable</name>
-        <firmware>2.10</firmware>
       </meta>
     </int>
     <unknown width="1h">
@@ -1012,27 +1078,287 @@
     <unused width="0h:6">
       <meta>
         <name>Unused bits</name>
-        <firmware>2.10</firmware>
       </meta>00</unused>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable FM talk permit tone</name>
-        <firmware>2.10</firmware>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable DMR talk permit tone</name>
-        <firmware>2.10</firmware>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Call reset tone enable</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>FM channel idle tone</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>DMR channel idle tone</name>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Type 1</name>
+      </item>
+      <item value="2">
+        <name>Type 2</name>
+      </item>
+      <item value="3">
+        <name>Type 3</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Menu display duration</name>
+        <description>In multiples of 5s + 5s. 0=5s, 1=10s, 2=15s, ..., 11=60s.</description>
         <firmware>2.10</firmware>
       </meta>
     </int>
-    <unknown width="9bh">
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Boot sound enable</name>
+      </meta>
+    </int>
+    <unknown width="dh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Show volume change notification</name>
+      </meta>
+    </int>
+    <unknown width="5h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Last caller display</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>DMR-ID</name>
+      </item>
+      <item value="2">
+        <name>Callsign</name>
+      </item>
+      <item value="3">
+        <name>Both</name>
+      </item>
+    </enum>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Show clock</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <unknown width="20h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <element>
+      <meta>
+        <name>Call alert tone</name>
+        <description>Consists of 5 tones.</description>
+        <firmware>2.10</firmware>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Frequencies</name>
+          <firmware>2.10</firmware>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Frequency</name>
+            <description>Frequency in Hz.</description>
+            <firmware>2.10</firmware>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="5">
+        <meta>
+          <name>Durations</name>
+          <firmware>2.10</firmware>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Duration</name>
+            <description>In 10ms. Limited to 200ms.</description>
+            <firmware>2.10</firmware>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <element>
+      <meta>
+        <name>Idle channel tone</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Frequencies</name>
+          <firmware>2.10</firmware>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Frequency</name>
+            <description>Frequency in Hz.</description>
+            <firmware>2.10</firmware>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="5">
+        <meta>
+          <name>Durations</name>
+          <firmware>2.10</firmware>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Duration</name>
+            <description>Duration in 10ms.</description>
+            <firmware>2.10</firmware>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <element>
+      <meta>
+        <name>Call reset tone</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Frequencies</name>
+          <firmware>2.10</firmware>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Frequency</name>
+            <description>Frequency in Hz.</description>
+            <firmware>2.10</firmware>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="5">
+        <meta>
+          <name>Durations</name>
+          <firmware>2.10</firmware>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Duration</name>
+            <description>Duration in 10ms.</description>
+            <firmware>2.10</firmware>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Call-sign display mode</name>
+        <description>Specifies, what is show from the call-sign DB.</description>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>Name</name>
+      </item>
+      <item value="1">
+        <name>Callsign</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Call-sign color</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+      <item value="7">
+        <name>Black</name>
+      </item>
+    </enum>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Show TX contact</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <unused width="0h:4">
+      <meta>
+        <name>Unused bits</name>
+      </meta>00</unused>
+    <int width="0h:4" format="unsigned">
+      <meta>
+        <name>Key tone volume</name>
+        <description>Specifies the key tone volume. If set to 0, it is user adjustable.</description>
+      </meta>
+    </int>
+    <unknown width="18h">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -1066,7 +1392,33 @@
         <description>Channel index within default zone. If ffh, VFO is selected.</description>
       </meta>
     </int>
-    <unknown width="dh">
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Keep last caller</name>
+        <description>If enabled, the last caller is kept on a channel switch.</description>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>RX backlight duration</name>
+        <description>Specifies the number of second, the backlight stays on during the reception of a call. Values 0, ..., 30. 0=Always.</description>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Channel background color</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>Black</name>
+      </item>
+      <item value="1">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <unknown width="ah">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -1180,7 +1532,172 @@
     <meta>
       <name>Extended settings</name>
     </meta>
-    <unknown width="30h">
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Text color</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>White</name>
+      </item>
+      <item value="1">
+        <name>Black</name>
+      </item>
+      <item value="2">
+        <name>Orange</name>
+      </item>
+      <item value="3">
+        <name>Red</name>
+      </item>
+      <item value="4">
+        <name>Yellow</name>
+      </item>
+      <item value="5">
+        <name>Green</name>
+      </item>
+      <item value="6">
+        <name>Turquoise</name>
+      </item>
+      <item value="7">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable custom channel background</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <unknown width="dh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Zone A name color</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Truquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+      <item value="7">
+        <name>Black</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Zone B name color</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+      <item value="7">
+        <name>Black</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Channel A name color</name>
+        <firmware>2.10</firmware>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+      <item value="7">
+        <name>Black</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Channel B name color</name>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+      <item value="7">
+        <name>Black</name>
+      </item>
+    </enum>
+    <unknown width="1ah">
       <meta>
         <name>Unknown data</name>
       </meta>
