@@ -966,7 +966,6 @@
       <meta>
         <name>Boot display</name>
         <description>Specifies, what is show during boot.</description>
-        <firmware>2.04</firmware>
       </meta>
       <item value="0">
         <name>Default Display</name>
@@ -981,10 +980,59 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Boot password enable</name>
+      </meta>
+    </int>
+    <unknown width="21h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>SMS alert tone enable</name>
         <firmware>2.10</firmware>
       </meta>
     </int>
-    <unknown width="c6h">
+    <unknown width="5h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Call alert tone enable</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused bits</name>
+        <firmware>2.10</firmware>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable FM talk permit tone</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable DMR talk permit tone</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Call reset tone enable</name>
+        <firmware>2.10</firmware>
+      </meta>
+    </int>
+    <unknown width="9bh">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -992,26 +1040,30 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Default boot channel enable</name>
-        <firmware>2.10</firmware>
       </meta>
     </int>
-    <unknown width="2h">
+    <int width="1h" format="unsigned">
       <meta>
-        <name>Unknown data</name>
+        <name>Default zone A index</name>
+        <description>Specifies the index of the boot zone for VFO A. Index is 0-based.</description>
       </meta>
-    </unknown>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Default zone B index</name>
+        <description>Index of the boot zone for VFO B. Index is 0-based.</description>
+      </meta>
+    </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Default Channel A Index</name>
         <description>Index of channel within default zone. 0xff for VFO.</description>
-        <firmware>2.10</firmware>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Default Channel B Index</name>
         <description>Channel index within default zone. If ffh, VFO is selected.</description>
-        <firmware>2.10</firmware>
       </meta>
     </int>
     <unknown width="dh">
