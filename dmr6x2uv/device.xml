@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<device class="AnyToneDevice">
+  <name>DMR-6X2UV</name>
+  <manufacturer>BTECH</manufacturer>
+  <description></description>
+  <url>https://baofengtech.com/product/dmr-6x2/</url>
+
+  <memory>
+    <model>36 58 32 55 56 00</model>  <!-- 6X2UV\0 -->
+    <revision>56 31 30 32 00 00</revision> <!-- V102\0\0 -->
+    <!-- Some binary blob, read by the CPS from the device. -->
+    <map address="02fa0000">
+      00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
+      44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
+      ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    </map>
+  </memory>
+	  
+  <version name="2.10" released="2024-04-10">
+    <!-- If we like, we can override every memory item. But we do not need to
+    <cp-version>56 31 30 32 00 00</cp-version>  still V102\0\0 -->
+  </version>
+</device>
+
