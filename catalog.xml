@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
-  <device class="AnyToneDevice" id="dmr6x2uv">
-    <name>DMR-6X2UV</name>
-    <manufacturer>BTECH</manufacturer>
+  <model class="AnyTone" id="d868uve">
+    <name>AT-D868UVE</name>
+    <manufacturer>AnyTone</manufacturer>
     <description></description>
-    <url>https://baofengtech.com/product/dmr-6x2/</url>
+    <url>https://www.anytone.net/pro_info60.html</url>
 
     <memory>
-      <model>36 58 32 55 56 00</model>  <!-- 6X2UV\0 -->
+      <id>38 36 38 55 56 45</id>  <!-- 868UVE -->
       <revision>56 31 30 32 00 00</revision> <!-- V102\0\0 -->
       <!-- Some binary blob, read by the CPS from the device. -->
       <map address="02fa0000">
@@ -29,18 +29,18 @@
         00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
       </map>
     </memory>
-	  
-    <version name="2.10" released="2024-04-10" codeplug="dmr6x2uv/2.10/codeplug.xml"/>
-  </device>
 
-  <device class="AnyToneDevice" id="dmr6x2uv2">
-    <name>DMR-6X2UV Pro</name>
-    <manufacturer>BTECH</manufacturer>
-    <description></description>
-    <url>https://baofengtech.com/product/dmr-6x2pro/</url>
+    <firmware name="2.40" released="2021-11-30" codeplug="d868uve/2.40/codeplug.xml"/>
+  </model>
+
+
+  <model class="AnyTone" id="d878uv">
+    <name>AT-D878UV / AT-D878UV+</name>
+    <manufacturer>AnyTone</manufacturer>
+    <url>https://www.anytone.net/video/products-detail-935430</url>
 
     <memory>
-      <model>36 58 32 55 56 32</model>  <!-- 6X2UV2 -->
+      <id>38 37 38 55 56 00</id>  <!-- 878UV -->
       <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
       <!-- Some binary blob, read by the CPS from the device. -->
       <map address="02fa0000">
@@ -63,6 +63,241 @@
       </map>
     </memory>
 
-    <version name="1.10" released="2024-04-10" codeplug="dmr6x2uv2/1.10/codeplug.xml"/>
-  </device>
+    <firmware name="3.40" released="2024-09-14" codeplug="d878uv/3.04/codeplug.xml"/>
+  </model>
+
+
+  <model class="AnyTone" id="d878uv2">
+    <name>AT-D878UVII / AT-D878UVII+</name>
+    <manufacturer>AnyTone</manufacturer>
+    <url>https://www.anytone.net/video/products-detail-935380</url>
+
+    <memory>
+      <id>38 37 38 55 56 32</id>  <!-- 878UV2 -->
+      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+      <!-- Some binary blob, read by the CPS from the device. -->
+      <map address="02fa0000">
+        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
+        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
+        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      </map>
+    </memory>
+
+    <firmware name="3.40" released="2024-09-14" codeplug="d878uv2/3.04/codeplug.xml"/>
+  </model>
+
+
+  <model class="AnyTone" id="d578uv">
+    <name>AT-D578UV</name>
+    <manufacturer>AnyTone</manufacturer>
+    <url></url>
+
+    <memory>
+      <id>35 37 38 55 56 00</id>  <!-- 578UV -->
+      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+      <!-- Some binary blob, read by the CPS from the device. -->
+      <map address="02fa0000">
+        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
+        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
+        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      </map>
+    </memory>
+
+    <firmware name="1.21" released="2024-06-19" codeplug="d578uv/1.21/codeplug.xml"/>
+  </model>
+
+
+  <model class="AnyTone" id="d578uv2">
+    <name>AT-D578UV III</name>
+    <manufacturer>AnyTone</manufacturer>
+    <url></url>
+
+    <memory>
+      <id>35 37 38 55 56 32</id>  <!-- 578UV2 -->
+      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+      <!-- Some binary blob, read by the CPS from the device. -->
+      <map address="02fa0000">
+        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
+        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
+        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      </map>
+    </memory>
+
+    <firmware name="2.03" released="2022-07-05" codeplug="d578uv2/2.03/codeplug.xml"/>
+    <firmware name="2.08" released="2024-06-19" codeplug="d578uv2/2.08/codeplug.xml"/>
+  </model>
+
+
+  <model class="AnyTone" id="dmr6x2uv">
+    <name>DMR-6X2UV</name>
+    <manufacturer>BTECH</manufacturer>
+    <description></description>
+    <url>https://baofengtech.com/product/dmr-6x2/</url>
+
+    <memory>
+      <id>36 58 32 55 56 00</id>  <!-- 6X2UV\0 -->
+      <revision>56 31 30 32 00 00</revision> <!-- V102\0\0 -->
+      <!-- Some binary blob, read by the CPS from the device. -->
+      <map address="02fa0000">
+        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
+        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
+        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      </map>
+    </memory>
+	  
+    <firmware name="2.10" released="2024-04-10" codeplug="dmr6x2uv/2.10/codeplug.xml"/>
+  </model>
+
+
+  <model class="AnyTone" id="dmr6x2uv2">
+    <name>DMR-6X2UV Pro</name>
+    <manufacturer>BTECH</manufacturer>
+    <description></description>
+    <url>https://baofengtech.com/product/dmr-6x2pro/</url>
+
+    <memory>
+      <id>36 58 32 55 56 32</id>  <!-- 6X2UV2 -->
+      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+      <!-- Some binary blob, read by the CPS from the device. -->
+      <map address="02fa0000">
+        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
+        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
+        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      </map>
+    </memory>
+
+    <firmware name="1.10" released="2024-04-10" codeplug="dmr6x2uv2/1.10/codeplug.xml"/>
+  </model>
+
+
+  <model class="AnyTone" id="djmd5">
+    <name>DJ-MD5</name>
+    <manufacturer>Alinco</manufacturer>
+    <url></url>
+
+    <memory>
+      <id>4A 4D 44 35 00 00</id>  <!-- JMD5\0\0 -->
+      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+      <!-- Some binary blob, read by the CPS from the device. -->
+      <map address="02fa0000">
+        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
+        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
+        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      </map>
+    </memory>
+
+    <firmware name="1.13e" released="2020-12-09" codeplug="djmd5/1.13e/codeplug.xml"/>
+  </model>
+
+
+  <model class="AnyTone" id="djmd5x">
+    <name>DJ-MD5X</name>
+    <manufacturer>Alinco</manufacturer>
+    <url></url>
+
+    <memory>
+      <id>4A 4D 44 35 58 00</id>  <!-- JMD5X\0 -->
+      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+      <!-- Some binary blob, read by the CPS from the device. -->
+      <map address="02fa0000">
+        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
+        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
+        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+      </map>
+    </memory>
+
+    <firmware name="1.11" released="2021-06-11" codeplug="djmd5x/1.11/codeplug.xml"/>
+  </model>
+
 </catalog>

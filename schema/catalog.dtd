@@ -1,0 +1,25 @@
+<!DOCTYPE catalog [
+
+<!ELEMENT catalog (model*)>
+
+<!ELEMENT model (name, manufacturer, description?, url?, memory?, firmware+)>
+<!ATTLIST model class CDATA #REQUIRED>
+<!ATTLIST model id ID #REQUIRED>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT manufacturer (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+
+<!ELEMENT memory (id?,revision?,map*)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT revision (#PCDATA)>
+<!ELEMENT map (#PCDATA)>
+<!ATTLIST map address CDATA #REQUIRED>
+
+<!ELEMENT firmware (memory?)>
+<!ATTLIST firmware name CDATA #REQUIRED>
+<!ATTLIST firmware released CDATA #IMPLIED>
+<!ATTLIST firmware codeplug CDATA #REQUIRED>
+
+]!>

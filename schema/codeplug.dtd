@@ -1,0 +1,59 @@
+<!DOCTYPE codeplug [
+
+<!ELEMENT codeplug (meta, repeat*, element*, int*, string*, enum*, unused*, undefined*)>
+
+<!ELEMENT meta (name, description?, firmware?, (done | needs-review | incomplete)?)>
+<!ELEMENT name #PCDATA>
+<!ELEMENT description #PCDATA>
+<!ELEMENT firmware #PCDATA>
+<!ELEMENT done EMPTY>
+<!ELEMENT needs-review EMPTY>
+<!ELEMENT incomplete EMPTY>
+
+
+<!ELEMENT repeat (meta, (repeat | element | int | string | enum | unused | undefined))>
+<!ATTLIST repeat at CDATA #IMPLIED>
+<!ATTLIST repeat step CDATA #IMPLIED>
+<!ATTLIST repeat min CDATA #IMPLIED>
+<!ATTLIST repeat max CDATA #IMPLIED>
+<!ATTLIST repeat n CDATA #IMPLIED>
+
+
+<!ELEMENT element (meta, repeat*, element*, int*, string*, enum*, unused*, undefined*)>
+<!ATTLIST element at CDATA #IMPLIED>
+
+
+<!ELEMENT int (meta)>
+<!ATTLIST int at CDATA #IMPLIED>
+<!ATTLIST int width CDATA #REQUIRED>
+<!ATTLIST int endian ("little"|"big") "little">
+<!ATTLIST int format ("signed"|"unsigned"|"BCD") "singed">
+<!ATTLIST int min CDATA #IMPLIED>
+<!ATTLIST int max CDATA #IMPLIED>
+<!ATTLIST int default CDATA #IMPLIED>
+
+
+<!ELEMENT string (meta)>
+<!ATTLIST string at CDATA #IMPLIED>
+<!ATTLIST string width CDATA #REQUIRED>
+<!ATTLIST string pad CDATA "0">
+<!ATTLIST string format ("ascii"|"unicode") "ascii">
+
+
+<!ELEMENT enum (meta, item+)>
+<!ATTLIST enum at CDATA #IMPLIED>
+<!ATTLIST enum width CDATA #REQUIRED>
+
+<!ELEMENT item (name, description?, firmware?, (done | needs-review | incomplete)?)>
+<!ATTLIST item value CDATA #REQUIRED>
+
+
+<!ELEMENT unused (meta)>
+<!ATTLIST unused at CDATA #IMPLIED>
+<!ATTLIST unused width CDATA #REQUIRED>
+
+<!ELEMENT undefined (meta)>
+<!ATTLIST undefined at CDATA #IMPLIED>
+<!ATTLIST undefined width CDATA #REQUIRED>
+
+]>
