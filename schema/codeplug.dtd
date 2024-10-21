@@ -1,59 +1,137 @@
-<!DOCTYPE codeplug [
-
-<!ELEMENT codeplug (meta, repeat*, element*, int*, string*, enum*, unused*, undefined*)>
+<!ELEMENT codeplug (meta, (repeat|element|int|string|enum|unused|unknown)*)>
 
 <!ELEMENT meta (name, description?, firmware?, (done | needs-review | incomplete)?)>
-<!ELEMENT name #PCDATA>
-<!ELEMENT description #PCDATA>
-<!ELEMENT firmware #PCDATA>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT firmware (#PCDATA)>
 <!ELEMENT done EMPTY>
 <!ELEMENT needs-review EMPTY>
 <!ELEMENT incomplete EMPTY>
 
 
-<!ELEMENT repeat (meta, (repeat | element | int | string | enum | unused | undefined))>
-<!ATTLIST repeat at CDATA #IMPLIED>
-<!ATTLIST repeat step CDATA #IMPLIED>
-<!ATTLIST repeat min CDATA #IMPLIED>
-<!ATTLIST repeat max CDATA #IMPLIED>
-<!ATTLIST repeat n CDATA #IMPLIED>
+<!ELEMENT repeat (meta, (repeat | element |
+                         int | uint8 | int8 | uint16le | int16le | uint16be | int16be |
+                         uint32le | int32le | uint32be | int32be | bcd | bcd8 |
+                         string | enum |
+                         unused | unknown))>
+<!ATTLIST repeat at CDATA #IMPLIED
+                 step CDATA #IMPLIED
+                 min CDATA #IMPLIED
+                 max CDATA #IMPLIED
+                 n CDATA #IMPLIED>
 
 
-<!ELEMENT element (meta, repeat*, element*, int*, string*, enum*, unused*, undefined*)>
+<!ELEMENT element (meta, (repeat | element |
+                          int | uint8 | int8 | uint16le | int16le | uint16be | int16be |
+                          uint32le | int32le | uint32be | int32be | bcd | bcd8 |
+                          string | enum | unused | unknown)+)>
 <!ATTLIST element at CDATA #IMPLIED>
 
 
 <!ELEMENT int (meta)>
-<!ATTLIST int at CDATA #IMPLIED>
-<!ATTLIST int width CDATA #REQUIRED>
-<!ATTLIST int endian ("little"|"big") "little">
-<!ATTLIST int format ("signed"|"unsigned"|"BCD") "singed">
-<!ATTLIST int min CDATA #IMPLIED>
-<!ATTLIST int max CDATA #IMPLIED>
-<!ATTLIST int default CDATA #IMPLIED>
+<!ATTLIST int at CDATA #IMPLIED
+              width CDATA #REQUIRED
+              endian (little|big) "little"
+              format (signed|unsigned|bcd) "singed"
+              min CDATA #IMPLIED
+              max CDATA #IMPLIED
+              default CDATA #IMPLIED>
+
+<!ELEMENT int8 (meta)>
+<!ATTLIST int8 at CDATA #IMPLIED
+               min CDATA #IMPLIED
+               max CDATA #IMPLIED
+               default CDATA #IMPLIED>
+
+<!ELEMENT uint8 (meta)>
+<!ATTLIST uint8 at CDATA #IMPLIED
+                min CDATA #IMPLIED
+                max CDATA #IMPLIED
+                default CDATA #IMPLIED>
+
+<!ELEMENT int16le (meta)>
+<!ATTLIST int16le at CDATA #IMPLIED
+                  min CDATA #IMPLIED
+                  max CDATA #IMPLIED
+                  default CDATA #IMPLIED>
+
+<!ELEMENT uint16le (meta)>
+<!ATTLIST uint16le at CDATA #IMPLIED
+                   min CDATA #IMPLIED
+                   max CDATA #IMPLIED
+                   default CDATA #IMPLIED>
+
+<!ELEMENT int16be (meta)>
+<!ATTLIST int16be at CDATA #IMPLIED
+                  min CDATA #IMPLIED
+                  max CDATA #IMPLIED
+                  default CDATA #IMPLIED>
+
+<!ELEMENT uint16be (meta)>
+<!ATTLIST uint16be at CDATA #IMPLIED
+                   min CDATA #IMPLIED
+                   max CDATA #IMPLIED
+                   default CDATA #IMPLIED>
+
+<!ELEMENT int32le (meta)>
+<!ATTLIST int32le at CDATA #IMPLIED
+                  min CDATA #IMPLIED
+                  max CDATA #IMPLIED
+                  default CDATA #IMPLIED>
+
+<!ELEMENT uint32le (meta)>
+<!ATTLIST uint32le at CDATA #IMPLIED
+                   min CDATA #IMPLIED
+                   max CDATA #IMPLIED
+                   default CDATA #IMPLIED>
+
+<!ELEMENT int32be (meta)>
+<!ATTLIST int32be at CDATA #IMPLIED
+                  min CDATA #IMPLIED
+                  max CDATA #IMPLIED
+                  default CDATA #IMPLIED>
+
+<!ELEMENT uint32be (meta)>
+<!ATTLIST uint32be at CDATA #IMPLIED
+                   min CDATA #IMPLIED
+                   max CDATA #IMPLIED
+                   default CDATA #IMPLIED>
+
+<!ELEMENT bcd (meta)>
+<!ATTLIST bcd at CDATA #IMPLIED
+              width CDATA #REQUIRED
+              endian (little|big) "little"
+              min CDATA #IMPLIED
+              max CDATA #IMPLIED
+              default CDATA #IMPLIED>
+
+<!ELEMENT bcd8 (meta)>
+<!ATTLIST bcd8 at CDATA #IMPLIED
+               endian (little|big) "little"
+               min CDATA #IMPLIED
+               max CDATA #IMPLIED
+               default CDATA #IMPLIED>
 
 
 <!ELEMENT string (meta)>
-<!ATTLIST string at CDATA #IMPLIED>
-<!ATTLIST string width CDATA #REQUIRED>
-<!ATTLIST string pad CDATA "0">
-<!ATTLIST string format ("ascii"|"unicode") "ascii">
+<!ATTLIST string at CDATA #IMPLIED
+                 width CDATA #REQUIRED
+                 pad CDATA "0"
+                 format (ascii|unicode) "ascii">
 
 
 <!ELEMENT enum (meta, item+)>
-<!ATTLIST enum at CDATA #IMPLIED>
-<!ATTLIST enum width CDATA #REQUIRED>
+<!ATTLIST enum at CDATA #IMPLIED
+               width CDATA #REQUIRED>
 
 <!ELEMENT item (name, description?, firmware?, (done | needs-review | incomplete)?)>
 <!ATTLIST item value CDATA #REQUIRED>
 
 
-<!ELEMENT unused (meta)>
-<!ATTLIST unused at CDATA #IMPLIED>
-<!ATTLIST unused width CDATA #REQUIRED>
+<!ELEMENT unused (#PCDATA|meta)*>
+<!ATTLIST unused at CDATA #IMPLIED
+                 width CDATA #REQUIRED>
 
-<!ELEMENT undefined (meta)>
-<!ATTLIST undefined at CDATA #IMPLIED>
-<!ATTLIST undefined width CDATA #REQUIRED>
-
-]>
+<!ELEMENT unknown (meta?)>
+<!ATTLIST unknown at CDATA #IMPLIED
+                  width CDATA #REQUIRED>
