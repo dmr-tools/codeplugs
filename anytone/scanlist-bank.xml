@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<repeat step="200h" min="1" max="250">
-  <meta><name>Scan list bank</name></meta>
-  <instance of="anytone.scanlist"/>
-</repeat>
