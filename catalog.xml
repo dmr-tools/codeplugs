@@ -235,15 +235,14 @@
   </model>
 
 
-  <model class="AnyTone" id="djmd5">
+  <!--<model class="AnyTone" id="djmd5">
     <name>DJ-MD5</name>
     <manufacturer>Alinco</manufacturer>
     <url></url>
 
     <memory>
-      <id>4A 4D 44 35 00 00</id>  <!-- JMD5\0\0 -->
-      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
-      <!-- Some binary blob, read by the CPS from the device. -->
+      <id>4A 4D 44 35 00 00</id>
+      <revision>56 31 30 30 00 00</revision>
       <map address="02fa0000">
         00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
         44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
@@ -274,9 +273,8 @@
     <url></url>
 
     <memory>
-      <id>4A 4D 44 35 58 00</id>  <!-- JMD5X\0 -->
-      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
-      <!-- Some binary blob, read by the CPS from the device. -->
+      <id>4A 4D 44 35 58 00</id>
+      <revision>56 31 30 30 00 00</revision>
       <map address="02fa0000">
         00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
         44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
@@ -298,6 +296,6 @@
     </memory>
 
     <firmware name="1.11" released="2021-06-11" codeplug="djmd5x/1.11/codeplug.xml"/>
-  </model>
+  </model> -->
 
 </catalog>
