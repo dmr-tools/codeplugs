@@ -419,7 +419,7 @@
             <name>APRS report channel index</name>
           </meta>
         </int>
-        <unused width="0h:6">
+        <unused width="0h:2">
           <meta>
             <name>Unused bits</name>
           </meta>00</unused>
@@ -1172,7 +1172,7 @@
   </element>
   <element at="24c1280h">
     <meta>
-      <name>2-tone encoding bitmap block</name>
+      <name>2-tone settings</name>
     </meta>
     <unknown width="10h">
       <meta>
@@ -1182,7 +1182,7 @@
   </element>
   <element at="24c1280h">
     <meta>
-      <name>2-tone settings</name>
+      <name>2-tone encoding bitmap block</name>
     </meta>
     <unknown width="10h">
       <meta>
@@ -2288,6 +2288,26 @@
       </meta>
     </int>
   </repeat>
+  <repeat at="2900000h" n="128">
+    <meta>
+      <name>DTMF Contact index list</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>DTMF contact index</name>
+      </meta>
+    </int>
+  </repeat>
+  <repeat at="2900100h" n="128">
+    <meta>
+      <name>DTMF Contact bytemap</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>DTMF contact enable byte</name>
+      </meta>
+    </int>
+  </repeat>
   <repeat at="2900100h" n="128">
     <meta>
       <name>DTMF Contact bytemap</name>
@@ -2307,6 +2327,36 @@
         <name>DTMF Contact</name>
       </meta>
       <unknown width="18h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+    </element>
+  </repeat>
+  <repeat at="2940000h" min="0" max="128">
+    <meta>
+      <name>DTMF Contacts</name>
+    </meta>
+    <element>
+      <meta>
+        <name>DTMF Contact</name>
+      </meta>
+      <unknown width="18h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+    </element>
+  </repeat>
+  <repeat at="2980000h" step="200h" min="0" max="250">
+    <meta>
+      <name>Group lists</name>
+    </meta>
+    <element>
+      <meta>
+        <name>Group list</name>
+      </meta>
+      <unknown width="120h">
         <meta>
           <name>Unknown data</name>
         </meta>
@@ -2348,39 +2398,24 @@
       </int>
     </element>
   </repeat>
-
-  <repeat at="02900000h" n="128">
-    <meta><name>DTMF Contact index list</name></meta>
-    <uint8><meta><name>DTMF contact index</name></meta></uint8>
-  </repeat>
-
-  <repeat at="02900100h" n="128">
-    <meta><name>DTMF Contact bytemap</name></meta>
-    <uint8><meta><name>DTMF contact enable byte</name></meta></uint8>
-  </repeat>
-
-  <repeat at="02940000h" min="0" max="128">
-    <meta><name>DTMF Contacts</name></meta>
+  <repeat at="4340000h" min="0" max="10000">
+    <meta>
+      <name>Contact-DMR ID index</name>
+    </meta>
     <element>
-      <meta><name>DTMF Contact</name></meta>
-      <unknown width="18h"/>
+      <meta>
+        <name></name>
+      </meta>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name></name>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name></name>
+        </meta>
+      </int>
     </element>
   </repeat>
-
-  <repeat at="02980000h" step="200h" min="0" max="250">
-    <meta><name>Group lists</name></meta>
-    <element>
-      <meta><name>Group list</name></meta>
-      <unknown width="120h"/>
-    </element>
-  </repeat>
-
-  <repeat at="04340000h" min="0" max="10000">
-    <meta><name>Contact-DMR ID index</name></meta>
-    <element>
-      <uint32le/>
-      <uint32le/>
-    </element>
-  </repeat>
-
 </codeplug>
