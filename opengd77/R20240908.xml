@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+
+<codeplug>
+  <meta>
+    <name>OpengGD77</name>
+    <description>
+      This document describes the codeplug format of the OpenGD77 firmware running on a GD77.
+    </description>
+    <firmware>R202409080</firmware>
+  </meta>
+
+  <unknown at="00000000h" width="06000h"/>
+  <unknown at="00007500h" width="0bb00h"/>
+  <unknown at="01000000h" width="01200h"/>
+  <unknown at="0107b000h" width="13e60h"/>
+</codeplug>

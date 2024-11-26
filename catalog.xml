@@ -298,4 +298,31 @@
     <firmware name="1.11" released="2021-06-11" codeplug="djmd5x/1.11/codeplug.xml"/>
   </model> -->
 
+  <model class="OpenGD77" id="opengd77">
+    <name>OpenGD77</name>
+    <manufacturer>OpenGD77</manufacturer>
+    <url>https://opengd77.com</url>
+
+    <memory>
+      <map address="02000000">
+        00 00 00 03 <!-- Struct version -->
+        00 00 00 00 <!-- radio type 0: GD77, 1: GS77S, 2: DM1801, 3: RD3R, 4: DM1801A, 5: DM9600,
+                                    6: MDUV380, 7: MD380, 8: RT84/DM1701 (non-RGB), 9: MD2017,
+                                    10: RT84/DM1701 (RGB)-->
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- git Revision -->
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- build DateTime -->
+        00 00 04 14 <!-- flash ID -->
+        00 00       <!-- features -->
+      </map>
+    </memory>
+
+    <firmware name="R20240908" released="2024-09-08" codeplug="opengd77/R20240908.xml">
+      <memory>
+        <map address="02000008">
+          00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- git Revision -->
+          00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- build DateTime -->
+        </map>
+      </memory>
+    </firmware>
+  </model>
 </catalog>
