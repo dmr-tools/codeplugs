@@ -305,22 +305,51 @@
 
     <memory>
       <map address="02000000">
-        00 00 00 03 <!-- Struct version -->
-        00 00 00 00 <!-- radio type 0: GD77, 1: GS77S, 2: DM1801, 3: RD3R, 4: DM1801A, 5: DM9600,
-                                    6: MDUV380, 7: MD380, 8: RT84/DM1701 (non-RGB), 9: MD2017,
-                                    10: RT84/DM1701 (RGB)-->
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- git Revision -->
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- build DateTime -->
-        00 00 04 14 <!-- flash ID -->
-        00 00       <!-- features -->
+        03 00 00 00 <!-- Struct version (le) -->
+        00 00 00 00 <!-- radio type (le) 0: GD77, 1: GS77S, 2: DM1801, 3: RD3R, 4: DM1801A, 5: DM9600,
+                                         6: MDUV380, 7: MD380, 8: RT84/DM1701 (non-RGB), 9: MD2017,
+                                        10: RT84/DM1701 (RGB)-->
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- git Revision (FW, ASCII) -->
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- build DateTime (FW, ASCII) -->
+        14 40 00 00 <!-- flash ID (le) -->
+        00 00       <!-- features (le) -->
       </map>
     </memory>
 
     <firmware name="R20240908" released="2024-09-08" codeplug="opengd77/R20240908.xml">
       <memory>
         <map address="02000008">
-          00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- git Revision -->
-          00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- build DateTime -->
+          30 61 62 63 64 65 66 00 00 00 00 00 00 00 00 00 <!-- git Revision -->
+          32 30 32 34 30 39 30 38 30 30 30 30 30 30 00 00 <!-- build DateTime -->
+        </map>
+      </memory>
+    </firmware>
+  </model>
+
+
+  <model class="OpenGD77" id="openrd5r">
+    <name>OpenRD5R</name>
+    <manufacturer>OpenGD77</manufacturer>
+    <url>https://opengd77.com</url>
+
+    <memory>
+      <map address="02000000">
+        03 00 00 00 <!-- Struct version (le) -->
+        03 00 00 00 <!-- radio type (le) 0: GD77, 1: GS77S, 2: DM1801, 3: RD3R, 4: DM1801A, 5: DM9600,
+                                         6: MDUV380, 7: MD380, 8: RT84/DM1701 (non-RGB), 9: MD2017,
+                                        10: RT84/DM1701 (RGB)-->
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- git Revision (FW, ASCII) -->
+        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- build DateTime (FW, ASCII) -->
+        14 40 00 00 <!-- flash ID (le) -->
+        00 00       <!-- features (le) -->
+      </map>
+    </memory>
+
+    <firmware name="R20240908" released="2024-09-08" codeplug="openrd5r/R20240908.xml">
+      <memory>
+        <map address="02000008">
+          36 35 66 61 38 39 61 36 00 00 00 00 00 00 00 00 <!-- git Revision -->
+          32 30 32 34 30 39 30 38 30 38 34 38 33 36 00 00 <!-- build DateTime -->
         </map>
       </memory>
     </firmware>
