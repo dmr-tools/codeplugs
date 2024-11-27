@@ -319,8 +319,8 @@
     <firmware name="R20240908" released="2024-09-08" codeplug="opengd77/R20240908.xml">
       <memory>
         <map address="02000008">
-          30 61 62 63 64 65 66 00 00 00 00 00 00 00 00 00 <!-- git Revision -->
-          32 30 32 34 30 39 30 38 30 30 30 30 30 30 00 00 <!-- build DateTime -->
+          36 35 66 61 38 39 61 36 00 00 00 00 00 00 00 00 <!-- git Revision -->
+          32 30 32 34 30 39 30 38 30 38 34 38 33 36 00 00 <!-- build DateTime -->
         </map>
       </memory>
     </firmware>
