@@ -191,11 +191,12 @@
           <name>0.5°</name>
         </item>
       </enum>
-      <unknown width="0h:2">
+      <unused width="0h:2">
         <meta>
-          <name>Unknown data</name>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
         </meta>
-      </unknown>
+      </unused>
       <int width="0h:1" format="unsigned">
         <meta>
           <name>Use position</name>
