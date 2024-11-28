@@ -18,6 +18,7 @@
         <short-name>UHFmin</short-name>
         <description>in MHz.</description>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </int>
     <int width="2h" format="bcd" endian="little" default="0">
@@ -26,6 +27,7 @@
         <short-name>UHFmax</short-name>
         <description>in MHz.</description>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </int>
     <int width="2h" format="bcd" endian="little" default="311">
@@ -34,6 +36,7 @@
         <short-name>VHFmin</short-name>
         <description>in MHz.</description>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </int>
     <int width="2h" format="bcd" endian="little" default="368">
@@ -42,11 +45,13 @@
         <short-name>VHFmax</short-name>
         <description>Maximum frequency for VHF band in MHz.</description>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="58h">
       <meta>
         <name>Unknown data</name>
+        <needs-review/>
       </meta>
     </unknown>
     <string format="ascii" width="8" pad="597">
@@ -54,17 +59,20 @@
         <name>Callsign</name>
         <short-name>Call</short-name>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </string>
     <int width="4h" format="bcd" endian="big" default="0">
       <meta>
         <name>DMR ID</name>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="24h">
       <meta>
         <name>Unknown data</name>
+        <needs-review/>
       </meta>
     </unknown>
   </element>
