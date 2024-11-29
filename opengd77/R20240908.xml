@@ -349,6 +349,297 @@
       </repeat>
     </element>
   </repeat>
+  <element at="3780h">
+    <meta>
+      <name>Channel Bank 0</name>
+      <description>The first channel bank.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <repeat n="128">
+      <meta>
+        <name>Channel bit map</name>
+        <description>Marks, which channels are valid.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Channel bit</name>
+          <description>Enables a single channel.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <repeat n="128">
+      <meta>
+        <name>Channels</name>
+        <description>Encodes all valid channels.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Channel</name>
+          <description>Encodes a single channel.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="15" pad="597">
+          <meta>
+            <name>Name</name>
+            <description>Specifies the channel name.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad byte</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>0255</unused>
+        <int width="4h" format="bcd" endian="little">
+          <meta>
+            <name>RX Frequency</name>
+            <description>RX Frequency in 10Hz as 8-digit BCD in little endian.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="little">
+          <meta>
+            <name>TX Frequency</name>
+            <description>TX Frequency in 10Hz in 8-digit BCD little endian.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Channel Mode</name>
+            <description>Specifies the mode of the channel.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>FM</name>
+          </item>
+          <item value="1">
+            <name>DMR</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Power</name>
+            <description>Specifies the transmit power.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Master</name>
+          </item>
+          <item value="1">
+            <name>50mW</name>
+          </item>
+          <item value="2">
+            <name>250mW</name>
+          </item>
+          <item value="3">
+            <name>500mW</name>
+          </item>
+          <item value="4">
+            <name>750mW</name>
+          </item>
+          <item value="5">
+            <name>1W</name>
+          </item>
+          <item value="6">
+            <name>2W</name>
+          </item>
+          <item value="7">
+            <name>3W</name>
+          </item>
+          <item value="8">
+            <name>4W</name>
+          </item>
+          <item value="9">
+            <name>5W</name>
+          </item>
+          <item value="10">
+            <name>Maximum</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Latitude LSB</name>
+            <description>The LSB of the 24bit latitude value.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Latitude MSB</name>
+            <description>The MSB part of the 24bit latitude value.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Longitude LSB</name>
+            <description>LSB part of the 16bit longitude value.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+            <firmware>R202409080</firmware>
+          </meta>
+        </unknown>
+        <int width="2h" format="signed" endian="little" default="0">
+          <meta>
+            <name>RX Tone</name>
+            <description>Encoded as uint16le. MSB is DCS/CTCSS flag. rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>TX Tone</name>
+            <description>Encoded as uint16le. MSB is DCS/CTCSS flag. rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Longitude MSB</name>
+            <description>MSB part of the 16bit longitude value.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="1h:1">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Disable beep</name>
+            <short-name>NOB</short-name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Disable Power Save</name>
+            <short-name>NOE</short-name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="0h:1">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Use Location</name>
+            <short-name>LOC</short-name>
+            <description>Whatever that means.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="ch:3">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused bit</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>VOX enable</name>
+            <short-name>VOX</short-name>
+            <description>Enabled VOX for this channel.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Skip in Zone Scan</name>
+            <short-name>SZS</short-name>
+            <description>If enabled, the channel is skipped during a zone scan.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Skip Scan</name>
+            <short-name>SAS</short-name>
+            <description>If enabled, the cannel is skipped in all scans.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="0h:1">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>TX disable</name>
+            <short-name>RXO</short-name>
+            <description>If enabled, the TX is disabled. That is, the channel is RX only.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="0h:1">
+          <meta>
+            <name>Bandwidth</name>
+            <short-name>BW</short-name>
+            <description>Specifies the FM bandwidth.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Narrow (12.5kHz)</name>
+          </item>
+          <item value="1">
+            <name>Wide (25kHz)</name>
+          </item>
+        </enum>
+        <unknown width="4h:1">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+      </element>
+    </repeat>
+  </element>
   <unknown at="7500h" width="18h">
     <meta>
       <name>Unknown data</name>
