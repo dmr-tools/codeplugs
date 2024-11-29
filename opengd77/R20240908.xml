@@ -417,6 +417,79 @@
       </meta>
     </string>
   </element>
+  <element at="8010h">
+    <meta>
+      <name>Zone Bank</name>
+      <description>Hold the zone bitmap as well as the actual zones.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <repeat n="72">
+      <meta>
+        <name>Zone bitmap</name>
+        <description>Encodes which zone is valid. Encodes only 68 bits.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Zone enable bit</name>
+          <description>Enables a particular zone.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="17h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>00</unused>
+    <repeat n="68">
+      <meta>
+        <name>Zones</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Zone</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="15" pad="597">
+          <meta>
+            <name>Name</name>
+            <description>Specifies the zone name.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad byte</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>ff</unused>
+        <repeat n="80">
+          <meta>
+            <name>Channel Indieces</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="2h" format="unsigned" endian="little" default="0">
+            <meta>
+              <name>Channel Index</name>
+              <description>Index of the channel +1. 0=unused.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+      </element>
+    </repeat>
+  </element>
   <repeat at="1087620h" n="1024">
     <meta>
       <name>Contacts</name>
