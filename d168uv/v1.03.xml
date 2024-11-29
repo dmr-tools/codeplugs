@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>AnyTone AT-D168UV</name>
+    <description>Documents the codeplug format for the AnyTone AT-D168UV device.</description>
+    <firmware>1.03</firmware>
+  </meta>
+  <repeat at="800000h" step="40000h" min="1" max="32">
+    <meta>
+      <name>Channel banks</name>
+      <description>A series of channel banks.</description>
+      <firmware>1.03</firmware>
+      <done/>
+    </meta>
+    <repeat min="1" max="128">
+      <meta>
+        <name>Channel Bank</name>
+        <description>A collection of up to 128 channels.</description>
+        <firmware>1.03</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Channel</name>
+          <description>Encodes a single FM or DMR channel.</description>
+          <firmware>1.03</firmware>
+          <done/>
+        </meta>
+        <unknown width="8h:6">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="0h:2">
+          <meta>
+            <name>Mode</name>
+            <description>Specifies the channel mode. A mixed mode is possible.</description>
+            <firmware>1.03</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>FM</name>
+          </item>
+          <item value="1">
+            <name>DMR</name>
+          </item>
+          <item value="2">
+            <name>FM + DMR RX</name>
+          </item>
+          <item value="3">
+            <name>DMR + FM RX</name>
+          </item>
+        </enum>
+        <unknown width="1ah">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Channel Name</name>
+            <description>The name of the channel.</description>
+            <firmware>1.03</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unknown width="dh">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+      </element>
+    </repeat>
+  </repeat>
+  <unknown at="fc0800h" width="40h">
+    <meta>
+      <name>VFO Channel A</name>
+    </meta>
+  </unknown>
+  <unknown at="fc0840h" width="40h">
+    <meta>
+      <name>VFO Channel B</name>
+    </meta>
+  </unknown>
+  <repeat at="1000000h" step="200h" min="1" max="250">
+    <meta>
+      <name>Zone channel lists.</name>
+    </meta>
+    <repeat min="1" max="250">
+      <meta>
+        <name>Channel indices</name>
+      </meta>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Channel index</name>
+        </meta>
+      </int>
+    </repeat>
+  </repeat>
+  <repeat at="1080000h" step="40000h" min="0" max="16">
+    <meta>
+      <name>Scan list banks</name>
+    </meta>
+    <repeat step="200h" min="1" max="250">
+      <meta>
+        <name>Scan list bank</name>
+      </meta>
+      <unknown width="90h">
+        <meta>
+          <name>Scan list element</name>
+        </meta>
+      </unknown>
+    </repeat>
+  </repeat>
+  <element at="1640800h">
+    <meta>
+      <name>Message byte-map</name>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name></name>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name></name>
+        </meta>
+        <item value="0">
+          <name>Invalid</name>
+        </item>
+        <item value="255">
+          <name>Valid</name>
+        </item>
+      </enum>
+    </repeat>
+    <unused width="2eh">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="2140000h" step="40000h" min="0" max="13">
+    <meta>
+      <name>Message banks</name>
+    </meta>
+    <repeat min="1" max="8">
+      <meta>
+        <name>Message bank</name>
+      </meta>
+      <element>
+        <meta>
+          <name>Message</name>
+        </meta>
+        <string format="ascii" width="99" pad="0">
+          <meta>
+            <name></name>
+          </meta>
+        </string>
+        <unused width="9dh">
+          <meta>
+            <name>Unused data</name>
+          </meta>
+        </unused>
+      </element>
+    </repeat>
+  </repeat>
+  <repeat at="2480000h" min="0" max="100">
+    <meta>
+      <name>FM broadcast channel frequencies</name>
+    </meta>
+    <int width="4h" format="signed" endian="little">
+      <meta>
+        <name>Channel frequency</name>
+      </meta>
+    </int>
+  </repeat>
+  <element at="2480200h">
+    <meta>
+      <name>FM broadcast VFO frequency</name>
+    </meta>
+    <int width="4h" format="signed" endian="little">
+      <meta>
+        <name>VFO frequency</name>
+      </meta>
+    </int>
+    <unused width="ch">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <element at="2480210h">
+    <meta>
+      <name>FM broadcast channel bitmap</name>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name></name>
+      </meta>
+      <int width="0h:1" format="signed">
+        <meta>
+          <name>Channel bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="3h:4">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <unknown at="2480220h" width="16h">
+    <meta>
+      <name>Some unknown bitfield</name>
+    </meta>
+  </unknown>
+</codeplug>
