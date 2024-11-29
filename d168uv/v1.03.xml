@@ -4,37 +4,85 @@
   <meta>
     <name>AnyTone AT-D168UV</name>
     <description>Documents the codeplug format for the AnyTone AT-D168UV device.</description>
+    <firmware>1.03</firmware>
   </meta>
-
   <repeat at="800000h" step="40000h" min="1" max="32">
     <meta>
       <name>Channel banks</name>
       <description>A series of channel banks.</description>
+      <firmware>1.03</firmware>
+      <done/>
     </meta>
     <repeat min="1" max="128">
       <meta>
-        <name></name>
+        <name>Channel Bank</name>
+        <description>A collection of up to 128 channels.</description>
+        <firmware>1.03</firmware>
+        <done/>
       </meta>
-      <unknown width="40h">
+      <element>
         <meta>
-          <name>A channel element</name>
+          <name>Channel</name>
+          <description>Encodes a single FM or DMR channel.</description>
+          <firmware>1.03</firmware>
+          <done/>
         </meta>
-      </unknown>
+        <unknown width="8h:6">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="0h:2">
+          <meta>
+            <name>Mode</name>
+            <description>Specifies the channel mode. A mixed mode is possible.</description>
+            <firmware>1.03</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>FM</name>
+          </item>
+          <item value="1">
+            <name>DMR</name>
+          </item>
+          <item value="2">
+            <name>FM + DMR RX</name>
+          </item>
+          <item value="3">
+            <name>DMR + FM RX</name>
+          </item>
+        </enum>
+        <unknown width="1ah">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Channel Name</name>
+            <description>The name of the channel.</description>
+            <firmware>1.03</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unknown width="dh">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+      </element>
     </repeat>
   </repeat>
-  
   <unknown at="fc0800h" width="40h">
     <meta>
       <name>VFO Channel A</name>
     </meta>
   </unknown>
-  
-  <unknown at="fc0800h" width="40h">
+  <unknown at="fc0840h" width="40h">
     <meta>
       <name>VFO Channel B</name>
     </meta>
   </unknown>
-  
   <repeat at="1000000h" step="200h" min="1" max="250">
     <meta>
       <name>Zone channel lists.</name>
@@ -50,7 +98,6 @@
       </int>
     </repeat>
   </repeat>
-  
   <repeat at="1080000h" step="40000h" min="0" max="16">
     <meta>
       <name>Scan list banks</name>
@@ -66,38 +113,6 @@
       </unknown>
     </repeat>
   </repeat>
-  
-  <repeat at="1640000h" min="0" max="100">
-    <meta>
-      <name>Message linked list</name>
-    </meta>
-    <element>
-      <meta>
-        <name>List element</name>
-      </meta>
-      <unused width="2h">
-        <meta>
-          <name>Unused data</name>
-        </meta>
-      </unused>
-      <int width="1h" format="unsigned">
-        <meta>
-          <name>Next index</name>
-        </meta>
-      </int>
-      <int width="1h" format="unsigned">
-        <meta>
-          <name>Current index</name>
-        </meta>
-      </int>
-      <unused width="ch">
-        <meta>
-          <name>Unused data</name>
-        </meta>
-      </unused>
-    </element>
-  </repeat>
-  
   <element at="1640800h">
     <meta>
       <name>Message byte-map</name>
@@ -124,7 +139,6 @@
       </meta>
     </unused>
   </element>
-  
   <repeat at="2140000h" step="40000h" min="0" max="13">
     <meta>
       <name>Message banks</name>
@@ -150,7 +164,6 @@
       </element>
     </repeat>
   </repeat>
-  
   <repeat at="2480000h" min="0" max="100">
     <meta>
       <name>FM broadcast channel frequencies</name>
@@ -176,7 +189,6 @@
       </meta>
     </unused>
   </element>
-  
   <element at="2480210h">
     <meta>
       <name>FM broadcast channel bitmap</name>
@@ -197,235 +209,9 @@
       </meta>
     </unused>
   </element>
-  
   <unknown at="2480220h" width="16h">
     <meta>
       <name>Some unknown bitfield</name>
     </meta>
   </unknown>
-  
-  <repeat at="24c0000h" min="0" max="100">
-    <meta>
-      <name>5-tone IDs</name>
-    </meta>
-    <element>
-      <meta>
-        <name>5-tone ID</name>
-      </meta>
-      <unused width="1h">
-        <meta>
-          <name>Unused data</name>
-        </meta>
-      </unused>
-      <enum width="1h">
-        <meta>
-          <name>Standard</name>
-        </meta>
-        <item value="0">
-          <name>ZVEI1</name>
-        </item>
-        <item value="1">
-          <name>ZVEI2</name>
-        </item>
-        <item value="2">
-          <name>ZVEI3</name>
-        </item>
-        <item value="3">
-          <name>PZVEI</name>
-        </item>
-        <item value="4">
-          <name>DZVEI</name>
-        </item>
-        <item value="5">
-          <name>PDZVEI</name>
-        </item>
-        <item value="6">
-          <name>CCIR1</name>
-        </item>
-        <item value="7">
-          <name>CCIR2</name>
-        </item>
-        <item value="8">
-          <name>PCCIR</name>
-        </item>
-        <item value="9">
-          <name>EEA</name>
-        </item>
-        <item value="10">
-          <name>Euro Signal</name>
-        </item>
-        <item value="11">
-          <name>NATEL</name>
-        </item>
-        <item value="12">
-          <name>MODAT</name>
-        </item>
-        <item value="13">
-          <name>CCITT</name>
-        </item>
-        <item value="14">
-          <name>EIA</name>
-        </item>
-      </enum>
-      <int width="1h" format="signed">
-        <meta>
-          <name>ID length</name>
-        </meta>
-      </int>
-      <int width="1h" format="signed">
-        <meta>
-          <name>Tone duration in ms</name>
-        </meta>
-      </int>
-      <int width="28h" format="signed" endian="little">
-        <meta>
-          <name>ID</name>
-        </meta>
-      </int>
-      <string format="ascii" width="7" pad="32">
-        <meta>
-          <name>Name</name>
-        </meta>
-      </string>
-      <unused width="1h">
-        <meta>
-          <name>Unused data</name>
-        </meta>
-      </unused>
-    </element>
-  </repeat>
-
-  <element at="024C0C80h">
-    <meta><name>5-tone bitmap</name></meta>
-    <repeat n="100">
-      <int width=":1" encoding="unsigend"/>
-    </repeat>
-    <unused width="3:4"/>
-  </element>
-
-  <repeat at="024C0D00" n="16">
-    <meta><name>5-tone functions</name></meta>
-    <element>
-      <meta><name>5-tone function</name></meta>
-      <enum width="1">
-        <meta><name>Function</name></meta>
-        <item value="0"><name>Open squelch</name></item>
-        <item value="1"><name>Call all</name></item>
-        <item value="2"><name>Emergency alarm</name></item>
-        <item value="3"><name>Remote kill</name></item>
-        <item value="4"><name>Remote stun</name></item>
-        <item value="5"><name>Remote wakeup</name></item>
-        <item value="6"><name>Group call</name></item>
-      </enum>
-      <int width="1" encoding="unsigned">
-        <meta><name>ID length</name></meta>
-      </int>
-      <int width="ch" encoding="bcd" endian="little">
-        <meta><name>ID</name></meta>
-      </int>
-      <string width="7" pad="32" encoding="ascii">
-        <meta><name>Name</name></meta>
-      </string>
-      <unused width="6"/>
-    </element>
-  </repeat>
-
-  <element at="024C1000h">
-    <meta><name>5-tone settings</name></meta>
-    <unknown width="20h"/>
-    <unused width="1"/>
-    <enum width="1">
-      <meta><name>Decoing response</name></meta>
-      <item value="0"><name>None</name></item>
-      <item value="1"><name>Tone</name></item>
-      <item value="2"><name>Tone and respond</name></item>
-    </enum>
-    <enum width="1h">
-      <meta><name>Decoding standard</name></meta>
-      <item value="0"><name>ZVEI1</name></item>
-      <item value="1"><name>ZVEI2</name></item>
-      <item value="2"><name>ZVEI3</name></item>
-      <item value="3"><name>PZVEI</name></item>
-      <item value="4"><name>DZVEI</name></item>
-      <item value="5"><name>PDZVEI</name></item>
-      <item value="6"><name>CCIR1</name></item>
-      <item value="7"><name>CCIR2</name></item>
-      <item value="8"><name>PCCIR</name></item>
-      <item value="9"><name>EEA</name></item>
-      <item value="10"><name>Euro Signal</name></item>
-      <item value="11"><name>NATEL</name></item>
-      <item value="12"><name>MODAT</name></item>
-      <item value="13"><name>CCITT</name></item>
-      <item value="14"><name>EIA</name></item>
-    </enum>
-    <int width="1" encoding="unsigned">
-      <meta><name>Radio ID length</name></meta>
-    </int>
-    <int width="1" encoding="unsigned">
-      <meta><name>Decoding tone duration in ms</name></meta>
-    </int>
-    <int width="7" encoding="bcd" endian="little">
-      <meta><name>Radio ID</name></meta>
-    </int>
-    <int width="1" encoding="unsigned"><meta><name>Post encode delay in 10ms</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>PTT ID 0=off, [5,75]</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>Auto reset time in 10s</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>First delay in 10ms</name></meta></int>
-    <enum width="1">
-      <meta><name>Sidetone enable</name></meta>
-      <item value="0">Disabled</item>
-      <item value="1">Enabled</item>
-    </enum>
-    <unknown width="1"/>
-    <int width="1" encoding="unsigned"><meta><name>Stop code</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>Stop time in 10ms</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>Decode time in 10ms</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>Delay after stop in 10ms</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>Pre-time in 10ms</name></meta></int>
-    <unused width="6"/>
-    <enum width="1h">
-      <meta><name>BOT standard</name></meta>
-      <item value="0"><name>ZVEI1</name></item>
-      <item value="1"><name>ZVEI2</name></item>
-      <item value="2"><name>ZVEI3</name></item>
-      <item value="3"><name>PZVEI</name></item>
-      <item value="4"><name>DZVEI</name></item>
-      <item value="5"><name>PDZVEI</name></item>
-      <item value="6"><name>CCIR1</name></item>
-      <item value="7"><name>CCIR2</name></item>
-      <item value="8"><name>PCCIR</name></item>
-      <item value="9"><name>EEA</name></item>
-      <item value="10"><name>Euro Signal</name></item>
-      <item value="11"><name>NATEL</name></item>
-      <item value="12"><name>MODAT</name></item>
-      <item value="13"><name>CCITT</name></item>
-      <item value="14"><name>EIA</name></item>
-    </enum>
-    <int width="1" encoding="unsigned"><meta><name>BOT ID length</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>BOT tone duration in ms</name></meta></int>
-    <int width="ch" encoding="bcd" endian="little"><meta><name>BOT ID</name></meta></int>
-    <unused width="11h"/>
-    <enum width="1h">
-      <meta><name>EOT standard</name></meta>
-      <item value="0"><name>ZVEI1</name></item>
-      <item value="1"><name>ZVEI2</name></item>
-      <item value="2"><name>ZVEI3</name></item>
-      <item value="3"><name>PZVEI</name></item>
-      <item value="4"><name>DZVEI</name></item>
-      <item value="5"><name>PDZVEI</name></item>
-      <item value="6"><name>CCIR1</name></item>
-      <item value="7"><name>CCIR2</name></item>
-      <item value="8"><name>PCCIR</name></item>
-      <item value="9"><name>EEA</name></item>
-      <item value="10"><name>Euro Signal</name></item>
-      <item value="11"><name>NATEL</name></item>
-      <item value="12"><name>MODAT</name></item>
-      <item value="13"><name>CCITT</name></item>
-      <item value="14"><name>EIA</name></item>
-    </enum>
-    <int width="1" encoding="unsigned"><meta><name>EOT ID length</name></meta></int>
-    <int width="1" encoding="unsigned"><meta><name>EOT tone duration in ms</name></meta></int>
-    <int width="ch" encoding="bcd" endian="little"><meta><name>EOT ID</name></meta></int>
-    <unused width="10h"/>
-  </element>
 </codeplug>
