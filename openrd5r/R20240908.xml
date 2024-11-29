@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+
+<codeplug>
+  <meta>
+    <name>OpengRD5R</name>
+    <description>
+      This document describes the codeplug format of the OpenGD77 firmware running on a RD-5R.
+    </description>
+    <firmware>R202409080</firmware>
+  </meta>
+
+  <element at="00000000h">
+    <unknown width="06000h"/>
+  </element>
+  <element at="00007500h" >
+    <unknown width="0bb00h"/>
+  </element>
+  <element at="01000000h">
+    <unknown width="01200h"/>
+  </element>
+  <element at="0107b000h">
+    <unknown width="13e60h"/>
+  </element>
+</codeplug>
