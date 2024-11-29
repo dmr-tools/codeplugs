@@ -11,6 +11,8 @@
   <element at="80h">
     <meta>
       <name>Settings</name>
+      <firmware>R202409080</firmware>
+      <done/>
     </meta>
     <int width="2h" format="bcd" endian="little" default="0">
       <meta>
@@ -76,6 +78,65 @@
       </meta>
     </unknown>
   </element>
+  <element at="1470h:0">
+    <meta>
+      <name>DTMF Settings</name>
+      <description>Collects all setting fields for encoding/decoding of DTMF tones.</description>
+      <firmware>R202409080</firmware>
+    </meta>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>First digit delay</name>
+        <description>Specifies the transmission delay of the first DTMF digit in 100ms. Valid values are 100-1000ms</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>First digit duration</name>
+        <description>Specifies the duration of the first digit it 100ms. Valid values are 0-1000ms.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="1">
+      <meta>
+        <name>Ast/Hash duration.</name>
+        <description>Specifies the duration for the asterisk (*) and hash (#) symbols in 100ms. Valid values are 0-1000ms.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>DTMF Rate</name>
+        <description>Whatever that is. Valid values between 1-10.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="5">
+      <meta>
+        <name>Tail duration</name>
+        <description>Delay in 100ms after end of last symbol befor transmission ends. Valid values are 0-1000ms</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="1h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
   <repeat at="1588h" n="8">
     <meta>
       <name>APRS Systems</name>
@@ -90,6 +151,7 @@
         <meta>
           <name>Name</name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </string>
       <int width="1h" format="unsigned">
@@ -98,17 +160,20 @@
           <short-name>S-SSID</short-name>
           <description>SSID of the transmitter.</description>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="3h">
         <meta>
           <name>Latitude</name>
           <firmware>R202409080</firmware>
+          <incomplete/>
         </meta>
       </unknown>
       <unknown width="3h">
         <meta>
           <name>Longitude</name>
+          <incomplete/>
         </meta>
       </unknown>
       <string format="ascii" width="6" pad="0">
@@ -116,24 +181,28 @@
           <name>Via-1 Call</name>
           <short-name>Via1</short-name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </string>
       <int width="1h" format="unsigned" default="0">
         <meta>
           <name>Via-1 SSID</name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </int>
       <string format="ascii" width="6" pad="0">
         <meta>
           <name>Via-2 Call</name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </string>
       <int width="1h" format="unsigned" default="0">
         <meta>
           <name>Via-2 SSID</name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </int>
       <enum width="1h">
@@ -142,6 +211,7 @@
           <short-name>IcnTab</short-name>
           <description>Specifies the APRS icon table.</description>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>Primary</name>
@@ -155,17 +225,20 @@
           <name>APRS Icon index</name>
           <description>Specifies the icon index within the icon table.</description>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </int>
       <string format="ascii" width="23" pad="0">
         <meta>
           <name>Comment</name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </string>
       <unknown width="7h">
         <meta>
           <name>Unknown data</name>
+          <needs-review/>
         </meta>
       </unknown>
       <enum width="0h:4">
@@ -173,6 +246,7 @@
           <name>Position Masking</name>
           <short-name>Mask</short-name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>None</name>
@@ -203,6 +277,7 @@
         <meta>
           <name>Unused data</name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </unused>
       <int width="0h:1" format="unsigned">
@@ -210,6 +285,7 @@
           <name>Use position</name>
           <short-name>POS</short-name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </int>
       <enum width="0h:1">
@@ -217,6 +293,7 @@
           <name>Baud rate</name>
           <short-name>BRT</short-name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>1200 Baud</name>
@@ -228,6 +305,7 @@
       <unknown width="2h">
         <meta>
           <name>Unknown data</name>
+          <needs-review/>
         </meta>
       </unknown>
     </element>
@@ -237,29 +315,34 @@
       <name>DTMF Contacts</name>
       <description>Bank of 64 DTMF contacts.</description>
       <firmware>R202409080</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>DTMF Contact</name>
         <description>A DTMF contact. Invalid entries have empty names.</description>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
       <string format="ascii" width="16" pad="597">
         <meta>
           <name>Name</name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </string>
       <repeat n="16">
         <meta>
           <name>Number</name>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>Digit</name>
             <description>0h-fh Corresponding to 0-9, A, B, C, D, *, #.</description>
             <firmware>R202409080</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -269,6 +352,7 @@
     <meta>
       <name>Unknown data</name>
       <firmware>R202409080</firmware>
+      <needs-review/>
     </meta>
   </unknown>
   <element at="7518h">
@@ -280,6 +364,7 @@
       <meta>
         <name>Boot display</name>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Picture</name>
@@ -293,11 +378,13 @@
         <name>Boot password enable</name>
         <short-name>PWD</short-name>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="ah">
       <meta>
         <name>Unknown data</name>
+        <needs-review/>
       </meta>
     </unknown>
     <int width="3h" format="bcd" endian="big" default="0">
@@ -305,24 +392,105 @@
         <name>Boot password</name>
         <short-name>PWD</short-name>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="19h">
       <meta>
         <name>Unknown data</name>
+        <needs-review/>
       </meta>
     </unknown>
     <string format="ascii" width="16" pad="597">
       <meta>
         <name>Boot Text Line 1</name>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </string>
     <string format="ascii" width="16" pad="597">
       <meta>
         <name>Boot Text Line 2</name>
         <firmware>R202409080</firmware>
+        <done/>
       </meta>
     </string>
   </element>
+  <repeat at="1087620h" n="1024">
+    <meta>
+      <name>Contacts</name>
+      <description>A list of up to 1024 contact elements. Empty names indicate invalid entries. Probably dense. That is, the list ends with the first invalid entry.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Contact Element</name>
+        <description>Encodes a DMR contact.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="16" pad="597">
+        <meta>
+          <name>Name</name>
+          <description>Encodes the name of the contact. Up to ASCII 16 chars, filled with ffh.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>DMR ID</name>
+          <description>Specifies the DMR ID as a 8-digit BCD number in big endian.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Call Type</name>
+          <description>Specifies the call type.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Private Call</name>
+        </item>
+        <item value="1">
+          <name>Group Call</name>
+        </item>
+        <item value="2">
+          <name>All Call</name>
+          <description>Also implies a certain DMR ID.</description>
+        </item>
+      </enum>
+      <unused width="2h">
+        <meta>
+          <name>Unused data</name>
+          <description>Some unsued data, filled with 0100h</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>0100</unused>
+      <enum width="1h">
+        <meta>
+          <name>Time Slot Override</name>
+          <description>Allows to override the time slot of the channel, if this contact is selected as the current transmit contact.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+          <description>Do not override the time slot of the channel.</description>
+        </item>
+        <item value="1">
+          <name>Time Slot 1</name>
+          <description>Overrides the channel time slot with TS1.</description>
+        </item>
+        <item value="2">
+          <name>Time Slot 2</name>
+          <description>Overrides the channel time slot with TS2.</description>
+        </item>
+      </enum>
+    </element>
+  </repeat>
 </codeplug>
