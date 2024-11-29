@@ -83,6 +83,7 @@
       <name>DTMF Settings</name>
       <description>Collects all setting fields for encoding/decoding of DTMF tones.</description>
       <firmware>R202409080</firmware>
+      <done/>
     </meta>
     <unknown width="2h">
       <meta>
@@ -493,4 +494,78 @@
       </enum>
     </element>
   </repeat>
+  <element at="108d620h">
+    <meta>
+      <name>Group List Bank</name>
+      <description>Consists of a lenght array for each of the 64 group lists and the actual group lists.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <repeat n="76">
+      <meta>
+        <name>Length Array</name>
+        <description>Specifies the number of entries for each of the valid group lists.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Length</name>
+          <description>Specifies the number of elements +1 of the corresponding group list.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="34h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>00</unused>
+    <repeat n="76">
+      <meta>
+        <name>Group Lists</name>
+        <description>Up to 76 group lists.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Group List</name>
+          <description>Encodes a group list.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="15" pad="0">
+          <meta>
+            <name>Name</name>
+            <description>Specifies the name of the group list.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad Byte</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>ff</unused>
+        <repeat n="32">
+          <meta>
+            <name>Contact Indices</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="2h" format="unsigned" endian="little" default="0">
+            <meta>
+              <name>Contact index +1. If 0, invalid index.</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+      </element>
+    </repeat>
+  </element>
 </codeplug>
