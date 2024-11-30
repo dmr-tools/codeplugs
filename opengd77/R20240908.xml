@@ -476,20 +476,21 @@
             <name>Latitude LSB</name>
             <description>The LSB of the 24bit latitude value.</description>
             <firmware>R202409080</firmware>
-            <done/>
+            <incomplete/>
           </meta>
         </int>
-        <unknown width="1h">
+        <unused width="1h">
           <meta>
-            <name>Unknown data</name>
-          </meta>
-        </unknown>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Latitude MSB</name>
             <description>The MSB part of the 24bit latitude value.</description>
             <firmware>R202409080</firmware>
-            <done/>
+            <incomplete/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
@@ -497,19 +498,19 @@
             <name>Longitude LSB</name>
             <description>LSB part of the 16bit longitude value.</description>
             <firmware>R202409080</firmware>
-            <done/>
+            <incomplete/>
           </meta>
         </int>
-        <unknown width="1h">
+        <unused width="1h">
           <meta>
-            <name>Unknown data</name>
+            <name>Unused data</name>
             <firmware>R202409080</firmware>
-          </meta>
-        </unknown>
+            <done/>
+          </meta>00</unused>
         <int width="2h" format="signed" endian="little" default="0">
           <meta>
             <name>RX Tone</name>
-            <description>Encoded as uint16le. MSB is DCS/CTCSS flag. rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+            <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
             <firmware>R202409080</firmware>
             <done/>
           </meta>
@@ -517,7 +518,7 @@
         <int width="2h" format="unsigned" endian="little" default="0">
           <meta>
             <name>TX Tone</name>
-            <description>Encoded as uint16le. MSB is DCS/CTCSS flag. rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t.</description>
+            <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
             <firmware>R202409080</firmware>
             <done/>
           </meta>
@@ -527,14 +528,24 @@
             <name>Longitude MSB</name>
             <description>MSB part of the 16bit longitude value.</description>
             <firmware>R202409080</firmware>
+            <incomplete/>
+          </meta>
+        </int>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Override DMR ID</name>
+            <short-name>OID</short-name>
+            <description>If enabled, the DMR ID is overridden.</description>
+            <firmware>R202409080</firmware>
             <done/>
           </meta>
         </int>
-        <unknown width="1h:1">
-          <meta>
-            <name>Unknown data</name>
-          </meta>
-        </unknown>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Disable beep</name>
@@ -551,11 +562,11 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:1">
+        <unused width="0h:1">
           <meta>
-            <name>Unknown data</name>
-          </meta>
-        </unknown>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+          </meta>00</unused>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Use Location</name>
@@ -565,11 +576,137 @@
             <done/>
           </meta>
         </int>
-        <unknown width="ch:3">
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Force DCO</name>
+            <short-name>DCO</short-name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="0h:2">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="3h" format="unsigned" endian="big" default="5632">
+          <meta>
+            <name>Channel DMR ID</name>
+            <description>If enabled, holds the DMR ID used for this channel. Somewhat weird in uint24be.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Group List Index</name>
+            <description>Specifies the group list index +1. Default 0: none.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="1">
+          <meta>
+            <name>Color code</name>
+            <description>Simply stores the color code as is.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>APRS System Index</name>
+            <description>Index of the APRS system associated with the channes +1. Default 0: none.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="2h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>0000</unused>
+        <unused width="0h:4">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <enum width="0h:2">
+          <meta>
+            <name>TX Alias TS1</name>
+            <short-name>TAL2</short-name>
+            <description>How to transmit talker alias on time slot 2</description>
+            <firmware>R202409080</firmware>
+          </meta>
+          <item value="0">
+            <name>None</name>
+          </item>
+          <item value="1">
+            <name>APRS</name>
+          </item>
+          <item value="2">
+            <name>Text</name>
+          </item>
+          <item value="3">
+            <name>Both</name>
+          </item>
+        </enum>
+        <enum width="0h:2">
+          <meta>
+            <name>TX Alias TS1</name>
+            <short-name>TAL1</short-name>
+            <description>How to transmit the talker alias on time-slot 1.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>None</name>
+          </item>
+          <item value="1">
+            <name>APRS</name>
+          </item>
+          <item value="2">
+            <name>Text</name>
+          </item>
+          <item value="3">
+            <name>Both</name>
+          </item>
+        </enum>
+        <unknown width="0h:1">
           <meta>
             <name>Unknown data</name>
           </meta>
         </unknown>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Time slot 2</name>
+            <short-name>TS2</short-name>
+            <description>If enabled, time slot 2 is used. Otherwise TS 1.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="0h:6">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
         <unused width="0h:1">
           <meta>
             <name>Unused bit</name>
@@ -632,11 +769,27 @@
             <name>Wide (25kHz)</name>
           </item>
         </enum>
-        <unknown width="4h:1">
+        <unused width="0h:1">
           <meta>
-            <name>Unknown data</name>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </unused>
+        <unused width="3h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>000000</unused>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Squelch Level</name>
+            <description>0: Global setting, 1: open, 2-14: 5%(n-1), 15: closed.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
       </element>
     </repeat>
   </element>
