@@ -33,7 +33,7 @@ jobs:
       - name: Install 
         id: install
         run: |
-          apt-get install python3 python3-svgwrite
+          apt-get install python3-svgwrite
       - name: Build
         id: build
         run: |
