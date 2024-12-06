@@ -37,7 +37,7 @@ jobs:
           cache: 'pip' # caching pip dependencies
       - name: Install
         id: install
-        run: pip install -r requirements.txt      
+        run: pip install -r ./codeplug-doc-gen/
       - name: Build
         id: build
         run: |
