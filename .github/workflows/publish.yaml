@@ -39,12 +39,12 @@ jobs:
           cache: 'pip' # caching pip dependencies
       - name: Install
         id: install
-        run: pip install -r ./codeplug-doc-gen/
+        run: pip install ./codeplug-doc-gen/
       - name: Build
         id: build
         run: |
           mkdir generated-docs/
-          PYTHONPATH=./codeplug-doc-gen/src python3 codeplug-doc-gen/src/cpdgen/cli.py opengd77/R20240908.xml generated-docs/index.html 
+          python3 codeplug-doc-gen/src/cpdgen/cli.py opengd77/R20240908.xml generated-docs/index.html 
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
