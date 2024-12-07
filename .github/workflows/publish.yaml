@@ -44,7 +44,7 @@ jobs:
         id: build
         run: |
           mkdir generated-docs/
-          python3 codeplug-doc-gen/src/cpdgen/cli.py opengd77/R20240908.xml generated-docs/index.html 
+          python3 codeplug-doc-gen/src/cpdgen/cli.py catalog.xml generated-docs/index.html 
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
