@@ -1,8 +1,9 @@
 <!ELEMENT codeplug (meta, (repeat|element|int|string|enum|unused|unknown)*)>
 
-<!ELEMENT meta (name, short-name?, description?, firmware?, (done | needs-review | incomplete)?)>
+<!ELEMENT meta (name, short-name?, brief?, description?, firmware?, (done | needs-review | incomplete)?)>
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT short-name (#PCDATA)>
+<!ELEMENT brief (#PCDATA)>
 <!ELEMENT description (#PCDATA)>
 <!ELEMENT firmware (#PCDATA)>
 <!ELEMENT done EMPTY>
