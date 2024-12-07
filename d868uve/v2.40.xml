@@ -1,0 +1,3045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>AnyTone AT-D868UV</name>
+    <brief>Codeplug format for the AnyTone AT-D868UVE device.</brief>
+    <firmware>2.40</firmware>
+    <done/>
+  </meta>
+  <repeat at="800000h" step="40000h" min="1" max="32">
+    <meta>
+      <name>Channel banks</name>
+      <brief>A sparse series of channel banks.</brief>
+      <firmware>2.40</firmware>
+      <done/>
+    </meta>
+    <repeat min="1" max="128">
+      <meta>
+        <name>Channel Bank</name>
+        <brief>A single channel bank, holding up to 128 Channels.</brief>
+        <firmware>2.40</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Channel</name>
+          <brief>Encodes a single FM or DMR channel.</brief>
+        </meta>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>RX Frequency</name>
+            <brief>Specifies the reception frequency.</brief>
+            <description>Frequency is specified in 10Hz.</description>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>TX Frequency Offset</name>
+            <brief>Specifies the transmit frequency offset.</brief>
+            <description>The frequency is stored in 10Hz. The offset direction is stored separately.</description>
+          </meta>
+        </int>
+        <enum width="0h:2">
+          <meta>
+            <name>Repeater Mode</name>
+            <brief>Specifies the offset direction for the repeater mode.</brief>
+            <firmware>RMode</firmware>
+          </meta>
+          <item value="0">
+            <name>Simplex</name>
+            <description>RX = TX Frequency</description>
+          </item>
+          <item value="1">
+            <name>Positive</name>
+            <description>TX = RX + Offset</description>
+          </item>
+          <item value="2">
+            <name>Negative</name>
+            <description>TX = RX - Offset</description>
+          </item>
+        </enum>
+        <enum width="0h:2">
+          <meta>
+            <name>Bandwidth</name>
+            <brief>Specifies the bandwidth of the FM channel. DMR channels are always 12.5kHz wide.</brief>
+          </meta>
+          <item value="0">
+            <name>Narrow (12.5kHz)</name>
+          </item>
+          <item value="1">
+            <name>Wide (25kHz)</name>
+          </item>
+        </enum>
+        <enum width="0h:2">
+          <meta>
+            <name>Transmit power</name>
+            <brief>Specifies the transmit power of the channel.</brief>
+          </meta>
+          <item value="0">
+            <name>Low</name>
+          </item>
+          <item value="1">
+            <name>Medium</name>
+          </item>
+          <item value="2">
+            <name>High</name>
+          </item>
+          <item value="3">
+            <name>Turbo</name>
+          </item>
+        </enum>
+        <enum width="0h:2">
+          <meta>
+            <name>Channel mode</name>
+            <brief>Specifies the mode of the channel.</brief>
+          </meta>
+          <item value="0">
+            <name>FM</name>
+          </item>
+          <item value="1">
+            <name>DMR</name>
+          </item>
+          <item value="2">
+            <name>FM + DMR RX</name>
+          </item>
+          <item value="3">
+            <name>DMR + FM RX</name>
+          </item>
+        </enum>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable talkaround</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable call confirm</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable RX only</name>
+            <brief>If enabled, no transmission is possible on this channel.</brief>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable CTCSS phase reversal</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable TX DCS</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable TX CTCSS</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable RX DCS</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable RX CTCSS</name>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>TX Tone CTCSS</name>
+          </meta>
+          <item value="0">
+            <name>62.5 Hz</name>
+          </item>
+          <item value="1">
+            <name>67.0 Hz</name>
+          </item>
+          <item value="2">
+            <name>69.3 Hz</name>
+          </item>
+          <item value="3">
+            <name>71.9 Hz</name>
+          </item>
+          <item value="4">
+            <name>74.4 Hz</name>
+          </item>
+          <item value="5">
+            <name>77.0 Hz</name>
+          </item>
+          <item value="6">
+            <name>79.7 Hz</name>
+          </item>
+          <item value="7">
+            <name>82.5 Hz</name>
+          </item>
+          <item value="8">
+            <name>85.4 Hz</name>
+          </item>
+          <item value="9">
+            <name>88.5 Hz</name>
+          </item>
+          <item value="10">
+            <name>91.5 Hz</name>
+          </item>
+          <item value="11">
+            <name>94.8 Hz</name>
+          </item>
+          <item value="12">
+            <name>97.4 Hz</name>
+          </item>
+          <item value="13">
+            <name>100.0 Hz</name>
+          </item>
+          <item value="14">
+            <name>103.5 Hz</name>
+          </item>
+          <item value="15">
+            <name>107.2 Hz</name>
+          </item>
+          <item value="16">
+            <name>110.9 Hz</name>
+          </item>
+          <item value="17">
+            <name>114.8 Hz</name>
+          </item>
+          <item value="18">
+            <name>118.8 Hz</name>
+          </item>
+          <item value="19">
+            <name>123.0 Hz</name>
+          </item>
+          <item value="20">
+            <name>127.3 Hz</name>
+          </item>
+          <item value="21">
+            <name>131.8 Hz</name>
+          </item>
+          <item value="22">
+            <name>136.5 Hz</name>
+          </item>
+          <item value="23">
+            <name>141.3 Hz</name>
+          </item>
+          <item value="24">
+            <name>146.2 Hz</name>
+          </item>
+          <item value="25">
+            <name>151.4 Hz</name>
+          </item>
+          <item value="26">
+            <name>156.7 Hz</name>
+          </item>
+          <item value="27">
+            <name>159.8 Hz</name>
+          </item>
+          <item value="28">
+            <name>162.2 Hz</name>
+          </item>
+          <item value="29">
+            <name>165.5 Hz</name>
+          </item>
+          <item value="30">
+            <name>167.9 Hz</name>
+          </item>
+          <item value="31">
+            <name>171.3 Hz</name>
+          </item>
+          <item value="32">
+            <name>173.8 Hz</name>
+          </item>
+          <item value="33">
+            <name>177.3 Hz</name>
+          </item>
+          <item value="34">
+            <name>179.9 Hz</name>
+          </item>
+          <item value="35">
+            <name>183.5 Hz</name>
+          </item>
+          <item value="36">
+            <name>186.2 Hz</name>
+          </item>
+          <item value="37">
+            <name>189.9 Hz</name>
+          </item>
+          <item value="38">
+            <name>192.8 Hz</name>
+          </item>
+          <item value="39">
+            <name>196.6 Hz</name>
+          </item>
+          <item value="40">
+            <name>199.5 Hz</name>
+          </item>
+          <item value="41">
+            <name>203.5 Hz</name>
+          </item>
+          <item value="42">
+            <name>206.5 Hz</name>
+          </item>
+          <item value="43">
+            <name>210.7 Hz</name>
+          </item>
+          <item value="44">
+            <name>218.1 Hz</name>
+          </item>
+          <item value="45">
+            <name>225.7 Hz</name>
+          </item>
+          <item value="46">
+            <name>229.1 Hz</name>
+          </item>
+          <item value="47">
+            <name>233.6 Hz</name>
+          </item>
+          <item value="48">
+            <name>241.8 Hz</name>
+          </item>
+          <item value="49">
+            <name>250.3 Hz</name>
+          </item>
+          <item value="50">
+            <name>254.1 Hz</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>RX Tone CTCSS</name>
+            <brief>Same codes as for TX</brief>
+          </meta>
+        </enum>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>TX DCS code</name>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>RX DCS code</name>
+          </meta>
+        </int>
+        <int width="2h" format="signed" endian="little" default="0">
+          <meta>
+            <name>Custom CTCSS frequency</name>
+            <brief>Specifies a custom CTCSS frequency in 0.1Hz.</brief>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Two-tone decode index</name>
+            <brief>Specifies the two-tone decode index.</brief>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Transmit contact index</name>
+            <brief>Contact index, 0-based.</brief>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Radio ID index</name>
+          </meta>
+        </int>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <enum width="0h:3">
+          <meta>
+            <name>Squelch Mode</name>
+          </meta>
+          <item value="0">
+            <name>Carrier</name>
+          </item>
+          <item value="1">
+            <name>CTCSS/DSC</name>
+          </item>
+          <item value="2">
+            <name>Optional Signaling</name>
+          </item>
+          <item value="3">
+            <name>CTCSS/DSC and Optional Signaling</name>
+          </item>
+        </enum>
+        <unused width="0h:4">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <unused width="0h:2">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <enum width="0h:2">
+          <meta>
+            <name>Optional Signaling</name>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>DTMF</name>
+          </item>
+          <item value="2">
+            <name>two-tone</name>
+          </item>
+          <item value="3">
+            <name>five-tone</name>
+          </item>
+        </enum>
+        <unused width="0h:2">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <enum width="0h:2">
+          <meta>
+            <name>Admit Criterium</name>
+          </meta>
+          <item value="0">
+            <name>Always</name>
+          </item>
+          <item value="1">
+            <name>Colorcode</name>
+          </item>
+          <item value="2">
+            <name>Channel Free</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Scan list index</name>
+            <brief>Scan list index, 0-based.</brief>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Group List index</name>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Two-tone Id</name>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Five-tone Id</name>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>DTMF Id</name>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Colorcode</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable Lone Worker</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable enhanced encryption</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable GPS RX</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable adaptive TDMA</name>
+          </meta>
+        </int>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable simplex TDMA</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable SMS Confirmation</name>
+          </meta>
+        </int>
+        <enum width="0h:1">
+          <meta>
+            <name>Time Slot</name>
+          </meta>
+          <item value="0">
+            <name>Time Slot 1</name>
+          </item>
+          <item value="1">
+            <name>Time Slot 2</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>AES encryption key index</name>
+          </meta>
+        </int>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Name</name>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad Byte</name>
+          </meta>00</unused>
+        <unused width="0h:5">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Disable Data ACK</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable Through Mode</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable ranging</name>
+          </meta>
+        </int>
+        <unused width="0h:7">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable TX ARPS</name>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>DMR APRS index</name>
+          </meta>
+        </int>
+        <unused width="3h">
+          <meta>
+            <name>Unused data</name>
+          </meta>
+        </unused>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>DMR Encryption index</name>
+            <brief>Index +1, 0=off.</brief>
+          </meta>
+        </int>
+        <unused width="0h:5">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>SMS forbid</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Random Key</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Multiple Keys</name>
+          </meta>
+        </int>
+        <unused width="4h">
+          <meta>
+            <name>Unused data</name>
+          </meta>00000000</unused>
+      </element>
+    </repeat>
+  </repeat>
+  <repeat at="fc0800h" n="2">
+    <meta>
+      <name>VFO Channels</name>
+    </meta>
+    <element>
+      <meta>
+        <name>VFO Channel</name>
+        <brief>Encodes a single FM or DMR channel.</brief>
+      </meta>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>RX Frequency</name>
+          <brief>Specifies the reception frequency.</brief>
+          <description>Frequency is specified in 10Hz.</description>
+        </meta>
+      </int>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>TX Frequency Offset</name>
+          <brief>Specifies the transmit frequency offset.</brief>
+          <description>The frequency is stored in 10Hz. The offset direction is stored separately.</description>
+        </meta>
+      </int>
+      <enum width="0h:2">
+        <meta>
+          <name>Repeater Mode</name>
+          <brief>Specifies the offset direction for the repeater mode.</brief>
+          <firmware>RMode</firmware>
+        </meta>
+        <item value="0">
+          <name>Simplex</name>
+          <description>RX = TX Frequency</description>
+        </item>
+        <item value="1">
+          <name>Positive</name>
+          <description>TX = RX + Offset</description>
+        </item>
+        <item value="2">
+          <name>Negative</name>
+          <description>TX = RX - Offset</description>
+        </item>
+      </enum>
+      <enum width="0h:2">
+        <meta>
+          <name>Bandwidth</name>
+          <brief>Specifies the bandwidth of the FM channel. DMR channels are always 12.5kHz wide.</brief>
+        </meta>
+        <item value="0">
+          <name>Narrow (12.5kHz)</name>
+        </item>
+        <item value="1">
+          <name>Wide (25kHz)</name>
+        </item>
+      </enum>
+      <enum width="0h:2">
+        <meta>
+          <name>Transmit power</name>
+          <brief>Specifies the transmit power of the channel.</brief>
+        </meta>
+        <item value="0">
+          <name>Low</name>
+        </item>
+        <item value="1">
+          <name>Medium</name>
+        </item>
+        <item value="2">
+          <name>High</name>
+        </item>
+        <item value="3">
+          <name>Turbo</name>
+        </item>
+      </enum>
+      <enum width="0h:2">
+        <meta>
+          <name>Channel mode</name>
+          <brief>Specifies the mode of the channel.</brief>
+        </meta>
+        <item value="0">
+          <name>FM</name>
+        </item>
+        <item value="1">
+          <name>DMR</name>
+        </item>
+        <item value="2">
+          <name>FM + DMR RX</name>
+        </item>
+        <item value="3">
+          <name>DMR + FM RX</name>
+        </item>
+      </enum>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable talkaround</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable call confirm</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable RX only</name>
+          <brief>If enabled, no transmission is possible on this channel.</brief>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable CTCSS phase reversal</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable TX DCS</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable TX CTCSS</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable RX DCS</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable RX CTCSS</name>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>TX Tone CTCSS</name>
+        </meta>
+        <item value="0">
+          <name>62.5 Hz</name>
+        </item>
+        <item value="1">
+          <name>67.0 Hz</name>
+        </item>
+        <item value="2">
+          <name>69.3 Hz</name>
+        </item>
+        <item value="3">
+          <name>71.9 Hz</name>
+        </item>
+        <item value="4">
+          <name>74.4 Hz</name>
+        </item>
+        <item value="5">
+          <name>77.0 Hz</name>
+        </item>
+        <item value="6">
+          <name>79.7 Hz</name>
+        </item>
+        <item value="7">
+          <name>82.5 Hz</name>
+        </item>
+        <item value="8">
+          <name>85.4 Hz</name>
+        </item>
+        <item value="9">
+          <name>88.5 Hz</name>
+        </item>
+        <item value="10">
+          <name>91.5 Hz</name>
+        </item>
+        <item value="11">
+          <name>94.8 Hz</name>
+        </item>
+        <item value="12">
+          <name>97.4 Hz</name>
+        </item>
+        <item value="13">
+          <name>100.0 Hz</name>
+        </item>
+        <item value="14">
+          <name>103.5 Hz</name>
+        </item>
+        <item value="15">
+          <name>107.2 Hz</name>
+        </item>
+        <item value="16">
+          <name>110.9 Hz</name>
+        </item>
+        <item value="17">
+          <name>114.8 Hz</name>
+        </item>
+        <item value="18">
+          <name>118.8 Hz</name>
+        </item>
+        <item value="19">
+          <name>123.0 Hz</name>
+        </item>
+        <item value="20">
+          <name>127.3 Hz</name>
+        </item>
+        <item value="21">
+          <name>131.8 Hz</name>
+        </item>
+        <item value="22">
+          <name>136.5 Hz</name>
+        </item>
+        <item value="23">
+          <name>141.3 Hz</name>
+        </item>
+        <item value="24">
+          <name>146.2 Hz</name>
+        </item>
+        <item value="25">
+          <name>151.4 Hz</name>
+        </item>
+        <item value="26">
+          <name>156.7 Hz</name>
+        </item>
+        <item value="27">
+          <name>159.8 Hz</name>
+        </item>
+        <item value="28">
+          <name>162.2 Hz</name>
+        </item>
+        <item value="29">
+          <name>165.5 Hz</name>
+        </item>
+        <item value="30">
+          <name>167.9 Hz</name>
+        </item>
+        <item value="31">
+          <name>171.3 Hz</name>
+        </item>
+        <item value="32">
+          <name>173.8 Hz</name>
+        </item>
+        <item value="33">
+          <name>177.3 Hz</name>
+        </item>
+        <item value="34">
+          <name>179.9 Hz</name>
+        </item>
+        <item value="35">
+          <name>183.5 Hz</name>
+        </item>
+        <item value="36">
+          <name>186.2 Hz</name>
+        </item>
+        <item value="37">
+          <name>189.9 Hz</name>
+        </item>
+        <item value="38">
+          <name>192.8 Hz</name>
+        </item>
+        <item value="39">
+          <name>196.6 Hz</name>
+        </item>
+        <item value="40">
+          <name>199.5 Hz</name>
+        </item>
+        <item value="41">
+          <name>203.5 Hz</name>
+        </item>
+        <item value="42">
+          <name>206.5 Hz</name>
+        </item>
+        <item value="43">
+          <name>210.7 Hz</name>
+        </item>
+        <item value="44">
+          <name>218.1 Hz</name>
+        </item>
+        <item value="45">
+          <name>225.7 Hz</name>
+        </item>
+        <item value="46">
+          <name>229.1 Hz</name>
+        </item>
+        <item value="47">
+          <name>233.6 Hz</name>
+        </item>
+        <item value="48">
+          <name>241.8 Hz</name>
+        </item>
+        <item value="49">
+          <name>250.3 Hz</name>
+        </item>
+        <item value="50">
+          <name>254.1 Hz</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>RX Tone CTCSS</name>
+          <brief>Same codes as for TX</brief>
+        </meta>
+      </enum>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>TX DCS code</name>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>RX DCS code</name>
+        </meta>
+      </int>
+      <int width="2h" format="signed" endian="little" default="0">
+        <meta>
+          <name>Custom CTCSS frequency</name>
+          <brief>Specifies a custom CTCSS frequency in 0.1Hz.</brief>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Two-tone decode index</name>
+          <brief>Specifies the two-tone decode index.</brief>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Transmit contact index</name>
+          <brief>Contact index, 0-based.</brief>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Radio ID index</name>
+        </meta>
+      </int>
+      <unused width="0h:1">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <enum width="0h:3">
+        <meta>
+          <name>Squelch Mode</name>
+        </meta>
+        <item value="0">
+          <name>Carrier</name>
+        </item>
+        <item value="1">
+          <name>CTCSS/DSC</name>
+        </item>
+        <item value="2">
+          <name>Optional Signaling</name>
+        </item>
+        <item value="3">
+          <name>CTCSS/DSC and Optional Signaling</name>
+        </item>
+      </enum>
+      <unused width="0h:4">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <unused width="0h:2">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <enum width="0h:2">
+        <meta>
+          <name>Optional Signaling</name>
+        </meta>
+        <item value="0">
+          <name>Off</name>
+        </item>
+        <item value="1">
+          <name>DTMF</name>
+        </item>
+        <item value="2">
+          <name>two-tone</name>
+        </item>
+        <item value="3">
+          <name>five-tone</name>
+        </item>
+      </enum>
+      <unused width="0h:2">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <enum width="0h:2">
+        <meta>
+          <name>Admit Criterium</name>
+        </meta>
+        <item value="0">
+          <name>Always</name>
+        </item>
+        <item value="1">
+          <name>Colorcode</name>
+        </item>
+        <item value="2">
+          <name>Channel Free</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Scan list index</name>
+          <brief>Scan list index, 0-based.</brief>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Group List index</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Two-tone Id</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Five-tone Id</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>DTMF Id</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Colorcode</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable Lone Worker</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable enhanced encryption</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable GPS RX</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable adaptive TDMA</name>
+        </meta>
+      </int>
+      <unused width="0h:1">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable simplex TDMA</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable SMS Confirmation</name>
+        </meta>
+      </int>
+      <enum width="0h:1">
+        <meta>
+          <name>Time Slot</name>
+        </meta>
+        <item value="0">
+          <name>Time Slot 1</name>
+        </item>
+        <item value="1">
+          <name>Time Slot 2</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>AES encryption key index</name>
+        </meta>
+      </int>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+        </meta>00</unused>
+      <unused width="0h:5">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Disable Data ACK</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable Through Mode</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable ranging</name>
+        </meta>
+      </int>
+      <unused width="0h:7">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Enable TX ARPS</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>DMR APRS index</name>
+        </meta>
+      </int>
+      <unused width="3h">
+        <meta>
+          <name>Unused data</name>
+        </meta>
+      </unused>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>DMR Encryption index</name>
+          <brief>Index +1, 0=off.</brief>
+        </meta>
+      </int>
+      <unused width="0h:5">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>SMS forbid</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Random Key</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Multiple Keys</name>
+        </meta>
+      </int>
+      <unused width="4h">
+        <meta>
+          <name>Unused data</name>
+        </meta>00000000</unused>
+    </element>
+  </repeat>
+  <repeat at="1000000h" step="200h" min="1" max="250">
+    <meta>
+      <name>Zone channel lists.</name>
+    </meta>
+    <repeat min="1" max="250">
+      <meta>
+        <name>Channel indices</name>
+      </meta>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Channel index</name>
+        </meta>
+      </int>
+    </repeat>
+  </repeat>
+  <repeat at="1080000h" step="40000h" min="0" max="16">
+    <meta>
+      <name>Scan list banks</name>
+    </meta>
+    <repeat step="200h" min="1" max="250">
+      <meta>
+        <name>Scan list bank</name>
+      </meta>
+      <element>
+        <meta>
+          <name>Scan List</name>
+        </meta>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+          </meta>
+        </unused>
+        <enum width="1h">
+          <meta>
+            <name>Priority Channel</name>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>Primary</name>
+          </item>
+          <item value="2">
+            <name>Secondary</name>
+          </item>
+          <item value="3">
+            <name>Both</name>
+          </item>
+        </enum>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Primary Priority Channel Index</name>
+            <brief>Index +1, 0=selected.</brief>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Secondary Priority Channel Index</name>
+            <brief>Index +1, 0=selected.</brief>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Primary Look Back Time</name>
+            <brief>in 10sec.</brief>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Secondary Look Back Time</name>
+            <brief>in 10sec.</brief>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Dropout delay</name>
+            <brief>in 10sec.</brief>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Dwell time</name>
+            <brief>in 10sec.</brief>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Revert Channel Type</name>
+          </meta>
+          <item value="0">
+            <name>Selected Channel</name>
+          </item>
+          <item value="1">
+            <name>Selected + Active Channel</name>
+          </item>
+          <item value="2">
+            <name>Primary Channel</name>
+          </item>
+          <item value="3">
+            <name>Secondary Channel</name>
+          </item>
+          <item value="4">
+            <name>Last Called</name>
+          </item>
+          <item value="5">
+            <name>Last Used</name>
+          </item>
+          <item value="6">
+            <name>Primary + Active Channel</name>
+          </item>
+          <item value="7">
+            <name>Secondary + Active Channel</name>
+          </item>
+        </enum>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Name</name>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad Byte</name>
+          </meta>00</unused>
+        <repeat n="50">
+          <meta>
+            <name>Channel Indices</name>
+          </meta>
+          <int width="2h" format="unsigned" endian="little" default="65535">
+            <meta>
+              <name>Channel Index</name>
+              <brief>Index 0-based, ffffh=disabled</brief>
+            </meta>
+          </int>
+        </repeat>
+        <unused width="ch">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+      </element>
+    </repeat>
+  </repeat>
+  <repeat at="1640000h" min="0" max="100">
+    <meta>
+      <name>Message linked list</name>
+    </meta>
+    <element>
+      <meta>
+        <name>List element</name>
+      </meta>
+      <unused width="2h">
+        <meta>
+          <name>Unused data</name>
+        </meta>
+      </unused>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Next index</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Current index</name>
+        </meta>
+      </int>
+      <unused width="ch">
+        <meta>
+          <name>Unused data</name>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
+  <element at="1640800h">
+    <meta>
+      <name>Message byte-map</name>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name></name>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name></name>
+        </meta>
+        <item value="0">
+          <name>Invalid</name>
+        </item>
+        <item value="255">
+          <name>Valid</name>
+        </item>
+      </enum>
+    </repeat>
+    <unused width="2eh">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="2140000h" step="40000h" min="0" max="13">
+    <meta>
+      <name>Message banks</name>
+    </meta>
+    <repeat min="1" max="8">
+      <meta>
+        <name>Message bank</name>
+      </meta>
+      <element>
+        <meta>
+          <name>Message</name>
+        </meta>
+        <string format="ascii" width="99" pad="0">
+          <meta>
+            <name></name>
+          </meta>
+        </string>
+        <unused width="9dh">
+          <meta>
+            <name>Unused data</name>
+          </meta>
+        </unused>
+      </element>
+    </repeat>
+  </repeat>
+  <repeat at="2480000h" min="0" max="100">
+    <meta>
+      <name>FM broadcast channel frequencies</name>
+    </meta>
+    <int width="4h" format="signed" endian="little">
+      <meta>
+        <name>Channel frequency</name>
+      </meta>
+    </int>
+  </repeat>
+  <element at="2480200h">
+    <meta>
+      <name>FM broadcast VFO frequency</name>
+    </meta>
+    <int width="4h" format="signed" endian="little">
+      <meta>
+        <name>VFO frequency</name>
+      </meta>
+    </int>
+    <unused width="ch">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <element at="2480210h">
+    <meta>
+      <name>FM broadcast channel bitmap</name>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name></name>
+      </meta>
+      <int width="0h:1" format="signed">
+        <meta>
+          <name>Channel bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="3h:4">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <unknown at="2480220h" width="16h">
+    <meta>
+      <name>Some unknown bitfield</name>
+    </meta>
+  </unknown>
+  <repeat at="24c0000h" min="0" max="100">
+    <meta>
+      <name>5-tone IDs</name>
+    </meta>
+    <element>
+      <meta>
+        <name>5-tone ID</name>
+      </meta>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+        </meta>
+      </unused>
+      <enum width="1h">
+        <meta>
+          <name>Standard</name>
+        </meta>
+        <item value="0">
+          <name>ZVEI1</name>
+        </item>
+        <item value="1">
+          <name>ZVEI2</name>
+        </item>
+        <item value="2">
+          <name>ZVEI3</name>
+        </item>
+        <item value="3">
+          <name>PZVEI</name>
+        </item>
+        <item value="4">
+          <name>DZVEI</name>
+        </item>
+        <item value="5">
+          <name>PDZVEI</name>
+        </item>
+        <item value="6">
+          <name>CCIR1</name>
+        </item>
+        <item value="7">
+          <name>CCIR2</name>
+        </item>
+        <item value="8">
+          <name>PCCIR</name>
+        </item>
+        <item value="9">
+          <name>EEA</name>
+        </item>
+        <item value="10">
+          <name>Euro Signal</name>
+        </item>
+        <item value="11">
+          <name>NATEL</name>
+        </item>
+        <item value="12">
+          <name>MODAT</name>
+        </item>
+        <item value="13">
+          <name>CCITT</name>
+        </item>
+        <item value="14">
+          <name>EIA</name>
+        </item>
+      </enum>
+      <int width="1h" format="signed">
+        <meta>
+          <name>ID length</name>
+        </meta>
+      </int>
+      <int width="1h" format="signed">
+        <meta>
+          <name>Tone duration in ms</name>
+        </meta>
+      </int>
+      <int width="28h" format="signed" endian="little">
+        <meta>
+          <name>ID</name>
+        </meta>
+      </int>
+      <string format="ascii" width="7" pad="32">
+        <meta>
+          <name>Name</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
+  <element at="24c0c80h">
+    <meta>
+      <name>5-tone bitmap</name>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name></name>
+      </meta>
+      <int width="0h:1" format="signed">
+        <meta>
+          <name></name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="3h:4">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="24c0d00h" n="16">
+    <meta>
+      <name>5-tone functions</name>
+    </meta>
+    <element>
+      <meta>
+        <name>5-tone function</name>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name>Function</name>
+        </meta>
+        <item value="0">
+          <name>Open squelch</name>
+        </item>
+        <item value="1">
+          <name>Call all</name>
+        </item>
+        <item value="2">
+          <name>Emergency alarm</name>
+        </item>
+        <item value="3">
+          <name>Remote kill</name>
+        </item>
+        <item value="4">
+          <name>Remote stun</name>
+        </item>
+        <item value="5">
+          <name>Remote wakeup</name>
+        </item>
+        <item value="6">
+          <name>Group call</name>
+        </item>
+      </enum>
+      <int width="1h" format="signed">
+        <meta>
+          <name>ID length</name>
+        </meta>
+      </int>
+      <int width="ch" format="signed" endian="little">
+        <meta>
+          <name>ID</name>
+        </meta>
+      </int>
+      <string format="ascii" width="7" pad="32">
+        <meta>
+          <name>Name</name>
+        </meta>
+      </string>
+      <unused width="6h">
+        <meta>
+          <name>Unused data</name>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
+  <element at="24c1000h">
+    <meta>
+      <name>5-tone settings</name>
+    </meta>
+    <unknown width="20h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unused width="1h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+    <enum width="1h">
+      <meta>
+        <name>Decoing response</name>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Tone</name>
+      </item>
+      <item value="2">
+        <name>Tone and respond</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Decoding standard</name>
+      </meta>
+      <item value="0">
+        <name>ZVEI1</name>
+      </item>
+      <item value="1">
+        <name>ZVEI2</name>
+      </item>
+      <item value="2">
+        <name>ZVEI3</name>
+      </item>
+      <item value="3">
+        <name>PZVEI</name>
+      </item>
+      <item value="4">
+        <name>DZVEI</name>
+      </item>
+      <item value="5">
+        <name>PDZVEI</name>
+      </item>
+      <item value="6">
+        <name>CCIR1</name>
+      </item>
+      <item value="7">
+        <name>CCIR2</name>
+      </item>
+      <item value="8">
+        <name>PCCIR</name>
+      </item>
+      <item value="9">
+        <name>EEA</name>
+      </item>
+      <item value="10">
+        <name>Euro Signal</name>
+      </item>
+      <item value="11">
+        <name>NATEL</name>
+      </item>
+      <item value="12">
+        <name>MODAT</name>
+      </item>
+      <item value="13">
+        <name>CCITT</name>
+      </item>
+      <item value="14">
+        <name>EIA</name>
+      </item>
+    </enum>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Radio ID length</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Decoding tone duration in ms</name>
+      </meta>
+    </int>
+    <int width="7h" format="signed" endian="little">
+      <meta>
+        <name>Radio ID</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Post encode delay in 10ms</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>PTT ID 0=off, [5,75]</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Auto reset time in 10s</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>First delay in 10ms</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Sidetone enable</name>
+      </meta>
+      <item value="0">
+        <name></name>
+      </item>
+      <item value="1">
+        <name></name>
+      </item>
+    </enum>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Stop code</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Stop time in 10ms</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Decode time in 10ms</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Delay after stop in 10ms</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Pre-time in 10ms</name>
+      </meta>
+    </int>
+    <unused width="6h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+    <enum width="1h">
+      <meta>
+        <name>BOT standard</name>
+      </meta>
+      <item value="0">
+        <name>ZVEI1</name>
+      </item>
+      <item value="1">
+        <name>ZVEI2</name>
+      </item>
+      <item value="2">
+        <name>ZVEI3</name>
+      </item>
+      <item value="3">
+        <name>PZVEI</name>
+      </item>
+      <item value="4">
+        <name>DZVEI</name>
+      </item>
+      <item value="5">
+        <name>PDZVEI</name>
+      </item>
+      <item value="6">
+        <name>CCIR1</name>
+      </item>
+      <item value="7">
+        <name>CCIR2</name>
+      </item>
+      <item value="8">
+        <name>PCCIR</name>
+      </item>
+      <item value="9">
+        <name>EEA</name>
+      </item>
+      <item value="10">
+        <name>Euro Signal</name>
+      </item>
+      <item value="11">
+        <name>NATEL</name>
+      </item>
+      <item value="12">
+        <name>MODAT</name>
+      </item>
+      <item value="13">
+        <name>CCITT</name>
+      </item>
+      <item value="14">
+        <name>EIA</name>
+      </item>
+    </enum>
+    <int width="1h" format="signed">
+      <meta>
+        <name>BOT ID length</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>BOT tone duration in ms</name>
+      </meta>
+    </int>
+    <int width="ch" format="signed" endian="little">
+      <meta>
+        <name>BOT ID</name>
+      </meta>
+    </int>
+    <unused width="11h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+    <enum width="1h">
+      <meta>
+        <name>EOT standard</name>
+      </meta>
+      <item value="0">
+        <name>ZVEI1</name>
+      </item>
+      <item value="1">
+        <name>ZVEI2</name>
+      </item>
+      <item value="2">
+        <name>ZVEI3</name>
+      </item>
+      <item value="3">
+        <name>PZVEI</name>
+      </item>
+      <item value="4">
+        <name>DZVEI</name>
+      </item>
+      <item value="5">
+        <name>PDZVEI</name>
+      </item>
+      <item value="6">
+        <name>CCIR1</name>
+      </item>
+      <item value="7">
+        <name>CCIR2</name>
+      </item>
+      <item value="8">
+        <name>PCCIR</name>
+      </item>
+      <item value="9">
+        <name>EEA</name>
+      </item>
+      <item value="10">
+        <name>Euro Signal</name>
+      </item>
+      <item value="11">
+        <name>NATEL</name>
+      </item>
+      <item value="12">
+        <name>MODAT</name>
+      </item>
+      <item value="13">
+        <name>CCITT</name>
+      </item>
+      <item value="14">
+        <name>EIA</name>
+      </item>
+    </enum>
+    <int width="1h" format="signed">
+      <meta>
+        <name>EOT ID length</name>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>EOT tone duration in ms</name>
+      </meta>
+    </int>
+    <int width="ch" format="signed" endian="little">
+      <meta>
+        <name>EOT ID</name>
+      </meta>
+    </int>
+    <unused width="10h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <element at="24c1300h">
+    <meta>
+      <name>Zone Bitmap Element</name>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Zone bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Zone enable bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+  </element>
+  <element at="24c1320h">
+    <meta>
+      <name>Radio Id Bitmap Element</name>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Radio Id Bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Radio Id Enable Bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <element at="24c1340h">
+    <meta>
+      <name>Scan List Bitmap Element</name>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Scan List Bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Scan List Enable Bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+  </element>
+  <element at="24c1500h">
+    <meta>
+      <name>Channel Bitmap Element</name>
+    </meta>
+    <repeat n="4000">
+      <meta>
+        <name>Channel enable bits</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Channel enable bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="ch">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <element at="2500000h">
+    <meta>
+      <name>General Settings</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable key tone</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Display Mode</name>
+      </meta>
+      <item value="0">
+        <name>Channel</name>
+      </item>
+      <item value="1">
+        <name>Frequency</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable automatic key lock</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Automatic Shut Down Delay</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>2.40</firmware>
+      </meta>
+    </unknown>
+    <unknown width="1h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>2.40</firmware>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Boot Display</name>
+      </meta>
+      <item value="0">
+        <name>Default</name>
+      </item>
+      <item value="1">
+        <name>Custom Text</name>
+      </item>
+      <item value="2">
+        <name>Custom Image</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Boot Password</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Squelch Level VFO A</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Squelch Level VFO B</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Power save mode</name>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>1:1 (50%)</name>
+      </item>
+      <item value="2">
+        <name>1:2 (66%)</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>VOX Sensitivity</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>VOX Delay</name>
+        <brief>Delay expressed in 100ms + 500ms * n.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>VFO Scan Type</name>
+      </meta>
+      <item value="0">
+        <name>Fixed Time</name>
+      </item>
+      <item value="1">
+        <name>Carrier</name>
+      </item>
+      <item value="2">
+        <name>Stop</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Mic Gain</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>PF1 Short Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>PF2 Short Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>PF3 Short Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>P1 Short Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>P2 Short Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Work Mode A</name>
+      </meta>
+      <item value="0">
+        <name>Channel</name>
+      </item>
+      <item value="1">
+        <name>VFO</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Work Mode B</name>
+      </meta>
+      <item value="0">
+        <name>Channel</name>
+      </item>
+      <item value="1">
+        <name>VFO</name>
+      </item>
+    </enum>
+    <unknown width="8h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Work Mode Mem Zone A</name>
+      </meta>
+      <item value="0">
+        <name>Channel</name>
+      </item>
+      <item value="1">
+        <name>VFO</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Work Mode Mem Zone B</name>
+      </meta>
+      <item value="0">
+        <name>Channel</name>
+      </item>
+      <item value="1">
+        <name>VFO</name>
+      </item>
+    </enum>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Recording</name>
+      </meta>
+    </int>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Display Brightness</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Backlight duration</name>
+        <brief>Multiple of 5s, 0=always</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable GPS</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable SMS Alert</name>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Main VFO</name>
+      </meta>
+      <item value="0">
+        <name>A</name>
+      </item>
+      <item value="1">
+        <name>B</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Subchannel</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Call Alert</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>GPS Time Zone</name>
+      </meta>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable talk permit tone</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable DMR call reset tone</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>VOX Source</name>
+      </meta>
+      <item value="0">
+        <name>Internal</name>
+      </item>
+      <item value="1">
+        <name>External</name>
+      </item>
+      <item value="2">
+        <name>Both</name>
+      </item>
+    </enum>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Idle Channel Tone</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Menu exit time</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Startup Tone</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Call End Prompt</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Max Volume</name>
+      </meta>
+    </int>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable RX DMR APRS Positions</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>PF1 Long Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>PF2 Long Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>PF3 Long Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>P1 Long Press Function</name>
+      </meta>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>P2 Long Press Function</name>
+      </meta>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Long Press Duration</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Volume Change Prompt</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Auto-repeater A direction</name>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Positive</name>
+      </item>
+      <item value="2">
+        <name>Negative</name>
+      </item>
+    </enum>
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Show Last Caller</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>2.40</firmware>
+      </meta>
+    </unknown>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Show Clock</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Max head-phone volume</name>
+      </meta>
+    </int>
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Enhanced Audio</name>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>VFO Scan UHF min Frequency</name>
+        <brief>in 10Hz.</brief>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>VFO Scan UHF max Frequency</name>
+        <brief>in 10Hz</brief>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>VFO Scan VHF min Frequency</name>
+        <brief>in 10Hz</brief>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>VFO Scan VHF max Frequency</name>
+        <brief>in 10Hz.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>UHF Auto-repeater offset frequency index</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>VHF Auto-repeater offset frequency index.</name>
+      </meta>
+    </int>
+    <unknown width="8h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <element>
+      <meta>
+        <name>Call Melody</name>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Tones</name>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Frequency</name>
+            <brief>in Hz.</brief>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="5">
+        <meta>
+          <name>Durations</name>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Duration</name>
+            <brief>in ms.</brief>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <element>
+      <meta>
+        <name>Idle Melody</name>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Tones</name>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Frequency</name>
+            <brief>in Hz.</brief>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="5">
+        <meta>
+          <name>Durations</name>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Duration</name>
+            <brief>in ms.</brief>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <element>
+      <meta>
+        <name>Reset Melody</name>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Tones</name>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Frequency</name>
+            <brief>in Hz.</brief>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="5">
+        <meta>
+          <name>Durations</name>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Duration</name>
+            <brief>in ms.</brief>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Record delay</name>
+        <brief>in 200ms</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Call Display Mode</name>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Call</name>
+      </item>
+      <item value="2">
+        <name>Name</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Call Display Color</name>
+      </meta>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>GPS update period</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Show Zone Talkgroup</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Key tone level</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>GPS Units</name>
+      </meta>
+      <item value="0">
+        <name>Metric</name>
+      </item>
+      <item value="1">
+        <name>Achaic</name>
+      </item>
+    </enum>
+    <unused width="0h:3">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Professional key lock</name>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Side key lock</name>
+      </meta>
+    </int>
+    <unused width="0h:1">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Keyboard lock</name>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Knob lock</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Show last heard</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>VHF Auto-repeater min Frequency</name>
+        <brief>in 10Hz.</brief>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>VHF Auto-repeater max Frequency</name>
+        <brief>in 10Hz.</brief>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>UHF Auto-repeater min Frequency</name>
+        <brief>in 10Hz.</brief>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>UHF Auto-repeater max Frequency</name>
+        <brief>in 10Hz.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Auto-repeater direction</name>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Positive</name>
+      </item>
+      <item value="2">
+        <name>Negative</name>
+      </item>
+    </enum>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Default Channel</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Default Zone VFO A</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Default Zone VFO B</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Default Channel A</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Default Channel B</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Keep Last Caller</name>
+      </meta>
+    </int>
+  </element>
+  <element at="2501000h">
+    <meta>
+      <name>DMR APRS Settings</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Max. TX Interval</name>
+        <brief>in seconds.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Auto TX Interval</name>
+        <brief>in seconds.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable fixed position</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Latitude (deg)</name>
+        <brief>in degrees.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Latitude (min)</name>
+        <brief>Minutes part.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Latitude (sec)</name>
+        <brief>Seconds part.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>North Flag</name>
+      </meta>
+      <item value="0">
+        <name>North</name>
+      </item>
+      <item value="1">
+        <name>South</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Longitude (deg)</name>
+        <brief>Degrees part.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Longitude (min)</name>
+        <brief>Minutes part.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Longitude (sec)</name>
+        <brief>Seconds part.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>West flag</name>
+      </meta>
+      <item value="0">
+        <name>East</name>
+      </item>
+      <item value="1">
+        <name>West</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Transmit Power</name>
+      </meta>
+      <item value="0">
+        <name>Low</name>
+      </item>
+      <item value="1">
+        <name>Medium</name>
+      </item>
+      <item value="2">
+        <name>High</name>
+      </item>
+      <item value="3">
+        <name>Turbo</name>
+      </item>
+    </enum>
+    <repeat n="8">
+      <meta>
+        <name>Revert Channel Indices</name>
+      </meta>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Revert Channel Index</name>
+          <brief>Index, 0-based.</brief>
+        </meta>
+      </int>
+    </repeat>
+    <int width="4h" format="bcd" endian="big">
+      <meta>
+        <name>Target DMR Id</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Call Type</name>
+      </meta>
+      <item value="0">
+        <name>Private Call</name>
+      </item>
+      <item value="1">
+        <name>Group Call</name>
+      </item>
+      <item value="2">
+        <name>All Call</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Time Slot override</name>
+      </meta>
+      <item value="0">
+        <name>Default</name>
+      </item>
+      <item value="1">
+        <name>Time Slot 1</name>
+      </item>
+      <item value="2">
+        <name>Time Slot 2</name>
+      </item>
+    </enum>
+    <unused width="eh">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <string at="2501100h" format="ascii" width="48" pad="0">
+    <meta>
+      <name>DMR APRS Message</name>
+    </meta>
+  </string>
+  <repeat at="2540000h" min="0" max="250">
+    <meta>
+      <name>Zone Names</name>
+    </meta>
+    <string format="ascii" width="32" pad="0">
+      <meta>
+        <name>Zone Name</name>
+      </meta>
+    </string>
+  </repeat>
+  <element at="25c0b10h">
+    <meta>
+      <name>Group List Bitmap Element</name>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Group List Bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Group List Enable</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="2600000h" min="0" max="1000">
+    <meta>
+      <name>Valid contact index list</name>
+    </meta>
+    <int width="4h" format="unsigned" endian="little" default="4294967295">
+      <meta>
+        <name>Contact index</name>
+      </meta>
+    </int>
+  </repeat>
+  <element at="2640000h">
+    <meta>
+      <name>Contact Bitmap Element</name>
+    </meta>
+    <repeat n="10000">
+      <meta>
+        <name>Contact Bitmap</name>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Contact disable bit</name>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="1eh">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+  </element>
+  <repeat at="2640500h" step="40000h" min="0" max="10">
+    <meta>
+      <name>Contact banks</name>
+    </meta>
+    <repeat min="0" max="10000">
+      <meta>
+        <name>Contact Bank</name>
+      </meta>
+      <element>
+        <meta>
+          <name>Contact</name>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Call Type</name>
+          </meta>
+          <item value="0">
+            <name>Private Call</name>
+          </item>
+          <item value="1">
+            <name>Group Call</name>
+          </item>
+          <item value="2">
+            <name>All Call</name>
+          </item>
+        </enum>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Name</name>
+          </meta>
+        </string>
+        <unused width="12h">
+          <meta>
+            <name>Unused data</name>
+          </meta>000000000000000000000000000000000000</unused>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>DMR ID</name>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Call Alert</name>
+          </meta>
+        </enum>
+        <unused width="3ch">
+          <meta>
+            <name>Unused data</name>
+          </meta>
+        </unused>
+      </element>
+    </repeat>
+  </repeat>
+  <repeat at="2900000h" n="128">
+    <meta>
+      <name>Analog Contact Index List</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Analog Contact Index</name>
+      </meta>
+    </int>
+  </repeat>
+  <repeat at="2900100h" n="128">
+    <meta>
+      <name>Analog Contact ByteMap</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Analog Contact Enable Byte</name>
+      </meta>
+    </int>
+  </repeat>
+  <repeat at="2940000h" min="0" max="128">
+    <meta>
+      <name>Analog Contacts</name>
+    </meta>
+    <element>
+      <meta>
+        <name>DTMF Contact</name>
+      </meta>
+      <int width="7h" format="bcd" endian="big">
+        <meta>
+          <name>DTMF Number</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Number Length</name>
+        </meta>
+      </int>
+      <string format="ascii" width="15" pad="0">
+        <meta>
+          <name>Name</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+        </meta>00</unused>
+    </element>
+  </repeat>
+  <repeat at="2980000h" step="200h" min="0" max="250">
+    <meta>
+      <name>Group List Bank</name>
+    </meta>
+    <element>
+      <meta>
+        <name>Group List</name>
+      </meta>
+      <repeat n="64">
+        <meta>
+          <name>Contact Indices</name>
+        </meta>
+        <int width="4h" format="unsigned" endian="little" default="4294967295">
+          <meta>
+            <name>Contact Index</name>
+            <brief>0-based</brief>
+          </meta>
+        </int>
+      </repeat>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+        </meta>
+      </string>
+      <unused width="10h">
+        <meta>
+          <name>Unused data</name>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
+  <repeat at="4340000h" min="0" max="10000">
+    <meta>
+      <name>Contact Map</name>
+    </meta>
+    <element>
+      <meta>
+        <name>Contact Map Entry</name>
+      </meta>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>DMR ID and Group Call Flag</name>
+          <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Contact Index</name>
+        </meta>
+      </int>
+    </element>
+  </repeat>
+  <repeat at="4340000h" min="0" max="250">
+    <meta>
+      <name>Radio Ids</name>
+    </meta>
+    <element>
+      <meta>
+        <name>Radio Id Element</name>
+      </meta>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>DMR Id</name>
+        </meta>
+      </int>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+        </meta>
+      </string>
+      <unused width="bh">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+    </element>
+  </repeat>
+</codeplug>
