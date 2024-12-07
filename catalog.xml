@@ -30,7 +30,7 @@
       </map>
     </memory>
 
-    <firmware name="2.40" released="2021-11-30" codeplug="d868uve/2.40/codeplug.xml"/>
+    <firmware name="2.40" released="2021-11-30" codeplug="d868uve/v2.40.xml"/>
   </model>
 
 
