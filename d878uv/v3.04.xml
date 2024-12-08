@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>AnyTone AT-D878UV/AT-D878UV+</name>
+    <firmware>3.04</firmware>
+  </meta>
+  <repeat at="2ec0000h" min="0" max="50">
+    <meta>
+      <name>Orbital Element Sets</name>
+      <brief>Holds the orbital elements for some sattelites.</brief>
+    </meta>
+    <element>
+      <meta>
+        <name>Orbital Element</name>
+        <brief>Holds the (TLE) orbital elements for a single sat.</brief>
+      </meta>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Satellite Name</name>
+        </meta>
+      </string>
+      <string format="ascii" width="88" pad="0">
+        <meta>
+          <name>Elements</name>
+        </meta>
+      </string>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Some Frequency</name>
+          <brief>Frequency in 10Hz.</brief>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Some other frequency</name>
+          <brief>Frequency in 10Hz.</brief>
+        </meta>
+      </int>
+      <unknown width="198h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+    </element>
+  </repeat>
+</codeplug>
