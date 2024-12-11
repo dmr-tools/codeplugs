@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>AnyTone AT-D878UV/AT-D878UV+</name>
+    <firmware>3.04</firmware>
+  </meta>
+  <repeat at="2ec0000h" min="0" max="50">
+    <meta>
+      <name>Orbital Element Sets</name>
+      <brief>Holds the orbital elements for some sattelites.</brief>
+      <firmware>3.04</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Orbital Element</name>
+        <brief>Holds the (TLE) orbital elements for a single sat.</brief>
+        <firmware>3.04</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Satellite Name</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <string format="ascii" width="2" pad="0">
+        <meta>
+          <name>Epoch Year</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <string format="ascii" width="12" pad="0">
+        <meta>
+          <name>Epoch Julien Day</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="10" pad="0">
+        <meta>
+          <name>First derivative mean motion</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Inclination</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Right ascension of the ascending node</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="7" pad="0">
+        <meta>
+          <name>Eccentricity</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Argument of perigee</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Mean anomaly</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="11" pad="0">
+        <meta>
+          <name>Mean motion</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <string format="ascii" width="5" pad="0">
+        <meta>
+          <name>Revolution number at epoch</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="3h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>FM Downlink Frequency</name>
+          <brief>Frequency in 10Hz.</brief>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>FM Uplink Frequency</name>
+          <brief>Frequency in 10Hz.</brief>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Uplink Tone Type</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>CTCSS</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Downlink Tone Type</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>CTCSS</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>UplinkTone</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>62.5 Hz</name>
+        </item>
+        <item value="1">
+          <name>67.0 Hz</name>
+        </item>
+        <item value="2">
+          <name>69.3 Hz</name>
+        </item>
+        <item value="3">
+          <name>71.9 Hz</name>
+        </item>
+        <item value="4">
+          <name>74.4 Hz</name>
+        </item>
+        <item value="5">
+          <name>77.0 Hz</name>
+        </item>
+        <item value="6">
+          <name>79.7 Hz</name>
+        </item>
+        <item value="7">
+          <name>82.5 Hz</name>
+        </item>
+        <item value="8">
+          <name>85.4 Hz</name>
+        </item>
+        <item value="9">
+          <name>88.5 Hz</name>
+        </item>
+        <item value="10">
+          <name>91.5 Hz</name>
+        </item>
+        <item value="11">
+          <name>94.8 Hz</name>
+        </item>
+        <item value="12">
+          <name>97.4 Hz</name>
+        </item>
+        <item value="13">
+          <name>100.0 Hz</name>
+        </item>
+        <item value="14">
+          <name>103.5 Hz</name>
+        </item>
+        <item value="15">
+          <name>107.2 Hz</name>
+        </item>
+        <item value="16">
+          <name>110.9 Hz</name>
+        </item>
+        <item value="17">
+          <name>114.8 Hz</name>
+        </item>
+        <item value="18">
+          <name>118.8 Hz</name>
+        </item>
+        <item value="19">
+          <name>123.0 Hz</name>
+        </item>
+        <item value="20">
+          <name>127.3 Hz</name>
+        </item>
+        <item value="21">
+          <name>131.8 Hz</name>
+        </item>
+        <item value="22">
+          <name>136.5 Hz</name>
+        </item>
+        <item value="23">
+          <name>141.3 Hz</name>
+        </item>
+        <item value="24">
+          <name>146.2 Hz</name>
+        </item>
+        <item value="25">
+          <name>151.4 Hz</name>
+        </item>
+        <item value="26">
+          <name>156.7 Hz</name>
+        </item>
+        <item value="27">
+          <name>159.8 Hz</name>
+        </item>
+        <item value="28">
+          <name>162.2 Hz</name>
+        </item>
+        <item value="29">
+          <name>165.5 Hz</name>
+        </item>
+        <item value="30">
+          <name>167.9 Hz</name>
+        </item>
+        <item value="31">
+          <name>171.3 Hz</name>
+        </item>
+        <item value="32">
+          <name>173.8 Hz</name>
+        </item>
+        <item value="33">
+          <name>177.3 Hz</name>
+        </item>
+        <item value="34">
+          <name>179.9 Hz</name>
+        </item>
+        <item value="35">
+          <name>183.5 Hz</name>
+        </item>
+        <item value="36">
+          <name>186.2 Hz</name>
+        </item>
+        <item value="37">
+          <name>189.9 Hz</name>
+        </item>
+        <item value="38">
+          <name>192.8 Hz</name>
+        </item>
+        <item value="39">
+          <name>196.6 Hz</name>
+        </item>
+        <item value="40">
+          <name>199.5 Hz</name>
+        </item>
+        <item value="41">
+          <name>203.5 Hz</name>
+        </item>
+        <item value="42">
+          <name>206.5 Hz</name>
+        </item>
+        <item value="43">
+          <name>210.7 Hz</name>
+        </item>
+        <item value="44">
+          <name>218.1 Hz</name>
+        </item>
+        <item value="45">
+          <name>225.7 Hz</name>
+        </item>
+        <item value="46">
+          <name>229.1 Hz</name>
+        </item>
+        <item value="47">
+          <name>233.6 Hz</name>
+        </item>
+        <item value="48">
+          <name>241.8 Hz</name>
+        </item>
+        <item value="49">
+          <name>250.3 Hz</name>
+        </item>
+        <item value="50">
+          <name>254.1 Hz</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Downlink Tone</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>62.5 Hz</name>
+        </item>
+        <item value="1">
+          <name>67.0 Hz</name>
+        </item>
+        <item value="2">
+          <name>69.3 Hz</name>
+        </item>
+        <item value="3">
+          <name>71.9 Hz</name>
+        </item>
+        <item value="4">
+          <name>74.4 Hz</name>
+        </item>
+        <item value="5">
+          <name>77.0 Hz</name>
+        </item>
+        <item value="6">
+          <name>79.7 Hz</name>
+        </item>
+        <item value="7">
+          <name>82.5 Hz</name>
+        </item>
+        <item value="8">
+          <name>85.4 Hz</name>
+        </item>
+        <item value="9">
+          <name>88.5 Hz</name>
+        </item>
+        <item value="10">
+          <name>91.5 Hz</name>
+        </item>
+        <item value="11">
+          <name>94.8 Hz</name>
+        </item>
+        <item value="12">
+          <name>97.4 Hz</name>
+        </item>
+        <item value="13">
+          <name>100.0 Hz</name>
+        </item>
+        <item value="14">
+          <name>103.5 Hz</name>
+        </item>
+        <item value="15">
+          <name>107.2 Hz</name>
+        </item>
+        <item value="16">
+          <name>110.9 Hz</name>
+        </item>
+        <item value="17">
+          <name>114.8 Hz</name>
+        </item>
+        <item value="18">
+          <name>118.8 Hz</name>
+        </item>
+        <item value="19">
+          <name>123.0 Hz</name>
+        </item>
+        <item value="20">
+          <name>127.3 Hz</name>
+        </item>
+        <item value="21">
+          <name>131.8 Hz</name>
+        </item>
+        <item value="22">
+          <name>136.5 Hz</name>
+        </item>
+        <item value="23">
+          <name>141.3 Hz</name>
+        </item>
+        <item value="24">
+          <name>146.2 Hz</name>
+        </item>
+        <item value="25">
+          <name>151.4 Hz</name>
+        </item>
+        <item value="26">
+          <name>156.7 Hz</name>
+        </item>
+        <item value="27">
+          <name>159.8 Hz</name>
+        </item>
+        <item value="28">
+          <name>162.2 Hz</name>
+        </item>
+        <item value="29">
+          <name>165.5 Hz</name>
+        </item>
+        <item value="30">
+          <name>167.9 Hz</name>
+        </item>
+        <item value="31">
+          <name>171.3 Hz</name>
+        </item>
+        <item value="32">
+          <name>173.8 Hz</name>
+        </item>
+        <item value="33">
+          <name>177.3 Hz</name>
+        </item>
+        <item value="34">
+          <name>179.9 Hz</name>
+        </item>
+        <item value="35">
+          <name>183.5 Hz</name>
+        </item>
+        <item value="36">
+          <name>186.2 Hz</name>
+        </item>
+        <item value="37">
+          <name>189.9 Hz</name>
+        </item>
+        <item value="38">
+          <name>192.8 Hz</name>
+        </item>
+        <item value="39">
+          <name>196.6 Hz</name>
+        </item>
+        <item value="40">
+          <name>199.5 Hz</name>
+        </item>
+        <item value="41">
+          <name>203.5 Hz</name>
+        </item>
+        <item value="42">
+          <name>206.5 Hz</name>
+        </item>
+        <item value="43">
+          <name>210.7 Hz</name>
+        </item>
+        <item value="44">
+          <name>218.1 Hz</name>
+        </item>
+        <item value="45">
+          <name>225.7 Hz</name>
+        </item>
+        <item value="46">
+          <name>229.1 Hz</name>
+        </item>
+        <item value="47">
+          <name>233.6 Hz</name>
+        </item>
+        <item value="48">
+          <name>241.8 Hz</name>
+        </item>
+        <item value="49">
+          <name>250.3 Hz</name>
+        </item>
+        <item value="50">
+          <name>254.1 Hz</name>
+        </item>
+      </enum>
+      <unknown width="194h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+    </element>
+  </repeat>
+</codeplug>

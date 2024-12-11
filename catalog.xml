@@ -41,7 +41,7 @@
 
     <memory>
       <id>38 37 38 55 56 00</id>  <!-- 878UV -->
-      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+      <revision>56 31 30 31 00 00</revision> <!-- V101\0\0 -->
       <!-- Some binary blob, read by the CPS from the device. -->
       <map address="02fa0000">
         00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
@@ -63,7 +63,7 @@
       </map>
     </memory>
 
-    <firmware name="3.40" released="2024-09-14" codeplug="d878uv/3.04/codeplug.xml"/>
+    <firmware name="3.04" released="2024-09-14" codeplug="d878uv/v3.04.xml"/>
   </model>
 
 
