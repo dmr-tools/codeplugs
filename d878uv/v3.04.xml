@@ -20,24 +20,141 @@
           <name>Satellite Name</name>
         </meta>
       </string>
-      <string format="ascii" width="88" pad="0">
+      <string format="ascii" width="2" pad="0">
         <meta>
-          <name>Elements</name>
+          <name>Epoch Year</name>
         </meta>
       </string>
+      <string format="ascii" width="12" pad="0">
+        <meta>
+          <name>Epoch Julien Day</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+        </meta>20</unused>
+      <string format="ascii" width="10" pad="0">
+        <meta>
+          <name>First derivative mean motion</name>
+        </meta>
+      </string>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Inclination</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Right ascension of the ascending node</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+        </meta>20</unused>
+      <string format="ascii" width="7" pad="0">
+        <meta>
+          <name>Eccentricity</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Argument of perigee</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Mean anomaly</name>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+        </meta>20</unused>
+      <string format="ascii" width="11" pad="0">
+        <meta>
+          <name>Mean motion</name>
+        </meta>
+      </string>
+      <string format="ascii" width="5" pad="0">
+        <meta>
+          <name>Revolution number at epoch</name>
+        </meta>
+      </string>
+      <unused width="3h">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
       <int width="4h" format="unsigned" endian="little">
         <meta>
-          <name>Some Frequency</name>
+          <name>FM Downlink Frequency</name>
           <brief>Frequency in 10Hz.</brief>
         </meta>
       </int>
       <int width="4h" format="unsigned" endian="little">
         <meta>
-          <name>Some other frequency</name>
+          <name>FM Uplink Frequency</name>
           <brief>Frequency in 10Hz.</brief>
         </meta>
       </int>
-      <unknown width="198h">
+      <enum width="1h">
+        <meta>
+          <name>Uplink Tone Type</name>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>CTCSS</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Downlink Tone Type</name>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>CTCSS</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Uplink Tone</name>
+        </meta>
+        <item value="0">
+          <name>Off</name>
+        </item>
+        <item value="1">
+          <name>67.0Hz</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Downlink Tone</name>
+        </meta>
+        <item value="0">
+          <name>Off</name>
+        </item>
+        <item value="1">
+          <name>67.0 Hz</name>
+        </item>
+      </enum>
+      <unknown width="194h">
         <meta>
           <name>Unknown data</name>
         </meta>
