@@ -76,11 +76,6 @@
       </meta>
     </unknown>
   </element>
-  <unknown at="110h" width="1360h">
-    <meta>
-      <name>Unknown data</name>
-    </meta>
-  </unknown>
   <element at="1470h">
     <meta>
       <name>DTMF Settings</name>
@@ -141,13 +136,6 @@
         <done/>
       </meta>00</unused>
   </element>
-  <unused at="1478h" width="110h">
-    <meta>
-      <name>Unused data</name>
-      <firmware>R202409080</firmware>
-      <done/>
-    </meta>
-  </unused>
   <repeat at="1588h" n="8">
     <meta>
       <name>APRS Systems</name>
@@ -326,11 +314,6 @@
       </unknown>
     </element>
   </repeat>
-  <unknown at="1788h" width="1800h">
-    <meta>
-      <name>Unknown data</name>
-    </meta>
-  </unknown>
   <repeat at="2f88h" n="32">
     <meta>
       <name>DTMF Contacts</name>
@@ -369,11 +352,6 @@
       </repeat>
     </element>
   </repeat>
-  <unknown at="3388h" width="3f8h">
-    <meta>
-      <name>Unknown data</name>
-    </meta>
-  </unknown>
   <element at="3780h">
     <meta>
       <name>Channel Bank 0</name>
@@ -813,17 +791,6 @@
       </element>
     </repeat>
   </element>
-  <unknown at="5390h" width="c70h">
-    <meta>
-      <name>Unknown data</name>
-    </meta>
-  </unknown>
-  <unknown at="7500h" width="18h">
-    <meta>
-      <name>Unknown data</name>
-      <firmware>R202409080</firmware>
-    </meta>
-  </unknown>
   <element at="7518h">
     <meta>
       <name>Boot Settings</name>
@@ -885,11 +852,6 @@
       </meta>
     </string>
   </element>
-  <unknown at="7560h" width="30h">
-    <meta>
-      <name>Unknown data</name>
-    </meta>
-  </unknown>
   <element at="7590h">
     <meta>
       <name>VFO Settings</name>
@@ -1709,11 +1671,6 @@
       </int>
     </element>
   </element>
-  <unknown at="7600h" width="a10h">
-    <meta>
-      <name>Unknown data</name>
-    </meta>
-  </unknown>
   <element at="8010h">
     <meta>
       <name>Zone Bank</name>
@@ -1787,132 +1744,127 @@
       </element>
     </repeat>
   </element>
-  <unknown at="aef0h" width="110h">
+  <element at="1000214h">
     <meta>
-      <name>Unknown data</name>
+      <name>Orbital Elements Bank</name>
     </meta>
-  </unknown>
-  <unknown at="1000000h" width="21ch">
-    <meta>
-      <name>Unknown data</name>
-    </meta>
-  </unknown>
-  <repeat at="100021ch" n="25">
-    <meta>
-      <name>Orbital Elements</name>
-    </meta>
-    <element>
+    <unknown width="8h">
       <meta>
-        <name>Orbital Element</name>
+        <name>Unknown data</name>
       </meta>
-      <string format="ascii" width="8" pad="0">
+    </unknown>
+    <repeat n="25">
+      <meta>
+        <name>Orbital Elements</name>
+      </meta>
+      <element>
         <meta>
-          <name>Name</name>
+          <name>Orbital Element</name>
         </meta>
-      </string>
-      <int width="1h" format="bcd">
-        <meta>
-          <name>Epoch Year</name>
-        </meta>
-      </int>
-      <int width="6h" format="bcd" endian="big">
-        <meta>
-          <name>Epoch julien day</name>
-        </meta>
-      </int>
-      <int width="5h" format="bcd" endian="big">
-        <meta>
-          <name>First derivative of mean motion</name>
-        </meta>
-      </int>
-      <int width="4h" format="bcd" endian="big">
-        <meta>
-          <name>Inclination</name>
-        </meta>
-      </int>
-      <int width="4h" format="bcd" endian="big">
-        <meta>
-          <name>Right ascension of the ascending node</name>
-        </meta>
-      </int>
-      <int width="3h:4" format="bcd" endian="big">
-        <meta>
-          <name>Eccentricity</name>
-        </meta>
-      </int>
-      <int width="4h" format="bcd" endian="big">
-        <meta>
-          <name>Argument of perigee</name>
-        </meta>
-      </int>
-      <int width="4h" format="bcd" endian="big">
-        <meta>
-          <name>Mean anomaly</name>
-        </meta>
-      </int>
-      <int width="5h:4" format="bcd" endian="big">
-        <meta>
-          <name>Mean motion</name>
-        </meta>
-      </int>
-      <int width="2h:4" format="bcd" endian="big">
-        <meta>
-          <name>Revolution number at epoch</name>
-        </meta>
-      </int>
-      <int width="0h:4" format="bcd">
-        <meta>
-          <name>Unused</name>
-          <brief>set to blank bh.</brief>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>FM Downlink Frequency</name>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>FM Uplinkrequency</name>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>CTCSS tone frequency</name>
-          <brief>Encoded frequency in 0.1Hz.</brief>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>APRS Downlink Frequency</name>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>APRS Uplink Frequency</name>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>Beacon Frequency</name>
-        </meta>
-      </int>
-      <unused width="4h">
-        <meta>
-          <name>Unused data</name>
-        </meta>00</unused>
-      <string format="ascii" width="24" pad="0">
-        <meta>
-          <name>APRS path</name>
-        </meta>
-      </string>
-    </element>
-  </repeat>
-  <unknown at="107b000h" width="1b0h">
-    <meta>
-      <name>Unknown data</name>
-    </meta>
-  </unknown>
+        <string format="ascii" width="8" pad="0">
+          <meta>
+            <name>Name</name>
+          </meta>
+        </string>
+        <int width="1h" format="bcd">
+          <meta>
+            <name>Epoch Year</name>
+          </meta>
+        </int>
+        <int width="6h" format="bcd" endian="big">
+          <meta>
+            <name>Epoch julien day</name>
+          </meta>
+        </int>
+        <int width="5h" format="bcd" endian="big">
+          <meta>
+            <name>First derivative of mean motion</name>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>Inclination</name>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>Right ascension of the ascending node</name>
+          </meta>
+        </int>
+        <int width="3h:4" format="bcd" endian="big">
+          <meta>
+            <name>Eccentricity</name>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>Argument of perigee</name>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>Mean anomaly</name>
+          </meta>
+        </int>
+        <int width="5h:4" format="bcd" endian="big">
+          <meta>
+            <name>Mean motion</name>
+          </meta>
+        </int>
+        <int width="2h:4" format="bcd" endian="big">
+          <meta>
+            <name>Revolution number at epoch</name>
+          </meta>
+        </int>
+        <int width="0h:4" format="bcd">
+          <meta>
+            <name>Unused</name>
+            <brief>set to blank bh.</brief>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>FM Downlink Frequency</name>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>FM Uplinkrequency</name>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>CTCSS tone frequency</name>
+            <brief>Encoded frequency in 0.1Hz.</brief>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>APRS Downlink Frequency</name>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>APRS Uplink Frequency</name>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>Beacon Frequency</name>
+          </meta>
+        </int>
+        <unused width="4h">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <string format="ascii" width="24" pad="0">
+          <meta>
+            <name>APRS path</name>
+          </meta>
+        </string>
+      </element>
+    </repeat>
+  </element>
   <repeat at="107b1b0h" n="7">
     <meta>
       <name>Channel Banks 1-7</name>
