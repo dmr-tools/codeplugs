@@ -174,19 +174,24 @@
           <done/>
         </meta>
       </int>
-      <unknown width="3h">
+      <int width="3h" format="unsigned" endian="little">
         <meta>
           <name>Latitude</name>
+          <brief>Complex encoded latitude in sign, degree and decimals.</brief>
+          <description>The most significant bit is the sign bit. The next 8 bits are the degrees and the lest significant 15 bits encode 4 decimals.</description>
           <firmware>R202409080</firmware>
-          <incomplete/>
+          <done/>
         </meta>
-      </unknown>
-      <unknown width="3h">
+      </int>
+      <int width="3h" format="unsigned" endian="little">
         <meta>
           <name>Longitude</name>
-          <incomplete/>
+          <brief>Complex encoded longitude in sign, degree and decimals.</brief>
+          <description>Most significant bit of the uint24le holds the sign bit, the next 8 bit are the degrees and the remaining 15 least significiant bits hold 4 decimals.</description>
+          <firmware>R202409080</firmware>
+          <done/>
         </meta>
-      </unknown>
+      </int>
       <string format="ascii" width="6" pad="0">
         <meta>
           <name>Via-1 Call</name>
@@ -402,7 +407,7 @@
       <element>
         <meta>
           <name>Channel</name>
-          <description>Encodes a single channel.</description>
+          <brief>Encodes a single channel.</brief>
           <firmware>R202409080</firmware>
           <done/>
         </meta>
@@ -494,9 +499,10 @@
         <int width="1h" format="unsigned">
           <meta>
             <name>Latitude LSB</name>
+            <brief>LSB of the uint24le complex encoding of the latitude.</brief>
             <description>The LSB of the 24bit latitude value.</description>
             <firmware>R202409080</firmware>
-            <incomplete/>
+            <done/>
           </meta>
         </int>
         <unused width="1h">
@@ -508,25 +514,20 @@
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Latitude MSB</name>
-            <description>The MSB part of the 24bit latitude value.</description>
-            <firmware>R202409080</firmware>
-            <incomplete/>
-          </meta>
-        </int>
-        <int width="1h" format="unsigned">
-          <meta>
-            <name>Longitude LSB</name>
-            <description>LSB part of the 16bit longitude value.</description>
-            <firmware>R202409080</firmware>
-            <incomplete/>
-          </meta>
-        </int>
-        <unused width="1h">
-          <meta>
-            <name>Unused data</name>
+            <brief>MSB of the uint24le encoding the latitude.</brief>
+            <description>Encodes the latitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
             <firmware>R202409080</firmware>
             <done/>
-          </meta>00</unused>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Longitude LSB</name>
+            <brief>Least significant part of the uin24le encoding the longitude.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
         <int width="2h" format="signed" endian="little" default="0">
           <meta>
             <name>RX Tone</name>
@@ -546,16 +547,15 @@
         <int width="1h" format="unsigned">
           <meta>
             <name>Longitude MSB</name>
-            <description>MSB part of the 16bit longitude value.</description>
+            <brief>Most significant byte of the uint24le encoding the longitude.</brief>
+            <description>Encodes the longitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
             <firmware>R202409080</firmware>
-            <incomplete/>
+            <done/>
           </meta>
         </int>
         <unused width="1h">
           <meta>
             <name>Unused data</name>
-            <firmware>R202409080</firmware>
-            <done/>
           </meta>00</unused>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
@@ -897,16 +897,24 @@
     <element>
       <meta>
         <name>VFO Channel A</name>
-        <description>Encodes a single channel.</description>
+        <brief>Encodes the settings for VFO A.</brief>
         <firmware>R202409080</firmware>
         <done/>
       </meta>
-      <unknown width="10h">
+      <string format="ascii" width="15" pad="597">
         <meta>
-          <name>Unused data</name>
+          <name>Name</name>
+          <description>Specifies the channel name.</description>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
-      </unknown>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad byte</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>0255</unused>
       <int width="4h" format="bcd" endian="little">
         <meta>
           <name>RX Frequency</name>
@@ -981,9 +989,10 @@
       <int width="1h" format="unsigned">
         <meta>
           <name>Latitude LSB</name>
+          <brief>LSB of the uint24le complex encoding of the latitude.</brief>
           <description>The LSB of the 24bit latitude value.</description>
           <firmware>R202409080</firmware>
-          <incomplete/>
+          <done/>
         </meta>
       </int>
       <unused width="1h">
@@ -995,25 +1004,20 @@
       <int width="2h" format="unsigned" endian="little">
         <meta>
           <name>Latitude MSB</name>
-          <description>The MSB part of the 24bit latitude value.</description>
-          <firmware>R202409080</firmware>
-          <incomplete/>
-        </meta>
-      </int>
-      <int width="1h" format="unsigned">
-        <meta>
-          <name>Longitude LSB</name>
-          <description>LSB part of the 16bit longitude value.</description>
-          <firmware>R202409080</firmware>
-          <incomplete/>
-        </meta>
-      </int>
-      <unused width="1h">
-        <meta>
-          <name>Unused data</name>
+          <brief>MSB of the uint24le encoding the latitude.</brief>
+          <description>Encodes the latitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
           <firmware>R202409080</firmware>
           <done/>
-        </meta>00</unused>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Longitude LSB</name>
+          <brief>Least significant part of the uin24le encoding the longitude.</brief>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
       <int width="2h" format="signed" endian="little" default="0">
         <meta>
           <name>RX Tone</name>
@@ -1033,16 +1037,15 @@
       <int width="1h" format="unsigned">
         <meta>
           <name>Longitude MSB</name>
-          <description>MSB part of the 16bit longitude value.</description>
+          <brief>Most significant byte of the uint24le encoding the longitude.</brief>
+          <description>Encodes the longitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
           <firmware>R202409080</firmware>
-          <incomplete/>
+          <done/>
         </meta>
       </int>
       <unused width="1h">
         <meta>
           <name>Unused data</name>
-          <firmware>R202409080</firmware>
-          <done/>
         </meta>00</unused>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
@@ -1301,16 +1304,24 @@
     <element>
       <meta>
         <name>VFO Channel B</name>
-        <description>Encodes a single channel.</description>
+        <brief>Encodes the settings for VFO B.</brief>
         <firmware>R202409080</firmware>
         <done/>
       </meta>
-      <unknown width="10h">
+      <string format="ascii" width="15" pad="597">
         <meta>
-          <name>Unused data</name>
+          <name>Name</name>
+          <description>Specifies the channel name.</description>
           <firmware>R202409080</firmware>
+          <done/>
         </meta>
-      </unknown>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad byte</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>0255</unused>
       <int width="4h" format="bcd" endian="little">
         <meta>
           <name>RX Frequency</name>
@@ -1385,9 +1396,10 @@
       <int width="1h" format="unsigned">
         <meta>
           <name>Latitude LSB</name>
+          <brief>LSB of the uint24le complex encoding of the latitude.</brief>
           <description>The LSB of the 24bit latitude value.</description>
           <firmware>R202409080</firmware>
-          <incomplete/>
+          <done/>
         </meta>
       </int>
       <unused width="1h">
@@ -1399,25 +1411,20 @@
       <int width="2h" format="unsigned" endian="little">
         <meta>
           <name>Latitude MSB</name>
-          <description>The MSB part of the 24bit latitude value.</description>
-          <firmware>R202409080</firmware>
-          <incomplete/>
-        </meta>
-      </int>
-      <int width="1h" format="unsigned">
-        <meta>
-          <name>Longitude LSB</name>
-          <description>LSB part of the 16bit longitude value.</description>
-          <firmware>R202409080</firmware>
-          <incomplete/>
-        </meta>
-      </int>
-      <unused width="1h">
-        <meta>
-          <name>Unused data</name>
+          <brief>MSB of the uint24le encoding the latitude.</brief>
+          <description>Encodes the latitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
           <firmware>R202409080</firmware>
           <done/>
-        </meta>00</unused>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Longitude LSB</name>
+          <brief>Least significant part of the uin24le encoding the longitude.</brief>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
       <int width="2h" format="signed" endian="little" default="0">
         <meta>
           <name>RX Tone</name>
@@ -1437,16 +1444,15 @@
       <int width="1h" format="unsigned">
         <meta>
           <name>Longitude MSB</name>
-          <description>MSB part of the 16bit longitude value.</description>
+          <brief>Most significant byte of the uint24le encoding the longitude.</brief>
+          <description>Encodes the longitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
           <firmware>R202409080</firmware>
-          <incomplete/>
+          <done/>
         </meta>
       </int>
       <unused width="1h">
         <meta>
           <name>Unused data</name>
-          <firmware>R202409080</firmware>
-          <done/>
         </meta>00</unused>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
@@ -1833,7 +1839,7 @@
         <element>
           <meta>
             <name>Channel</name>
-            <description>Encodes a single channel.</description>
+            <brief>Encodes a single channel.</brief>
             <firmware>R202409080</firmware>
             <done/>
           </meta>
@@ -1925,9 +1931,10 @@
           <int width="1h" format="unsigned">
             <meta>
               <name>Latitude LSB</name>
+              <brief>LSB of the uint24le complex encoding of the latitude.</brief>
               <description>The LSB of the 24bit latitude value.</description>
               <firmware>R202409080</firmware>
-              <incomplete/>
+              <done/>
             </meta>
           </int>
           <unused width="1h">
@@ -1939,25 +1946,20 @@
           <int width="2h" format="unsigned" endian="little">
             <meta>
               <name>Latitude MSB</name>
-              <description>The MSB part of the 24bit latitude value.</description>
-              <firmware>R202409080</firmware>
-              <incomplete/>
-            </meta>
-          </int>
-          <int width="1h" format="unsigned">
-            <meta>
-              <name>Longitude LSB</name>
-              <description>LSB part of the 16bit longitude value.</description>
-              <firmware>R202409080</firmware>
-              <incomplete/>
-            </meta>
-          </int>
-          <unused width="1h">
-            <meta>
-              <name>Unused data</name>
+              <brief>MSB of the uint24le encoding the latitude.</brief>
+              <description>Encodes the latitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
               <firmware>R202409080</firmware>
               <done/>
-            </meta>00</unused>
+            </meta>
+          </int>
+          <int width="2h" format="unsigned" endian="little">
+            <meta>
+              <name>Longitude LSB</name>
+              <brief>Least significant part of the uin24le encoding the longitude.</brief>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
           <int width="2h" format="signed" endian="little" default="0">
             <meta>
               <name>RX Tone</name>
@@ -1977,16 +1979,15 @@
           <int width="1h" format="unsigned">
             <meta>
               <name>Longitude MSB</name>
-              <description>MSB part of the 16bit longitude value.</description>
+              <brief>Most significant byte of the uint24le encoding the longitude.</brief>
+              <description>Encodes the longitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
               <firmware>R202409080</firmware>
-              <incomplete/>
+              <done/>
             </meta>
           </int>
           <unused width="1h">
             <meta>
               <name>Unused data</name>
-              <firmware>R202409080</firmware>
-              <done/>
             </meta>00</unused>
           <int width="0h:1" format="unsigned" default="0">
             <meta>
