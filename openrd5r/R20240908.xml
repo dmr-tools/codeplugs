@@ -1,25 +1,2484 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--vi: set ts=2 sw=2:-->
-
 <codeplug>
   <meta>
     <name>OpengRD5R</name>
-    <description>
-      This document describes the codeplug format of the OpenGD77 firmware running on a RD-5R.
-    </description>
+    <brief>Description of OpeRD5R codeplug.</brief>
+    <description>This document describes the codeplug format of the OpenGD77 firmware running on a GD77.</description>
     <firmware>R202409080</firmware>
   </meta>
-
-  <element at="00000000h">
-    <unknown width="06000h"/>
+  <element at="80h">
+    <meta>
+      <name>Settings</name>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <int width="2h" format="bcd" endian="little" default="0">
+      <meta>
+        <name>UHF min frequency</name>
+        <short-name>UHFmin</short-name>
+        <description>in MHz.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="2h" format="bcd" endian="little" default="0">
+      <meta>
+        <name>UHF max frequency</name>
+        <short-name>UHFmax</short-name>
+        <description>in MHz.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="2h" format="bcd" endian="little" default="311">
+      <meta>
+        <name>VHF min frequency</name>
+        <short-name>VHFmin</short-name>
+        <description>in MHz.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="2h" format="bcd" endian="little" default="368">
+      <meta>
+        <name>VHF max frequency</name>
+        <short-name>VHFmax</short-name>
+        <description>Maximum frequency for VHF band in MHz.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="58h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <string format="ascii" width="8" pad="597">
+      <meta>
+        <name>Callsign</name>
+        <short-name>Call</short-name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </string>
+    <int width="4h" format="bcd" endian="big" default="0">
+      <meta>
+        <name>DMR ID</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="24h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
   </element>
-  <element at="00007500h" >
-    <unknown width="0bb00h"/>
+  <element at="1470h">
+    <meta>
+      <name>DTMF Settings</name>
+      <description>Collects all setting fields for encoding/decoding of DTMF tones.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>First digit delay</name>
+        <description>Specifies the transmission delay of the first DTMF digit in 100ms. Valid values are 100-1000ms</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>First digit duration</name>
+        <description>Specifies the duration of the first digit it 100ms. Valid values are 0-1000ms.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="1">
+      <meta>
+        <name>Ast/Hash duration.</name>
+        <description>Specifies the duration for the asterisk (*) and hash (#) symbols in 100ms. Valid values are 0-1000ms.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>DTMF Rate</name>
+        <description>Whatever that is. Valid values between 1-10.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="5">
+      <meta>
+        <name>Tail duration</name>
+        <description>Delay in 100ms after end of last symbol befor transmission ends. Valid values are 0-1000ms</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="1h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>00</unused>
   </element>
-  <element at="01000000h">
-    <unknown width="01200h"/>
+  <repeat at="1588h" n="8">
+    <meta>
+      <name>APRS Systems</name>
+      <firmware>R202409080</firmware>
+    </meta>
+    <element>
+      <meta>
+        <name>APRS System</name>
+        <firmware>R202409080</firmware>
+      </meta>
+      <string format="ascii" width="8" pad="597">
+        <meta>
+          <name>Name</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Source SSID</name>
+          <short-name>S-SSID</short-name>
+          <description>SSID of the transmitter.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="3h" format="unsigned" endian="little">
+        <meta>
+          <name>Latitude</name>
+          <brief>Complex encoded latitude in sign, degree and decimals.</brief>
+          <description>The most significant bit is the sign bit. The next 8 bits are the degrees and the lest significant 15 bits encode 4 decimals.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="3h" format="unsigned" endian="little">
+        <meta>
+          <name>Longitude</name>
+          <brief>Complex encoded longitude in sign, degree and decimals.</brief>
+          <description>Most significant bit of the uint24le holds the sign bit, the next 8 bit are the degrees and the remaining 15 least significiant bits hold 4 decimals.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <string format="ascii" width="6" pad="0">
+        <meta>
+          <name>Via-1 Call</name>
+          <short-name>Via1</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Via-1 SSID</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <string format="ascii" width="6" pad="0">
+        <meta>
+          <name>Via-2 Call</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Via-2 SSID</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>APRS Icon Table</name>
+          <short-name>IcnTab</short-name>
+          <description>Specifies the APRS icon table.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Primary</name>
+        </item>
+        <item value="1">
+          <name>Alternate</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>APRS Icon index</name>
+          <description>Specifies the icon index within the icon table.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <string format="ascii" width="23" pad="0">
+        <meta>
+          <name>Comment</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unknown width="7h">
+        <meta>
+          <name>Unknown data</name>
+          <needs-review/>
+        </meta>
+      </unknown>
+      <enum width="0h:4">
+        <meta>
+          <name>Position Masking</name>
+          <short-name>Mask</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>0.0005°</name>
+        </item>
+        <item value="2">
+          <name>0.001°</name>
+        </item>
+        <item value="3">
+          <name>0.005°</name>
+        </item>
+        <item value="4">
+          <name>0.01°</name>
+        </item>
+        <item value="5">
+          <name>0.05°</name>
+        </item>
+        <item value="6">
+          <name>0.1°</name>
+        </item>
+        <item value="7">
+          <name>0.5°</name>
+        </item>
+      </enum>
+      <unused width="0h:2">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </unused>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Use position</name>
+          <short-name>POS</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="0h:1">
+        <meta>
+          <name>Baud rate</name>
+          <short-name>BRT</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>1200 Baud</name>
+        </item>
+        <item value="1">
+          <name>300 Baud</name>
+        </item>
+      </enum>
+      <unknown width="2h">
+        <meta>
+          <name>Unknown data</name>
+          <needs-review/>
+        </meta>
+      </unknown>
+    </element>
+  </repeat>
+  <repeat at="2f88h" n="32">
+    <meta>
+      <name>DTMF Contacts</name>
+      <description>Bank of 64 DTMF contacts.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>DTMF Contact</name>
+        <description>A DTMF contact. Invalid entries have empty names.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="16" pad="597">
+        <meta>
+          <name>Name</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <repeat n="16">
+        <meta>
+          <name>Number</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Digit</name>
+            <description>0h-fh Corresponding to 0-9, A, B, C, D, *, #.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+  </repeat>
+  <element at="3780h">
+    <meta>
+      <name>Channel Bank 0</name>
+      <description>The first channel bank.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <repeat n="128">
+      <meta>
+        <name>Channel bit map</name>
+        <description>Marks, which channels are valid.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Channel bit</name>
+          <description>Enables a single channel.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <repeat n="128">
+      <meta>
+        <name>Channels</name>
+        <description>Encodes all valid channels.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Channel</name>
+          <brief>Encodes a single channel.</brief>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="15" pad="597">
+          <meta>
+            <name>Name</name>
+            <description>Specifies the channel name.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad byte</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>0255</unused>
+        <int width="4h" format="bcd" endian="little">
+          <meta>
+            <name>RX Frequency</name>
+            <description>RX Frequency in 10Hz as 8-digit BCD in little endian.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="little">
+          <meta>
+            <name>TX Frequency</name>
+            <description>TX Frequency in 10Hz in 8-digit BCD little endian.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Channel Mode</name>
+            <description>Specifies the mode of the channel.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>FM</name>
+          </item>
+          <item value="1">
+            <name>DMR</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Power</name>
+            <description>Specifies the transmit power.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Master</name>
+          </item>
+          <item value="1">
+            <name>50mW</name>
+          </item>
+          <item value="2">
+            <name>250mW</name>
+          </item>
+          <item value="3">
+            <name>500mW</name>
+          </item>
+          <item value="4">
+            <name>750mW</name>
+          </item>
+          <item value="5">
+            <name>1W</name>
+          </item>
+          <item value="6">
+            <name>2W</name>
+          </item>
+          <item value="7">
+            <name>3W</name>
+          </item>
+          <item value="8">
+            <name>4W</name>
+          </item>
+          <item value="9">
+            <name>5W</name>
+          </item>
+          <item value="10">
+            <name>Maximum</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Latitude LSB</name>
+            <brief>LSB of the uint24le complex encoding of the latitude.</brief>
+            <description>The LSB of the 24bit latitude value.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Latitude MSB</name>
+            <brief>MSB of the uint24le encoding the latitude.</brief>
+            <description>Encodes the latitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Longitude LSB</name>
+            <brief>Least significant part of the uin24le encoding the longitude.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="2h" format="signed" endian="little" default="0">
+          <meta>
+            <name>RX Tone</name>
+            <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>TX Tone</name>
+            <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Longitude MSB</name>
+            <brief>Most significant byte of the uint24le encoding the longitude.</brief>
+            <description>Encodes the longitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Override DMR ID</name>
+            <short-name>OID</short-name>
+            <description>If enabled, the DMR ID is overridden.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Disable beep</name>
+            <short-name>NOB</short-name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Disable Power Save</name>
+            <short-name>NOE</short-name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Use Location</name>
+            <short-name>LOC</short-name>
+            <description>Whatever that means.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Force DCO</name>
+            <short-name>DCO</short-name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="0h:2">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="3h" format="unsigned" endian="big" default="5632">
+          <meta>
+            <name>Channel DMR ID</name>
+            <description>If enabled, holds the DMR ID used for this channel. Somewhat weird in uint24be.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Group List Index</name>
+            <description>Specifies the group list index +1. Default 0: none.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="1">
+          <meta>
+            <name>Color code</name>
+            <description>Simply stores the color code as is.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>APRS System Index</name>
+            <description>Index of the APRS system associated with the channes +1. Default 0: none.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="2h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>0000</unused>
+        <unused width="0h:4">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <enum width="0h:2">
+          <meta>
+            <name>TX Alias TS1</name>
+            <short-name>TAL2</short-name>
+            <description>How to transmit talker alias on time slot 2</description>
+            <firmware>R202409080</firmware>
+          </meta>
+          <item value="0">
+            <name>None</name>
+          </item>
+          <item value="1">
+            <name>APRS</name>
+          </item>
+          <item value="2">
+            <name>Text</name>
+          </item>
+          <item value="3">
+            <name>Both</name>
+          </item>
+        </enum>
+        <enum width="0h:2">
+          <meta>
+            <name>TX Alias TS1</name>
+            <short-name>TAL1</short-name>
+            <description>How to transmit the talker alias on time-slot 1.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>None</name>
+          </item>
+          <item value="1">
+            <name>APRS</name>
+          </item>
+          <item value="2">
+            <name>Text</name>
+          </item>
+          <item value="3">
+            <name>Both</name>
+          </item>
+        </enum>
+        <unknown width="0h:1">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Time slot 2</name>
+            <short-name>TS2</short-name>
+            <description>If enabled, time slot 2 is used. Otherwise TS 1.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="0h:6">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused bit</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>VOX enable</name>
+            <short-name>VOX</short-name>
+            <description>Enabled VOX for this channel.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Skip in Zone Scan</name>
+            <short-name>SZS</short-name>
+            <description>If enabled, the channel is skipped during a zone scan.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Skip Scan</name>
+            <short-name>SAS</short-name>
+            <description>If enabled, the cannel is skipped in all scans.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="0h:1">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>TX disable</name>
+            <short-name>RXO</short-name>
+            <description>If enabled, the TX is disabled. That is, the channel is RX only.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="0h:1">
+          <meta>
+            <name>Bandwidth</name>
+            <short-name>BW</short-name>
+            <description>Specifies the FM bandwidth.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Narrow (12.5kHz)</name>
+          </item>
+          <item value="1">
+            <name>Wide (25kHz)</name>
+          </item>
+        </enum>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </unused>
+        <unused width="3h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>000000</unused>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Squelch Level</name>
+            <description>0: Global setting, 1: open, 2-14: 5%(n-1), 15: closed.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+      </element>
+    </repeat>
   </element>
-  <element at="0107b000h">
-    <unknown width="13e60h"/>
+  <element at="7518h">
+    <meta>
+      <name>Boot Settings</name>
+      <firmware>R202409080</firmware>
+    </meta>
+    <enum width="1h">
+      <meta>
+        <name>Boot display</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Picture</name>
+      </item>
+      <item value="1">
+        <name>Text</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Boot password enable</name>
+        <short-name>PWD</short-name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="ah">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="3h" format="bcd" endian="big" default="0">
+      <meta>
+        <name>Boot password</name>
+        <short-name>PWD</short-name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="19h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <string format="ascii" width="16" pad="597">
+      <meta>
+        <name>Boot Text Line 1</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </string>
+    <string format="ascii" width="16" pad="597">
+      <meta>
+        <name>Boot Text Line 2</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+    </string>
+  </element>
+  <element at="7590h">
+    <meta>
+      <name>VFO Settings</name>
+    </meta>
+    <element>
+      <meta>
+        <name>VFO Channel A</name>
+        <brief>Encodes the settings for VFO A.</brief>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="15" pad="597">
+        <meta>
+          <name>Name</name>
+          <description>Specifies the channel name.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad byte</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>0255</unused>
+      <int width="4h" format="bcd" endian="little">
+        <meta>
+          <name>RX Frequency</name>
+          <description>RX Frequency in 10Hz as 8-digit BCD in little endian.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="4h" format="bcd" endian="little">
+        <meta>
+          <name>TX Frequency</name>
+          <description>TX Frequency in 10Hz in 8-digit BCD little endian.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Channel Mode</name>
+          <description>Specifies the mode of the channel.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>FM</name>
+        </item>
+        <item value="1">
+          <name>DMR</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Power</name>
+          <description>Specifies the transmit power.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Master</name>
+        </item>
+        <item value="1">
+          <name>50mW</name>
+        </item>
+        <item value="2">
+          <name>250mW</name>
+        </item>
+        <item value="3">
+          <name>500mW</name>
+        </item>
+        <item value="4">
+          <name>750mW</name>
+        </item>
+        <item value="5">
+          <name>1W</name>
+        </item>
+        <item value="6">
+          <name>2W</name>
+        </item>
+        <item value="7">
+          <name>3W</name>
+        </item>
+        <item value="8">
+          <name>4W</name>
+        </item>
+        <item value="9">
+          <name>5W</name>
+        </item>
+        <item value="10">
+          <name>Maximum</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Latitude LSB</name>
+          <brief>LSB of the uint24le complex encoding of the latitude.</brief>
+          <description>The LSB of the 24bit latitude value.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Latitude MSB</name>
+          <brief>MSB of the uint24le encoding the latitude.</brief>
+          <description>Encodes the latitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Longitude LSB</name>
+          <brief>Least significant part of the uin24le encoding the longitude.</brief>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="signed" endian="little" default="0">
+        <meta>
+          <name>RX Tone</name>
+          <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>TX Tone</name>
+          <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Longitude MSB</name>
+          <brief>Most significant byte of the uint24le encoding the longitude.</brief>
+          <description>Encodes the longitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Override DMR ID</name>
+          <short-name>OID</short-name>
+          <description>If enabled, the DMR ID is overridden.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Disable beep</name>
+          <short-name>NOB</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Disable Power Save</name>
+          <short-name>NOE</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="0h:1">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Use Location</name>
+          <short-name>LOC</short-name>
+          <description>Whatever that means.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Force DCO</name>
+          <short-name>DCO</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="0h:2">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="3h" format="unsigned" endian="big" default="5632">
+        <meta>
+          <name>Channel DMR ID</name>
+          <description>If enabled, holds the DMR ID used for this channel. Somewhat weird in uint24be.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Group List Index</name>
+          <description>Specifies the group list index +1. Default 0: none.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="1">
+        <meta>
+          <name>Color code</name>
+          <description>Simply stores the color code as is.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>APRS System Index</name>
+          <description>Index of the APRS system associated with the channes +1. Default 0: none.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="2h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>0000</unused>
+      <unused width="0h:4">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <enum width="0h:2">
+        <meta>
+          <name>TX Alias TS1</name>
+          <short-name>TAL2</short-name>
+          <description>How to transmit talker alias on time slot 2</description>
+          <firmware>R202409080</firmware>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>APRS</name>
+        </item>
+        <item value="2">
+          <name>Text</name>
+        </item>
+        <item value="3">
+          <name>Both</name>
+        </item>
+      </enum>
+      <enum width="0h:2">
+        <meta>
+          <name>TX Alias TS1</name>
+          <short-name>TAL1</short-name>
+          <description>How to transmit the talker alias on time-slot 1.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>APRS</name>
+        </item>
+        <item value="2">
+          <name>Text</name>
+        </item>
+        <item value="3">
+          <name>Both</name>
+        </item>
+      </enum>
+      <unknown width="0h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Time slot 2</name>
+          <short-name>TS2</short-name>
+          <description>If enabled, time slot 2 is used. Otherwise TS 1.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="0h:6">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <unused width="0h:1">
+        <meta>
+          <name>Unused bit</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>VOX enable</name>
+          <short-name>VOX</short-name>
+          <description>Enabled VOX for this channel.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Skip in Zone Scan</name>
+          <short-name>SZS</short-name>
+          <description>If enabled, the channel is skipped during a zone scan.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Skip Scan</name>
+          <short-name>SAS</short-name>
+          <description>If enabled, the cannel is skipped in all scans.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="0h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>TX disable</name>
+          <short-name>RXO</short-name>
+          <description>If enabled, the TX is disabled. That is, the channel is RX only.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="0h:1">
+        <meta>
+          <name>Bandwidth</name>
+          <short-name>BW</short-name>
+          <description>Specifies the FM bandwidth.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Narrow (12.5kHz)</name>
+        </item>
+        <item value="1">
+          <name>Wide (25kHz)</name>
+        </item>
+      </enum>
+      <unused width="0h:1">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </unused>
+      <unused width="3h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>000000</unused>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Squelch Level</name>
+          <description>0: Global setting, 1: open, 2-14: 5%(n-1), 15: closed.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
+    <element>
+      <meta>
+        <name>VFO Channel B</name>
+        <brief>Encodes the settings for VFO B.</brief>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="15" pad="597">
+        <meta>
+          <name>Name</name>
+          <description>Specifies the channel name.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad byte</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>0255</unused>
+      <int width="4h" format="bcd" endian="little">
+        <meta>
+          <name>RX Frequency</name>
+          <description>RX Frequency in 10Hz as 8-digit BCD in little endian.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="4h" format="bcd" endian="little">
+        <meta>
+          <name>TX Frequency</name>
+          <description>TX Frequency in 10Hz in 8-digit BCD little endian.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Channel Mode</name>
+          <description>Specifies the mode of the channel.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>FM</name>
+        </item>
+        <item value="1">
+          <name>DMR</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Power</name>
+          <description>Specifies the transmit power.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Master</name>
+        </item>
+        <item value="1">
+          <name>50mW</name>
+        </item>
+        <item value="2">
+          <name>250mW</name>
+        </item>
+        <item value="3">
+          <name>500mW</name>
+        </item>
+        <item value="4">
+          <name>750mW</name>
+        </item>
+        <item value="5">
+          <name>1W</name>
+        </item>
+        <item value="6">
+          <name>2W</name>
+        </item>
+        <item value="7">
+          <name>3W</name>
+        </item>
+        <item value="8">
+          <name>4W</name>
+        </item>
+        <item value="9">
+          <name>5W</name>
+        </item>
+        <item value="10">
+          <name>Maximum</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Latitude LSB</name>
+          <brief>LSB of the uint24le complex encoding of the latitude.</brief>
+          <description>The LSB of the 24bit latitude value.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Latitude MSB</name>
+          <brief>MSB of the uint24le encoding the latitude.</brief>
+          <description>Encodes the latitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Longitude LSB</name>
+          <brief>Least significant part of the uin24le encoding the longitude.</brief>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="signed" endian="little" default="0">
+        <meta>
+          <name>RX Tone</name>
+          <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>TX Tone</name>
+          <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Longitude MSB</name>
+          <brief>Most significant byte of the uint24le encoding the longitude.</brief>
+          <description>Encodes the longitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Override DMR ID</name>
+          <short-name>OID</short-name>
+          <description>If enabled, the DMR ID is overridden.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Disable beep</name>
+          <short-name>NOB</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Disable Power Save</name>
+          <short-name>NOE</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="0h:1">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Use Location</name>
+          <short-name>LOC</short-name>
+          <description>Whatever that means.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Force DCO</name>
+          <short-name>DCO</short-name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="0h:2">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="3h" format="unsigned" endian="big" default="5632">
+        <meta>
+          <name>Channel DMR ID</name>
+          <description>If enabled, holds the DMR ID used for this channel. Somewhat weird in uint24be.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Group List Index</name>
+          <description>Specifies the group list index +1. Default 0: none.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="1">
+        <meta>
+          <name>Color code</name>
+          <description>Simply stores the color code as is.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>APRS System Index</name>
+          <description>Index of the APRS system associated with the channes +1. Default 0: none.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="2h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>0000</unused>
+      <unused width="0h:4">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <enum width="0h:2">
+        <meta>
+          <name>TX Alias TS1</name>
+          <short-name>TAL2</short-name>
+          <description>How to transmit talker alias on time slot 2</description>
+          <firmware>R202409080</firmware>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>APRS</name>
+        </item>
+        <item value="2">
+          <name>Text</name>
+        </item>
+        <item value="3">
+          <name>Both</name>
+        </item>
+      </enum>
+      <enum width="0h:2">
+        <meta>
+          <name>TX Alias TS1</name>
+          <short-name>TAL1</short-name>
+          <description>How to transmit the talker alias on time-slot 1.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>APRS</name>
+        </item>
+        <item value="2">
+          <name>Text</name>
+        </item>
+        <item value="3">
+          <name>Both</name>
+        </item>
+      </enum>
+      <unknown width="0h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Time slot 2</name>
+          <short-name>TS2</short-name>
+          <description>If enabled, time slot 2 is used. Otherwise TS 1.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="0h:6">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <unused width="0h:1">
+        <meta>
+          <name>Unused bit</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>VOX enable</name>
+          <short-name>VOX</short-name>
+          <description>Enabled VOX for this channel.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Skip in Zone Scan</name>
+          <short-name>SZS</short-name>
+          <description>If enabled, the channel is skipped during a zone scan.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Skip Scan</name>
+          <short-name>SAS</short-name>
+          <description>If enabled, the cannel is skipped in all scans.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="0h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>TX disable</name>
+          <short-name>RXO</short-name>
+          <description>If enabled, the TX is disabled. That is, the channel is RX only.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="0h:1">
+        <meta>
+          <name>Bandwidth</name>
+          <short-name>BW</short-name>
+          <description>Specifies the FM bandwidth.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Narrow (12.5kHz)</name>
+        </item>
+        <item value="1">
+          <name>Wide (25kHz)</name>
+        </item>
+      </enum>
+      <unused width="0h:1">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </unused>
+      <unused width="3h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>000000</unused>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Squelch Level</name>
+          <description>0: Global setting, 1: open, 2-14: 5%(n-1), 15: closed.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
+  </element>
+  <element at="8010h">
+    <meta>
+      <name>Zone Bank</name>
+      <description>Hold the zone bitmap as well as the actual zones.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <repeat n="72">
+      <meta>
+        <name>Zone bitmap</name>
+        <description>Encodes which zone is valid. Encodes only 68 bits.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Zone enable bit</name>
+          <description>Enables a particular zone.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="17h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>00</unused>
+    <repeat n="68">
+      <meta>
+        <name>Zones</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Zone</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="15" pad="597">
+          <meta>
+            <name>Name</name>
+            <description>Specifies the zone name.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad byte</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>ff</unused>
+        <repeat n="80">
+          <meta>
+            <name>Channel Indieces</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="2h" format="unsigned" endian="little" default="0">
+            <meta>
+              <name>Channel Index</name>
+              <description>Index of the channel +1. 0=unused.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+      </element>
+    </repeat>
+  </element>
+  <element at="1000214h">
+    <meta>
+      <name>Orbital Elements Bank</name>
+    </meta>
+    <unknown width="8h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="25">
+      <meta>
+        <name>Orbital Elements</name>
+      </meta>
+      <element>
+        <meta>
+          <name>Orbital Element</name>
+        </meta>
+        <string format="ascii" width="8" pad="0">
+          <meta>
+            <name>Name</name>
+          </meta>
+        </string>
+        <int width="1h" format="bcd">
+          <meta>
+            <name>Epoch Year</name>
+          </meta>
+        </int>
+        <int width="6h" format="bcd" endian="big">
+          <meta>
+            <name>Epoch julien day</name>
+          </meta>
+        </int>
+        <int width="5h" format="bcd" endian="big">
+          <meta>
+            <name>First derivative of mean motion</name>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>Inclination</name>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>Right ascension of the ascending node</name>
+          </meta>
+        </int>
+        <int width="3h:4" format="bcd" endian="big">
+          <meta>
+            <name>Eccentricity</name>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>Argument of perigee</name>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>Mean anomaly</name>
+          </meta>
+        </int>
+        <int width="5h:4" format="bcd" endian="big">
+          <meta>
+            <name>Mean motion</name>
+          </meta>
+        </int>
+        <int width="2h:4" format="bcd" endian="big">
+          <meta>
+            <name>Revolution number at epoch</name>
+          </meta>
+        </int>
+        <int width="0h:4" format="bcd">
+          <meta>
+            <name>Unused</name>
+            <brief>set to blank bh.</brief>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>FM Downlink Frequency</name>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>FM Uplinkrequency</name>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>CTCSS tone frequency</name>
+            <brief>Encoded frequency in 0.1Hz.</brief>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>APRS Downlink Frequency</name>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>APRS Uplink Frequency</name>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>Beacon Frequency</name>
+          </meta>
+        </int>
+        <unused width="4h">
+          <meta>
+            <name>Unused data</name>
+          </meta>00</unused>
+        <string format="ascii" width="24" pad="0">
+          <meta>
+            <name>APRS path</name>
+          </meta>
+        </string>
+      </element>
+    </repeat>
+  </element>
+  <element at="1030000h">
+    <meta>
+      <name>Callsign DB Segment 0</name>
+    </meta>
+    <unknown width="40000h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
+  <repeat at="107b1b0h" n="7">
+    <meta>
+      <name>Channel Banks 1-7</name>
+    </meta>
+    <element>
+      <meta>
+        <name>Channel Bank</name>
+        <description>The first channel bank.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <repeat n="128">
+        <meta>
+          <name>Channel bit map</name>
+          <description>Marks, which channels are valid.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Channel bit</name>
+            <description>Enables a single channel.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="128">
+        <meta>
+          <name>Channels</name>
+          <description>Encodes all valid channels.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <element>
+          <meta>
+            <name>Channel</name>
+            <brief>Encodes a single channel.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <string format="ascii" width="15" pad="597">
+            <meta>
+              <name>Name</name>
+              <description>Specifies the channel name.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </string>
+          <unused width="1h">
+            <meta>
+              <name>Pad byte</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>0255</unused>
+          <int width="4h" format="bcd" endian="little">
+            <meta>
+              <name>RX Frequency</name>
+              <description>RX Frequency in 10Hz as 8-digit BCD in little endian.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="little">
+            <meta>
+              <name>TX Frequency</name>
+              <description>TX Frequency in 10Hz in 8-digit BCD little endian.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <enum width="1h">
+            <meta>
+              <name>Channel Mode</name>
+              <description>Specifies the mode of the channel.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>FM</name>
+            </item>
+            <item value="1">
+              <name>DMR</name>
+            </item>
+          </enum>
+          <enum width="1h">
+            <meta>
+              <name>Power</name>
+              <description>Specifies the transmit power.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>Master</name>
+            </item>
+            <item value="1">
+              <name>50mW</name>
+            </item>
+            <item value="2">
+              <name>250mW</name>
+            </item>
+            <item value="3">
+              <name>500mW</name>
+            </item>
+            <item value="4">
+              <name>750mW</name>
+            </item>
+            <item value="5">
+              <name>1W</name>
+            </item>
+            <item value="6">
+              <name>2W</name>
+            </item>
+            <item value="7">
+              <name>3W</name>
+            </item>
+            <item value="8">
+              <name>4W</name>
+            </item>
+            <item value="9">
+              <name>5W</name>
+            </item>
+            <item value="10">
+              <name>Maximum</name>
+            </item>
+          </enum>
+          <int width="1h" format="unsigned">
+            <meta>
+              <name>Latitude LSB</name>
+              <brief>LSB of the uint24le complex encoding of the latitude.</brief>
+              <description>The LSB of the 24bit latitude value.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unused width="1h">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>00</unused>
+          <int width="2h" format="unsigned" endian="little">
+            <meta>
+              <name>Latitude MSB</name>
+              <brief>MSB of the uint24le encoding the latitude.</brief>
+              <description>Encodes the latitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="2h" format="unsigned" endian="little">
+            <meta>
+              <name>Longitude LSB</name>
+              <brief>Least significant part of the uin24le encoding the longitude.</brief>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="2h" format="signed" endian="little" default="0">
+            <meta>
+              <name>RX Tone</name>
+              <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="2h" format="unsigned" endian="little" default="0">
+            <meta>
+              <name>TX Tone</name>
+              <description>Encoded as uint16le. MSB (15) is DCS/CTCSS flag and bit 14 flags inverted DCS codes. The rest is 3-digit BCD containing CTCSS frequency in 0.1Hz or octal DCS code. Boy, what a s**t. ffffh means disabled.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="1h" format="unsigned">
+            <meta>
+              <name>Longitude MSB</name>
+              <brief>Most significant byte of the uint24le encoding the longitude.</brief>
+              <description>Encodes the longitude in sign, degree and decimals. The MSB holds the sign bit, the next 8 bit encode the degrees and the least significant 15 bits encode 4 decimals.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unused width="1h">
+            <meta>
+              <name>Unused data</name>
+            </meta>00</unused>
+          <int width="0h:1" format="unsigned" default="0">
+            <meta>
+              <name>Override DMR ID</name>
+              <short-name>OID</short-name>
+              <description>If enabled, the DMR ID is overridden.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:1" format="unsigned" default="0">
+            <meta>
+              <name>Disable beep</name>
+              <short-name>NOB</short-name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:1" format="unsigned" default="0">
+            <meta>
+              <name>Disable Power Save</name>
+              <short-name>NOE</short-name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unused width="0h:1">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+            </meta>00</unused>
+          <int width="0h:1" format="unsigned">
+            <meta>
+              <name>Use Location</name>
+              <short-name>LOC</short-name>
+              <description>Whatever that means.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:1" format="unsigned" default="0">
+            <meta>
+              <name>Force DCO</name>
+              <short-name>DCO</short-name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unused width="0h:2">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>00</unused>
+          <int width="3h" format="unsigned" endian="big" default="5632">
+            <meta>
+              <name>Channel DMR ID</name>
+              <description>If enabled, holds the DMR ID used for this channel. Somewhat weird in uint24be.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unused width="1h">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>00</unused>
+          <int width="1h" format="unsigned" default="0">
+            <meta>
+              <name>Group List Index</name>
+              <description>Specifies the group list index +1. Default 0: none.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="1h" format="unsigned" default="1">
+            <meta>
+              <name>Color code</name>
+              <description>Simply stores the color code as is.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="1h" format="unsigned" default="0">
+            <meta>
+              <name>APRS System Index</name>
+              <description>Index of the APRS system associated with the channes +1. Default 0: none.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unused width="2h">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>0000</unused>
+          <unused width="0h:4">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>00</unused>
+          <enum width="0h:2">
+            <meta>
+              <name>TX Alias TS1</name>
+              <short-name>TAL2</short-name>
+              <description>How to transmit talker alias on time slot 2</description>
+              <firmware>R202409080</firmware>
+            </meta>
+            <item value="0">
+              <name>None</name>
+            </item>
+            <item value="1">
+              <name>APRS</name>
+            </item>
+            <item value="2">
+              <name>Text</name>
+            </item>
+            <item value="3">
+              <name>Both</name>
+            </item>
+          </enum>
+          <enum width="0h:2">
+            <meta>
+              <name>TX Alias TS1</name>
+              <short-name>TAL1</short-name>
+              <description>How to transmit the talker alias on time-slot 1.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>None</name>
+            </item>
+            <item value="1">
+              <name>APRS</name>
+            </item>
+            <item value="2">
+              <name>Text</name>
+            </item>
+            <item value="3">
+              <name>Both</name>
+            </item>
+          </enum>
+          <unknown width="0h:1">
+            <meta>
+              <name>Unknown data</name>
+            </meta>
+          </unknown>
+          <int width="0h:1" format="unsigned" default="0">
+            <meta>
+              <name>Time slot 2</name>
+              <short-name>TS2</short-name>
+              <description>If enabled, time slot 2 is used. Otherwise TS 1.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unused width="0h:6">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>00</unused>
+          <unused width="1h">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>00</unused>
+          <unused width="0h:1">
+            <meta>
+              <name>Unused bit</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>00</unused>
+          <int width="0h:1" format="unsigned">
+            <meta>
+              <name>VOX enable</name>
+              <short-name>VOX</short-name>
+              <description>Enabled VOX for this channel.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:1" format="unsigned" default="0">
+            <meta>
+              <name>Skip in Zone Scan</name>
+              <short-name>SZS</short-name>
+              <description>If enabled, the channel is skipped during a zone scan.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:1" format="unsigned" default="0">
+            <meta>
+              <name>Skip Scan</name>
+              <short-name>SAS</short-name>
+              <description>If enabled, the cannel is skipped in all scans.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unknown width="0h:1">
+            <meta>
+              <name>Unknown data</name>
+            </meta>
+          </unknown>
+          <int width="0h:1" format="unsigned" default="0">
+            <meta>
+              <name>TX disable</name>
+              <short-name>RXO</short-name>
+              <description>If enabled, the TX is disabled. That is, the channel is RX only.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <enum width="0h:1">
+            <meta>
+              <name>Bandwidth</name>
+              <short-name>BW</short-name>
+              <description>Specifies the FM bandwidth.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>Narrow (12.5kHz)</name>
+            </item>
+            <item value="1">
+              <name>Wide (25kHz)</name>
+            </item>
+          </enum>
+          <unused width="0h:1">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </unused>
+          <unused width="3h">
+            <meta>
+              <name>Unused data</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>000000</unused>
+          <int width="1h" format="unsigned" default="0">
+            <meta>
+              <name>Squelch Level</name>
+              <description>0: Global setting, 1: open, 2-14: 5%(n-1), 15: closed.</description>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+      </repeat>
+    </element>
+  </repeat>
+  <repeat at="1087620h" n="1024">
+    <meta>
+      <name>Contacts</name>
+      <description>A list of up to 1024 contact elements. Empty names indicate invalid entries. Probably dense. That is, the list ends with the first invalid entry.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Contact Element</name>
+        <description>Encodes a DMR contact.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="16" pad="597">
+        <meta>
+          <name>Name</name>
+          <description>Encodes the name of the contact. Up to ASCII 16 chars, filled with ffh.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </string>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>DMR ID</name>
+          <description>Specifies the DMR ID as a 8-digit BCD number in big endian.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Call Type</name>
+          <description>Specifies the call type.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Private Call</name>
+        </item>
+        <item value="1">
+          <name>Group Call</name>
+        </item>
+        <item value="2">
+          <name>All Call</name>
+          <description>Also implies a certain DMR ID.</description>
+        </item>
+      </enum>
+      <unused width="2h">
+        <meta>
+          <name>Unused data</name>
+          <description>Some unsued data, filled with 0100h</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>0100</unused>
+      <enum width="1h">
+        <meta>
+          <name>Time Slot Override</name>
+          <description>Allows to override the time slot of the channel, if this contact is selected as the current transmit contact.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+          <description>Do not override the time slot of the channel.</description>
+        </item>
+        <item value="1">
+          <name>Time Slot 1</name>
+          <description>Overrides the channel time slot with TS1.</description>
+        </item>
+        <item value="2">
+          <name>Time Slot 2</name>
+          <description>Overrides the channel time slot with TS2.</description>
+        </item>
+      </enum>
+    </element>
+  </repeat>
+  <element at="108d620h">
+    <meta>
+      <name>Group List Bank</name>
+      <description>Consists of a lenght array for each of the 64 group lists and the actual group lists.</description>
+      <firmware>R202409080</firmware>
+      <done/>
+    </meta>
+    <repeat n="76">
+      <meta>
+        <name>Length Array</name>
+        <description>Specifies the number of entries for each of the valid group lists.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Length</name>
+          <description>Specifies the number of elements +1 of the corresponding group list.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="34h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>00</unused>
+    <repeat n="76">
+      <meta>
+        <name>Group Lists</name>
+        <description>Up to 76 group lists.</description>
+        <firmware>R202409080</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Group List</name>
+          <description>Encodes a group list.</description>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="15" pad="0">
+          <meta>
+            <name>Name</name>
+            <description>Specifies the name of the group list.</description>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad Byte</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>ff</unused>
+        <repeat n="32">
+          <meta>
+            <name>Contact Indices</name>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="2h" format="unsigned" endian="little" default="0">
+            <meta>
+              <name>Contact index +1. If 0, invalid index.</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+      </element>
+    </repeat>
+  </element>
+  <element at="10b8000h">
+    <meta>
+      <name>Callsign DB Segment 1</name>
+    </meta>
+    <unknown width="48000h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
 </codeplug>
