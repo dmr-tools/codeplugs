@@ -229,7 +229,7 @@
       </map>
     </memory>
 	  
-    <firmware name="2.10" released="2024-04-10" codeplug="dmr6x2uv/2.10/codeplug.xml"/>
+    <firmware name="2.10" released="2024-04-10" codeplug="dmr6x2uv/v2.10.xml"/>
   </model>
 
 
