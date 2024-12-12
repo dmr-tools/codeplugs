@@ -1865,6 +1865,16 @@
       </element>
     </repeat>
   </element>
+  <element at="1030000h">
+    <meta>
+      <name>Callsign DB Segment 0</name>
+    </meta>
+    <unknown width="40000h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
   <repeat at="107b1b0h" n="7">
     <meta>
       <name>Channel Banks 1-7</name>
@@ -2459,5 +2469,15 @@
         </repeat>
       </element>
     </repeat>
+  </element>
+  <element at="10b8000h">
+    <meta>
+      <name>Callsign DB Segment 1</name>
+    </meta>
+    <unknown width="48000h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
 </codeplug>
