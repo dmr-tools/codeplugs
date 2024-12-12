@@ -11,7 +11,7 @@ Another disadvantage is, that this scheme makes the collaboration harder. It is 
 There are several branches in this repository. Although you will not work on them directly, you need to understand, which branch holds what.
 
 | Branch | Description|
------------------------
+| ------ | ---------- |
 | main   | Main branch, holding the lastest firmware versions of all devices |
 | d868uv | Main branch for the AT-D868UV and AT-D868UVE, holds the latest firmware version for that device. |
 | d868uv-v2.40 | Branch for the particular firmware version 2.40. Here all pull requests for this FW version land. Once that reverse engineering is somewhat complete, it gets pulled into `d868uv` and finally into `main`. |
