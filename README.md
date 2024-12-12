@@ -12,10 +12,10 @@ There are several branches in this repository. Although you will not work on the
 
 | Branch | Description|
 | ------ | ---------- |
-| main   | Main branch, holding the lastest firmware versions of all devices |
-| d868uv | Main branch for the AT-D868UV and AT-D868UVE, holds the latest firmware version for that device. |
-| d868uv-v2.40 | Branch for the particular firmware version 2.40. Here all pull requests for this FW version land. Once that reverse engineering is somewhat complete, it gets pulled into `d868uv` and finally into `main`. |
-| d578uv2 | Main branch for the AT-D578UV III. Holds the latest firmware version for that device, e.g., 2.08. |
-| d578uv2-v2.05 | Branch for a somewhat older firmware version. |
-| d578uv2-v2.08 | Branch for the firmware version 2.08 for the AT-D578UV III. |
+| `main` | Main branch, holding the lastest firmware versions of all devices |
+| `d868uv` | Main branch for the AT-D868UV and AT-D868UVE, holds the latest firmware version for that device. |
+| `d868uv-v2.40` | Branch for the particular firmware version 2.40. Here all pull requests for this FW version land. Once that reverse engineering is somewhat complete, it gets pulled into `d868uv` and finally into `main`. |
+| `d578uv2` | Main branch for the AT-D578UV III. Holds the latest firmware version for that device, e.g., 2.08. |
+| `d578uv2-v2.05` | Branch for a somewhat older firmware version. |
+| `d578uv2-v2.08` | Branch for the firmware version 2.08 for the AT-D578UV III. |
 | ... | ... |
