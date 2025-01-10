@@ -626,12 +626,15 @@
             <done/>
           </meta>
         </int>
-        <unused width="2h">
+        <int width="2h" format="unsigned" endian="little" default="0">
           <meta>
-            <name>Unused data</name>
+            <name>TX Contact</name>
+            <brief>Index (+1) of the transmit contact.</brief>
+            <description>Specifies the index of the transmit contact. The index is 1-based. An index of 0 means no contact.</description>
             <firmware>R202409080</firmware>
             <done/>
-          </meta>0000</unused>
+          </meta>
+        </int>
         <unused width="0h:4">
           <meta>
             <name>Unused data</name>
@@ -2153,12 +2156,15 @@
               <done/>
             </meta>
           </int>
-          <unused width="2h">
+          <int width="2h" format="unsigned" endian="little" default="0">
             <meta>
-              <name>Unused data</name>
+              <name>TX Contact</name>
+              <brief>Index (+1) of the transmit contact.</brief>
+              <description>Specifies the index of the transmit contact. The index is 1-based. An index of 0 means no contact.</description>
               <firmware>R202409080</firmware>
               <done/>
-            </meta>0000</unused>
+            </meta>
+          </int>
           <unused width="0h:4">
             <meta>
               <name>Unused data</name>
