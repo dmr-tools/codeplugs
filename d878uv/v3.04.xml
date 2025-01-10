@@ -179,6 +179,9 @@
         <item value="1">
           <name>CTCSS</name>
         </item>
+        <item value="2">
+          <name>DCS</name>
+        </item>
       </enum>
       <enum width="1h">
         <meta>
@@ -500,11 +503,29 @@
           <name>254.1 Hz</name>
         </item>
       </enum>
-      <unknown width="194h">
+      <int width="2h" format="unsigned" endian="little" default="0">
         <meta>
-          <name>Unknown data</name>
+          <name>Uplink DCS code</name>
+          <brief>The least significant 9 bit encode the DCS code 000h-1ffh. The 10-th bit encodes the inversion flag. That is D023I is encoded as 0213h, and D777I as 03ffh.</brief>
+          <firmware>3.04</firmware>
+          <done/>
         </meta>
-      </unknown>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Downlink DCS</name>
+          <brief>The least significant 9 bit encode the DCS code 000h-1ffh. The 10-th bit encodes the inversion flag. That is D023I is encoded as 0213h, and D777I as 03ffh.</brief>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="190h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </unused>
     </element>
   </repeat>
 </codeplug>
