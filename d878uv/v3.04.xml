@@ -19,9 +19,11 @@
         <firmware>3.04</firmware>
         <done/>
       </meta>
-      <string format="ascii" width="8" pad="0">
+      <string format="ascii" width="8" pad="32">
         <meta>
           <name>Satellite Name</name>
+          <brief>Simple ASCII string.</brief>
+          <description>Unused chars are stored as space.</description>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -29,6 +31,7 @@
       <string format="ascii" width="2" pad="0">
         <meta>
           <name>Epoch Year</name>
+          <brief>The two-digit year with leading 0.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -36,6 +39,7 @@
       <string format="ascii" width="12" pad="0">
         <meta>
           <name>Epoch Julien Day</name>
+          <brief>Fractional Julien day in format ddd.ffffffff. The 3-digit ddd part is the day of year with leading zeros, while the 8-digit ffffffff encodes the fractional part of the day.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -49,6 +53,7 @@
       <string format="ascii" width="10" pad="0">
         <meta>
           <name>First derivative mean motion</name>
+          <brief>Encodes the fractional value as s.ffffffff, where s is the sign. Either &quot; &quot; or &quot;-&quot; and the 8-digit field ffffffff contains the fractional part.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -56,6 +61,7 @@
       <string format="ascii" width="8" pad="0">
         <meta>
           <name>Inclination</name>
+          <brief>Ecodes the inclination in degrees as ddd.ffff, where 3-digit ddd is the integer part. Leading zeros are not stored but replaced with spaces (ASCII 20h). The 4-digit ffff is the fractional part.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -69,6 +75,8 @@
       <string format="ascii" width="8" pad="0">
         <meta>
           <name>Right ascension of the ascending node</name>
+          <short-name>Ascension</short-name>
+          <brief>Ecodes the ascension in degrees as ddd.ffff, where 3-digit ddd is the integer part. Leading zeros are not stored but replaced with spaces (ASCII 20h). The 4-digit ffff is the fractional part.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -82,6 +90,7 @@
       <string format="ascii" width="7" pad="0">
         <meta>
           <name>Eccentricity</name>
+          <brief>Stores the fractional part of the eccentricity as a 7-digit number with leading zeros.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -95,6 +104,7 @@
       <string format="ascii" width="8" pad="0">
         <meta>
           <name>Argument of perigee</name>
+          <brief>Stores the argument of perigee in degrees, stored as ddd.ffff. The 3-digit ddd field holds the integer part, where leading zeros are stored as space (ASCII 20h). The 4-digit ffff field holds the fractional part.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -108,6 +118,7 @@
       <string format="ascii" width="8" pad="0">
         <meta>
           <name>Mean anomaly</name>
+          <brief>Stores the mean anomaly in degrees as ddd.ffff. The 3-digit ddd part holds the integer part, where leading zeros are replaced by space (ASCII 20h). The 4-digit field ffff contains the fractional part.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -121,6 +132,7 @@
       <string format="ascii" width="11" pad="0">
         <meta>
           <name>Mean motion</name>
+          <brief>Encodes the mean motion as dd.ffffffff. The 2-digit field dd encodes the integer part, where leading zeros are stored as space (ASCII 20h). The 8-digit ffffffff part encodes the fractional part.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -128,6 +140,7 @@
       <string format="ascii" width="5" pad="0">
         <meta>
           <name>Revolution number at epoch</name>
+          <brief>Encodes the revoution number as 5-digit field ddddd. Leading zeros are stored.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -141,7 +154,7 @@
       <int width="4h" format="unsigned" endian="little">
         <meta>
           <name>FM Downlink Frequency</name>
-          <brief>Frequency in 10Hz.</brief>
+          <brief>Stores the frequency in multiples of 10Hz.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -149,7 +162,7 @@
       <int width="4h" format="unsigned" endian="little">
         <meta>
           <name>FM Uplink Frequency</name>
-          <brief>Frequency in 10Hz.</brief>
+          <brief>Stores the frequency in multiples of 10Hz.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -522,10 +535,10 @@
       <unused width="190h">
         <meta>
           <name>Unused data</name>
+          <brief>Filled with 0h.</brief>
           <firmware>3.04</firmware>
           <done/>
-        </meta>
-      </unused>
+        </meta>00</unused>
     </element>
   </repeat>
 </codeplug>
