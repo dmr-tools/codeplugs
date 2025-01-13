@@ -703,6 +703,615 @@
       </unknown>
     </repeat>
   </repeat>
+  <element at="2501000h">
+    <meta>
+      <name>APRS settings</name>
+    </meta>
+    <unknown width="5h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>FM APRS TX delay</name>
+        <brief>Specifies the transmit FM APRS delay in multiple of 20ms. Valid values are 0-5100ms.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>FM APRS sub tone type</name>
+        <brief>Specifies the transmit sub-tone for FM APRS.</brief>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>CTCSS</name>
+      </item>
+      <item value="2">
+        <name>DCS</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>FM APRS TX CTCSS tone</name>
+        <firmware>2.40</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>62.5 Hz</name>
+      </item>
+      <item value="1">
+        <name>67.0 Hz</name>
+      </item>
+      <item value="2">
+        <name>69.3 Hz</name>
+      </item>
+      <item value="3">
+        <name>71.9 Hz</name>
+      </item>
+      <item value="4">
+        <name>74.4 Hz</name>
+      </item>
+      <item value="5">
+        <name>77.0 Hz</name>
+      </item>
+      <item value="6">
+        <name>79.7 Hz</name>
+      </item>
+      <item value="7">
+        <name>82.5 Hz</name>
+      </item>
+      <item value="8">
+        <name>85.4 Hz</name>
+      </item>
+      <item value="9">
+        <name>88.5 Hz</name>
+      </item>
+      <item value="10">
+        <name>91.5 Hz</name>
+      </item>
+      <item value="11">
+        <name>94.8 Hz</name>
+      </item>
+      <item value="12">
+        <name>97.4 Hz</name>
+      </item>
+      <item value="13">
+        <name>100.0 Hz</name>
+      </item>
+      <item value="14">
+        <name>103.5 Hz</name>
+      </item>
+      <item value="15">
+        <name>107.2 Hz</name>
+      </item>
+      <item value="16">
+        <name>110.9 Hz</name>
+      </item>
+      <item value="17">
+        <name>114.8 Hz</name>
+      </item>
+      <item value="18">
+        <name>118.8 Hz</name>
+      </item>
+      <item value="19">
+        <name>123.0 Hz</name>
+      </item>
+      <item value="20">
+        <name>127.3 Hz</name>
+      </item>
+      <item value="21">
+        <name>131.8 Hz</name>
+      </item>
+      <item value="22">
+        <name>136.5 Hz</name>
+      </item>
+      <item value="23">
+        <name>141.3 Hz</name>
+      </item>
+      <item value="24">
+        <name>146.2 Hz</name>
+      </item>
+      <item value="25">
+        <name>151.4 Hz</name>
+      </item>
+      <item value="26">
+        <name>156.7 Hz</name>
+      </item>
+      <item value="27">
+        <name>159.8 Hz</name>
+      </item>
+      <item value="28">
+        <name>162.2 Hz</name>
+      </item>
+      <item value="29">
+        <name>165.5 Hz</name>
+      </item>
+      <item value="30">
+        <name>167.9 Hz</name>
+      </item>
+      <item value="31">
+        <name>171.3 Hz</name>
+      </item>
+      <item value="32">
+        <name>173.8 Hz</name>
+      </item>
+      <item value="33">
+        <name>177.3 Hz</name>
+      </item>
+      <item value="34">
+        <name>179.9 Hz</name>
+      </item>
+      <item value="35">
+        <name>183.5 Hz</name>
+      </item>
+      <item value="36">
+        <name>186.2 Hz</name>
+      </item>
+      <item value="37">
+        <name>189.9 Hz</name>
+      </item>
+      <item value="38">
+        <name>192.8 Hz</name>
+      </item>
+      <item value="39">
+        <name>196.6 Hz</name>
+      </item>
+      <item value="40">
+        <name>199.5 Hz</name>
+      </item>
+      <item value="41">
+        <name>203.5 Hz</name>
+      </item>
+      <item value="42">
+        <name>206.5 Hz</name>
+      </item>
+      <item value="43">
+        <name>210.7 Hz</name>
+      </item>
+      <item value="44">
+        <name>218.1 Hz</name>
+      </item>
+      <item value="45">
+        <name>225.7 Hz</name>
+      </item>
+      <item value="46">
+        <name>229.1 Hz</name>
+      </item>
+      <item value="47">
+        <name>233.6 Hz</name>
+      </item>
+      <item value="48">
+        <name>241.8 Hz</name>
+      </item>
+      <item value="49">
+        <name>250.3 Hz</name>
+      </item>
+      <item value="50">
+        <name>254.1 Hz</name>
+      </item>
+    </enum>
+    <int width="2h" format="unsigned" endian="little">
+      <meta>
+        <name>FM APRS DCS code</name>
+        <brief>Least significant 9bit encodes the binary DCS code. The 9th bit encodes inverted DCS.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Manual TX interval</name>
+        <brief>Specifies the manual TX interval in second. 0: Off, 1-255.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Automatic TX interval</name>
+        <brief>Specifies the interval in multiples of 30s. 0:Off. Valid values 30-7650s.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>APRS monitor enable</name>
+        <brief>Listen to the APRS packet transmission.</brief>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>On</name>
+      </item>
+    </enum>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <element>
+      <meta>
+        <name>Fixed location 0</name>
+      </meta>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Latitude degree</name>
+          <brief>Encodes the first position latitude degree value.</brief>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Latitude minute</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Latitude seconds</name>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Latitude hemisphere</name>
+        </meta>
+        <item value="0">
+          <name>North</name>
+        </item>
+        <item value="1">
+          <name>South</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Longitude degree</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Longitude minute</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Longitude seconds</name>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Longitude hemisphere</name>
+        </meta>
+        <item value="0">
+          <name>East</name>
+        </item>
+        <item value="1">
+          <name>West</name>
+        </item>
+      </enum>
+    </element>
+    <string format="ascii" width="6" pad="0">
+      <meta>
+        <name>Destination call</name>
+      </meta>
+    </string>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Destination SSID</name>
+      </meta>
+    </int>
+    <string format="ascii" width="6" pad="0">
+      <meta>
+        <name>Source call</name>
+      </meta>
+    </string>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Source SSID</name>
+      </meta>
+    </int>
+    <string format="ascii" width="21" pad="0">
+      <meta>
+        <name>APRS path string 0-14h</name>
+        <brief>First half of the APRS path string. Contains the first 24 bytes.</brief>
+      </meta>
+    </string>
+    <int width="1h" format="signed">
+      <meta>
+        <name>APRS symbol table</name>
+        <brief>A char!</brief>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>APRS symbol</name>
+        <brief>A char!</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>FM APRS transmit power</name>
+      </meta>
+      <item value="0">
+        <name>Low</name>
+      </item>
+      <item value="1">
+        <name>Mid</name>
+      </item>
+      <item value="2">
+        <name>High</name>
+      </item>
+      <item value="3">
+        <name>Max</name>
+      </item>
+    </enum>
+    <unknown width="0h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Prewave delay</name>
+        <brief>Specifies the pre-wave delay in multiples of 10ms. Valid values are 0-2550ms.</brief>
+      </meta>
+    </int>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <element>
+      <meta>
+        <name>DMR APRS settings</name>
+      </meta>
+      <repeat n="8">
+        <meta>
+          <name>Channel indices</name>
+        </meta>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Channel index</name>
+            <brief>0-based transmit channel. 0fa0=VFO A, 0fa1=VFO B, 0fa2=Current</brief>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="8">
+        <meta>
+          <name>Destination DMR IDs</name>
+        </meta>
+        <int width="4h" format="bcd" endian="big" default="0">
+          <meta>
+            <name>DMR destination ID</name>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="8">
+        <meta>
+          <name>Call types</name>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Call type</name>
+          </meta>
+          <item value="0">
+            <name>Private Call</name>
+          </item>
+          <item value="1">
+            <name>Group Call</name>
+          </item>
+          <item value="2">
+            <name>All Call</name>
+          </item>
+        </enum>
+      </repeat>
+    </element>
+    <enum width="1h">
+      <meta>
+        <name>Roaming support</name>
+      </meta>
+      <item value="0">
+        <name>Disabled</name>
+      </item>
+      <item value="1">
+        <name>Enabled</name>
+      </item>
+    </enum>
+    <repeat n="8">
+      <meta>
+        <name>DMR APRS time slots</name>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name>Time slot</name>
+        </meta>
+        <item value="0">
+          <name>Channel slot</name>
+        </item>
+        <item value="1">
+          <name>Time slot 1</name>
+        </item>
+        <item value="2">
+          <name>Time slot 2</name>
+        </item>
+      </enum>
+    </repeat>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>APRS display duration</name>
+        <brief>Specifies the time, an APRS message is shown. Stored as 3s + n seconds.</brief>
+        <description>That is, 0=3s, 1=4s, ... ch=15s, dh = infinity.</description>
+      </meta>
+    </int>
+    <string format="ascii" width="35" pad="0">
+      <meta>
+        <name>APRS path 15h-38h</name>
+        <brief>Second half of the APRS path.</brief>
+      </meta>
+    </string>
+    <int width="2h" format="unsigned" endian="little">
+      <meta>
+        <name>Fixed altitude</name>
+        <brief>Encodes the fixed altitude in feet.</brief>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>FM APRS bandwidth</name>
+      </meta>
+      <item value="0">
+        <name>Narrow</name>
+      </item>
+      <item value="1">
+        <name>Wide</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Enable AX.25 CRC check</name>
+        <brief>If disabled, the all decoded AX.25 frames are processed, even those with invalid CRCs.</brief>
+      </meta>
+      <item value="0">
+        <name>On</name>
+      </item>
+      <item value="1">
+        <name>Off</name>
+      </item>
+    </enum>
+    <repeat n="8">
+      <meta>
+        <name>FM APRS frequencies</name>
+      </meta>
+      <int width="4h" format="bcd" endian="big" default="0">
+        <meta>
+          <name>FM APRS Frequency</name>
+        </meta>
+      </int>
+    </repeat>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <element>
+      <meta>
+        <name>Fixed locations 1-7</name>
+      </meta>
+      <repeat n="7">
+        <meta>
+          <name>Fixed location latitude degree</name>
+        </meta>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Latitude degree</name>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="7">
+        <meta>
+          <name>Fixed location latitude minute</name>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Latitude minute</name>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="7">
+        <meta>
+          <name>Fixed latitude seconds</name>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Latitude seconds</name>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="7">
+        <meta>
+          <name>Fixed location latitude hemispheres</name>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Latitude hemisphere</name>
+          </meta>
+          <item value="0">
+            <name>North</name>
+          </item>
+          <item value="1">
+            <name>South</name>
+          </item>
+        </enum>
+      </repeat>
+      <repeat n="7">
+        <meta>
+          <name>Fixed location longitude degree</name>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Longitude degree</name>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="7">
+        <meta>
+          <name>Fixed location longitude minute</name>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Longitude minute</name>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="7">
+        <meta>
+          <name>Fixed location longitude seconds</name>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Longitude seconds</name>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="7">
+        <meta>
+          <name>Fixed location longitude hemispheres</name>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Longitude hemisphere</name>
+          </meta>
+          <item value="0">
+            <name>East</name>
+          </item>
+          <item value="1">
+            <name>West</name>
+          </item>
+        </enum>
+      </repeat>
+    </element>
+    <unknown width="fbh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <string format="ascii" width="60" pad="0">
+      <meta>
+        <name>APRS message</name>
+      </meta>
+    </string>
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
   <element at="2582000h">
     <meta>
       <name>Primary ID Settings</name>
