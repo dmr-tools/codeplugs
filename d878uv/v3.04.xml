@@ -46,9 +46,9 @@
         </int>
         <enum width="0h:2">
           <meta>
-            <name>Repeater Mode</name>
+            <name>Repeater direction</name>
             <brief>Specifies the offset direction for the repeater mode.</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -68,7 +68,7 @@
           <meta>
             <name>Bandwidth</name>
             <brief>Specifies the bandwidth of the FM channel. DMR channels are always 12.5kHz wide.</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -82,7 +82,7 @@
           <meta>
             <name>Transmit power</name>
             <brief>Specifies the transmit power of the channel.</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -102,7 +102,7 @@
           <meta>
             <name>Channel mode</name>
             <brief>Specifies the mode of the channel.</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -121,64 +121,66 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable talkaround</name>
-            <firmware>2.40</firmware>
+            <short-name>TlkAr</short-name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Enable call confirm</name>
-            <firmware>2.40</firmware>
+            <name>Call confirm</name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX only</name>
+            <short-name>RXO</short-name>
             <brief>If enabled, no transmission is possible on this channel.</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable CTCSS phase reversal</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable TX DCS</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable TX CTCSS</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX DCS</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX CTCSS</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <enum width="1h">
           <meta>
             <name>TX Tone CTCSS</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -338,22 +340,178 @@
         <enum width="1h">
           <meta>
             <name>RX Tone CTCSS</name>
-            <brief>Same codes as for TX</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
+          <item value="0">
+            <name>62.5 Hz</name>
+          </item>
+          <item value="1">
+            <name>67.0 Hz</name>
+          </item>
+          <item value="2">
+            <name>69.3 Hz</name>
+          </item>
+          <item value="3">
+            <name>71.9 Hz</name>
+          </item>
+          <item value="4">
+            <name>74.4 Hz</name>
+          </item>
+          <item value="5">
+            <name>77.0 Hz</name>
+          </item>
+          <item value="6">
+            <name>79.7 Hz</name>
+          </item>
+          <item value="7">
+            <name>82.5 Hz</name>
+          </item>
+          <item value="8">
+            <name>85.4 Hz</name>
+          </item>
+          <item value="9">
+            <name>88.5 Hz</name>
+          </item>
+          <item value="10">
+            <name>91.5 Hz</name>
+          </item>
+          <item value="11">
+            <name>94.8 Hz</name>
+          </item>
+          <item value="12">
+            <name>97.4 Hz</name>
+          </item>
+          <item value="13">
+            <name>100.0 Hz</name>
+          </item>
+          <item value="14">
+            <name>103.5 Hz</name>
+          </item>
+          <item value="15">
+            <name>107.2 Hz</name>
+          </item>
+          <item value="16">
+            <name>110.9 Hz</name>
+          </item>
+          <item value="17">
+            <name>114.8 Hz</name>
+          </item>
+          <item value="18">
+            <name>118.8 Hz</name>
+          </item>
+          <item value="19">
+            <name>123.0 Hz</name>
+          </item>
+          <item value="20">
+            <name>127.3 Hz</name>
+          </item>
+          <item value="21">
+            <name>131.8 Hz</name>
+          </item>
+          <item value="22">
+            <name>136.5 Hz</name>
+          </item>
+          <item value="23">
+            <name>141.3 Hz</name>
+          </item>
+          <item value="24">
+            <name>146.2 Hz</name>
+          </item>
+          <item value="25">
+            <name>151.4 Hz</name>
+          </item>
+          <item value="26">
+            <name>156.7 Hz</name>
+          </item>
+          <item value="27">
+            <name>159.8 Hz</name>
+          </item>
+          <item value="28">
+            <name>162.2 Hz</name>
+          </item>
+          <item value="29">
+            <name>165.5 Hz</name>
+          </item>
+          <item value="30">
+            <name>167.9 Hz</name>
+          </item>
+          <item value="31">
+            <name>171.3 Hz</name>
+          </item>
+          <item value="32">
+            <name>173.8 Hz</name>
+          </item>
+          <item value="33">
+            <name>177.3 Hz</name>
+          </item>
+          <item value="34">
+            <name>179.9 Hz</name>
+          </item>
+          <item value="35">
+            <name>183.5 Hz</name>
+          </item>
+          <item value="36">
+            <name>186.2 Hz</name>
+          </item>
+          <item value="37">
+            <name>189.9 Hz</name>
+          </item>
+          <item value="38">
+            <name>192.8 Hz</name>
+          </item>
+          <item value="39">
+            <name>196.6 Hz</name>
+          </item>
+          <item value="40">
+            <name>199.5 Hz</name>
+          </item>
+          <item value="41">
+            <name>203.5 Hz</name>
+          </item>
+          <item value="42">
+            <name>206.5 Hz</name>
+          </item>
+          <item value="43">
+            <name>210.7 Hz</name>
+          </item>
+          <item value="44">
+            <name>218.1 Hz</name>
+          </item>
+          <item value="45">
+            <name>225.7 Hz</name>
+          </item>
+          <item value="46">
+            <name>229.1 Hz</name>
+          </item>
+          <item value="47">
+            <name>233.6 Hz</name>
+          </item>
+          <item value="48">
+            <name>241.8 Hz</name>
+          </item>
+          <item value="49">
+            <name>250.3 Hz</name>
+          </item>
+          <item value="50">
+            <name>254.1 Hz</name>
+          </item>
         </enum>
         <int width="2h" format="unsigned" endian="little" default="0">
           <meta>
             <name>TX DCS code</name>
-            <firmware>2.40</firmware>
+            <brief>Encodes the DCS code in a complex way.</brief>
+            <description>The least significant 9 bits encode the binary DCS code. The 9th bit encodes the inversion flag.</description>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="2h" format="unsigned" endian="little" default="0">
           <meta>
             <name>RX DCS code</name>
-            <firmware>2.40</firmware>
+            <brief>Encodes the DCS code in a complex way.</brief>
+            <description>The least significant 9 bits encode the binary DCS code. The 9th bit encodes the inversion flag.</description>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
@@ -361,7 +519,7 @@
           <meta>
             <name>Custom CTCSS frequency</name>
             <brief>Specifies a custom CTCSS frequency in 0.1Hz.</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
@@ -369,7 +527,7 @@
           <meta>
             <name>Two-tone decode index</name>
             <brief>Specifies the two-tone decode index.</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
@@ -377,58 +535,54 @@
           <meta>
             <name>Transmit contact index</name>
             <brief>Contact index, 0-based.</brief>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Radio ID index</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
-        <unused width="0h:1">
+        <unknown width="0h:6">
           <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
-            <done/>
-          </meta>00</unused>
-        <enum width="0h:3">
+            <name>Unknown data</name>
+            <firmware>3.04</firmware>
+          </meta>
+        </unknown>
+        <enum width="0h:2">
           <meta>
-            <name>Squelch Mode</name>
-            <firmware>2.40</firmware>
+            <name>FM PTT ID transmission mode</name>
+            <short-name>TX PTT ID</short-name>
+            <brief>Specifies when to transmit the FM PTT id.</brief>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
-            <name>Carrier</name>
+            <name>Off</name>
           </item>
           <item value="1">
-            <name>CTCSS/DSC</name>
+            <name>Start</name>
           </item>
           <item value="2">
-            <name>Optional Signaling</name>
+            <name>End</name>
           </item>
           <item value="3">
-            <name>CTCSS/DSC and Optional Signaling</name>
+            <name>Both</name>
           </item>
         </enum>
-        <unused width="0h:4">
-          <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
-            <done/>
-          </meta>00</unused>
         <unused width="0h:2">
           <meta>
             <name>Unused data</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>00</unused>
         <enum width="0h:2">
           <meta>
             <name>Optional Signaling</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -444,123 +598,136 @@
             <name>five-tone</name>
           </item>
         </enum>
-        <unused width="0h:2">
+        <unknown width="0h:2">
           <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
-            <done/>
-          </meta>00</unused>
+            <name>Unknown data</name>
+            <firmware>3.04</firmware>
+          </meta>
+        </unknown>
         <enum width="0h:2">
           <meta>
             <name>Admit Criterium</name>
-            <firmware>2.40</firmware>
+            <brief>This is a mess. Similar admid criteria for FM and DMR are encoded differently. E.g., channel free and different CC/tone.</brief>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
             <name>Always</name>
           </item>
           <item value="1">
-            <name>Colorcode</name>
+            <name>Channel Free</name>
+            <description>DMR: channel Free, FM: different CTCSS/DCS tone.</description>
           </item>
           <item value="2">
-            <name>Channel Free</name>
+            <name>Different color code</name>
+            <description>DMR: different CC; FM: channel free</description>
+          </item>
+          <item value="3">
+            <name>Same color code</name>
           </item>
         </enum>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Scan list index</name>
             <brief>Scan list index, 0-based.</brief>
-            <firmware>2.40</firmware>
+            <description>None = 0xff.</description>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
-        <int width="1h" format="unsigned">
+        <int width="1h" format="unsigned" default="255">
           <meta>
             <name>Group List index</name>
-            <firmware>2.40</firmware>
+            <brief>Specifies the group list index.</brief>
+            <description>A 0-based index of the group list. If not set, 0xff.</description>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
           <meta>
             <name>Two-tone Id</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
           <meta>
             <name>Five-tone Id</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
           <meta>
             <name>DTMF Id</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
           <meta>
             <name>Colorcode</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable Lone Worker</name>
-            <firmware>2.40</firmware>
+            <short-name>LWk</short-name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
+        <unknown width="0h:1">
+          <meta>
+            <name>Unknown data</name>
+            <firmware>3.04</firmware>
+          </meta>
+        </unknown>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Enable enhanced encryption</name>
-            <firmware>2.40</firmware>
+            <name>Enable APRS RX</name>
+            <short-name>APRSr</short-name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
-        <int width="0h:1" format="unsigned">
+        <unknown width="0h:1">
           <meta>
-            <name>Enable GPS RX</name>
-            <firmware>2.40</firmware>
+            <name>Unknown data</name>
+            <firmware>3.04</firmware>
+          </meta>
+        </unknown>
+        <enum width="0h:2">
+          <meta>
+            <name>DCMA mode</name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
-        </int>
-        <int width="0h:1" format="unsigned">
-          <meta>
-            <name>Enable adaptive TDMA</name>
-            <firmware>2.40</firmware>
-            <done/>
-          </meta>
-        </int>
-        <unused width="0h:1">
-          <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
-            <done/>
-          </meta>00</unused>
-        <int width="0h:1" format="unsigned">
-          <meta>
-            <name>Enable simplex TDMA</name>
-            <firmware>2.40</firmware>
-            <done/>
-          </meta>
-        </int>
-        <int width="0h:1" format="unsigned">
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>DCMA Double Slot</name>
+          </item>
+          <item value="2">
+            <name>DCMA Sinlge Slot</name>
+          </item>
+        </enum>
+        <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable SMS Confirmation</name>
-            <firmware>2.40</firmware>
+            <short-name>SMS ACK</short-name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <enum width="0h:1">
           <meta>
             <name>Time Slot</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -573,13 +740,15 @@
         <int width="1h" format="unsigned">
           <meta>
             <name>AES encryption key index</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <string format="ascii" width="16" pad="0">
           <meta>
             <name>Name</name>
+            <firmware>3.04</firmware>
+            <done/>
           </meta>
         </string>
         <unused width="1h">
@@ -588,101 +757,196 @@
             <firmware>2.40</firmware>
             <done/>
           </meta>00</unused>
-        <unused width="0h:5">
+        <unknown width="0h:3">
           <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
-            <done/>
-          </meta>00</unused>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Disable Data ACK</name>
-            <firmware>2.40</firmware>
+            <name>Auto scan</name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Enable Through Mode</name>
-            <firmware>2.40</firmware>
+            <name>Disable data ACK</name>
+            <short-name>dACK</short-name>
+            <firmware>3.04</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Exclude channel from roaming</name>
+            <firmware>3.04</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable Simplex</name>
+            <short-name>Smplx</short-name>
+            <brief>Enables the simplex mode.</brief>
+            <description>That is, RX = TX frequency.</description>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable ranging</name>
-            <firmware>2.40</firmware>
+            <short-name>Rngng</short-name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
-        <unused width="0h:7">
+        <enum width="1h">
           <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
+            <name>APRS Type</name>
+            <firmware>3.04</firmware>
             <done/>
-          </meta>00</unused>
-        <int width="0h:1" format="unsigned">
+          </meta>
+          <item value="0">
+            <name>None</name>
+          </item>
+          <item value="1">
+            <name>FM ARPS</name>
+          </item>
+          <item value="2">
+            <name>DMR APRS</name>
+          </item>
+        </enum>
+        <enum width="1h">
           <meta>
-            <name>Enable TX ARPS</name>
-            <firmware>2.40</firmware>
+            <name>DMR APRS PTT mode</name>
+            <firmware>3.04</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>Start of transmission</name>
+          </item>
+          <item value="2">
+            <name>End of transmission</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>FM APRS PTT mode</name>
+            <firmware>3.04</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>On</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>DMR APRS channel index</name>
+            <brief>Specifies the DMR APRS channel setting index. A value in [0,7].</brief>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
-        <int width="1h" format="unsigned">
+        <int width="1h" format="signed">
           <meta>
-            <name>DMR APRS index</name>
-            <firmware>2.40</firmware>
+            <name>Frequency correction</name>
+            <brief>Specifies the frequency correction in multiples of 10Hz.</brief>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
-        <unused width="3h">
+        <unknown width="1h">
           <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
+            <name>Unknown data</name>
+            <firmware>3.04</firmware>
+          </meta>
+        </unknown>
+        <unknown width="0h:2">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="0h:1">
+          <meta>
+            <name>Encryption type</name>
+            <short-name>CrypType</short-name>
+            <brief>Specifies the encryption type.</brief>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
-        </unused>
-        <int width="1h" format="unsigned">
+          <item value="0">
+            <name>AES</name>
+          </item>
+          <item value="1">
+            <name>ARC4</name>
+          </item>
+        </enum>
+        <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>DMR Encryption index</name>
-            <brief>Index +1, 0=off.</brief>
-            <firmware>2.40</firmware>
+            <name>Send talker alias</name>
+            <short-name>Send TalkAl</short-name>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
-        <unused width="0h:5">
+        <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
+            <name>Mute FM APRS</name>
+            <firmware>3.04</firmware>
             <done/>
-          </meta>00</unused>
+          </meta>
+        </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>SMS forbid</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Random Key</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Multiple Keys</name>
-            <firmware>2.40</firmware>
+            <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
-        <unused width="4h">
+        <int width="1h" format="unsigned" default="0">
           <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
+            <name>FM APRS frequency index</name>
+            <brief>A value in range [0,7].</brief>
+            <firmware>3.04</firmware>
             <done/>
-          </meta>00000000</unused>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>ARC4 key index</name>
+            <brief>Specifies the key index for ARC4 encryption.</brief>
+            <description>This index is idx+1, that is 0=Off, 1=key 0, 2 = key 1, ...</description>
+            <firmware>3.04</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="2h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
       </element>
     </repeat>
   </repeat>
@@ -696,11 +960,31 @@
         <name>Channel extension bank</name>
         <brief>Encodes several channel extensions corresponding to each encoded channel.</brief>
       </meta>
-      <unknown width="40h">
+      <element>
         <meta>
-          <name>Unknown data</name>
+          <name>Channel extension</name>
+          <brief>Encodes additional channel information.</brief>
         </meta>
-      </unknown>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>5 Tone PTT ID index BOT</name>
+            <brief>Specifies the index of the begin-of-transmission 5 tone PTT ID to send.</brief>
+            <description>The index is 0-based. Index 64h means &quot;custom&quot;.</description>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>5 Tone PTT ID index EOT</name>
+            <brief>Specifies the index of the 5 tone end-of-transmission PTT ID to send.</brief>
+            <description>The index is 0-based. The index 64h means &quot;custom&quot;.</description>
+          </meta>
+        </int>
+        <unknown width="3eh">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+      </element>
     </repeat>
   </repeat>
   <element at="2501000h">
