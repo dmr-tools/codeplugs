@@ -3,7 +3,7 @@
 <codeplug>
   <meta>
     <name>AnyTone AT-D878UV/AT-D878UV+</name>
-    <firmware>3.04</firmware>
+    <firmware>3.05</firmware>
   </meta>
   <repeat at="800000h" step="40000h" min="1" max="32">
     <meta>
@@ -3484,6 +3484,33 @@
   </element>
   <element at="24c1300h">
     <meta>
+      <name>Zone Bitmap Element</name>
+      <firmware>3.04</firmware>
+      <done/>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Zone bitmap</name>
+        <firmware>3.04</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Zone enable bit</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.04</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
+  <element at="24c1300h">
+    <meta>
       <name>Radio Id Bitmap Element</name>
       <firmware>3.04</firmware>
       <done/>
@@ -3509,33 +3536,6 @@
         <done/>
       </meta>
     </unused>
-  </element>
-  <element at="24c1300h">
-    <meta>
-      <name>Zone Bitmap Element</name>
-      <firmware>3.04</firmware>
-      <done/>
-    </meta>
-    <repeat n="250">
-      <meta>
-        <name>Zone bitmap</name>
-        <firmware>3.04</firmware>
-        <done/>
-      </meta>
-      <int width="0h:1" format="unsigned" default="0">
-        <meta>
-          <name>Zone enable bit</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-    </repeat>
-    <unused width="0h:6">
-      <meta>
-        <name>Unused data</name>
-        <firmware>3.04</firmware>
-        <done/>
-      </meta>00</unused>
   </element>
   <element at="24c1340h">
     <meta>
@@ -4055,35 +4055,35 @@
     <element>
       <meta>
         <name>Fixed location 0</name>
-        <firmware>3.04</firmware>
+        <firmware>3.05</firmware>
         <done/>
       </meta>
       <int width="1h" format="unsigned">
         <meta>
           <name>Latitude degree</name>
           <brief>Encodes the first position latitude degree value.</brief>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Latitude minute</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Latitude seconds</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
       </int>
       <enum width="1h">
         <meta>
           <name>Latitude hemisphere</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <item value="0">
@@ -4096,28 +4096,28 @@
       <int width="1h" format="unsigned">
         <meta>
           <name>Longitude degree</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Longitude minute</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Longitude seconds</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
       </int>
       <enum width="1h">
         <meta>
           <name>Longitude hemisphere</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <item value="0">
@@ -4477,19 +4477,19 @@
     <element>
       <meta>
         <name>Fixed locations 1-7</name>
-        <firmware>3.04</firmware>
+        <firmware>3.05</firmware>
         <done/>
       </meta>
       <repeat n="7">
         <meta>
           <name>Fixed location latitude degree</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Latitude degree</name>
-            <firmware>3.04</firmware>
+            <firmware>3.05</firmware>
             <done/>
           </meta>
         </int>
@@ -4497,13 +4497,13 @@
       <repeat n="7">
         <meta>
           <name>Fixed location latitude minute</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>Latitude minute</name>
-            <firmware>3.04</firmware>
+            <firmware>3.05</firmware>
             <done/>
           </meta>
         </int>
@@ -4511,13 +4511,13 @@
       <repeat n="7">
         <meta>
           <name>Fixed latitude seconds</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>Latitude seconds</name>
-            <firmware>3.04</firmware>
+            <firmware>3.05</firmware>
             <done/>
           </meta>
         </int>
@@ -4525,13 +4525,13 @@
       <repeat n="7">
         <meta>
           <name>Fixed location latitude hemispheres</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <enum width="1h">
           <meta>
             <name>Latitude hemisphere</name>
-            <firmware>3.04</firmware>
+            <firmware>3.05</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -4545,13 +4545,13 @@
       <repeat n="7">
         <meta>
           <name>Fixed location longitude degree</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>Longitude degree</name>
-            <firmware>3.04</firmware>
+            <firmware>3.05</firmware>
             <done/>
           </meta>
         </int>
@@ -4559,13 +4559,13 @@
       <repeat n="7">
         <meta>
           <name>Fixed location longitude minute</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>Longitude minute</name>
-            <firmware>3.04</firmware>
+            <firmware>3.05</firmware>
             <done/>
           </meta>
         </int>
@@ -4573,13 +4573,13 @@
       <repeat n="7">
         <meta>
           <name>Fixed location longitude seconds</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>Longitude seconds</name>
-            <firmware>3.04</firmware>
+            <firmware>3.05</firmware>
             <done/>
           </meta>
         </int>
@@ -4587,13 +4587,13 @@
       <repeat n="7">
         <meta>
           <name>Fixed location longitude hemispheres</name>
-          <firmware>3.04</firmware>
+          <firmware>3.05</firmware>
           <done/>
         </meta>
         <enum width="1h">
           <meta>
             <name>Longitude hemisphere</name>
-            <firmware>3.04</firmware>
+            <firmware>3.05</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -4862,20 +4862,20 @@
   <element at="2582000h">
     <meta>
       <name>Primary ID Settings</name>
-      <firmware>3.04</firmware>
+      <firmware>3.05</firmware>
       <done/>
     </meta>
     <int width="4h" format="bcd" endian="big" default="0">
       <meta>
         <name>Primary DMR ID</name>
-        <firmware>3.04</firmware>
+        <firmware>3.05</firmware>
         <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Used flag</name>
-        <firmware>3.04</firmware>
+        <firmware>3.05</firmware>
         <done/>
       </meta>
       <item value="0">
@@ -4888,14 +4888,14 @@
     <string format="ascii" width="26" pad="0">
       <meta>
         <name>Primary radio name</name>
-        <firmware>3.04</firmware>
+        <firmware>3.05</firmware>
         <done/>
       </meta>
     </string>
     <unused width="1h">
       <meta>
         <name>Pad byte</name>
-        <firmware>3.04</firmware>
+        <firmware>3.05</firmware>
         <done/>
       </meta>00</unused>
   </element>
