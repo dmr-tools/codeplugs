@@ -239,12 +239,26 @@
           <done/>
         </meta>
       </string>
-      <unknown width="7h">
+      <unused width="1h">
         <meta>
-          <name>Unknown data</name>
-          <needs-review/>
+          <name>Pad byte</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="4h" format="unsigned" endian="little" default="309329920">
+        <meta>
+          <name>Unknown integer</name>
+          <brief>Fixed to value 12700000 decimal.</brief>
+          <firmware>R202409080</firmware>
+          <done/>
         </meta>
-      </unknown>
+      </int>
+      <unused width="2h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
       <enum width="0h:4">
         <meta>
           <name>Position Masking</name>
@@ -309,6 +323,7 @@
       <unknown width="2h">
         <meta>
           <name>Unknown data</name>
+          <brief>Some unknown data 5241h.</brief>
           <needs-review/>
         </meta>
       </unknown>
