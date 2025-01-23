@@ -356,7 +356,15 @@
         </map>
       </memory>
     </firmware>
-  </model>
+    <firmware name="R20250119" released="2025-01-19" codeplug="opengd77/R20250119.xml">
+      <memory>
+        <map address="02000008">
+          36 35 66 61 38 39 61 36 00 00 00 00 00 00 00 00 <!-- git Revision -->
+          32 30 32 35 30 31 31 39 30 30 30 30 30 30 00 00 <!-- build DateTime -->
+        </map>
+      </memory>
+    </firmware>
+   </model>
 
 
   <model class="OpenGD77" id="openmduv380">
