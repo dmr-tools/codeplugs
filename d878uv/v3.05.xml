@@ -4267,33 +4267,6 @@
   </element>
   <element at="24c1300h">
     <meta>
-      <name>Zone Bitmap Element</name>
-      <firmware>3.04</firmware>
-      <done/>
-    </meta>
-    <repeat n="250">
-      <meta>
-        <name>Zone bitmap</name>
-        <firmware>3.04</firmware>
-        <done/>
-      </meta>
-      <int width="0h:1" format="unsigned" default="0">
-        <meta>
-          <name>Zone enable bit</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-    </repeat>
-    <unused width="0h:6">
-      <meta>
-        <name>Unused data</name>
-        <firmware>3.04</firmware>
-        <done/>
-      </meta>00</unused>
-  </element>
-  <element at="24c1300h">
-    <meta>
       <name>Radio Id Bitmap Element</name>
       <firmware>3.04</firmware>
       <done/>
@@ -4319,6 +4292,33 @@
         <done/>
       </meta>
     </unused>
+  </element>
+  <element at="24c1300h">
+    <meta>
+      <name>Zone Bitmap Element</name>
+      <firmware>3.04</firmware>
+      <done/>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Zone bitmap</name>
+        <firmware>3.04</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Zone enable bit</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.04</firmware>
+        <done/>
+      </meta>00</unused>
   </element>
   <element at="24c1340h">
     <meta>
@@ -4823,10 +4823,11 @@
       <name>General Settings</name>
       <needs-review/>
     </meta>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable key tone</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
@@ -4868,7 +4869,8 @@
     <enum width="1h">
       <meta>
         <name>Boot Display</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Default</name>
@@ -4935,22 +4937,30 @@
     <enum width="1h">
       <meta>
         <name>VFO Scan Type</name>
-        <needs-review/>
+        <brief>Specifies if and when a scan continues.</brief>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Fixed Time</name>
+        <description>Continues after a fixed time period.</description>
       </item>
       <item value="1">
         <name>Carrier</name>
+        <description>Continues once the carrier is gone.</description>
       </item>
       <item value="2">
         <name>Stop</name>
+        <description>Stops the scan after the first signal is recieved.</description>
       </item>
     </enum>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>Mic Gain</name>
-        <needs-review/>
+        <name>DMR mic gain</name>
+        <brief>Specifies the DMR microphone gain.</brief>
+        <description>Valid values are [1, ..., 5], encoded as n + 1. That is, 0=1, ..., 4=5.</description>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
@@ -5046,7 +5056,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable Recording</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="3h">
@@ -5055,29 +5066,34 @@
         <needs-review/>
       </meta>
     </unknown>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Display Brightness</name>
-        <needs-review/>
+        <brief>Possible values [0-4].</brief>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Backlight duration</name>
-        <brief>Multiple of 5s, 0=always</brief>
-        <needs-review/>
+        <brief>Multiples of 5s, 0=always</brief>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable GPS</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable SMS Alert</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="2h">
@@ -5113,25 +5129,134 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable Call Alert</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
-        <name>GPS Time Zone</name>
+        <name>Time Zone</name>
+        <description>How about encoding it as a singed integer in multiples of 5min? Also, UTC+13h where you drunk?</description>
         <needs-review/>
       </meta>
+      <item value="0">
+        <name>UTC-12:00h</name>
+      </item>
+      <item value="1">
+        <name>UTC-11:00h</name>
+      </item>
+      <item value="2">
+        <name>UTC-10:00h</name>
+      </item>
+      <item value="3">
+        <name>UTC-09:00h</name>
+      </item>
+      <item value="4">
+        <name>UTC-08:00h</name>
+      </item>
+      <item value="5">
+        <name>UTC-07:00h</name>
+      </item>
+      <item value="6">
+        <name>UTC-06:00h</name>
+      </item>
+      <item value="7">
+        <name>UTC-05:00h</name>
+      </item>
+      <item value="8">
+        <name>UTC-04:00h</name>
+      </item>
+      <item value="9">
+        <name>UTC-03:30h</name>
+      </item>
+      <item value="10">
+        <name>UTC-02:00h</name>
+      </item>
+      <item value="11">
+        <name>UTC-01:00h</name>
+      </item>
+      <item value="12">
+        <name>UTC</name>
+      </item>
+      <item value="13">
+        <name>UTC+01:00h</name>
+      </item>
+      <item value="14">
+        <name>UTC+02:00h</name>
+      </item>
+      <item value="15">
+        <name>UTC+03:00h</name>
+      </item>
+      <item value="16">
+        <name>UTC+03:30h</name>
+      </item>
+      <item value="17">
+        <name>UTC+04:00h</name>
+      </item>
+      <item value="18">
+        <name>UTC+04:30h</name>
+      </item>
+      <item value="19">
+        <name>UTC+05:00h</name>
+      </item>
+      <item value="20">
+        <name>UTC+05:30h</name>
+      </item>
+      <item value="21">
+        <name>UTC+05:45h</name>
+      </item>
+      <item value="22">
+        <name>UTC+06:00h</name>
+      </item>
+      <item value="23">
+        <name>UTC+07:00h</name>
+      </item>
+      <item value="24">
+        <name>UTC+08:00h</name>
+      </item>
+      <item value="25">
+        <name>UTC+08:30h</name>
+      </item>
+      <item value="26">
+        <name>UTC+09:00h</name>
+      </item>
+      <item value="27">
+        <name>UTC+10:00h</name>
+      </item>
+      <item value="28">
+        <name>UTC+11:00h</name>
+      </item>
+      <item value="29">
+        <name>UTC+12:00h</name>
+      </item>
+      <item value="30">
+        <name>UTC+13:00h</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Talk permit tone</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>DMR</name>
+      </item>
+      <item value="2">
+        <name>FM</name>
+      </item>
+      <item value="3">
+        <name>Both</name>
+      </item>
     </enum>
     <int width="1h" format="unsigned">
       <meta>
-        <name>Enable talk permit tone</name>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="1h" format="unsigned">
-      <meta>
         <name>Enable DMR call reset tone</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
@@ -5155,16 +5280,33 @@
         <needs-review/>
       </meta>
     </unknown>
-    <int width="1h" format="unsigned">
+    <enum width="1h">
       <meta>
-        <name>Enable Idle Channel Tone</name>
-        <needs-review/>
+        <name>DMR channel free tone</name>
+        <brief>Selects the channel free/idle tone.</brief>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
-    </int>
-    <int width="1h" format="unsigned">
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Type 1</name>
+      </item>
+      <item value="2">
+        <name>Type 2</name>
+      </item>
+      <item value="3">
+        <name>Type 3</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="5">
       <meta>
         <name>Menu exit time</name>
-        <needs-review/>
+        <brief>Specifies the menu hang time/duartion.</brief>
+        <description>The duration is specified in multiples of 5s + 5s. That is, 0=5s, 1=10s, 2=15s, ..., 11=60s.</description>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
@@ -5173,10 +5315,11 @@
         <needs-review/>
       </meta>
     </unknown>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable Startup Tone</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
@@ -5185,10 +5328,13 @@
         <needs-review/>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>Max Volume</name>
-        <needs-review/>
+        <name>Max speaker volume</name>
+        <brief>Specifies the maximum speaker volume.</brief>
+        <description>Valid values are [Indoors, 1, ..., 8]. Where Indoors is encoded as 0.</description>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="3h">
@@ -5200,7 +5346,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable RX DMR APRS Positions</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
@@ -5245,16 +5392,19 @@
         <needs-review/>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>Enable Volume Change Prompt</name>
-        <needs-review/>
+        <name>Show volume bar</name>
+        <brief>Shows the volume bar, when the volume is changed.</brief>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Auto-repeater A direction</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -5272,12 +5422,26 @@
         <needs-review/>
       </meta>
     </unknown>
-    <int width="1h" format="unsigned">
+    <enum width="1h">
       <meta>
-        <name>Enable Show Last Caller</name>
-        <needs-review/>
+        <name>Show last caller</name>
+        <brief>Specifies if and how the last caller is shown.</brief>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
-    </int>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>DMR ID</name>
+      </item>
+      <item value="2">
+        <name>Callsign</name>
+      </item>
+      <item value="3">
+        <name>Both</name>
+      </item>
+    </enum>
     <unknown width="1h">
       <meta>
         <name>Unused data</name>
@@ -5293,65 +5457,85 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Show Clock</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Max head-phone volume</name>
+        <brief>Encodes the maximum head-phone volume.</brief>
+        <description>Valid values are [Indoors, 1, ..., 8]. Where Indoors is encoded as 0.</description>
         <needs-review/>
       </meta>
     </int>
-    <unknown width="4h">
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Sent (DMR) APRS message.</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="3h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>Enable Enhanced Audio</name>
-        <needs-review/>
+        <name>Enable enhanced audio</name>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little">
       <meta>
         <name>VFO Scan UHF min Frequency</name>
         <brief>in 10Hz.</brief>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little">
       <meta>
         <name>VFO Scan UHF max Frequency</name>
         <brief>in 10Hz</brief>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little">
       <meta>
         <name>VFO Scan VHF min Frequency</name>
         <brief>in 10Hz</brief>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little">
       <meta>
         <name>VFO Scan VHF max Frequency</name>
         <brief>in 10Hz.</brief>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="255">
       <meta>
-        <name>UHF Auto-repeater offset frequency index</name>
-        <needs-review/>
+        <name>UHF Auto-repeater offset frequency 1 index</name>
+        <brief>The 0-based index of the offset frequency.</brief>
+        <description>If set to ffh, disabled.</description>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="255">
       <meta>
-        <name>VHF Auto-repeater offset frequency index.</name>
-        <needs-review/>
+        <name>VHF Auto-repeater 1 offset frequency index.</name>
+        <brief>Specifies the 0-based index of the offset frequency.</brief>
+        <description>If set to ffh, disables the auto-repeater feature.</description>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="8h">
@@ -5363,31 +5547,36 @@
     <element>
       <meta>
         <name>Call Melody</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Tones</name>
-          <needs-review/>
+          <firmware>3.05</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <brief>in Hz.</brief>
-            <needs-review/>
+            <firmware>3.05</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
-          <needs-review/>
+          <firmware>3.05</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <brief>in ms.</brief>
-            <needs-review/>
+            <firmware>3.05</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -5395,31 +5584,36 @@
     <element>
       <meta>
         <name>Idle Melody</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Tones</name>
-          <needs-review/>
+          <firmware>3.05</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <brief>in Hz.</brief>
-            <needs-review/>
+            <firmware>3.05</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
-          <needs-review/>
+          <firmware>3.05</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <brief>in ms.</brief>
-            <needs-review/>
+            <firmware>3.05</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -5427,36 +5621,512 @@
     <element>
       <meta>
         <name>Reset Melody</name>
-        <needs-review/>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Tones</name>
-          <needs-review/>
+          <firmware>3.05</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <brief>in Hz.</brief>
-            <needs-review/>
+            <firmware>3.05</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
-          <needs-review/>
+          <firmware>3.05</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <brief>in ms.</brief>
-            <needs-review/>
+            <firmware>3.05</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
     </element>
-    <unknown width="42h">
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Call display mode</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Call</name>
+      </item>
+      <item value="2">
+        <name>Name</name>
+      </item>
+    </enum>
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable plug-in recording tone</name>
+        <brief>Whatever that is. Here you can enable it.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="5">
+      <meta>
+        <name>Ranging interval</name>
+        <brief>Specifies the ranging interval in seconds. Valid values are [5,255].</brief>
+        <description>No offset. Nobody gave a f**k. I wonder, what happens if one sets it to 0.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Channel number mode</name>
+        <brief>WTF, really? Specifies whether the total or within-zone number is show as the channel number.</brief>
+        <description>It makes absolutely no sense to show a total channel number, dear AnyTone engineer. The user can only access channels through a zone. So, if a channel is not assigned to any zone, it is basically hidden. So, explain to me, why should anyone care about the absolute channel number?</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Total</name>
+      </item>
+      <item value="1">
+        <name>Within Zone</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable show current contact</name>
+        <brief>Enables the display of the current contact.</brief>
+        <description>Why is the default off? Isn't it a pretty important information?</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Auto-roaming period</name>
+        <brief>Specifies the auto-roaming period (if enabled) in multiples of 1 minute.</brief>
+        <description>The period is stored as n + 1min. That is 0=1min, 1=2min, ..., 255=256min.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Key tone volume</name>
+        <brief>A value in range [1,15]. If set to 0 it is adjustable.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Call sign color</name>
+        <brief>Specifies the color, the callsign is shown in.</brief>
+        <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Units</name>
+        <brief>Dear AnyTone UI translator. It is not &quot;inch system&quot; it is &quot;imperial units&quot;.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Metric</name>
+      </item>
+      <item value="1">
+        <name>Archaic</name>
+      </item>
+    </enum>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Roaming delay</name>
+        <brief>Specifies the delay in seconds between a auto-roaming trigger and the actual auto-roaming.</brief>
+        <description>Valid values are [None, 1s, 30s], where None is encoded as 0.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Standby text color</name>
+        <brief>Another palette. Thanks!</brief>
+        <description>Seriously dear AnyTone engineer. Why for f**k sake can't you produce a consistent encoding of colors? It is called copy-and-paste. The produces a lot of code you can impress your supervisor with at zero cost. Give it a try, you gonna love it.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>White</name>
+      </item>
+      <item value="1">
+        <name>Black</name>
+      </item>
+      <item value="2">
+        <name>Orange</name>
+      </item>
+      <item value="3">
+        <name>Red</name>
+      </item>
+      <item value="4">
+        <name>Yellow</name>
+      </item>
+      <item value="5">
+        <name>Green</name>
+      </item>
+      <item value="6">
+        <name>Turquoise</name>
+      </item>
+      <item value="7">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Standby background image</name>
+        <brief>Specifies a wallpaper for the radio.</brief>
+        <description>Yes, very important feature.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Default</name>
+      </item>
+      <item value="1">
+        <name>Custom 1</name>
+      </item>
+      <item value="2">
+        <name>Custom 2</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Show last caller on boot</name>
+        <brief>If set to 1, shows the last caller after boot.</brief>
+        <description>Why do I need to know that? That might be ages ago.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="4h" format="unsigned" endian="little" default="0">
+      <meta>
+        <name>VHF auto-repeater 1 min frequency</name>
+        <brief>Specifies the lower bound of the first VHF auto-repeater frequency range.</brief>
+        <description>The freuqency is stored in multiples of 10Hz.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>VHF auto-repeater 1 max frequency</name>
+        <brief>Speifies the upper bound of the first VHF auto-repeater frequency range.</brief>
+        <description>The frequency is stored in multiples of 10Hz.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little" default="0">
+      <meta>
+        <name>UHF auto-repeater 1 min frequency</name>
+        <brief>Specifies the lower bound of the first UHF auto-repeater frequency range.</brief>
+        <description>The freuqency is stored in multiples of 10Hz.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>UHF auto-repeater 1 max frequency</name>
+        <brief>Speifies the upper bound of the first UHF auto-repeater frequency range.</brief>
+        <description>The frequency is stored in multiples of 10Hz.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Auto-repeater B direction</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Positive</name>
+      </item>
+      <item value="2">
+        <name>Negative</name>
+      </item>
+    </enum>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable default boot channel</name>
+        <description>If set to 1, a default channel for VFO A and B is set.</description>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Boot zone VFO A</name>
+        <brief>Specifies the zone index for the boot zone.</brief>
+        <description>That is, the zone selected for VFO A at boot.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Boot zoot VFO B</name>
+        <brief>Default boot zone for VFO B</brief>
+        <description>Encodes the 0-based boot zone for the VFO B. That is, the zone being selected at bootup.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="255">
+      <meta>
+        <name>Default boot channel VFO A</name>
+        <brief>Specifies the channel index within the boot zone.</brief>
+        <description>If set to ffh, the VFO is selected.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="255">
+      <meta>
+        <name>Default boot channel VFO B</name>
+        <brief>Encodes the channel index for the boot channel for VFO B.</brief>
+        <description>That is, the 0-based index of the channel within the boot zone B. If ffh is selected, the VFO is selected as the boot channel.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Roaming zone index</name>
+        <brief>Specifies the 0-based roaming zone index.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable repeater check</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Repeater check interval</name>
+        <brief>Specifies the repeater check interval in multuples of 5s. The period is 5s * n + 5s with valid values in 5s - 50s.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Repeater check retry count</name>
+        <brief>Number is specified as 3 + n with valid values in [3, 5].</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Auto-roaming start condition</name>
+        <brief>Specifies, when auto roaming is triggered.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Periodic</name>
+        <description>Auto roaming starts periodically.</description>
+      </item>
+      <item value="1">
+        <name>Out-of-range</name>
+        <description>Auto roaming starts on out-of-range event.</description>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Backlight duration TX</name>
+        <brief>Specifies the duration of the backlight during TX.</brief>
+        <description>Encodes the duration in seconds. Valid values are [1,30]. If set to 0, the backlight is disabled during TX.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Show menu separator</name>
+        <brief>If set to 1, shows menu separators.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Keep last caller</name>
+        <brief>If set to 1, the last caller is kept when the channel is changed.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Channel A name color</name>
+        <brief>Specifies the color of the channel name.</brief>
+        <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Repeater check OOR notification</name>
+        <brief>Specifies the mode of notification for an out-of-range event.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Tone</name>
+      </item>
+      <item value="2">
+        <name>Voice</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Backlight duration RX</name>
+        <brief>Specifies the duration of the backlight during RX.</brief>
+        <description>The duration is specified in multiples of 5s. If set to 0 the backlight stays on.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable auto roamin</name>
+        <brief>If set to 1, enables auto roaming.</brief>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Repeater check OOR notification count</name>
+        <brief>Number of notifications for a out-of-range event. The number is specified as n + 1 with an valid value in [1, 10].</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable GPS test</name>
+        <brief>If set to 1, the GPS gets tested at boot.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="1">
+      <meta>
+        <name>Enable MCU reset</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="3h">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -5551,6 +6221,56 @@
       </int>
     </repeat>
   </repeat>
+  <element at="2500600h">
+    <meta>
+      <name>Boot Settings</name>
+      <firmware>3.05</firmware>
+      <done/>
+    </meta>
+    <string format="ascii" width="14" pad="0">
+      <meta>
+        <name>Boot text line 1</name>
+        <brief>Specifies the first line of the boot text.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unused width="2h">
+      <meta>
+        <name>Pad bytes</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>0000</unused>
+    <string format="ascii" width="14" pad="0">
+      <meta>
+        <name>Boot text line 2</name>
+        <brief>Encodes the second line of the boot text.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unused width="2h">
+      <meta>
+        <name>Pad bytes</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>0000</unused>
+    <string format="ascii" width="8" pad="0">
+      <meta>
+        <name>Boot password</name>
+        <brief>Plain boot password.</brief>
+        <description>Although this is an ASCII string, only digits are allowed. That is 30h-39h.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unused width="8h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
   <element at="2501000h">
     <meta>
       <name>APRS settings</name>
@@ -5784,11 +6504,15 @@
         <name>On</name>
       </item>
     </enum>
-    <unknown width="1h">
+    <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>Unknown data</name>
+        <name>Fixed location index</name>
+        <brief>Speicfies which fixed location to use.</brief>
+        <description>The index is stored +1. That is 1= index 0, ... . If 0 is set, GPS is used for the location.</description>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
-    </unknown>
+    </int>
     <element>
       <meta>
         <name>Fixed location 0</name>
@@ -6360,11 +7084,84 @@
       </meta>
     </unknown>
   </element>
+  <element at="2501280h">
+    <meta>
+      <name>DMR APRS message</name>
+      <firmware>3.05</firmware>
+      <done/>
+    </meta>
+    <string format="ascii" width="32" pad="0">
+      <meta>
+        <name>DMR APRS message</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unused width="10h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
   <element at="2501400h">
     <meta>
       <name>General Settings Extension</name>
     </meta>
-    <unknown width="1eh">
+    <unknown width="0h:5">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Show color code</name>
+        <short-name>ShCoCo</short-name>
+        <brief>If enabled, the color code is shown.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Show time slot</name>
+        <short-name>ShTiSl</short-name>
+        <brief>If enabled, the time slot is shown.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Show channel type</name>
+        <short-name>ShChTy</short-name>
+        <brief>If enables, the channel type is shown.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Date format</name>
+        <brief>Specifies the format, the date is shown in.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Big Endian</name>
+        <description>YYYY/MM/DD</description>
+      </item>
+      <item value="1">
+        <name>Little Endian</name>
+        <description>DD/MM/YYYY</description>
+      </item>
+    </enum>
+    <unknown width="1bh">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -6372,6 +7169,8 @@
     <enum width="1h">
       <meta>
         <name>Talker alias priority</name>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -6386,6 +7185,8 @@
     <enum width="1h">
       <meta>
         <name>Talker alias encoding</name>
+        <firmware>3.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>ISO 7</name>
@@ -6397,7 +7198,325 @@
         <name>Unicode</name>
       </item>
     </enum>
-    <unknown width="1e0h">
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="255">
+      <meta>
+        <name>UHF auto-repeater 2 offset index</name>
+        <brief>Specifies the 0-based index of the offset frequency for the second UHF auto-repeater frequency range.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="255">
+      <meta>
+        <name>VHF auto-repeater 2 offset index</name>
+        <brief>Specifies the 0-based index of the offset frequency for the second VHF auto-repeater frequency range.</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little" default="0">
+      <meta>
+        <name>VHF auto-repeater 2 min frequency</name>
+        <brief>Specifies the lower bound of the second VHF auto-repeater frequency range.</brief>
+        <description>The freuqency is stored in multiples of 10Hz.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little" default="0">
+      <meta>
+        <name>VHF auto-repeater 2 max frequency</name>
+        <brief>Specifies the upper bound of the second VHF auto-repeater frequency range.</brief>
+        <description>The freuqency is stored in multiples of 10Hz.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little" default="0">
+      <meta>
+        <name>UHF auto-repeater 2 min frequency</name>
+        <brief>Specifies the lower bound of the second UHF auto-repeater frequency range.</brief>
+        <description>The freuqency is stored in multiples of 10Hz.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little" default="0">
+      <meta>
+        <name>UHF auto-repeater 2 max frequency</name>
+        <brief>Specifies the upper bound of the second UHF auto-repeater frequency range.</brief>
+        <description>The freuqency is stored in multiples of 10Hz.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>GPS Modes</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>GPS</name>
+      </item>
+      <item value="1">
+        <name>BDS</name>
+      </item>
+      <item value="2">
+        <name>Both</name>
+      </item>
+    </enum>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Channel B name color</name>
+        <brief>Specifies the color of the channel name.</brief>
+        <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+    </enum>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Zone A name color</name>
+        <brief>Specifies the color of the zone name.</brief>
+        <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Zone B name color</name>
+        <brief>Specifies the color of the zone name.</brief>
+        <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Orange</name>
+      </item>
+      <item value="1">
+        <name>Red</name>
+      </item>
+      <item value="2">
+        <name>Yellow</name>
+      </item>
+      <item value="3">
+        <name>Green</name>
+      </item>
+      <item value="4">
+        <name>Turquoise</name>
+      </item>
+      <item value="5">
+        <name>Blue</name>
+      </item>
+      <item value="6">
+        <name>White</name>
+      </item>
+    </enum>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable FM channel free tone</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>FM mic gain</name>
+        <brief>Specifies the FM microphone gain.</brief>
+        <description>Valid values are [1, ..., 5], encoded as n + 1. That is, 0=1, ..., 4=5.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable GPS roaming.</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <element>
+      <meta>
+        <name>Call end melody</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Tones</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Frequency</name>
+            <brief>in Hz.</brief>
+            <firmware>3.05</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="5">
+        <meta>
+          <name>Durations</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Duration</name>
+            <brief>in ms.</brief>
+            <firmware>3.05</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <element>
+      <meta>
+        <name>All-call melody</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Tones</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Frequency</name>
+            <brief>in Hz.</brief>
+            <firmware>3.05</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="5">
+        <meta>
+          <name>Durations</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Duration</name>
+            <brief>in ms.</brief>
+            <firmware>3.05</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Satellite fixed location index</name>
+        <brief>Specifies the location source for the satellite prediction.</brief>
+        <description>Speicfies the index +1 of the fixed location (APRS settings). If set to 0, the GPS location is used.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Satellite FM channel squelch</name>
+        <brief>Encodes the squelch level for all satellite FM channels.</brief>
+        <description>Valid values are [0,5], where 0=open.</description>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="18eh">
       <meta>
         <name>Unknown data</name>
       </meta>
