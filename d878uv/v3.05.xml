@@ -3330,25 +3330,26 @@
     </meta>
     <repeat n="100">
       <meta>
-        <name></name>
+        <name>Message enabled bytes</name>
         <firmware>3.04</firmware>
         <done/>
       </meta>
       <enum width="1h">
         <meta>
-          <name></name>
+          <name>Message enable byte</name>
+          <brief>Enables a specific message.</brief>
           <firmware>3.04</firmware>
           <done/>
         </meta>
         <item value="0">
-          <name>Invalid</name>
+          <name>Valid</name>
         </item>
         <item value="255">
-          <name>Valid</name>
+          <name>Invalid</name>
         </item>
       </enum>
     </repeat>
-    <unused width="2eh">
+    <unused width="2ch">
       <meta>
         <name>Unused data</name>
         <firmware>3.04</firmware>
@@ -3484,7 +3485,7 @@
   </element>
   <repeat at="24c0000h" min="0" max="100">
     <meta>
-      <name>5-tone IDs</name>
+      <name>5-Tone IDs</name>
       <firmware>3.05</firmware>
       <done/>
     </meta>
@@ -3560,20 +3561,30 @@
           <done/>
         </meta>
       </int>
-      <int width="1h" format="signed">
+      <int width="1h" format="signed" default="0">
         <meta>
-          <name>Tone duration in ms</name>
+          <name>Tone duration</name>
+          <brief>Duration is encoded in ms. Valid values are 30ms - 100ms.</brief>
           <firmware>3.05</firmware>
           <done/>
         </meta>
       </int>
-      <int width="28h" format="signed" endian="little">
+      <repeat n="40">
         <meta>
           <name>ID</name>
+          <brief>Up to 40 digits</brief>
           <firmware>3.05</firmware>
           <done/>
         </meta>
-      </int>
+        <int width="0h:4" format="unsigned" default="0">
+          <meta>
+            <name>Digit</name>
+            <brief>Encodes a single ID digit.</brief>
+            <firmware>3.05</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
       <string format="ascii" width="7" pad="32">
         <meta>
           <name>Name</name>
@@ -3583,16 +3594,15 @@
       </string>
       <unused width="1h">
         <meta>
-          <name>Unused data</name>
+          <name>Pad Byte</name>
           <firmware>3.05</firmware>
           <done/>
-        </meta>
-      </unused>
+        </meta>00</unused>
     </element>
   </repeat>
   <element at="24c0c80h">
     <meta>
-      <name>5-tone id bitmap</name>
+      <name>5-Tone id bitmap</name>
       <firmware>3.05</firmware>
       <done/>
     </meta>
@@ -3618,9 +3628,110 @@
       </meta>
     </unused>
   </element>
+  <repeat at="24c0d00h" n="16">
+    <meta>
+      <name>5-Tone functions</name>
+      <brief>Defines up to 16 functions, that can be triggered by a 5-tone id.</brief>
+      <firmware>3.05</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>5-Tone function</name>
+        <brief>Configures a single function</brief>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name>Function code</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Open squelch</name>
+        </item>
+        <item value="1">
+          <name>Call all</name>
+        </item>
+        <item value="2">
+          <name>Emergency alarm</name>
+        </item>
+        <item value="3">
+          <name>Remote kill</name>
+        </item>
+        <item value="4">
+          <name>Remote stun</name>
+        </item>
+        <item value="5">
+          <name>Remote restore</name>
+        </item>
+        <item value="6">
+          <name>Message group</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Response</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>Tone</name>
+        </item>
+        <item value="2">
+          <name>Tone &amp; Respond</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>ID Length</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+      </int>
+      <repeat n="12">
+        <meta>
+          <name>ID</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>ID digit</name>
+            <brief>Encodes a single ID digit. Valid values are 0-9, A-F. Encoded as 0-15.</brief>
+            <firmware>3.05</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>00</unused>
+      <string format="ascii" width="7" pad="0">
+        <meta>
+          <name>Name</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="9h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>00</unused>
+    </element>
+  </repeat>
   <element at="24c1000h">
     <meta>
-      <name>5-tone settings</name>
+      <name>5-Tone settings</name>
       <firmware>3.05</firmware>
       <done/>
     </meta>
@@ -4292,7 +4403,7 @@
         <done/>
       </meta>00</unused>
   </element>
-  <element at="24c1300h">
+  <element at="24c1320h">
     <meta>
       <name>Radio Id Bitmap Element</name>
       <firmware>3.04</firmware>
@@ -4344,6 +4455,34 @@
       <meta>
         <name>Unused data</name>
         <firmware>3.04</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
+  <element at="24c1360h">
+    <meta>
+      <name>Hidden zone bitmap</name>
+      <firmware>3.05</firmware>
+      <done/>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Hidden zone bits</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Hidden zone bit</name>
+          <brief>If enabled, the corresponding zone is hidden.</brief>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.05</firmware>
         <done/>
       </meta>00</unused>
   </element>
@@ -4737,6 +4876,95 @@
       <meta>
         <name>Unused data</name>
         <firmware>3.04</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
+  <repeat at="24c2400h" min="0" max="16">
+    <meta>
+      <name>2-Tone functions</name>
+      <brief>Encodes up to 16 two-tone functions.</brief>
+      <firmware>3.05</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Two-Tone function</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>First tone frequency</name>
+          <brief>Encodes the frequency of the first tone.</brief>
+          <description>The value is stored in multiples of 0.1Hz.</description>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Second tone frequency</name>
+          <brief>Encodes the frequency of the second tone.</brief>
+          <description>The value is stored in multiples of 0.1Hz.</description>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Response</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>Tone</name>
+        </item>
+        <item value="2">
+          <name>Tone &amp; Respond</name>
+        </item>
+      </enum>
+      <string format="ascii" width="7" pad="0">
+        <meta>
+          <name>Function name</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="14h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>00</unused>
+    </element>
+  </repeat>
+  <element at="24c2600h">
+    <meta>
+      <name>2-Tone function bitmap</name>
+      <firmware>3.05</firmware>
+      <done/>
+    </meta>
+    <repeat n="16">
+      <meta>
+        <name>2-Tone function bits</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>2-Tone function bit</name>
+          <firmware>3.05</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="eh">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.05</firmware>
         <done/>
       </meta>00</unused>
   </element>
@@ -10116,6 +10344,12 @@
         </int>
       </element>
     </repeat>
+    <unused width="f8h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.05</firmware>
+        <done/>
+      </meta>00</unused>
   </element>
   <repeat at="25c0100h" n="32">
     <meta>
@@ -10428,7 +10662,7 @@
         </meta>
       </int>
     </repeat>
-    <unused width="1eh">
+    <unused width="eh">
       <meta>
         <name>Unused data</name>
         <firmware>3.04</firmware>
