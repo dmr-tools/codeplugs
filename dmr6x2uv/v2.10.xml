@@ -124,7 +124,7 @@
             <name>DMR + FM RX</name>
           </item>
         </enum>
-        <int width="0h:1" format="unsigned">
+        <int width="0h:1" format="unsigned" default="0" min="0">
           <meta>
             <name>Enable talk around</name>
             <firmware>2.10</firmware>
@@ -343,10 +343,162 @@
         <enum width="1h">
           <meta>
             <name>RX Tone CTCSS</name>
-            <brief>Same codes as for TX</brief>
             <firmware>2.10</firmware>
             <done/>
           </meta>
+          <item value="0">
+            <name>62.5 Hz</name>
+          </item>
+          <item value="1">
+            <name>67.0 Hz</name>
+          </item>
+          <item value="2">
+            <name>69.3 Hz</name>
+          </item>
+          <item value="3">
+            <name>71.9 Hz</name>
+          </item>
+          <item value="4">
+            <name>74.4 Hz</name>
+          </item>
+          <item value="5">
+            <name>77.0 Hz</name>
+          </item>
+          <item value="6">
+            <name>79.7 Hz</name>
+          </item>
+          <item value="7">
+            <name>82.5 Hz</name>
+          </item>
+          <item value="8">
+            <name>85.4 Hz</name>
+          </item>
+          <item value="9">
+            <name>88.5 Hz</name>
+          </item>
+          <item value="10">
+            <name>91.5 Hz</name>
+          </item>
+          <item value="11">
+            <name>94.8 Hz</name>
+          </item>
+          <item value="12">
+            <name>97.4 Hz</name>
+          </item>
+          <item value="13">
+            <name>100.0 Hz</name>
+          </item>
+          <item value="14">
+            <name>103.5 Hz</name>
+          </item>
+          <item value="15">
+            <name>107.2 Hz</name>
+          </item>
+          <item value="16">
+            <name>110.9 Hz</name>
+          </item>
+          <item value="17">
+            <name>114.8 Hz</name>
+          </item>
+          <item value="18">
+            <name>118.8 Hz</name>
+          </item>
+          <item value="19">
+            <name>123.0 Hz</name>
+          </item>
+          <item value="20">
+            <name>127.3 Hz</name>
+          </item>
+          <item value="21">
+            <name>131.8 Hz</name>
+          </item>
+          <item value="22">
+            <name>136.5 Hz</name>
+          </item>
+          <item value="23">
+            <name>141.3 Hz</name>
+          </item>
+          <item value="24">
+            <name>146.2 Hz</name>
+          </item>
+          <item value="25">
+            <name>151.4 Hz</name>
+          </item>
+          <item value="26">
+            <name>156.7 Hz</name>
+          </item>
+          <item value="27">
+            <name>159.8 Hz</name>
+          </item>
+          <item value="28">
+            <name>162.2 Hz</name>
+          </item>
+          <item value="29">
+            <name>165.5 Hz</name>
+          </item>
+          <item value="30">
+            <name>167.9 Hz</name>
+          </item>
+          <item value="31">
+            <name>171.3 Hz</name>
+          </item>
+          <item value="32">
+            <name>173.8 Hz</name>
+          </item>
+          <item value="33">
+            <name>177.3 Hz</name>
+          </item>
+          <item value="34">
+            <name>179.9 Hz</name>
+          </item>
+          <item value="35">
+            <name>183.5 Hz</name>
+          </item>
+          <item value="36">
+            <name>186.2 Hz</name>
+          </item>
+          <item value="37">
+            <name>189.9 Hz</name>
+          </item>
+          <item value="38">
+            <name>192.8 Hz</name>
+          </item>
+          <item value="39">
+            <name>196.6 Hz</name>
+          </item>
+          <item value="40">
+            <name>199.5 Hz</name>
+          </item>
+          <item value="41">
+            <name>203.5 Hz</name>
+          </item>
+          <item value="42">
+            <name>206.5 Hz</name>
+          </item>
+          <item value="43">
+            <name>210.7 Hz</name>
+          </item>
+          <item value="44">
+            <name>218.1 Hz</name>
+          </item>
+          <item value="45">
+            <name>225.7 Hz</name>
+          </item>
+          <item value="46">
+            <name>229.1 Hz</name>
+          </item>
+          <item value="47">
+            <name>233.6 Hz</name>
+          </item>
+          <item value="48">
+            <name>241.8 Hz</name>
+          </item>
+          <item value="49">
+            <name>250.3 Hz</name>
+          </item>
+          <item value="50">
+            <name>254.1 Hz</name>
+          </item>
         </enum>
         <int width="2h" format="unsigned" endian="little">
           <meta>
@@ -1456,7 +1608,7 @@
         <firmware>2.10</firmware>
         <done/>
       </meta>
-      <int width="2h" format="unsigned" endian="little" default="0">
+      <int width="2h" format="unsigned" endian="little" default="0" min="0">
         <meta>
           <name>Channel index</name>
           <firmware>2.10</firmware>
@@ -1473,15 +1625,68 @@
     </meta>
     <element>
       <meta>
-        <name>Roming channel</name>
-        <incomplete/>
+        <name>Roaming channel</name>
+        <brief>Encodes a single roaming channel.</brief>
+        <needs-review/>
       </meta>
-      <unknown width="20h">
+      <int width="4h" format="bcd" endian="big">
         <meta>
-          <name>Unknown data</name>
-          <incomplete/>
+          <name>RX frequency</name>
+          <brief>Specifies the RX frequency.</brief>
+          <description>The frequency is stored in multiples of 10Hz.</description>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
-      </unknown>
+      </int>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>TX frequency</name>
+          <brief>Encodes the transmit frequency.</brief>
+          <description>The frequency is encoded in multiples of 10Hz.</description>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Color code override</name>
+          <brief>Specifies the color code to override the current channels setting with.</brief>
+          <description>If set to 16 (10h), there is no override.</description>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Time slot override</name>
+          <brief>Specifies if and how the current channels time slot gets overridden.</brief>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Time Slot 1</name>
+        </item>
+        <item value="1">
+          <name>Time Slot 2</name>
+        </item>
+        <item value="2">
+          <name>None</name>
+          <description>If selected, the current channels time slot will not be overridden.</description>
+        </item>
+      </enum>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="6h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>00</unused>
     </element>
   </repeat>
   <element at="1042000h">
@@ -1549,14 +1754,33 @@
     <element>
       <meta>
         <name>Roaming zone</name>
-        <firmware>2.10</firmware>
-        <incomplete/>
+        <brief>Encodes a single roaming.</brief>
+        <needs-review/>
       </meta>
-      <unknown width="80h">
+      <repeat n="64">
         <meta>
-          <name>Unknown data</name>
+          <name>Roaming channel indices</name>
+          <needs-review/>
         </meta>
-      </unknown>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Roaming channel index</name>
+            <needs-review/>
+          </meta>
+        </int>
+      </repeat>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+          <brief>Specifies the name of the roaming zone.</brief>
+          <needs-review/>
+        </meta>
+      </string>
+      <unused width="30h">
+        <meta>
+          <name>Unused data</name>
+          <needs-review/>
+        </meta>00</unused>
     </element>
   </repeat>
   <repeat at="1080000h" step="40000h" min="0" max="16">
@@ -1883,85 +2107,813 @@
       </meta>
     </unused>
   </element>
-  <element at="24c0000h">
+  <repeat at="24c0000h" min="0" max="100">
     <meta>
-      <name>5-tone encoding</name>
+      <name>5-Tone IDs</name>
+      <needs-review/>
+    </meta>
+    <element>
+      <meta>
+        <name>5-tone ID</name>
+        <needs-review/>
+      </meta>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <needs-review/>
+        </meta>
+      </unused>
+      <enum width="1h">
+        <meta>
+          <name>Standard</name>
+          <needs-review/>
+        </meta>
+        <item value="0">
+          <name>ZVEI1</name>
+        </item>
+        <item value="1">
+          <name>ZVEI2</name>
+        </item>
+        <item value="2">
+          <name>ZVEI3</name>
+        </item>
+        <item value="3">
+          <name>PZVEI</name>
+        </item>
+        <item value="4">
+          <name>DZVEI</name>
+        </item>
+        <item value="5">
+          <name>PDZVEI</name>
+        </item>
+        <item value="6">
+          <name>CCIR1</name>
+        </item>
+        <item value="7">
+          <name>CCIR2</name>
+        </item>
+        <item value="8">
+          <name>PCCIR</name>
+        </item>
+        <item value="9">
+          <name>EEA</name>
+        </item>
+        <item value="10">
+          <name>Euro Signal</name>
+        </item>
+        <item value="11">
+          <name>NATEL</name>
+        </item>
+        <item value="12">
+          <name>MODAT</name>
+        </item>
+        <item value="13">
+          <name>CCITT</name>
+        </item>
+        <item value="14">
+          <name>EIA</name>
+        </item>
+      </enum>
+      <int width="1h" format="signed">
+        <meta>
+          <name>ID length</name>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="1h" format="signed" default="0">
+        <meta>
+          <name>Tone duration</name>
+          <brief>Duration is encoded in ms. Valid values are 30ms - 100ms.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <repeat n="40">
+        <meta>
+          <name>ID</name>
+          <brief>Up to 40 digits</brief>
+          <needs-review/>
+        </meta>
+        <int width="0h:4" format="unsigned" default="0">
+          <meta>
+            <name>Digit</name>
+            <brief>Encodes a single ID digit.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+      </repeat>
+      <string format="ascii" width="7" pad="32">
+        <meta>
+          <name>Name</name>
+          <needs-review/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+          <needs-review/>
+        </meta>00</unused>
+    </element>
+  </repeat>
+  <element at="24c0c80h">
+    <meta>
+      <name>5-Tone id bitmap</name>
+      <needs-review/>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name>5-tone id bits</name>
+        <needs-review/>
+      </meta>
+      <int width="0h:1" format="signed">
+        <meta>
+          <name>5-tone id bit</name>
+          <needs-review/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="3h:4">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="24c0d00h" n="16">
+    <meta>
+      <name>5-Tone functions</name>
+      <brief>Defines up to 16 functions, that can be triggered by a 5-tone id.</brief>
+      <needs-review/>
+    </meta>
+    <element>
+      <meta>
+        <name>5-Tone function</name>
+        <brief>Configures a single function</brief>
+        <needs-review/>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name>Function code</name>
+          <needs-review/>
+        </meta>
+        <item value="0">
+          <name>Open squelch</name>
+        </item>
+        <item value="1">
+          <name>Call all</name>
+        </item>
+        <item value="2">
+          <name>Emergency alarm</name>
+        </item>
+        <item value="3">
+          <name>Remote kill</name>
+        </item>
+        <item value="4">
+          <name>Remote stun</name>
+        </item>
+        <item value="5">
+          <name>Remote restore</name>
+        </item>
+        <item value="6">
+          <name>Message group</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Response</name>
+          <needs-review/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>Tone</name>
+        </item>
+        <item value="2">
+          <name>Tone &amp; Respond</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="0" min="0">
+        <meta>
+          <name>ID Length</name>
+          <brief>Specifies the length of the id.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <repeat n="12">
+        <meta>
+          <name>ID</name>
+          <needs-review/>
+        </meta>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>ID digit</name>
+            <brief>Encodes a single ID digit. Valid values are 0-9, A-F. Encoded as 0-15.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+      </repeat>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+          <needs-review/>
+        </meta>00</unused>
+      <string format="ascii" width="7" pad="0">
+        <meta>
+          <name>Name</name>
+          <needs-review/>
+        </meta>
+      </string>
+      <unused width="9h">
+        <meta>
+          <name>Unused data</name>
+          <needs-review/>
+        </meta>00</unused>
+    </element>
+  </repeat>
+  <element at="24c1000h">
+    <meta>
+      <name>5-Tone settings</name>
+      <needs-review/>
     </meta>
     <unknown width="20h">
       <meta>
         <name>Unknown data</name>
+        <needs-review/>
       </meta>
     </unknown>
-  </element>
-  <element at="24c0c80h">
-    <meta>
-      <name>5-tone encoding bitmap block</name>
-    </meta>
-    <unknown width="10h">
+    <unused width="1h">
       <meta>
-        <name>Unknown data</name>
+        <name>Unused data</name>
+        <needs-review/>
       </meta>
-    </unknown>
-  </element>
-  <element at="24c0d00h">
-    <meta>
-      <name>5-tone ID list</name>
-    </meta>
-    <unknown width="200h">
+    </unused>
+    <enum width="1h">
       <meta>
-        <name>Unknown data</name>
+        <name>Decoing response</name>
+        <needs-review/>
       </meta>
-    </unknown>
-  </element>
-  <element at="24c1000h">
-    <meta>
-      <name>5-tone settings</name>
-    </meta>
-    <unknown width="80h">
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Tone</name>
+      </item>
+      <item value="2">
+        <name>Tone and respond</name>
+      </item>
+    </enum>
+    <enum width="1h">
       <meta>
-        <name>Unknown data</name>
+        <name>Decoding standard</name>
+        <needs-review/>
       </meta>
-    </unknown>
+      <item value="0">
+        <name>ZVEI1</name>
+      </item>
+      <item value="1">
+        <name>ZVEI2</name>
+      </item>
+      <item value="2">
+        <name>ZVEI3</name>
+      </item>
+      <item value="3">
+        <name>PZVEI</name>
+      </item>
+      <item value="4">
+        <name>DZVEI</name>
+      </item>
+      <item value="5">
+        <name>PDZVEI</name>
+      </item>
+      <item value="6">
+        <name>CCIR1</name>
+      </item>
+      <item value="7">
+        <name>CCIR2</name>
+      </item>
+      <item value="8">
+        <name>PCCIR</name>
+      </item>
+      <item value="9">
+        <name>EEA</name>
+      </item>
+      <item value="10">
+        <name>Euro Signal</name>
+      </item>
+      <item value="11">
+        <name>NATEL</name>
+      </item>
+      <item value="12">
+        <name>MODAT</name>
+      </item>
+      <item value="13">
+        <name>CCITT</name>
+      </item>
+      <item value="14">
+        <name>EIA</name>
+      </item>
+    </enum>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Radio ID length</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Decoding tone duration in ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="7h" format="signed" endian="little">
+      <meta>
+        <name>Radio ID</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Post encode delay in 10ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>PTT ID 0=off, [5,75]</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Auto reset time in 10s</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>First delay in 10ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Sidetone enable</name>
+        <needs-review/>
+      </meta>
+      <item value="0">
+        <name></name>
+      </item>
+      <item value="1">
+        <name></name>
+      </item>
+    </enum>
+    <unused width="1h">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>00</unused>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Stop code</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Stop time in 10ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Decode time in 10ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Delay after stop in 10ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>Pre-time in 10ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <unused width="6h">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>
+    </unused>
+    <enum width="1h">
+      <meta>
+        <name>BOT standard</name>
+        <needs-review/>
+      </meta>
+      <item value="0">
+        <name>ZVEI1</name>
+      </item>
+      <item value="1">
+        <name>ZVEI2</name>
+      </item>
+      <item value="2">
+        <name>ZVEI3</name>
+      </item>
+      <item value="3">
+        <name>PZVEI</name>
+      </item>
+      <item value="4">
+        <name>DZVEI</name>
+      </item>
+      <item value="5">
+        <name>PDZVEI</name>
+      </item>
+      <item value="6">
+        <name>CCIR1</name>
+      </item>
+      <item value="7">
+        <name>CCIR2</name>
+      </item>
+      <item value="8">
+        <name>PCCIR</name>
+      </item>
+      <item value="9">
+        <name>EEA</name>
+      </item>
+      <item value="10">
+        <name>Euro Signal</name>
+      </item>
+      <item value="11">
+        <name>NATEL</name>
+      </item>
+      <item value="12">
+        <name>MODAT</name>
+      </item>
+      <item value="13">
+        <name>CCITT</name>
+      </item>
+      <item value="14">
+        <name>EIA</name>
+      </item>
+    </enum>
+    <int width="1h" format="signed">
+      <meta>
+        <name>BOT ID length</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>BOT tone duration in ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="ch" format="signed" endian="little">
+      <meta>
+        <name>BOT ID</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <unused width="11h">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>
+    </unused>
+    <enum width="1h">
+      <meta>
+        <name>EOT standard</name>
+        <needs-review/>
+      </meta>
+      <item value="0">
+        <name>ZVEI1</name>
+      </item>
+      <item value="1">
+        <name>ZVEI2</name>
+      </item>
+      <item value="2">
+        <name>ZVEI3</name>
+      </item>
+      <item value="3">
+        <name>PZVEI</name>
+      </item>
+      <item value="4">
+        <name>DZVEI</name>
+      </item>
+      <item value="5">
+        <name>PDZVEI</name>
+      </item>
+      <item value="6">
+        <name>CCIR1</name>
+      </item>
+      <item value="7">
+        <name>CCIR2</name>
+      </item>
+      <item value="8">
+        <name>PCCIR</name>
+      </item>
+      <item value="9">
+        <name>EEA</name>
+      </item>
+      <item value="10">
+        <name>Euro Signal</name>
+      </item>
+      <item value="11">
+        <name>NATEL</name>
+      </item>
+      <item value="12">
+        <name>MODAT</name>
+      </item>
+      <item value="13">
+        <name>CCITT</name>
+      </item>
+      <item value="14">
+        <name>EIA</name>
+      </item>
+    </enum>
+    <int width="1h" format="signed">
+      <meta>
+        <name>EOT ID length</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="signed">
+      <meta>
+        <name>EOT tone duration in ms</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="ch" format="signed" endian="little">
+      <meta>
+        <name>EOT ID</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <unused width="14h">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>
+    </unused>
   </element>
   <element at="24c1080h">
     <meta>
-      <name>DTMF settings</name>
+      <name>DTMF Settings</name>
+      <needs-review/>
     </meta>
-    <unknown width="50h">
+    <int width="1h" format="unsigned">
       <meta>
-        <name>Unknown data</name>
+        <name>Symbol Interval</name>
+        <brief>Valid values 0-15.</brief>
+        <needs-review/>
       </meta>
-    </unknown>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Group Code</name>
+        <brief>Valid values 0-15</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Response</name>
+        <needs-review/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Tone</name>
+      </item>
+      <item value="2">
+        <name>Tone + Respond</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Tone Delay</name>
+        <brief>Tone delay in 10ms.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>First digit duration</name>
+        <brief>Duration in 10ms.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Auto Reset Time</name>
+        <brief>In multiple of 10s.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <string format="ascii" width="3" pad="0">
+      <meta>
+        <name>Radio ID</name>
+        <needs-review/>
+      </meta>
+    </string>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Post-tone delay.</name>
+        <brief>Delay in multiple of 10ms before EOT.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>PTT Id Pause</name>
+        <brief>Pause between PTT Id transmissions in multiple of 10s.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>PTT Id Enable</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>D-Code Pause</name>
+        <brief>In seconds.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Side-tone enable</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <unused width="2h">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>0000</unused>
+    <string format="ascii" width="16" pad="255">
+      <meta>
+        <name>BOT Id</name>
+        <needs-review/>
+      </meta>
+    </string>
+    <string format="ascii" width="16" pad="255">
+      <meta>
+        <name>EOT Id</name>
+        <needs-review/>
+      </meta>
+    </string>
+    <string format="ascii" width="16" pad="255">
+      <meta>
+        <name>Remote kill Id</name>
+        <needs-review/>
+      </meta>
+    </string>
+    <string format="ascii" width="16" pad="255">
+      <meta>
+        <name>Remote Stun Id</name>
+        <needs-review/>
+      </meta>
+    </string>
   </element>
-  <element at="24c1100h">
+  <repeat at="24c1100h" min="0" max="24">
     <meta>
-      <name>2-tone encoding</name>
+      <name>2-Tone Ids</name>
+      <needs-review/>
     </meta>
-    <unknown width="10h">
+    <element>
       <meta>
-        <name>Unknown data</name>
+        <name>2-Tone Id</name>
+        <brief>Encodes a single 2-tone id.</brief>
+        <needs-review/>
       </meta>
-    </unknown>
-  </element>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>First tone frequency</name>
+          <brief>Encodes the frequency in multiples of 0.1Hz.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Second tone frequency</name>
+          <brief>Encodes the tone frequency in multiples of 0.1Hz.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <unused width="4h">
+        <meta>
+          <name>Unused data</name>
+          <needs-review/>
+        </meta>00</unused>
+      <string format="ascii" width="7" pad="0">
+        <meta>
+          <name>Name</name>
+          <brief>The name of the id.</brief>
+          <needs-review/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad byte</name>
+          <needs-review/>
+        </meta>00</unused>
+    </element>
+  </repeat>
   <element at="24c1280h">
     <meta>
-      <name>2-tone encoding bitmap block</name>
-      <incomplete/>
+      <name>2-Tone Id bitmap</name>
+      <brief>Specifies, which 2-tone id is valid.</brief>
+      <needs-review/>
     </meta>
-    <unknown width="10h">
+    <repeat n="24">
+      <meta>
+        <name>2-tone id enable bits</name>
+        <needs-review/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>2-tone id enable bit</name>
+          <needs-review/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="dh">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>00</unused>
+  </element>
+  <element at="24c1290h">
+    <meta>
+      <name>2-Tone Settings</name>
+      <needs-review/>
+    </meta>
+    <unknown width="9h">
       <meta>
         <name>Unknown data</name>
+        <needs-review/>
       </meta>
     </unknown>
-  </element>
-  <element at="24c1280h">
-    <meta>
-      <name>2-tone settings</name>
-      <incomplete/>
-    </meta>
-    <unknown width="10h">
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>First tone duration</name>
+        <brief>Encodes the first tone duration in multiples of 100ms. Valid values are 500-10000ms.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Second tone duration</name>
+        <brief>Specifies the second tone duration in multiples of 100ms. Valid values are 500ms - 10000ms.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Long tone duration</name>
+        <brief>Encodes the duration in terms of 100ms. Valid values are 500 - 10000ms.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Gap duration</name>
+        <brief>Encodes the gap duration in multiples of 100ms. Valid values are 0 - 2000ms.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Reset period</name>
+        <brief>Encodes the reset period in seconds. Valid values are 0 - 250s.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <enum width="1h:1">
+      <meta>
+        <name>Side tone</name>
+        <brief>Enables side tone.</brief>
+        <needs-review/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>On</name>
+      </item>
+    </enum>
+    <unknown width="0h:7">
       <meta>
         <name>Unknown data</name>
+        <needs-review/>
       </meta>
     </unknown>
   </element>
@@ -2042,23 +2994,140 @@
   </element>
   <element at="24c1400h">
     <meta>
-      <name>Alarm settings</name>
+      <name>Alarm Settings</name>
+      <needs-review/>
     </meta>
-    <unknown width="20h">
+    <element>
       <meta>
-        <name>Unknown data</name>
+        <name>Analog Alarm Settings</name>
+        <needs-review/>
       </meta>
-    </unknown>
+      <enum width="1h">
+        <meta>
+          <name>Action</name>
+          <needs-review/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>TX and background</name>
+        </item>
+        <item value="2">
+          <name>TX and non-local alarm</name>
+        </item>
+        <item value="3">
+          <name>TX and local alarm</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Mode</name>
+          <needs-review/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>DTMF</name>
+        </item>
+        <item value="2">
+          <name>5-Tone</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>DTMF/5Tomn id index</name>
+          <brief>0-based index of DTMF or 5-tone id.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Alarm duration</name>
+          <brief>Specifies the alarm duration in seconds.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Alarm TX duration</name>
+          <brief>Specifies the alarm transmit duration in seconds.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Alarm RX duration</name>
+          <brief>Specifies the alarm RX duration in seconds.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Alarm channel index</name>
+          <brief>Must be a 0-based index to an analog channel.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Alarm channel selection</name>
+          <needs-review/>
+        </meta>
+        <item value="0">
+          <name>Current Channel</name>
+        </item>
+        <item value="1">
+          <name>Set Channel</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Emergency cycle</name>
+          <brief>0 = continuous, otherwise count 1...255.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+    </element>
   </element>
   <element at="24c1440h">
     <meta>
-      <name>Digital alarm settings extension</name>
+      <name>DMR Alarm Extension</name>
+      <needs-review/>
     </meta>
-    <unknown width="30h">
+    <enum width="1h">
       <meta>
-        <name>Unknown data</name>
+        <name>Call Type</name>
+        <needs-review/>
       </meta>
-    </unknown>
+      <item value="0">
+        <name>Private Call</name>
+      </item>
+      <item value="1">
+        <name>Group Call</name>
+      </item>
+      <item value="2">
+        <name>All Call</name>
+      </item>
+    </enum>
+    <unused width="22h">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>
+    </unused>
+    <int width="4h" format="bcd" endian="big">
+      <meta>
+        <name>Destination Id</name>
+        <needs-review/>
+      </meta>
+    </int>
+    <unused width="9h">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>00</unused>
   </element>
   <element at="24c1500h">
     <meta>
@@ -2066,7 +3135,7 @@
     </meta>
     <repeat n="4000">
       <meta>
-        <name></name>
+        <name>Channel bits</name>
       </meta>
       <int width="0h:1" format="unsigned">
         <meta>
@@ -2092,13 +3161,31 @@
   </repeat>
   <repeat at="24c1800h" n="32">
     <meta>
-      <name>DMR encryption key IDs</name>
+      <name>DMR Encryption Keys</name>
+      <needs-review/>
     </meta>
-    <unknown width="28h">
+    <element>
       <meta>
-        <name>Unknown data</name>
+        <name>DMR Encryption Key</name>
+        <needs-review/>
       </meta>
-    </unknown>
+      <unused width="10h">
+        <meta>
+          <name>Unused data</name>
+          <needs-review/>
+        </meta>00</unused>
+      <int width="2h" format="signed" endian="big" default="65535">
+        <meta>
+          <name>Key</name>
+          <needs-review/>
+        </meta>
+      </int>
+      <unused width="16h">
+        <meta>
+          <name>Unused data</name>
+          <needs-review/>
+        </meta>00</unused>
+    </element>
   </repeat>
   <element at="24c2000h">
     <meta>
@@ -2120,25 +3207,83 @@
       </meta>
     </unused>
   </element>
-  <element at="24c2400h">
+  <repeat at="24c2400h" min="0" max="16">
     <meta>
-      <name>2-tone decoding</name>
+      <name>2-Tone functions</name>
+      <brief>Encodes up to 16 two-tone functions.</brief>
+      <needs-review/>
     </meta>
-    <unknown width="10h">
+    <element>
       <meta>
-        <name>Unknown data</name>
+        <name>Two-Tone function</name>
+        <needs-review/>
       </meta>
-    </unknown>
-  </element>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>First tone frequency</name>
+          <brief>Encodes the frequency of the first tone.</brief>
+          <description>The value is stored in multiples of 0.1Hz.</description>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Second tone frequency</name>
+          <brief>Encodes the frequency of the second tone.</brief>
+          <description>The value is stored in multiples of 0.1Hz.</description>
+          <needs-review/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Response</name>
+          <needs-review/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>Tone</name>
+        </item>
+        <item value="2">
+          <name>Tone &amp; Respond</name>
+        </item>
+      </enum>
+      <string format="ascii" width="7" pad="0">
+        <meta>
+          <name>Function name</name>
+          <needs-review/>
+        </meta>
+      </string>
+      <unused width="14h">
+        <meta>
+          <name>Unused data</name>
+          <needs-review/>
+        </meta>00</unused>
+    </element>
+  </repeat>
   <element at="24c2600h">
     <meta>
-      <name>2-tone decoding bitmap block</name>
+      <name>2-Tone function bitmap</name>
+      <needs-review/>
     </meta>
-    <unknown width="10h">
+    <repeat n="16">
       <meta>
-        <name>Unknown data</name>
+        <name>2-Tone function bits</name>
+        <needs-review/>
       </meta>
-    </unknown>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>2-Tone function bit</name>
+          <needs-review/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="eh">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>00</unused>
   </element>
   <unknown at="24c2610h" width="20h">
     <meta>
@@ -2685,16 +3830,26 @@
       </meta>
     </unused>
   </element>
-  <element at="2500500h">
+  <repeat at="2500500h" n="16">
     <meta>
-      <name>DTMF List</name>
+      <name>DTMF Ids</name>
+      <brief>Encodes DTMF PTT ids.</brief>
+      <needs-review/>
     </meta>
-    <unknown width="100h">
+    <repeat n="16">
       <meta>
-        <name>Unknown data</name>
+        <name>DTMF Id</name>
+        <needs-review/>
       </meta>
-    </unknown>
-  </element>
+      <int width="1h" format="unsigned" default="255">
+        <meta>
+          <name>DTMF digit</name>
+          <brief>Valid values 0h - fh. If not set, ffh.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+    </repeat>
+  </repeat>
   <element at="2500600h">
     <meta>
       <name>Boot settings</name>
@@ -2731,11 +3886,11 @@
   </element>
   <element at="2501200h">
     <meta>
-      <name>APRS text block</name>
+      <name>APRS message settings</name>
     </meta>
     <string format="ascii" width="60" pad="0">
       <meta>
-        <name></name>
+        <name>APRS message</name>
       </meta>
     </string>
     <unused width="4h">
