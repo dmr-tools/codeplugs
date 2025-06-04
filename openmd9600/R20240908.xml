@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--vi: set ts=2 sw=2:-->
-<codeplug>
-  <meta>
-    <name>OpengMD9600</name>
-    <description>This document describes the codeplug format of the OpenGD77 firmware running on a MD-9600.</description>
-    <firmware>R202409080</firmware>
-  </meta>
-</codeplug>
