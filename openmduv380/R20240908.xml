@@ -1908,11 +1908,86 @@
     <meta>
       <name>Callsign DB Segment 0</name>
     </meta>
-    <unknown width="40000h">
+    <string format="ascii" width="2" pad="0">
       <meta>
-        <name>Unknown data</name>
+        <name>Magic String</name>
+        <brief>A fixed ASCII string 'ID'.</brief>
       </meta>
-    </unknown>
+    </string>
+    <enum width="1h">
+      <meta>
+        <name>Format</name>
+      </meta>
+      <item value="45">
+        <name>Uncompressed</name>
+        <description>Old uncompressed format</description>
+      </item>
+      <item value="89">
+        <name>Compressed</name>
+        <description>New compressed format</description>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Entry size</name>
+        <brief>Specifies the size of every entry. The encoding is quiet weird: 59h=15bytes, 5d=19bytes, ..., 50bytes.</brief>
+      </meta>
+    </int>
+    <string format="ascii" width="3" pad="0">
+      <meta>
+        <name>Version string</name>
+        <brief>Fixed to '001'.</brief>
+      </meta>
+    </string>
+    <unused width="1h">
+      <meta>
+        <name>Pad byte</name>
+      </meta>00</unused>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>Entry count</name>
+        <brief>Specifies the number of entries in the callsign db.</brief>
+      </meta>
+    </int>
+    <repeat n="17475">
+      <meta>
+        <name>Entries</name>
+      </meta>
+      <element>
+        <meta>
+          <name>Entry</name>
+        </meta>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>DMR ID</name>
+          </meta>
+        </int>
+        <repeat n="4">
+          <meta>
+            <name>Call etc</name>
+            <brief>Text field containing the callsign, name, city, etc. This is encoded in a compressed form. Chars are encoded using a simple 6bit table and stored in 4-chars groups as 3bytes each. Padding is 00h (space).</brief>
+          </meta>
+          <repeat n="4">
+            <meta>
+              <name>Char Group</name>
+              <brief>Contains 4 6-bit chars</brief>
+            </meta>
+            <int width="0h:6" format="unsigned">
+              <meta>
+                <name>Single char</name>
+                <brief>Using translation table [' ', '0', ..., '9', 'A', ..., 'Z', 'a', ..., 'z', '.'].</brief>
+              </meta>
+            </int>
+          </repeat>
+        </repeat>
+      </element>
+    </repeat>
+    <unused width="7h">
+      <meta>
+        <name>Unused data</name>
+        <brief>Whatever is left over.</brief>
+      </meta>
+    </unused>
   </element>
   <repeat at="109b1b0h" n="7">
     <meta>
@@ -2512,11 +2587,44 @@
   <element at="10d8000h">
     <meta>
       <name>Callsign DB Segment 1</name>
+      <brief>Remaining entries of the callsign DB</brief>
     </meta>
-    <unknown width="48000h">
+    <repeat n="19660">
       <meta>
-        <name>Unknown data</name>
+        <name>Entries</name>
       </meta>
-    </unknown>
+      <element>
+        <meta>
+          <name>Entry</name>
+        </meta>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>DMR ID</name>
+          </meta>
+        </int>
+        <repeat n="4">
+          <meta>
+            <name>Call etc</name>
+            <brief>Text field containing the callsign, name, city, etc. This is encoded in a compressed form. Chars are encoded using a simple 6bit table and stored in 4-chars groups as 3bytes each. Padding is 00h (space).</brief>
+          </meta>
+          <repeat n="4">
+            <meta>
+              <name>Char Group</name>
+              <brief>Contains 4 6-bit chars</brief>
+            </meta>
+            <int width="0h:6" format="unsigned">
+              <meta>
+                <name>Single char</name>
+                <brief>Using translation table [' ', '0', ..., '9', 'A', ..., 'Z', 'a', ..., 'z', '.'].</brief>
+              </meta>
+            </int>
+          </repeat>
+        </repeat>
+      </element>
+    </repeat>
+    <unused width="ch">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
   </element>
 </codeplug>
