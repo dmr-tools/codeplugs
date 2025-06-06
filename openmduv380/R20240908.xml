@@ -1783,6 +1783,33 @@
     </int>
     <element>
       <meta>
+        <name>Unknown Settings Block</name>
+      </meta>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Block Type ID</name>
+          <brief>The magic number identifying the block type. This one is unknown, seen 2h.</brief>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Size</name>
+          <brief>Size of the block content, fixed to 200h</brief>
+        </meta>
+      </int>
+      <element>
+        <meta>
+          <name>Unknown Settings</name>
+        </meta>
+        <unknown width="200h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+      </element>
+    </element>
+    <element>
+      <meta>
         <name>Orbital Elements Bank</name>
       </meta>
       <int width="4h" format="unsigned" endian="little" default="0">
