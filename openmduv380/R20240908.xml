@@ -1764,7 +1764,9 @@
   </element>
   <element at="1020000h">
     <meta>
-      <name>Orbital Elements Bank</name>
+      <name>Additional Settings</name>
+      <brief>This section of flash memory is always of size 11a0h. It may contain several setting elements. E.g., satellite orbital elements, theme settings etc.</brief>
+      <description>Each setting is stored in a block starting with a magic number and followed by its size. The size field only covers the content. The position of each block may vary. The blocks, hoever, are packed densely.</description>
     </meta>
     <string format="ascii" width="8" pad="0">
       <meta>
@@ -1772,141 +1774,2046 @@
         <brief>Just contains &quot;OpenGD77&quot;.</brief>
       </meta>
     </string>
-    <int width="4h" format="unsigned" endian="little" default="1">
+    <int width="4h" format="unsigned" endian="little" default="0">
       <meta>
-        <name>Unknown integer</name>
+        <name>Version number</name>
         <brief>Some unknown integer. Seen value 1.</brief>
         <description>Possibly a version number/revision of the structure.</description>
       </meta>
     </int>
-    <int width="4h" format="unsigned" endian="little" default="3">
+    <element>
       <meta>
-        <name>Unknown Integer</name>
-        <brief>Yet another unknown integer. Seen value 3.</brief>
-        <description>Either also a revision number or a field count.</description>
+        <name>Orbital Elements Bank</name>
       </meta>
-    </int>
-    <int width="4h" format="unsigned" endian="little">
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Block Type ID</name>
+          <brief>Specifies, that his block is a set of orbital elements. The value is fixed to 3.</brief>
+          <description>Either also a revision number or a field count.</description>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Size</name>
+          <brief>Contains the size of the entire bank, incluing the header. That is 9d8h.</brief>
+        </meta>
+      </int>
+      <repeat n="25">
+        <meta>
+          <name>Orbital Elements</name>
+        </meta>
+        <element>
+          <meta>
+            <name>Orbital Element</name>
+          </meta>
+          <string format="ascii" width="8" pad="0">
+            <meta>
+              <name>Name</name>
+            </meta>
+          </string>
+          <int width="1h" format="bcd">
+            <meta>
+              <name>Epoch Year</name>
+            </meta>
+          </int>
+          <int width="6h" format="bcd" endian="big">
+            <meta>
+              <name>Epoch julien day</name>
+            </meta>
+          </int>
+          <int width="5h" format="bcd" endian="big">
+            <meta>
+              <name>First derivative of mean motion</name>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="big">
+            <meta>
+              <name>Inclination</name>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="big">
+            <meta>
+              <name>Right ascension of the ascending node</name>
+            </meta>
+          </int>
+          <int width="3h:4" format="bcd" endian="big">
+            <meta>
+              <name>Eccentricity</name>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="big">
+            <meta>
+              <name>Argument of perigee</name>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="big">
+            <meta>
+              <name>Mean anomaly</name>
+            </meta>
+          </int>
+          <int width="5h:4" format="bcd" endian="big">
+            <meta>
+              <name>Mean motion</name>
+            </meta>
+          </int>
+          <int width="2h:4" format="bcd" endian="big">
+            <meta>
+              <name>Revolution number at epoch</name>
+            </meta>
+          </int>
+          <int width="0h:4" format="bcd">
+            <meta>
+              <name>Unused</name>
+              <brief>set to blank bh.</brief>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>FM Downlink Frequency</name>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>FM Uplinkrequency</name>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>CTCSS tone frequency</name>
+              <brief>Encoded frequency in 0.1Hz.</brief>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>APRS Downlink Frequency</name>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>APRS Uplink Frequency</name>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>Beacon Frequency</name>
+            </meta>
+          </int>
+          <unused width="4h">
+            <meta>
+              <name>Unused data</name>
+            </meta>00</unused>
+          <string format="ascii" width="24" pad="0">
+            <meta>
+              <name>APRS path</name>
+            </meta>
+          </string>
+        </element>
+      </repeat>
+      <unused width="14h">
+        <meta>
+          <name>Unused data</name>
+        </meta>00</unused>
+    </element>
+    <element>
       <meta>
-        <name>Size</name>
-        <brief>Contains the size of the entire bank, incluing the header. That is 9d8h.</brief>
+        <name>Light Theme Settings</name>
       </meta>
-    </int>
-    <repeat n="25">
-      <meta>
-        <name>Orbital Elements</name>
-      </meta>
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Block Type ID</name>
+          <brief>Specifies the magic number to identify the block type. For the light theme settings, this is 4h.</brief>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Size</name>
+          <brief>Specifies the size of the block content in bytes.</brief>
+        </meta>
+      </int>
       <element>
         <meta>
-          <name>Orbital Element</name>
+          <name>Color Settings</name>
         </meta>
-        <string format="ascii" width="8" pad="0">
+        <element>
           <meta>
-            <name>Name</name>
+            <name>Text Default</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </string>
-        <int width="1h" format="bcd">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Epoch Year</name>
+            <name>Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="6h" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Epoch julien day</name>
+            <name>Decoration</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="5h" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>First derivative of mean motion</name>
+            <name>Text Input</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Inclination</name>
+            <name>Boot Screen Text</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Right ascension of the ascending node</name>
+            <name>Boot Screen Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="3h:4" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Eccentricity</name>
+            <name>Text Notification</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Argument of perigee</name>
+            <name>Warning Notification</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Mean anomaly</name>
+            <name>Error Notification</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="5h:4" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Mean motion</name>
+            <name>Notification Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="2h:4" format="bcd" endian="big">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Revolution number at epoch</name>
+            <name>Menu Name</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="0h:4" format="bcd">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Unused</name>
-            <brief>set to blank bh.</brief>
+            <name>Menu Name Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>FM Downlink Frequency</name>
+            <name>Menu Item</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>FM Uplinkrequency</name>
+            <name>Menu Highlight</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>CTCSS tone frequency</name>
-            <brief>Encoded frequency in 0.1Hz.</brief>
+            <name>Option Value</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>APRS Downlink Frequency</name>
+            <name>Header Text</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>APRS Uplink Frequency</name>
+            <name>Header Text Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Beacon Frequency</name>
+            <name>RSSI Bar</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </int>
-        <unused width="4h">
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
           <meta>
-            <name>Unused data</name>
-          </meta>00</unused>
-        <string format="ascii" width="24" pad="0">
-          <meta>
-            <name>APRS path</name>
+            <name>RSSI Bar S9+</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </string>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Channel Name</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Channel VFO/TG</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Contact Info</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Zone Name</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>VFO RX Frequency</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>VFO TX Frequency</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>CSS/SQL Values</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>TX Counter</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Polar</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Satellite Spot</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>GPS Number</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>GPS Spot</name>
+            <brief>Default value 0,0,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Beidou Spot</name>
+            <brief>Default value 31,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
       </element>
-    </repeat>
-    <unused width="14h">
+    </element>
+    <element>
       <meta>
-        <name>Unused data</name>
-      </meta>00</unused>
+        <name>Dark Theme Settings</name>
+      </meta>
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Block Type ID</name>
+          <brief>Specifies the magic number to identify the block type. For the light theme settings, this is 5h.</brief>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Size</name>
+          <brief>Specifies the size of the block content in bytes.</brief>
+        </meta>
+      </int>
+      <element>
+        <meta>
+          <name>Color Settings</name>
+        </meta>
+        <element>
+          <meta>
+            <name>Text Default</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Decoration</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Text Input</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Boot Screen Text</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Boot Screen Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Text Notification</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Warning Notification</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Error Notification</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Notification Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Menu Name</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Menu Name Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Menu Item</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Menu Highlight</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Option Value</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Header Text</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Header Text Background</name>
+            <brief>Default value 31,63,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>RSSI Bar</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>RSSI Bar S9+</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Channel Name</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Channel VFO/TG</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Contact Info</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Zone Name</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>VFO RX Frequency</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>VFO TX Frequency</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>CSS/SQL Values</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>TX Counter</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Polar</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Satellite Spot</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>GPS Number</name>
+            <brief>Default value 0,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>GPS Spot</name>
+            <brief>Default value 0,0,31.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+        <element>
+          <meta>
+            <name>Beidou Spot</name>
+            <brief>Default value 31,0,0.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
+          </meta>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Red</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:6" format="unsigned">
+            <meta>
+              <name>Green</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+          <int width="0h:5" format="unsigned">
+            <meta>
+              <name>Blue</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+      </element>
+    </element>
   </element>
   <element at="1050000h">
     <meta>
