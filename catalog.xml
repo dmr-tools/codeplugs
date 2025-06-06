@@ -64,6 +64,7 @@
     </memory>
 
     <firmware name="3.05" released="2024-12-12" codeplug="d878uv/v3.05.xml"/>
+    <firmware name="3.06" released="2025-01-23" codeplug="d878uv/v3.06.xml"/>
   </model>
 
 
@@ -394,4 +395,5 @@
       </memory>
     </firmware>
   </model>
+
 </catalog>

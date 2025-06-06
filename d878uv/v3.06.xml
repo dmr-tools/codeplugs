@@ -3,7 +3,8 @@
 <codeplug>
   <meta>
     <name>AnyTone AT-D878UV/AT-D878UV+</name>
-    <firmware>3.05</firmware>
+    <firmware>3.06</firmware>
+    <done/>
   </meta>
   <repeat at="800000h" step="40000h" min="1" max="32">
     <meta>
@@ -983,7 +984,22 @@
             <done/>
           </meta>
         </int>
-        <unknown width="3eh">
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="1h" format="unsigned" default="1">
+          <meta>
+            <name>TX color code</name>
+            <short-name>TX CC</short-name>
+            <brief>Sets the transmit color code.</brief>
+            <description>Usually, this should be equal to the RX color code.</description>
+            <firmware>3.06</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="3ch">
           <meta>
             <name>Unknown data</name>
           </meta>
@@ -11383,13 +11399,207 @@
           <done/>
         </meta>
       </int>
-      <unused width="190h">
+      <int width="4h" format="unsigned" endian="little" default="4294967295">
         <meta>
-          <name>Unused data</name>
-          <brief>Filled with 0h.</brief>
-          <firmware>3.04</firmware>
+          <name>APRS Uplink Frequency</name>
+          <brief>Specifies the APRS transmit (uplink) frequency.</brief>
+          <description>The frequency is specified in multiples of 10Hz. If no frequency is set, the value is ffffffffh.</description>
+          <firmware>3.06</firmware>
           <done/>
-        </meta>00</unused>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Arm sub tone type</name>
+          <brief>Specifies the subtone type to be send for arming the satellite.</brief>
+          <firmware>3.06</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+          <description>No arm subtone is send.</description>
+        </item>
+        <item value="1">
+          <name>CTCSS</name>
+        </item>
+        <item value="2">
+          <name>DCS</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Arm Tone CTCSS</name>
+          <firmware>3.06</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>62.5 Hz</name>
+        </item>
+        <item value="1">
+          <name>67.0 Hz</name>
+        </item>
+        <item value="2">
+          <name>69.3 Hz</name>
+        </item>
+        <item value="3">
+          <name>71.9 Hz</name>
+        </item>
+        <item value="4">
+          <name>74.4 Hz</name>
+        </item>
+        <item value="5">
+          <name>77.0 Hz</name>
+        </item>
+        <item value="6">
+          <name>79.7 Hz</name>
+        </item>
+        <item value="7">
+          <name>82.5 Hz</name>
+        </item>
+        <item value="8">
+          <name>85.4 Hz</name>
+        </item>
+        <item value="9">
+          <name>88.5 Hz</name>
+        </item>
+        <item value="10">
+          <name>91.5 Hz</name>
+        </item>
+        <item value="11">
+          <name>94.8 Hz</name>
+        </item>
+        <item value="12">
+          <name>97.4 Hz</name>
+        </item>
+        <item value="13">
+          <name>100.0 Hz</name>
+        </item>
+        <item value="14">
+          <name>103.5 Hz</name>
+        </item>
+        <item value="15">
+          <name>107.2 Hz</name>
+        </item>
+        <item value="16">
+          <name>110.9 Hz</name>
+        </item>
+        <item value="17">
+          <name>114.8 Hz</name>
+        </item>
+        <item value="18">
+          <name>118.8 Hz</name>
+        </item>
+        <item value="19">
+          <name>123.0 Hz</name>
+        </item>
+        <item value="20">
+          <name>127.3 Hz</name>
+        </item>
+        <item value="21">
+          <name>131.8 Hz</name>
+        </item>
+        <item value="22">
+          <name>136.5 Hz</name>
+        </item>
+        <item value="23">
+          <name>141.3 Hz</name>
+        </item>
+        <item value="24">
+          <name>146.2 Hz</name>
+        </item>
+        <item value="25">
+          <name>151.4 Hz</name>
+        </item>
+        <item value="26">
+          <name>156.7 Hz</name>
+        </item>
+        <item value="27">
+          <name>159.8 Hz</name>
+        </item>
+        <item value="28">
+          <name>162.2 Hz</name>
+        </item>
+        <item value="29">
+          <name>165.5 Hz</name>
+        </item>
+        <item value="30">
+          <name>167.9 Hz</name>
+        </item>
+        <item value="31">
+          <name>171.3 Hz</name>
+        </item>
+        <item value="32">
+          <name>173.8 Hz</name>
+        </item>
+        <item value="33">
+          <name>177.3 Hz</name>
+        </item>
+        <item value="34">
+          <name>179.9 Hz</name>
+        </item>
+        <item value="35">
+          <name>183.5 Hz</name>
+        </item>
+        <item value="36">
+          <name>186.2 Hz</name>
+        </item>
+        <item value="37">
+          <name>189.9 Hz</name>
+        </item>
+        <item value="38">
+          <name>192.8 Hz</name>
+        </item>
+        <item value="39">
+          <name>196.6 Hz</name>
+        </item>
+        <item value="40">
+          <name>199.5 Hz</name>
+        </item>
+        <item value="41">
+          <name>203.5 Hz</name>
+        </item>
+        <item value="42">
+          <name>206.5 Hz</name>
+        </item>
+        <item value="43">
+          <name>210.7 Hz</name>
+        </item>
+        <item value="44">
+          <name>218.1 Hz</name>
+        </item>
+        <item value="45">
+          <name>225.7 Hz</name>
+        </item>
+        <item value="46">
+          <name>229.1 Hz</name>
+        </item>
+        <item value="47">
+          <name>233.6 Hz</name>
+        </item>
+        <item value="48">
+          <name>241.8 Hz</name>
+        </item>
+        <item value="49">
+          <name>250.3 Hz</name>
+        </item>
+        <item value="50">
+          <name>254.1 Hz</name>
+        </item>
+      </enum>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Arm DCS code</name>
+          <brief>Encodes the DCS code in a complex way.</brief>
+          <description>The least significant 9 bits encode the binary DCS code. The 9th bit encodes the inversion flag.</description>
+          <firmware>3.06</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="188h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
     </element>
   </repeat>
   <repeat at="4340000h" min="0" max="10000">
