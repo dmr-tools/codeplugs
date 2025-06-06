@@ -1766,7 +1766,7 @@
     <meta>
       <name>Additional Settings</name>
       <brief>This section of flash memory is always of size 11a0h. It may contain several setting elements. E.g., satellite orbital elements, theme settings etc.</brief>
-      <description>Each setting is stored in a block starting with a magic number and followed by its size. The size field only covers the content. The position of each block may vary. The blocks, hoever, are packed densely.</description>
+      <description>Each setting is stored in a block starting with a magic number and followed by its size. The size field only covers the content. The position of each block may vary. The blocks, however, are packed densely. Therefore, the order of blocks below is just an example and may vary.</description>
     </meta>
     <string format="ascii" width="8" pad="0">
       <meta>
@@ -1783,27 +1783,64 @@
     </int>
     <element>
       <meta>
-        <name>Unknown Settings Block</name>
+        <name>Boot Image</name>
+        <needs-review/>
+      </meta>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Block Type ID</name>
+          <brief>The magic number identifying the block type, alwas set to 1h.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Size</name>
+          <brief>Size of the block content, fixed to 400h</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <element>
+        <meta>
+          <name>Image data</name>
+          <needs-review/>
+        </meta>
+        <unknown width="400h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+      </element>
+    </element>
+    <element>
+      <meta>
+        <name>Boot Melody</name>
+        <needs-review/>
       </meta>
       <int width="4h" format="unsigned" endian="little">
         <meta>
           <name>Block Type ID</name>
           <brief>The magic number identifying the block type. This one is unknown, seen 2h.</brief>
+          <needs-review/>
         </meta>
       </int>
       <int width="4h" format="unsigned" endian="little">
         <meta>
           <name>Size</name>
           <brief>Size of the block content, fixed to 200h</brief>
+          <needs-review/>
         </meta>
       </int>
       <element>
         <meta>
           <name>Unknown Settings</name>
+          <needs-review/>
         </meta>
         <unknown width="200h">
           <meta>
             <name>Unknown data</name>
+            <needs-review/>
           </meta>
         </unknown>
       </element>
@@ -3841,6 +3878,10 @@
         </element>
       </element>
     </element>
+    <unused width="114h">
+      <meta>
+        <name>Unused data</name>
+      </meta>ff</unused>
   </element>
   <element at="1050000h">
     <meta>
