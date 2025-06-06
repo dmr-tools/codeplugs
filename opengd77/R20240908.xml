@@ -2021,7 +2021,7 @@
     <string format="ascii" width="2" pad="0">
       <meta>
         <name>Magic String</name>
-        <brief>A fixed ASCII string 'ID'.</brief>
+        <brief>A fixed ASCII string 'Id'.</brief>
         <needs-review/>
       </meta>
     </string>
@@ -2034,7 +2034,7 @@
         <name>Uncompressed</name>
         <description>Old uncompressed format</description>
       </item>
-      <item value="89">
+      <item value="78">
         <name>Compressed</name>
         <description>New compressed format</description>
       </item>
