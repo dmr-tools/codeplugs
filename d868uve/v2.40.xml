@@ -518,13 +518,22 @@
             <done/>
           </meta>
         </int>
-        <int width="0h:1" format="unsigned">
+        <enum width="0h:1">
           <meta>
-            <name>Enable enhanced encryption</name>
+            <name>Encryption Type</name>
+            <short-name>EncType</short-name>
+            <brief>Specifies the encryption type.</brief>
             <firmware>2.40</firmware>
             <done/>
           </meta>
-        </int>
+          <item value="0">
+            <name>Basic</name>
+            <description>Basic DMR encryption</description>
+          </item>
+          <item value="1">
+            <name>Enhanced</name>
+          </item>
+        </enum>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable GPS RX</name>

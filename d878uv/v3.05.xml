@@ -680,12 +680,21 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:1">
+        <enum width="0h:1">
           <meta>
-            <name>Unknown data</name>
-            <firmware>3.04</firmware>
+            <name>Encryption Type</name>
+            <short-name>EncType</short-name>
+            <brief>Specifies the encryption type.</brief>
+            <firmware>3.05</firmware>
+            <done/>
           </meta>
-        </unknown>
+          <item value="0">
+            <name>AES</name>
+          </item>
+          <item value="1">
+            <name>ARC4</name>
+          </item>
+        </enum>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable APRS RX</name>
