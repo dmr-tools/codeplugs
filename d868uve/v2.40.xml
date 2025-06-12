@@ -572,9 +572,11 @@
             <name>Time Slot 2</name>
           </item>
         </enum>
-        <int width="1h" format="unsigned">
+        <int width="1h" format="unsigned" default="0">
           <meta>
-            <name>AES encryption key index</name>
+            <name>Encryption key index</name>
+            <brief>Encodes the DMR/enhanced encryption key index.</brief>
+            <description>The index is encoded as index +1, where 0=Off.</description>
             <firmware>2.40</firmware>
             <done/>
           </meta>
@@ -644,14 +646,12 @@
             <done/>
           </meta>
         </unused>
-        <int width="1h" format="unsigned">
+        <unknown width="1h">
           <meta>
-            <name>DMR Encryption index</name>
-            <brief>Index +1, 0=off.</brief>
+            <name>Unknown data</name>
             <firmware>2.40</firmware>
-            <done/>
           </meta>
-        </int>
+        </unknown>
         <unused width="0h:5">
           <meta>
             <name>Unused data</name>
@@ -2806,6 +2806,11 @@
       </meta>
     </int>
   </repeat>
+  <unknown at="24c2400h" width="30h">
+    <meta>
+      <name>Two-Tone Decoding</name>
+    </meta>
+  </unknown>
   <unknown at="24c2600h" width="10h">
     <meta>
       <name>Two-Tone Decoding Bitmap</name>
@@ -4145,11 +4150,6 @@
       </unused>
     </element>
   </repeat>
-  <unknown at="24c2400h" width="30h">
-    <meta>
-      <name>Two-Tone Decoding</name>
-    </meta>
-  </unknown>
   <repeat at="4340000h" min="0" max="10000">
     <meta>
       <name>Contact Map</name>
