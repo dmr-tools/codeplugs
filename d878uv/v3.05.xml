@@ -739,7 +739,9 @@
         </enum>
         <int width="1h" format="unsigned">
           <meta>
-            <name>AES encryption key index</name>
+            <name>AES Encryption Key Index</name>
+            <brief>Specifies the index (not ID) of the AES encryption key.</brief>
+            <description>The index is encoded +1, where the value 0 means &quot;no key&quot;.</description>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -863,12 +865,13 @@
             <done/>
           </meta>
         </int>
-        <unknown width="1h">
+        <int width="1h" format="unsigned" default="0">
           <meta>
-            <name>Unknown data</name>
-            <firmware>3.04</firmware>
+            <name>DMR Encryption Key Index</name>
+            <brief>Specifies the DMR encryption key index.</brief>
+            <description>Only valid if the global encryption type is set to common. The index is encoded +1, where a value of 0 means none.</description>
           </meta>
-        </unknown>
+        </int>
         <unknown width="0h:2">
           <meta>
             <name>Unknown data</name>
@@ -937,7 +940,7 @@
           <meta>
             <name>ARC4 key index</name>
             <brief>Specifies the key index for ARC4 encryption.</brief>
-            <description>This index is idx+1, that is 0=Off, 1=key 0, 2 = key 1, ...</description>
+            <description>This index is idx+1, that is 0=Off, 1=key 0, 2 = key 1, ... The index is stored, not the key ID.</description>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -4803,13 +4806,15 @@
   </element>
   <repeat at="24c1700h" n="32">
     <meta>
-      <name>DMR Encryption IDs</name>
+      <name>DMR Encryption Keys</name>
       <firmware>3.04</firmware>
       <done/>
     </meta>
-    <int width="2h" format="unsigned" endian="big">
+    <int width="2h" format="unsigned" endian="big" default="65535">
       <meta>
-        <name>DMR Encryption Id</name>
+        <name>DMR Encryption Key</name>
+        <brief>A 16bit key for the &quot;basic&quot; DMR encryption scheme.</brief>
+        <description>If ffffh, disabled.</description>
         <firmware>3.04</firmware>
         <done/>
       </meta>
@@ -4817,13 +4822,15 @@
   </repeat>
   <repeat at="24c1800h" n="32">
     <meta>
-      <name>DMR Encryption Keys</name>
+      <name>DMR Enhanced Encryption Keys</name>
+      <brief>Also 16bit &quot;enhanced&quot; encryption keys.</brief>
       <firmware>3.04</firmware>
       <done/>
     </meta>
     <element>
       <meta>
-        <name>DMR Encryption Key</name>
+        <name>DMR Enhanced Encryption Key</name>
+        <brief>Encodes a single &quot;enhanced&quot; DMR encryption key.</brief>
         <firmware>3.04</firmware>
         <done/>
       </meta>
@@ -4833,9 +4840,11 @@
           <firmware>3.04</firmware>
           <done/>
         </meta>00</unused>
-      <int width="2h" format="signed" endian="big" default="65535">
+      <int width="2h" format="signed" endian="big" default="0">
         <meta>
           <name>Key</name>
+          <brief>The final RC4 key is generated from this 16bit seed. So the final key has also only 16bit.</brief>
+          <description>If ffffh, disabled.</description>
           <firmware>3.04</firmware>
           <done/>
         </meta>
@@ -4989,29 +4998,33 @@
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Key Id</name>
-            <brief>1-based key Id. 0=Off.</brief>
+            <brief>1-based key Id. 0=Off. Valid values are 1-255.</brief>
             <firmware>3.04</firmware>
             <done/>
           </meta>
         </int>
         <unused width="20h">
           <meta>
-            <name>256 bit key data</name>
+            <name>Key Data</name>
+            <brief>Stores up to 256 bits key data.</brief>
+            <description>If the key is less than 256 bit, it gets stored right-aligned. That is, 0-bits are added to the frot to extend the key to 256.</description>
             <firmware>3.04</firmware>
             <done/>
           </meta>00</unused>
         <unused width="1h">
           <meta>
-            <name>Unused data</name>
-            <firmware>3.04</firmware>
+            <name>Pad Byte</name>
+            <firmware>3.05</firmware>
             <done/>
           </meta>00</unused>
-        <unused width="1h">
+        <int width="1h" format="unsigned" default="0">
           <meta>
-            <name>Fixed to 40h.</name>
-            <firmware>3.04</firmware>
+            <name>Key Size</name>
+            <brief>Specifies the key size in multiple of nibbles. That is, 4bits.</brief>
+            <firmware>3.05</firmware>
             <done/>
-          </meta>40</unused>
+          </meta>
+        </int>
         <unused width="1dh">
           <meta>
             <name>Unused data</name>
