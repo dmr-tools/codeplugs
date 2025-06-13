@@ -521,11 +521,18 @@
             <done/>
           </meta>
         </int>
-        <int width="2h" format="unsigned" endian="little">
+        <int width="1h" format="unsigned">
           <meta>
             <name>2-tone decode index</name>
             <firmware>2.10</firmware>
             <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>AES Encryption Key Index</name>
+            <brief>Specifies the AES encryption key index.</brief>
+            <description>The index is 1-based. 0=None.</description>
           </meta>
         </int>
         <int width="4h" format="unsigned" endian="little">
@@ -694,13 +701,21 @@
             <done/>
           </meta>
         </int>
-        <int width="0h:1" format="unsigned">
+        <enum width="0h:1">
           <meta>
-            <name>Enable enhanced encryption</name>
+            <name>DMR Encryption Type</name>
+            <short-name>EncTy</short-name>
+            <brief>Specifies the encryption type used. This is either DMR &quot;basic&quot; or &quot;enhanced&quot;</brief>
             <firmware>2.10</firmware>
             <done/>
           </meta>
-        </int>
+          <item value="0">
+            <name>DMR</name>
+          </item>
+          <item value="1">
+            <name>Enhanced</name>
+          </item>
+        </enum>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable RX DMR-APRS</name>
@@ -748,9 +763,11 @@
             <name>Time slot 2</name>
           </item>
         </enum>
-        <int width="1h" format="unsigned">
+        <int width="1h" format="unsigned" default="0">
           <meta>
-            <name>AES encryption key index</name>
+            <name>DMR Encryption Key Index</name>
+            <brief>Specifies the DMR/Enhanced encryption key index.</brief>
+            <description>The index is 1-based. If 0, no key is associated with the channel.</description>
             <firmware>2.10</firmware>
             <done/>
           </meta>
@@ -3151,39 +3168,54 @@
   </element>
   <repeat at="24c1700h" n="32">
     <meta>
-      <name>DMR encryption key IDs</name>
+      <name>DMR encryption keys</name>
+      <brief>Encodes the set of basic DMR encryption keys.</brief>
+      <description>This key only has 16bits. So it is utterly useless. This is also true for the so-called &quot;enhanced&quot; encryption key.</description>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <int width="4h" format="unsigned" endian="big">
       <meta>
-        <name>DMR encryption key ID</name>
+        <name>DMR encryption key</name>
+        <brief>The actual encryption key.</brief>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
   </repeat>
   <repeat at="24c1800h" n="32">
     <meta>
-      <name>DMR Encryption Keys</name>
-      <needs-review/>
+      <name>DMR Enhanced Encryption Keys</name>
+      <brief>Encodes the set of &quot;enhanced&quot; DMR encryption keys.</brief>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>DMR Encryption Key</name>
-        <needs-review/>
+        <brief>Encodes a single DMR enhanced encryption key.</brief>
+        <description>There is nothing enhanced about this encryption. The effective key size is still 16bit.</description>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <unused width="10h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
       <int width="2h" format="signed" endian="big" default="65535">
         <meta>
           <name>Key</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <unused width="16h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
@@ -4173,16 +4205,72 @@
         <firmware>2.10</firmware>
       </meta>00</unused>
   </element>
-  <repeat at="25c1000h" n="256">
+  <element at="25c1000h">
     <meta>
-      <name>AES encryption keys</name>
+      <name>AES encryption key bank</name>
+      <brief>Encodes up to 255 256bit AES keys.</brief>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
-    <unknown width="40h">
+    <repeat n="255">
       <meta>
-        <name>Unknown data</name>
+        <name>AES encryption keys</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
-    </unknown>
-  </repeat>
+      <element>
+        <meta>
+          <name>AES encryption key</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Key Id</name>
+            <brief>Stores the key ID.</brief>
+            <description>The ID is 1-based, where 0=Off.</description>
+            <firmware>2.10</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="20h">
+          <meta>
+            <name>256 bit key data</name>
+            <brief>Encodes up to 256 bit of key data.</brief>
+            <description>If the key is smaller than 256bit, it gets stored right-aligned. That is, 0-bits are added to the front to extend the size to 256bits.</description>
+            <firmware>2.10</firmware>
+            <done/>
+          </meta>00</unused>
+        <unused width="1h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>2.10</firmware>
+            <done/>
+          </meta>00</unused>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Key Size</name>
+            <brief>Specifies the key-size in nibbles.</brief>
+            <description>That is, in multiples of 4bits.</description>
+            <firmware>2.10</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="1dh">
+          <meta>
+            <name>Unused data</name>
+            <firmware>2.10</firmware>
+            <done/>
+          </meta>00</unused>
+      </element>
+    </repeat>
+    <unused width="40h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
   <repeat at="2600000h" min="0" max="10000">
     <meta>
       <name>Contact index list</name>
