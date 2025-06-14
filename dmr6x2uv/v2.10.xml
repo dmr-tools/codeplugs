@@ -521,9 +521,11 @@
             <done/>
           </meta>
         </int>
-        <int width="1h" format="unsigned">
+        <int width="1h" format="unsigned" default="0">
           <meta>
-            <name>2-tone decode index</name>
+            <name>2-tone Function Index</name>
+            <brief>Specifies the index (+1) of the 2-tone function.</brief>
+            <description>If set to 0, 2-tone decoding is disabled.</description>
             <firmware>2.10</firmware>
             <done/>
           </meta>
@@ -533,6 +535,8 @@
             <name>AES Encryption Key Index</name>
             <brief>Specifies the AES encryption key index.</brief>
             <description>The index is 1-based. 0=None.</description>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
         <int width="4h" format="unsigned" endian="little">
@@ -575,13 +579,35 @@
             <name>CTCSS/DCS + optional signaling</name>
           </item>
         </enum>
-        <unused width="0h:4">
+        <unknown width="0h:2">
           <meta>
-            <name>Unused data</name>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="0h:2">
+          <meta>
+            <name>PTT ID</name>
+            <brief>Specifies, if and how an analog PTT ID is send.</brief>
             <firmware>2.10</firmware>
             <done/>
           </meta>
-        </unused>
+          <item value="0">
+            <name>Off</name>
+            <description>No PTT ID is send.</description>
+          </item>
+          <item value="1">
+            <name>Start</name>
+            <description>PTT ID is send at the start of a trasmission.</description>
+          </item>
+          <item value="2">
+            <name>End</name>
+            <description>PTT ID is send at the end of a transmission.</description>
+          </item>
+          <item value="3">
+            <name>Both</name>
+            <description>PTT ID is send at the start and end of a transmission.</description>
+          </item>
+        </enum>
         <unused width="0h:2">
           <meta>
             <name>Unused data</name>
@@ -668,7 +694,9 @@
         </int>
         <int width="1h" format="unsigned">
           <meta>
-            <name>2-tone ID</name>
+            <name>2-Tone ID</name>
+            <brief>Specifies the index (+1) of the 2-tone PTT ID to send (if enabled).</brief>
+            <description>If set to 0, no ID is specified.</description>
             <firmware>2.10</firmware>
             <done/>
           </meta>
@@ -3149,20 +3177,28 @@
   <element at="24c1500h">
     <meta>
       <name>Channel bitmap block</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="4000">
       <meta>
         <name>Channel bits</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned">
         <meta>
           <name>Channel bit</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unused width="ch">
       <meta>
         <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
   </element>
@@ -3243,19 +3279,22 @@
     <meta>
       <name>2-Tone functions</name>
       <brief>Encodes up to 16 two-tone functions.</brief>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>Two-Tone function</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="2h" format="unsigned" endian="little" default="0">
         <meta>
           <name>First tone frequency</name>
           <brief>Encodes the frequency of the first tone.</brief>
           <description>The value is stored in multiples of 0.1Hz.</description>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="unsigned" endian="little" default="0">
@@ -3263,13 +3302,15 @@
           <name>Second tone frequency</name>
           <brief>Encodes the frequency of the second tone.</brief>
           <description>The value is stored in multiples of 0.1Hz.</description>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <enum width="1h">
         <meta>
           <name>Response</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>None</name>
@@ -3284,59 +3325,283 @@
       <string format="ascii" width="7" pad="0">
         <meta>
           <name>Function name</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </string>
       <unused width="14h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
   <element at="24c2600h">
     <meta>
       <name>2-Tone function bitmap</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="16">
       <meta>
         <name>2-Tone function bits</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
           <name>2-Tone function bit</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unused width="eh">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
   </element>
-  <unknown at="24c2610h" width="20h">
+  <element at="24c2610h">
     <meta>
-      <name>Unknown data</name>
+      <name>DTMF Function Bitmap</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
-  </unknown>
-  <unknown at="24c2630h" width="20h">
+    <repeat n="250">
+      <meta>
+        <name>Bitmap</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable bit</name>
+          <brief>Enables a single DTMF function.</brief>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Pad bits</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
+  <element at="24c2630h">
     <meta>
-      <name>Unknown data</name>
+      <name>5-Tone Function Bitmap</name>
     </meta>
-  </unknown>
-  <unknown at="24c3000h" width="20h">
+    <repeat n="250">
+      <meta>
+        <name>5-Tone function bits</name>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable bit</name>
+          <brief>Enables a single 5-tone function.</brief>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Pad bits</name>
+      </meta>00</unused>
+  </element>
+  <repeat at="24c3000h" min="0" max="250">
     <meta>
-      <name>Unknown data</name>
+      <name>DTMF Functions</name>
+      <brief>Up to 250 DTMF functions.</brief>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
-  </unknown>
-  <unknown at="24c5000h" width="20h">
+    <element>
+      <meta>
+        <name>DTMF Function</name>
+        <brief>Specifies a single DTMF funciton</brief>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>
+      <repeat n="3">
+        <meta>
+          <name>ID</name>
+          <brief>Encodes the fixed size ID. If an ID is shorter, it gets prepended with 0s.</brief>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>ID Digit</name>
+            <brief>A single ID digit.</brief>
+            <firmware>2.10</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <enum width="1h">
+        <meta>
+          <name>Function</name>
+          <brief>The function to perform, when the code is received.</brief>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>Beep</name>
+        </item>
+        <item value="2">
+          <name>Beep &amp; Respond</name>
+        </item>
+      </enum>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Function Name</name>
+          <brief>Specifies the function name.</brief>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="ch">
+        <meta>
+          <name>Unused data</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>00</unused>
+    </element>
+  </repeat>
+  <repeat at="24c5000h" min="0" max="250">
     <meta>
-      <name>Unknown data</name>
+      <name>5-Tone Functions</name>
+      <brief>Encodes up to 250 5-tone functions.</brief>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
-  </unknown>
+    <element>
+      <meta>
+        <name>5-Tone Function</name>
+        <brief>Encodes a single 5-tone function.</brief>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>
+      <repeat n="7">
+        <meta>
+          <name>ID</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>ID digits</name>
+            <firmware>2.10</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>ID Size</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Standard</name>
+          <brief>Specifies the 5-tone standard.</brief>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>ZVEI1</name>
+        </item>
+        <item value="1">
+          <name>ZVEI2</name>
+        </item>
+        <item value="2">
+          <name>ZVEI3</name>
+        </item>
+        <item value="3">
+          <name>PZVEI</name>
+        </item>
+        <item value="4">
+          <name>DZVEI</name>
+        </item>
+        <item value="5">
+          <name>PDZVEI</name>
+        </item>
+        <item value="6">
+          <name>CCIR1</name>
+        </item>
+        <item value="7">
+          <name>CCIR2</name>
+        </item>
+        <item value="8">
+          <name>PCCIR</name>
+        </item>
+        <item value="9">
+          <name>EEA</name>
+        </item>
+        <item value="10">
+          <name>Euro SIgnal</name>
+        </item>
+        <item value="11">
+          <name>NATEL</name>
+        </item>
+        <item value="12">
+          <name>MODAT</name>
+        </item>
+        <item value="13">
+          <name>CCITT</name>
+        </item>
+        <item value="14">
+          <name>EIA</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Tone Duration</name>
+          <brief>Specifies the tone duration in ms. Valid values depend on the chosen standard.</brief>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Function</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>Beep</name>
+        </item>
+        <item value="2">
+          <name>Beep &amp; Respond</name>
+        </item>
+      </enum>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Function Name</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="5h">
+        <meta>
+          <name>Pad Bytes</name>
+          <firmware>2.10</firmware>
+          <done/>
+        </meta>00</unused>
+    </element>
+  </repeat>
   <element at="2500000h">
     <meta>
       <name>General settings element</name>
@@ -3344,6 +3609,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable key tone</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="5h">
@@ -3440,6 +3707,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>SMS alert tone enable</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="5h">
@@ -3450,6 +3719,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Call alert tone enable</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
@@ -3463,20 +3734,28 @@
     <unused width="0h:6">
       <meta>
         <name>Unused bits</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable FM talk permit tone</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable DMR talk permit tone</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
-        <name>Call reset tone enable</name>
+        <name>DMR call reset tone enable</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
@@ -3487,6 +3766,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>FM channel idle tone</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
@@ -3497,6 +3778,8 @@
     <enum width="1h">
       <meta>
         <name>DMR channel idle tone</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -3525,6 +3808,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Boot sound enable</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="5h">
@@ -3545,6 +3830,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Show volume change notification</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="5h">
@@ -3598,26 +3885,36 @@
       <meta>
         <name>Call alert tone</name>
         <description>Consists of 5 tones.</description>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Frequencies</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <description>Frequency in Hz.</description>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <description>In 10ms. Limited to 200ms.</description>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -3625,26 +3922,36 @@
     <element>
       <meta>
         <name>Idle channel tone</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Frequencies</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <description>Frequency in Hz.</description>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <description>Duration in 10ms.</description>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -3652,26 +3959,36 @@
     <element>
       <meta>
         <name>Call reset tone</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Frequencies</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <description>Frequency in Hz.</description>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <description>Duration in 10ms.</description>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -3722,22 +4039,38 @@
         <name>Black</name>
       </item>
     </enum>
-    <unknown width="1h">
+    <enum width="1h">
       <meta>
-        <name>Unknown data</name>
+        <name>Simplex Repeater</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
-    </unknown>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>On</name>
+      </item>
+    </enum>
     <int width="1h" format="unsigned">
       <meta>
         <name>Ranging interval</name>
         <description>Interval in seconds. Valid range [5,255].</description>
       </meta>
     </int>
-    <unknown width="1h">
+    <enum width="1h">
       <meta>
-        <name>Unknown data</name>
+        <name>Monitor Simplex Repeater</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
-    </unknown>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>On</name>
+      </item>
+    </enum>
     <int width="1h" format="unsigned">
       <meta>
         <name>Show TX contact</name>
@@ -3747,13 +4080,37 @@
       <meta>
         <name>Unused bits</name>
       </meta>00</unused>
-    <int width="0h:4" format="unsigned">
+    <int width="0h:4" format="unsigned" default="0">
       <meta>
         <name>Key tone volume</name>
+        <brief>Specifies the key tone volume. If set to 0, it means it is adjustable.</brief>
         <description>Specifies the key tone volume. If set to 0, it is user adjustable.</description>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
-    <unknown width="4h">
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Simplex Repeater Time Slot</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Time Slot 1</name>
+      </item>
+      <item value="1">
+        <name>Time Slot 2</name>
+      </item>
+      <item value="2">
+        <name>Channel Time Slot</name>
+      </item>
+    </enum>
+    <unknown width="2h">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -3835,23 +4192,33 @@
   <element at="2500100h">
     <meta>
       <name>Zone A/B index list block</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="250">
       <meta>
         <name>Zone A/B index list</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Zone A/B index pair</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Channel A index</name>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Channel B index</name>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </element>
@@ -3859,6 +4226,8 @@
     <unused width="18h">
       <meta>
         <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
   </element>
@@ -3866,18 +4235,21 @@
     <meta>
       <name>DTMF Ids</name>
       <brief>Encodes DTMF PTT ids.</brief>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="16">
       <meta>
         <name>DTMF Id</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
-      <int width="1h" format="unsigned" default="255">
+      <int width="1h" format="unsigned" default="0">
         <meta>
           <name>DTMF digit</name>
           <brief>Valid values 0h - fh. If not set, ffh.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
