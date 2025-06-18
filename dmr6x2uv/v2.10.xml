@@ -2891,44 +2891,51 @@
   <repeat at="24c1100h" min="0" max="24">
     <meta>
       <name>2-Tone Ids</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>2-Tone Id</name>
         <brief>Encodes a single 2-tone id.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="2h" format="unsigned" endian="little" default="0">
         <meta>
           <name>First tone frequency</name>
           <brief>Encodes the frequency in multiples of 0.1Hz.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="unsigned" endian="little" default="0">
         <meta>
           <name>Second tone frequency</name>
           <brief>Encodes the tone frequency in multiples of 0.1Hz.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <unused width="4h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
       <string format="ascii" width="7" pad="0">
         <meta>
           <name>Name</name>
           <brief>The name of the id.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </string>
       <unused width="1h">
         <meta>
           <name>Pad byte</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
@@ -2936,24 +2943,28 @@
     <meta>
       <name>2-Tone Id bitmap</name>
       <brief>Specifies, which 2-tone id is valid.</brief>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="24">
       <meta>
         <name>2-tone id enable bits</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
           <name>2-tone id enable bit</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unused width="dh">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <element at="24c1290h">
@@ -3464,21 +3475,29 @@
   <element at="24c2630h">
     <meta>
       <name>5-Tone Function Bitmap</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="250">
       <meta>
         <name>5-Tone function bits</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
           <name>Enable bit</name>
           <brief>Enables a single 5-tone function.</brief>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unused width="0h:6">
       <meta>
         <name>Pad bits</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <repeat at="24c3000h" min="0" max="250">
@@ -6733,6 +6752,7 @@
     <unknown width="a0h">
       <meta>
         <name>Unknown data</name>
+        <incomplete/>
       </meta>
     </unknown>
   </element>
@@ -7115,6 +7135,7 @@
       <unknown width="4h">
         <meta>
           <name>Unknown data</name>
+          <incomplete/>
         </meta>
       </unknown>
     </repeat>
@@ -7126,6 +7147,7 @@
     <unknown width="20h">
       <meta>
         <name>Unknown data</name>
+        <incomplete/>
       </meta>
     </unknown>
   </repeat>
@@ -7136,6 +7158,7 @@
     <unknown width="30h">
       <meta>
         <name>Unknown data</name>
+        <incomplete/>
       </meta>
     </unknown>
   </repeat>
@@ -7146,20 +7169,27 @@
     <unknown width="10h">
       <meta>
         <name>Unknown data</name>
+        <incomplete/>
       </meta>
     </unknown>
   </element>
   <element at="25c0b10h">
     <meta>
       <name>Group list bitmap block</name>
+      <firmware>2.10</firmware>
+      <needs-review/>
     </meta>
     <repeat n="250">
       <meta>
         <name>Group list bitmap</name>
+        <firmware>2.10</firmware>
+        <needs-review/>
       </meta>
       <int width="0h:1" format="unsigned">
         <meta>
           <name>Group list enable bit</name>
+          <firmware>2.10</firmware>
+          <needs-review/>
         </meta>
       </int>
     </repeat>
@@ -7167,6 +7197,7 @@
       <meta>
         <name>Unused data</name>
         <firmware>2.10</firmware>
+        <needs-review/>
       </meta>00</unused>
   </element>
   <element at="25c1000h">
@@ -7238,24 +7269,34 @@
   <repeat at="2600000h" min="0" max="10000">
     <meta>
       <name>Contact index list</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <int width="4h" format="unsigned" endian="little">
       <meta>
         <name>Contact index</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
   </repeat>
   <element at="2640000h">
     <meta>
       <name>Contact bitmap block</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="10000">
       <meta>
         <name>Contact bitmap</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned">
         <meta>
           <name>Contact disable bit</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
@@ -7263,14 +7304,20 @@
   <repeat at="2680000h" min="0" max="10000">
     <meta>
       <name>Contact bank</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>Contact</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="1h" format="unsigned">
         <meta>
           <name>Type</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </element>
@@ -7306,6 +7353,7 @@
       <unknown width="18h">
         <meta>
           <name>Unknown data</name>
+          <incomplete/>
         </meta>
       </unknown>
     </element>
@@ -7321,6 +7369,7 @@
       <unknown width="120h">
         <meta>
           <name>Unknown data</name>
+          <incomplete/>
         </meta>
       </unknown>
     </element>
@@ -7332,6 +7381,7 @@
     <element>
       <meta>
         <name></name>
+        <incomplete/>
       </meta>
       <int width="4h" format="unsigned" endian="little">
         <meta>
