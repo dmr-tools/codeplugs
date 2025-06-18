@@ -7513,24 +7513,6 @@
         </enum>
       </repeat>
     </element>
-    <unknown width="fbh">
-      <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
-    <string format="ascii" width="60" pad="0">
-      <meta>
-        <name>APRS message</name>
-        <needs-review/>
-      </meta>
-    </string>
-    <unknown width="4h">
-      <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
   </element>
   <element at="2501200h">
     <meta>
