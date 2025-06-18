@@ -6788,26 +6788,36 @@
   <element at="2501000h">
     <meta>
       <name>APRS settings</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
-    <unknown width="5h">
+    <unused width="1h">
       <meta>
-        <name>Unknown data</name>
-        <needs-review/>
+        <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>00</unused>
+    <int width="4h" format="bcd" endian="big" default="340787200">
+      <meta>
+        <name>FM APRS TX Frquency</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
-    </unknown>
+    </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>FM APRS TX delay</name>
         <brief>Specifies the transmit FM APRS delay in multiple of 20ms. Valid values are 0-5100ms.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>FM APRS sub tone type</name>
         <brief>Specifies the transmit sub-tone for FM APRS.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -6822,7 +6832,8 @@
     <enum width="1h">
       <meta>
         <name>FM APRS TX CTCSS tone</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>62.5 Hz</name>
@@ -6983,72 +6994,73 @@
         <name>FM APRS DCS code</name>
         <brief>Encodes the DCS code in a complex way.</brief>
         <description>That is, the least significant 9 bits encode the binary DCS code and 9th bit encodes the inverted flag of DCS.</description>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Manual TX interval</name>
         <brief>Specifies the manual TX interval in second. 0: Off, 1-255.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Automatic TX interval</name>
         <brief>Specifies the interval in multiples of 30s. 0:Off. Valid values 30-7650s.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
-    <enum width="1h">
-      <meta>
-        <name>APRS monitor enable</name>
-        <brief>Listen to the APRS packet transmission.</brief>
-        <needs-review/>
-      </meta>
-      <item value="0">
-        <name>Off</name>
-      </item>
-      <item value="1">
-        <name>On</name>
-      </item>
-    </enum>
     <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>Fixed location index</name>
-        <brief>Speicfies which fixed location to use.</brief>
-        <description>The index is stored +1. That is 1= index 0, ... . If 0 is set, GPS is used for the location.</description>
-        <needs-review/>
+        <name>Enabl APRS TX Tone</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Fixed Location</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <element>
       <meta>
-        <name>Fixed location 0</name>
-        <needs-review/>
+        <name>Fixed location</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="1h" format="unsigned">
         <meta>
           <name>Latitude degree</name>
           <brief>Encodes the first position latitude degree value.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Latitude minute</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Latitude seconds</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <enum width="1h">
         <meta>
           <name>Latitude hemisphere</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>North</name>
@@ -7060,25 +7072,29 @@
       <int width="1h" format="unsigned">
         <meta>
           <name>Longitude degree</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Longitude minute</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Longitude seconds</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <enum width="1h">
         <meta>
           <name>Longitude hemisphere</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>East</name>
@@ -7091,52 +7107,60 @@
     <string format="ascii" width="6" pad="0">
       <meta>
         <name>Destination call</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </string>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Destination SSID</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <string format="ascii" width="6" pad="0">
       <meta>
         <name>Source call</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </string>
     <int width="1h" format="unsigned">
       <meta>
         <name>Source SSID</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <string format="ascii" width="21" pad="0">
       <meta>
         <name>APRS path string 0-14h</name>
         <brief>First half of the APRS path string. Contains the first 24 bytes.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </string>
     <int width="1h" format="signed">
       <meta>
         <name>APRS symbol table</name>
         <brief>A char!</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>APRS symbol</name>
         <brief>A char!</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>FM APRS transmit power</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Low</name>
@@ -7155,54 +7179,62 @@
       <meta>
         <name>Prewave delay</name>
         <brief>Specifies the pre-wave delay in multiples of 10ms. Valid values are 0-2550ms.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
-    <unknown width="3h">
+    <unused width="3h">
       <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
+        <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>00</unused>
     <element>
       <meta>
         <name>DMR APRS settings</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <repeat n="8">
         <meta>
           <name>Channel indices</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little" default="0">
           <meta>
             <name>Channel index</name>
             <brief>0-based transmit channel. 0fa0=VFO A, 0fa1=VFO B, 0fa2=Current</brief>
-            <needs-review/>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="8">
         <meta>
           <name>Destination DMR IDs</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="4h" format="bcd" endian="big" default="0">
           <meta>
             <name>DMR destination ID</name>
-            <needs-review/>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="8">
         <meta>
           <name>Call types</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <enum width="1h">
           <meta>
             <name>Call type</name>
-            <needs-review/>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Private Call</name>
@@ -7219,7 +7251,8 @@
     <enum width="1h">
       <meta>
         <name>Roaming support</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Disabled</name>
@@ -7231,12 +7264,14 @@
     <repeat n="8">
       <meta>
         <name>DMR APRS time slots</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <enum width="1h">
         <meta>
           <name>Time slot</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>Channel slot</name>
@@ -7254,278 +7289,35 @@
         <name>Repeater activation delay</name>
         <brief>Delay in multiples of 100ms. 0=Off.</brief>
         <description>Valid values are Off, 100ms, ..., 1000ms.</description>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
-      <meta>
-        <name>APRS display duration</name>
-        <brief>Specifies the time, an APRS message is shown. Stored as 3s + n seconds.</brief>
-        <description>That is, 0=3s, 1=4s, ... ch=15s, dh = infinity.</description>
-        <needs-review/>
-      </meta>
-    </int>
-    <string format="ascii" width="35" pad="0">
-      <meta>
-        <name>APRS path 15h-38h</name>
-        <brief>Second half of the APRS path.</brief>
-        <needs-review/>
-      </meta>
-    </string>
-    <int width="2h" format="unsigned" endian="little">
-      <meta>
-        <name>Fixed altitude</name>
-        <brief>Encodes the fixed altitude in feet.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned">
-      <meta>
-        <name>Status report flag</name>
-        <short-name>FStat</short-name>
-        <brief>Sets the &quot;STATUS REPORT&quot; flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned">
-      <meta>
-        <name>NEMA report flag</name>
-        <short-name>FNEMA</short-name>
-        <brief>Sets the &quot;NEMA REPORT&quot; flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned">
-      <meta>
-        <name>Weather report flag</name>
-        <short-name>FWX</short-name>
-        <brief>Sets the weather report flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned">
-      <meta>
-        <name>Message flag</name>
-        <short-name>FMsg</short-name>
-        <brief>Sets the &quot;MESSAGE&quot; flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned">
-      <meta>
-        <name>Item flag</name>
-        <short-name>FItem</short-name>
-        <brief>Sets the &quot;ITEM&quot; flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned">
-      <meta>
-        <name>Object flag</name>
-        <short-name>FObj</short-name>
-        <brief>Set the &quot;OBJECT&quot; flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned">
-      <meta>
-        <name>Mic-E flag</name>
-        <short-name>FMicE</short-name>
-        <brief>Sets the &quot;MIC-E&quot; flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned" default="0">
-      <meta>
-        <name>Position Flag</name>
-        <short-name>FPos</short-name>
-        <brief>Sets the &quot;POSITION&quot; flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <unused width="0h:7">
+    <unused width="1eh">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
-    <int width="0h:1" format="unsigned" default="0">
-      <meta>
-        <name>Other flag</name>
-        <short-name>FOther</short-name>
-        <brief>Sets the &quot;OTHER&quot; flag.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <enum width="1h">
-      <meta>
-        <name>FM APRS bandwidth</name>
-        <needs-review/>
-      </meta>
-      <item value="0">
-        <name>Narrow</name>
-      </item>
-      <item value="1">
-        <name>Wide</name>
-      </item>
-    </enum>
-    <enum width="1h">
-      <meta>
-        <name>Enable AX.25 CRC check</name>
-        <brief>If disabled, the all decoded AX.25 frames are processed, even those with invalid CRCs.</brief>
-        <needs-review/>
-      </meta>
-      <item value="0">
-        <name>On</name>
-      </item>
-      <item value="1">
-        <name>Off</name>
-      </item>
-    </enum>
-    <repeat n="8">
-      <meta>
-        <name>FM APRS frequencies</name>
-        <needs-review/>
-      </meta>
-      <int width="4h" format="bcd" endian="big" default="0">
-        <meta>
-          <name>FM APRS Frequency</name>
-          <needs-review/>
-        </meta>
-      </int>
-    </repeat>
-    <unknown width="1h">
-      <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
-    <element>
-      <meta>
-        <name>Fixed locations 1-7</name>
-        <needs-review/>
-      </meta>
-      <repeat n="7">
-        <meta>
-          <name>Fixed location latitude degree</name>
-          <needs-review/>
-        </meta>
-        <int width="1h" format="unsigned" default="0">
-          <meta>
-            <name>Latitude degree</name>
-            <needs-review/>
-          </meta>
-        </int>
-      </repeat>
-      <repeat n="7">
-        <meta>
-          <name>Fixed location latitude minute</name>
-          <needs-review/>
-        </meta>
-        <int width="1h" format="unsigned">
-          <meta>
-            <name>Latitude minute</name>
-            <needs-review/>
-          </meta>
-        </int>
-      </repeat>
-      <repeat n="7">
-        <meta>
-          <name>Fixed latitude seconds</name>
-          <needs-review/>
-        </meta>
-        <int width="1h" format="unsigned">
-          <meta>
-            <name>Latitude seconds</name>
-            <needs-review/>
-          </meta>
-        </int>
-      </repeat>
-      <repeat n="7">
-        <meta>
-          <name>Fixed location latitude hemispheres</name>
-          <needs-review/>
-        </meta>
-        <enum width="1h">
-          <meta>
-            <name>Latitude hemisphere</name>
-            <needs-review/>
-          </meta>
-          <item value="0">
-            <name>North</name>
-          </item>
-          <item value="1">
-            <name>South</name>
-          </item>
-        </enum>
-      </repeat>
-      <repeat n="7">
-        <meta>
-          <name>Fixed location longitude degree</name>
-          <needs-review/>
-        </meta>
-        <int width="1h" format="unsigned">
-          <meta>
-            <name>Longitude degree</name>
-            <needs-review/>
-          </meta>
-        </int>
-      </repeat>
-      <repeat n="7">
-        <meta>
-          <name>Fixed location longitude minute</name>
-          <needs-review/>
-        </meta>
-        <int width="1h" format="unsigned">
-          <meta>
-            <name>Longitude minute</name>
-            <needs-review/>
-          </meta>
-        </int>
-      </repeat>
-      <repeat n="7">
-        <meta>
-          <name>Fixed location longitude seconds</name>
-          <needs-review/>
-        </meta>
-        <int width="1h" format="unsigned">
-          <meta>
-            <name>Longitude seconds</name>
-            <needs-review/>
-          </meta>
-        </int>
-      </repeat>
-      <repeat n="7">
-        <meta>
-          <name>Fixed location longitude hemispheres</name>
-          <needs-review/>
-        </meta>
-        <enum width="1h">
-          <meta>
-            <name>Longitude hemisphere</name>
-            <needs-review/>
-          </meta>
-          <item value="0">
-            <name>East</name>
-          </item>
-          <item value="1">
-            <name>West</name>
-          </item>
-        </enum>
-      </repeat>
-    </element>
   </element>
   <element at="2501200h">
     <meta>
       <name>APRS message settings</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <string format="ascii" width="60" pad="0">
       <meta>
         <name>APRS message</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </string>
     <unused width="4h">
       <meta>
         <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
   </element>
