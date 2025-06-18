@@ -579,11 +579,13 @@
             <name>CTCSS/DCS + optional signaling</name>
           </item>
         </enum>
-        <unknown width="0h:2">
+        <unused width="0h:2">
           <meta>
-            <name>Unknown data</name>
+            <name>Unused data</name>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </unused>
         <enum width="0h:2">
           <meta>
             <name>PTT ID</name>
@@ -2161,23 +2163,27 @@
   <repeat at="24c0000h" min="0" max="100">
     <meta>
       <name>5-Tone IDs</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>5-tone ID</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <unused width="1h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </unused>
       <enum width="1h">
         <meta>
           <name>Standard</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>ZVEI1</name>
@@ -2228,64 +2234,74 @@
       <int width="1h" format="signed">
         <meta>
           <name>ID length</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="signed" default="0">
         <meta>
           <name>Tone duration</name>
           <brief>Duration is encoded in ms. Valid values are 30ms - 100ms.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <repeat n="40">
         <meta>
           <name>ID</name>
           <brief>Up to 40 digits</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="0h:4" format="unsigned" default="0">
           <meta>
             <name>Digit</name>
             <brief>Encodes a single ID digit.</brief>
-            <needs-review/>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <string format="ascii" width="7" pad="32">
         <meta>
           <name>Name</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </string>
       <unused width="1h">
         <meta>
           <name>Pad Byte</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
   <element at="24c0c80h">
     <meta>
       <name>5-Tone id bitmap</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="100">
       <meta>
         <name>5-tone id bits</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="signed">
         <meta>
           <name>5-tone id bit</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unused width="3h:4">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
   </element>
@@ -2293,18 +2309,21 @@
     <meta>
       <name>5-Tone functions</name>
       <brief>Defines up to 16 functions, that can be triggered by a 5-tone id.</brief>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>5-Tone function</name>
         <brief>Configures a single function</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <enum width="1h">
         <meta>
           <name>Function code</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>Open squelch</name>
@@ -2331,7 +2350,8 @@
       <enum width="1h">
         <meta>
           <name>Response</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>None</name>
@@ -2347,37 +2367,43 @@
         <meta>
           <name>ID Length</name>
           <brief>Specifies the length of the id.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <repeat n="12">
         <meta>
           <name>ID</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>ID digit</name>
             <brief>Encodes a single ID digit. Valid values are 0-9, A-F. Encoded as 0-15.</brief>
-            <needs-review/>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <unused width="1h">
         <meta>
           <name>Pad Byte</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
       <string format="ascii" width="7" pad="0">
         <meta>
           <name>Name</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </string>
       <unused width="9h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
@@ -2395,13 +2421,15 @@
     <unused width="1h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
     <enum width="1h">
       <meta>
         <name>Decoing response</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -2416,7 +2444,8 @@
     <enum width="1h">
       <meta>
         <name>Decoding standard</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>ZVEI1</name>
@@ -2467,49 +2496,57 @@
     <int width="1h" format="signed">
       <meta>
         <name>Radio ID length</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>Decoding tone duration in ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="7h" format="signed" endian="little">
       <meta>
         <name>Radio ID</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>Post encode delay in 10ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>PTT ID 0=off, [5,75]</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>Auto reset time in 10s</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>First delay in 10ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Sidetone enable</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name></name>
@@ -2521,48 +2558,56 @@
     <unused width="1h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
     <int width="1h" format="signed">
       <meta>
         <name>Stop code</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>Stop time in 10ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>Decode time in 10ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>Delay after stop in 10ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>Pre-time in 10ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="6h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
     <enum width="1h">
       <meta>
         <name>BOT standard</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>ZVEI1</name>
@@ -2613,31 +2658,36 @@
     <int width="1h" format="signed">
       <meta>
         <name>BOT ID length</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>BOT tone duration in ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="ch" format="signed" endian="little">
       <meta>
         <name>BOT ID</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="11h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
     <enum width="1h">
       <meta>
         <name>EOT standard</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>ZVEI1</name>
@@ -2688,25 +2738,29 @@
     <int width="1h" format="signed">
       <meta>
         <name>EOT ID length</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="signed">
       <meta>
         <name>EOT tone duration in ms</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="ch" format="signed" endian="little">
       <meta>
         <name>EOT ID</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="14h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
   </element>
@@ -6668,6 +6722,8 @@
     <unused width="8h">
       <meta>
         <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <element at="2501000h">
@@ -7022,10 +7078,14 @@
   <repeat at="2540000h" min="0" max="250">
     <meta>
       <name>Zone names</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <string format="ascii" width="32" pad="0">
       <meta>
         <name>Zone name</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </string>
   </repeat>
