@@ -2988,54 +2988,61 @@
   <element at="24c1290h">
     <meta>
       <name>2-Tone Settings</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
-    <unknown width="9h">
+    <unused width="9h">
       <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
+        <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>00</unused>
     <int width="1h" format="unsigned">
       <meta>
         <name>First tone duration</name>
         <brief>Encodes the first tone duration in multiples of 100ms. Valid values are 500-10000ms.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Second tone duration</name>
         <brief>Specifies the second tone duration in multiples of 100ms. Valid values are 500ms - 10000ms.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Long tone duration</name>
         <brief>Encodes the duration in terms of 100ms. Valid values are 500 - 10000ms.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Gap duration</name>
         <brief>Encodes the gap duration in multiples of 100ms. Valid values are 0 - 2000ms.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Reset period</name>
         <brief>Encodes the reset period in seconds. Valid values are 0 - 250s.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
-    <enum width="1h:1">
+    <enum width="1h">
       <meta>
         <name>Side tone</name>
         <brief>Enables side tone.</brief>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -3044,30 +3051,38 @@
         <name>On</name>
       </item>
     </enum>
-    <unknown width="0h:7">
+    <unused width="1h">
       <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
+        <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
+      </meta>00</unused>
   </element>
   <element at="24c1300h">
     <meta>
       <name>Zone bitmap block</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="250">
       <meta>
         <name>Zone bitmap</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned">
         <meta>
           <name>Zone enable bit</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unused width="0h:6">
       <meta>
         <name>Unused data</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
   </element>
@@ -3129,17 +3144,20 @@
   <element at="24c1400h">
     <meta>
       <name>Alarm Settings</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>Analog Alarm Settings</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <enum width="1h">
         <meta>
           <name>Action</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>None</name>
@@ -3157,7 +3175,8 @@
       <enum width="1h">
         <meta>
           <name>Mode</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>None</name>
@@ -3173,41 +3192,47 @@
         <meta>
           <name>DTMF/5Tomn id index</name>
           <brief>0-based index of DTMF or 5-tone id.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="0">
         <meta>
           <name>Alarm duration</name>
           <brief>Specifies the alarm duration in seconds.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="0">
         <meta>
           <name>Alarm TX duration</name>
           <brief>Specifies the alarm transmit duration in seconds.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned">
         <meta>
           <name>Alarm RX duration</name>
           <brief>Specifies the alarm RX duration in seconds.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="unsigned" endian="little" default="0">
         <meta>
           <name>Alarm channel index</name>
           <brief>Must be a 0-based index to an analog channel.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <enum width="1h">
         <meta>
           <name>Alarm channel selection</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>Current Channel</name>
@@ -3220,7 +3245,8 @@
         <meta>
           <name>Emergency cycle</name>
           <brief>0 = continuous, otherwise count 1...255.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </element>
@@ -3228,12 +3254,14 @@
   <element at="24c1440h">
     <meta>
       <name>DMR Alarm Extension</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <enum width="1h">
       <meta>
         <name>Call Type</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Private Call</name>
@@ -3248,19 +3276,22 @@
     <unused width="22h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </unused>
     <int width="4h" format="bcd" endian="big">
       <meta>
         <name>Destination Id</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="9h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <element at="24c1500h">
@@ -7662,56 +7693,66 @@
   <repeat at="2580000h" min="0" max="250">
     <meta>
       <name>Radio Ids</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>Radio Id Element</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="4h" format="bcd" endian="big">
         <meta>
           <name>DMR Id</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <unused width="1h">
         <meta>
-          <name>Unused data</name>
-          <needs-review/>
+          <name>Pad Byte</name>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
       <string format="ascii" width="16" pad="0">
         <meta>
           <name>Name</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </string>
       <unused width="bh">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
   <element at="25c0000h">
     <meta>
       <name>FM Quick Call Bank</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="4">
       <meta>
         <name>FM Quick Calls</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>FM Qick Call</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <enum width="1h">
           <meta>
             <name>Type</name>
-            <needs-review/>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>None</name>
@@ -7730,7 +7771,8 @@
           <meta>
             <name>Analog Contact Index</name>
             <brief>0-based index, ffh=none.</brief>
-            <needs-review/>
+            <firmware>2.10</firmware>
+            <done/>
           </meta>
         </int>
       </element>
@@ -7738,35 +7780,42 @@
     <unused width="f8h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <repeat at="25c0100h" n="32">
     <meta>
       <name>Status Messages</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <string format="ascii" width="32" pad="0">
       <meta>
         <name>Status Message</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </string>
   </repeat>
   <repeat at="25c0500h" n="18">
     <meta>
       <name>Hot-Key Settings</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>Hot-Key Setting</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <enum width="1h">
         <meta>
           <name>Type</name>
-          <needs-review/>
+          <brief>Specifies the hot-key action type.</brief>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>Call</name>
@@ -7778,7 +7827,8 @@
       <enum width="1h">
         <meta>
           <name>Menu Item</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>None</name>
@@ -7829,7 +7879,8 @@
       <enum width="1h">
         <meta>
           <name>Call Type</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>FM</name>
@@ -7841,7 +7892,8 @@
       <enum width="1h">
         <meta>
           <name>DMR Call Type</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
         <item value="255">
           <name>Off</name>
@@ -7870,20 +7922,23 @@
           <name>Contact Index</name>
           <brief>0-based index, ffffffffh = none.</brief>
           <description>Used for both, FM and DMR contacts.</description>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="255">
         <meta>
           <name>Message Index</name>
           <brief>0-based SMS message index or status message index. ffh = none.</brief>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <unused width="27h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </unused>
     </element>
@@ -7891,24 +7946,28 @@
   <element at="25c0b00h">
     <meta>
       <name>Status Message Bitmap Element</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <repeat n="32">
       <meta>
         <name>Status Message Bitmap</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
           <name>Status Message Bit</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unused width="ch">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <element at="25c0b10h">
@@ -8063,55 +8122,79 @@
   <repeat at="2900000h" n="128">
     <meta>
       <name>DTMF Contact index list</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <int width="1h" format="unsigned">
       <meta>
         <name>DTMF contact index</name>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
   </repeat>
   <repeat at="2900100h" n="128">
     <meta>
       <name>DTMF Contact bytemap</name>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
-    <int width="1h" format="unsigned">
+    <int width="1h" format="unsigned" default="255">
       <meta>
-        <name>DTMF contact enable byte</name>
+        <name>DTMF contact diable byte</name>
+        <brief>The byte encodes 0=enabled and ff=disabled.</brief>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
     </int>
   </repeat>
   <repeat at="2940000h" min="0" max="128">
     <meta>
       <name>Analog Contacts</name>
-      <needs-review/>
+      <firmware>2.10</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>DTMF Contact</name>
-        <needs-review/>
+        <firmware>2.10</firmware>
+        <done/>
       </meta>
-      <int width="7h" format="bcd" endian="big">
+      <repeat n="14">
         <meta>
           <name>DTMF Number</name>
-          <needs-review/>
+          <brief>Exactly 14 4-bit digits. Unused digits are set to 0.</brief>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
-      </int>
+        <int width="0h:4" format="unsigned" default="0">
+          <meta>
+            <name>DTMF Digit</name>
+            <brief>Encodes the DTMF digits as 0-9, A-D, *, #.</brief>
+            <firmware>2.10</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
       <int width="1h" format="unsigned">
         <meta>
           <name>Number Length</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </int>
       <string format="ascii" width="15" pad="0">
         <meta>
           <name>Name</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>
       </string>
       <unused width="1h">
         <meta>
           <name>Pad Byte</name>
-          <needs-review/>
+          <firmware>2.10</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
