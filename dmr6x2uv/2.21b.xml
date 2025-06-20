@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>BTECH DMR-6X2UV</name>
+    <description>Documents the codeplug format for the BTECH DMR-6X2UV device.</description>
+    <firmware>2.21b</firmware>
+    <done/>
+  </meta>
+</codeplug>

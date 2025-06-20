@@ -231,6 +231,7 @@
     </memory>
 	  
     <firmware name="2.10" released="2024-04-10" codeplug="dmr6x2uv/v2.10.xml"/>
+    <firmware name="2.21b" released="2025-05-08" codeplug="dmr6x2uv/v2.21b.xml"/>
   </model>
 
 
