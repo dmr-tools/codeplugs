@@ -659,13 +659,30 @@
             <name>channel free</name>
           </item>
         </enum>
-        <unused width="0h:5">
+        <unknown width="0h:1">
           <meta>
-            <name>Unused data</name>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="0h:1">
+          <meta>
+            <name>Enhanced encryption type</name>
+            <short-name>EnhEnc</short-name>
             <firmware>2.21b</firmware>
             <done/>
           </meta>
-        </unused>
+          <item value="0">
+            <name>AES</name>
+          </item>
+          <item value="1">
+            <name>ARC4</name>
+          </item>
+        </enum>
+        <unknown width="0h:3">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Exclude channel from roaming</name>
@@ -950,11 +967,16 @@
           <firmware>2.21b</firmware>
           <done/>
         </meta>
-        <unknown width="40h">
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>ARC4 Encryption Key Index</name>
+            <brief>Specifies the ARC4 encryption key index.</brief>
+            <description>Index is stored idx+1, 0=Off.</description>
+          </meta>
+        </int>
+        <unknown width="3fh">
           <meta>
             <name>Unknown data</name>
-            <firmware>2.21b</firmware>
-            <done/>
           </meta>
         </unknown>
       </element>
@@ -1674,7 +1696,7 @@
       </enum>
     </element>
   </repeat>
-  <repeat at="fc2000h" n="2">
+  <repeat at="fc2800h" n="2">
     <meta>
       <name>VFO Channel Extensions</name>
       <firmware>2.21b</firmware>
@@ -3797,21 +3819,22 @@
   <element at="2500000h">
     <meta>
       <name>General settings element</name>
-      <needs-review/>
+      <firmware>2.21b</firmware>
+      <done/>
     </meta>
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable key tone</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Display mode</name>
         <brief>Specifies the work mode. That is VFO/Channel.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Channel</name>
@@ -3823,8 +3846,8 @@
     <enum width="1h">
       <meta>
         <name>Keypad Lock</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Auto</name>
@@ -3836,8 +3859,8 @@
     <enum width="1h">
       <meta>
         <name>Sleep mode timeout</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -3860,22 +3883,23 @@
         <name>Transmit timeout</name>
         <brief>Specifies the transmit timeout in multiles of 30s.</brief>
         <description>That is, the timeout is T = n*30s, where n=0 disables the transmit timeout.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="1h">
       <meta>
         <name>Boot display</name>
         <description>Specifies, what is show during boot.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Default Display</name>
@@ -3890,15 +3914,15 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Boot password enable</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>VFO Tuing Step SIze</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>2.5 kHz</name>
@@ -3932,23 +3956,23 @@
       <meta>
         <name>Squelch Level VFO A</name>
         <brief>Valid values 0=Open, 1, ..., 5.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Squelch Level VFO B</name>
         <brief>Valid values 0=Open, 1, ..., 5</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Power save mode</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -3964,24 +3988,24 @@
       <meta>
         <name>VOX Level</name>
         <brief>Specifies the VOX level: 0=Off, 1, ..., 3.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>VOX Delay</name>
         <brief>Delay in (n+5) * 100ms.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>VFO Scan Mode</name>
         <brief>Specifies, how the scan behaves, once a signal is received.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Time</name>
@@ -4000,16 +4024,16 @@
       <meta>
         <name>Microphone Gain</name>
         <brief>Specifies the mic gain. Valid values 0=1, ..., 4=5.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>PF1 short press function</name>
         <brief>Specifies the function for a short press of PF1.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -4157,14 +4181,20 @@
       </item>
       <item value="48">
         <name>DIM Shut</name>
+      </item>
+      <item value="49">
+        <name>GPS Toggle</name>
+      </item>
+      <item value="50">
+        <name>Satellite Predict</name>
       </item>
     </enum>
     <enum width="1h">
       <meta>
         <name>PF2 short press function</name>
         <brief>Specifies the function for a short press of PF2.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -4312,14 +4342,20 @@
       </item>
       <item value="48">
         <name>DIM Shut</name>
+      </item>
+      <item value="49">
+        <name>GPS toggle</name>
+      </item>
+      <item value="50">
+        <name>Satellite Predict</name>
       </item>
     </enum>
     <enum width="1h">
       <meta>
         <name>PF3 short press function</name>
         <brief>Specifies the function for a short press of PF3.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -4467,14 +4503,20 @@
       </item>
       <item value="48">
         <name>DIM Shut</name>
+      </item>
+      <item value="49">
+        <name>GPS toggle</name>
+      </item>
+      <item value="50">
+        <name>Satellite Predict</name>
       </item>
     </enum>
     <enum width="1h">
       <meta>
         <name>P1 short press function</name>
         <brief>Specifies the function for a short press of P1.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -4622,14 +4664,20 @@
       </item>
       <item value="48">
         <name>DIM Shut</name>
+      </item>
+      <item value="49">
+        <name>GPS toggle</name>
+      </item>
+      <item value="50">
+        <name>Satellite Predict</name>
       </item>
     </enum>
     <enum width="1h">
       <meta>
         <name>P2 short press function</name>
         <brief>Specifies the function for a short press of P2.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -4778,13 +4826,19 @@
       <item value="48">
         <name>DIM Shut</name>
       </item>
+      <item value="49">
+        <name>GPS toggle</name>
+      </item>
+      <item value="50">
+        <name>Satellite predict</name>
+      </item>
     </enum>
     <enum width="1h">
       <meta>
         <name>Work Mode VFO A</name>
         <brief>Specifies the work mode for VFO A.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Channel</name>
@@ -4796,8 +4850,8 @@
     <enum width="1h">
       <meta>
         <name>Work Mode VFO B</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Channel</name>
@@ -4810,8 +4864,8 @@
       <meta>
         <name>Squelch Tail Elimination</name>
         <brief>Sets the STE type.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -4832,8 +4886,8 @@
     <enum width="1h">
       <meta>
         <name>STE Frequency</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -4849,47 +4903,47 @@
       <meta>
         <name>Group Call Hang Time</name>
         <brief>Specifies the duration in seconds. Valid values are 1, ..., 30s, 31=unlimited.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="5">
       <meta>
         <name>Private Call Hang Time</name>
         <brief>Specifies the duration in seconds. Valid values are 1, ..., 30, 31=unlimited.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="5">
+    <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Voice header repetition</name>
         <brief>The count is stored as n+2. Valid values are 2,...,8</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="5">
       <meta>
         <name>TX Preamble Duration</name>
         <brief>Stroed in multiples of 60ms. Valid values are 0, ..., 2400ms.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>WFM Channel Index</name>
         <brief>Specifies the 0-based index of the current WFM channel index.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>WFM Mode</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Channel</name>
@@ -4902,36 +4956,37 @@
       <meta>
         <name>Memory Zone A Index</name>
         <brief>Specifies the current Zone for VFO A.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Memory Zone B Index</name>
         <brief>Specifies the zone index for the VFO B.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable record function</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>DTMF tone duration</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>50ms</name>
@@ -4952,7 +5007,8 @@
     <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned">
@@ -4960,15 +5016,15 @@
         <name>Display brightness</name>
         <brief>Valid values 0-4.</brief>
         <description>Brightness level-1, levels=1, ..., 5.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Backlight duration</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Always</name>
@@ -5010,36 +5066,37 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable GPS</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>SMS alert tone enable</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable WFM Monitor</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Main Channel</name>
         <brief>Specifies the current active VFO (A or B).</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>A</name>
@@ -5051,15 +5108,15 @@
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Enable Sub-Channel</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>TBST</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>1000 Hz</name>
@@ -5077,15 +5134,15 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Call alert tone enable</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>GPS time zone</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>GMT-12</name>
@@ -5169,36 +5226,36 @@
     <unused width="0h:6">
       <meta>
         <name>Unused bits</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable FM talk permit tone</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable DMR talk permit tone</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>DMR call reset tone enable</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>VOX Source</name>
         <brief>Specifies the VOX trigger source. This can either be the internal, external or both microphones.´</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Internal Mic</name>
@@ -5213,21 +5270,22 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>FM channel idle tone</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="1h">
       <meta>
         <name>DMR channel idle tone</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -5247,76 +5305,80 @@
         <name>Menu display duration</name>
         <brief>T = (n+1) * 5s. Valid values 5-60s.</brief>
         <description>In multiples of 5s + 5s. 0=5s, 1=10s, 2=15s, ..., 11=60s.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Enable Filter Own ID From Missed Calls</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Boot sound enable</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="8">
       <meta>
         <name>Max Speaker Volume</name>
         <brief>Specifies the maximum speaker volume 0=Indoors, 1, ..., 8.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable DMR Remote Stun &amp; Kill</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable Remote DMR Monitor</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Get position</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Enable Select TX Contact</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>PF1 long press function</name>
         <brief>Specifies the function for a long press of PF1.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -5470,8 +5532,8 @@
       <meta>
         <name>PF2 long press function</name>
         <brief>Specifies the function for a long press of PF2.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -5625,8 +5687,8 @@
       <meta>
         <name>PF3 long press function</name>
         <brief>Specifies the function for a long press of PF3.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -5780,8 +5842,8 @@
       <meta>
         <name>P1 long press function</name>
         <brief>Specifies the function for a long press of P1.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -5935,8 +5997,8 @@
       <meta>
         <name>P2 long press function</name>
         <brief>Specifies the function for a long press of P2.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -6090,23 +6152,23 @@
       <meta>
         <name>Long Press Duration</name>
         <brief>Specifies the duration in (n+1) seconds. Valid values are 1, ..., 5 seconds.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Show volume change notification</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Autorepeater VFO A</name>
         <brief>Enables and specifies the direction of the auto-repeater function.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -6121,8 +6183,8 @@
     <enum width="1h">
       <meta>
         <name>DMR Monitor</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -6137,8 +6199,8 @@
     <enum width="1h">
       <meta>
         <name>DMR Monitor Match CC</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Any</name>
@@ -6150,8 +6212,8 @@
     <enum width="1h">
       <meta>
         <name>DMR Monitor Match ID</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Any</name>
@@ -6163,15 +6225,15 @@
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable DMR Monitor hold slot</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Last caller display</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -6189,57 +6251,60 @@
     <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="2">
       <meta>
         <name>FM Call Hang Time</name>
         <brief>Specifies the FM call hang time in seconds. Valid values are 0, ..., 30s.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Show clock</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="8">
       <meta>
         <name>Max Headphone Volume</name>
         <brief>Specifies the maximum head-phone volume. Valid values: 0=Indoors, 1, ..., 8.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>DMR APRS message enable</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="3h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable enhanced sound quality.</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little" default="0">
       <meta>
         <name>VFO Scan UHF Min Frequency</name>
         <brief>Lower bound of the UHF VFO scan range. Frequency is stored in multiples of 10Hz.</brief>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little" default="0">
@@ -6247,8 +6312,8 @@
         <name>VFO Scan UHF Max Frequency</name>
         <brief>Specifies the upper bound of the VFO scan frequency range.</brief>
         <description>The frequency is encoded in multiples of 10Hz.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little" default="0">
@@ -6256,8 +6321,8 @@
         <name>VFO Scan VHF Min Frequency</name>
         <brief>Specifies the lower bound of the VFO scan frequency range.</brief>
         <description>The frequency is stored in multiples of 10Hz.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little" default="0">
@@ -6265,96 +6330,97 @@
         <name>VFO Scan VHF Max Frequency</name>
         <brief>Specifies the VFO scan upper bound frequency.</brief>
         <description>The frequency is stored in multiples of 10Hz.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="255">
       <meta>
         <name>Auto Repeater UHF Offset Index</name>
         <brief>Specifies the index of the UHF repeater offset frequency. If set to ffh, is it disabled.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Auto Repeater VHF Offset Index</name>
         <brief>Specifies the index of the VHF auto-repater offset frequency. If set to ffh, the function is disabled.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="4h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Enable Call Channel is Maintained</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="255">
       <meta>
         <name>Priority Zone Index VFO A</name>
         <brief>The index is 0-based. An index of ffh, implies no priority zone.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="255">
       <meta>
         <name>Priority Zone Index VFO B</name>
         <brief>0-based index, a value of ffh imples no priority zone.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable SMS Confirmation</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <element>
       <meta>
         <name>Call alert tone</name>
         <description>Consists of 5 tones.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Frequencies</name>
-          <firmware>2.10</firmware>
-          <needs-review/>
+          <firmware>2.21b</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <description>Frequency in Hz.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
-          <firmware>2.10</firmware>
-          <needs-review/>
+          <firmware>2.21b</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <description>In 10ms. Limited to 200ms.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -6362,36 +6428,36 @@
     <element>
       <meta>
         <name>Idle channel tone</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Frequencies</name>
-          <firmware>2.10</firmware>
-          <needs-review/>
+          <firmware>2.21b</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <description>Frequency in Hz.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
-          <firmware>2.10</firmware>
-          <needs-review/>
+          <firmware>2.21b</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <description>Duration in 10ms.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -6399,36 +6465,36 @@
     <element>
       <meta>
         <name>Call reset tone</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Frequencies</name>
-          <firmware>2.10</firmware>
-          <needs-review/>
+          <firmware>2.21b</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <description>Frequency in Hz.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
-          <firmware>2.10</firmware>
-          <needs-review/>
+          <firmware>2.21b</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <description>Duration in 10ms.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -6437,16 +6503,16 @@
       <meta>
         <name>Record delay</name>
         <brief>Specifies the record delay in multiples of 0.2s.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Call-sign display mode</name>
         <description>Specifies, what is show from the call-sign DB.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Name</name>
@@ -6458,8 +6524,8 @@
     <enum width="1h">
       <meta>
         <name>Call-sign color</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -6489,8 +6555,8 @@
     <enum width="1h">
       <meta>
         <name>Simplex Repeater</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -6504,15 +6570,15 @@
         <name>Ranging interval</name>
         <brief>Duration in seconds, Valid values 1-255.</brief>
         <description>Interval in seconds. Valid range [5,255].</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Monitor Simplex Repeater</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -6524,65 +6590,65 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Show TX contact</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="0h:4">
       <meta>
         <name>Unused bits</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:4" format="unsigned" default="0">
       <meta>
         <name>Key tone volume</name>
         <brief>Specifies the key tone volume. If set to 0, it means it is adjustable.</brief>
         <description>Specifies the key tone volume. If set to 0, it is user adjustable.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="0h:4">
       <meta>
         <name>Unused data</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Professional Key Lock</name>
         <brief>WTF?!?</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Sidekey Lock</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Keyboard Lock</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Knob Lock</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Simplex Repeater Time Slot</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Time Slot 1</name>
@@ -6597,15 +6663,15 @@
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Enable Show Last Call on Launch</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>SMS Standard</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Motorola</name>
@@ -6620,8 +6686,8 @@
     <enum width="1h">
       <meta>
         <name>Ranging units</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Metric</name>
@@ -6633,7 +6699,8 @@
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="4h" format="unsigned" endian="little" default="0">
@@ -6641,8 +6708,8 @@
         <name>Auto-repeater VHF min Frequency</name>
         <brief>Specifies the lower-bound of the auto-repeater VHF range.</brief>
         <description>The frequency is stored in multiples of 10Hz.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little" default="17400000">
@@ -6650,32 +6717,32 @@
         <name>Auto-repeater VHF max Frequency</name>
         <brief>Specifies the upper-bound of the auto-repeater VHF range.</brief>
         <description>The frequency is stored in multiples of 10Hz.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little" default="40000000">
       <meta>
         <name>Auto-repeater UHF min Frequency</name>
         <brief>Specifies the lower-bound of the auto-repeater UHF range.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little" default="48000000">
       <meta>
         <name>Auto-repeater UHF max Frequency</name>
         <brief>Specifies the upper bound of the auto-repeater UHF range.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Auto repeater VFO B</name>
         <brief>Enables and specifies the direction of the auto-repeater function.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -6690,31 +6757,31 @@
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable Address book is send with own code</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Default boot channel enable</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Default zone A index</name>
         <description>Specifies the index of the boot zone for VFO A. Index is 0-based.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Default zone B index</name>
         <description>Index of the boot zone for VFO B. Index is 0-based.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -6722,8 +6789,8 @@
         <name>Default Channel A Index</name>
         <brief>Specifies the 0-based index of the channel within the zone. If set to ff, the VFO is selected at boot.</brief>
         <description>Index of channel within default zone. 0xff for VFO.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="255">
@@ -6731,16 +6798,16 @@
         <name>Default Channel B Index</name>
         <brief>Specifies the 0-based index of the channel within the zone. If set to ff, the VFO is selected at boot.</brief>
         <description>Channel index within default zone. If ffh, VFO is selected.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Keep last caller</name>
         <description>If enabled, the last caller is kept on a channel switch.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -6748,15 +6815,15 @@
         <name>RX backlight duration</name>
         <brief>Duration specified in second. If set to 0, backlight is always on.</brief>
         <description>Specifies the number of second, the backlight stays on during the reception of a call. Values 0, ..., 30. 0=Always.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Channel background color</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Black</name>
@@ -6769,22 +6836,23 @@
       <meta>
         <name>Manual Dial Group Call Hang Time</name>
         <brief>The duration is specified in seconds. Valid values are 1, ..., 30, 31=unlimited.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Manual Dial Private Call Hang Time</name>
         <brief>The duration is specified in seconds. Valid values are 1, ..., 30s, 31=infinite.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="8h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
   </element>
@@ -7446,19 +7514,21 @@
   <element at="2501400h">
     <meta>
       <name>Extended settings</name>
-      <needs-review/>
+      <firmware>2.21b</firmware>
+      <done/>
     </meta>
     <unknown width="3h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="1h">
       <meta>
         <name>Text color</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>White</name>
@@ -7488,8 +7558,8 @@
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable custom channel background</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
@@ -7497,29 +7567,29 @@
         <name>Roaming Zone Index</name>
         <brief>Specifies the 0-based index of the roaming zone.</brief>
         <description>The default value is not defined. There is a bug in the manufacturer CPS requireing at least one roaming zone to prevent the CPS from crashing.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable auto-roaming</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable Repeater Check</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Repeater out of range notification</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -7536,31 +7606,31 @@
         <name>Repeater out-of-range reminder</name>
         <brief>Specifies the number of reminders that the current repeater is out-of-range.</brief>
         <description>The count is stored n-1. That is, 0=1 times, 1=2 times, ..., 9=10 times.</description>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Repeater check interval</name>
         <brief>Specifies the interval in (n+1)*5s. Valid values are 5s ... 50s.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Repeater reconnections</name>
         <brief>Count is specified in n+3. Valid values are 3,4 &amp; 5.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Roaming start condition</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Time</name>
@@ -7573,23 +7643,23 @@
       <meta>
         <name>Auto-roaming interval</name>
         <brief>Specified in n+1 minutes. Valid values 1, ..., 256min.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Roaming delay</name>
         <brief>Specifies the roaming delay in seconds. 0=Off.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Roaming Return Condition</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Time</name>
@@ -7602,28 +7672,28 @@
       <meta>
         <name>Mute Timeout</name>
         <brief>Specifies a mute timeout in multiples of 1minute. The timeout is stored as n+1 minutes. Valid values are 1, ..., 256 minutes.</brief>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Encryption type</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>DMR</name>
       </item>
       <item value="1">
-        <name>AES</name>
+        <name>AES + ARC4</name>
       </item>
     </enum>
     <enum width="1h">
       <meta>
         <name>Zone A name color</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -7653,8 +7723,8 @@
     <enum width="1h">
       <meta>
         <name>Zone B name color</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -7684,8 +7754,8 @@
     <enum width="1h">
       <meta>
         <name>Channel A name color</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -7715,8 +7785,8 @@
     <enum width="1h">
       <meta>
         <name>Channel B name color</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -7746,7 +7816,8 @@
     <unknown width="1ah">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
     </unknown>
   </element>
@@ -8075,28 +8146,28 @@
     <meta>
       <name>AES encryption key bank</name>
       <brief>Encodes up to 255 256bit AES keys.</brief>
-      <firmware>2.10</firmware>
-      <needs-review/>
+      <firmware>2.21b</firmware>
+      <done/>
     </meta>
     <repeat n="255">
       <meta>
         <name>AES encryption keys</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>AES encryption key</name>
-          <firmware>2.10</firmware>
-          <needs-review/>
+          <firmware>2.21b</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Key Id</name>
             <brief>Stores the key ID.</brief>
             <description>The ID is 1-based, where 0=Off.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>
         </int>
         <unused width="20h">
@@ -8104,39 +8175,82 @@
             <name>256 bit key data</name>
             <brief>Encodes up to 256 bit of key data.</brief>
             <description>If the key is smaller than 256bit, it gets stored right-aligned. That is, 0-bits are added to the front to extend the size to 256bits.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>00</unused>
         <unused width="1h">
           <meta>
             <name>Unused data</name>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>00</unused>
         <int width="1h" format="unsigned">
           <meta>
             <name>Key Size</name>
             <brief>Specifies the key-size in nibbles.</brief>
             <description>That is, in multiples of 4bits.</description>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>
         </int>
         <unused width="1dh">
           <meta>
             <name>Unused data</name>
-            <firmware>2.10</firmware>
-            <needs-review/>
+            <firmware>2.21b</firmware>
+            <done/>
           </meta>00</unused>
       </element>
     </repeat>
     <unused width="40h">
       <meta>
         <name>Unused data</name>
-        <firmware>2.10</firmware>
-        <needs-review/>
+        <firmware>2.21b</firmware>
+        <done/>
       </meta>00</unused>
   </element>
+  <repeat at="25c5000h" n="255">
+    <meta>
+      <name>ARC4 Keys</name>
+      <firmware>2.21b</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>ARC4 Key</name>
+        <firmware>2.21b</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Key ID</name>
+          <brief>Valid values are 1-255, 0 means disabled.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </int>
+      <repeat n="5">
+        <meta>
+          <name>Key data</name>
+          <brief>Raw key data</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Key byte</name>
+            <firmware>2.21b</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <unused width="ah">
+        <meta>
+          <name>Unused data</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>00</unused>
+    </element>
+  </repeat>
   <repeat at="2600000h" min="0" max="10000">
     <meta>
       <name>Contact index list</name>
@@ -8313,6 +8427,738 @@
           <done/>
         </meta>
       </unused>
+    </element>
+  </repeat>
+  <repeat at="2ec0000h" min="0" max="199">
+    <meta>
+      <name>Orbital Element Sets</name>
+      <brief>Holds the orbital elements for some sattelites.</brief>
+      <firmware>2.21b</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Orbital Element</name>
+        <brief>Holds the (TLE) orbital elements for a single sat.</brief>
+        <firmware>2.21b</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="8" pad="32">
+        <meta>
+          <name>Satellite Name</name>
+          <brief>Simple ASCII string.</brief>
+          <description>Unused chars are stored as space.</description>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <string format="ascii" width="2" pad="0">
+        <meta>
+          <name>Epoch Year</name>
+          <brief>The two-digit year with leading 0.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <string format="ascii" width="12" pad="0">
+        <meta>
+          <name>Epoch Julien Day</name>
+          <brief>Fractional Julien day in format ddd.ffffffff. The 3-digit ddd part is the day of year with leading zeros, while the 8-digit ffffffff encodes the fractional part of the day.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="10" pad="0">
+        <meta>
+          <name>First derivative mean motion</name>
+          <brief>Encodes the fractional value as s.ffffffff, where s is the sign. Either &quot; &quot; or &quot;-&quot; and the 8-digit field ffffffff contains the fractional part.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Inclination</name>
+          <brief>Ecodes the inclination in degrees as ddd.ffff, where 3-digit ddd is the integer part. Leading zeros are not stored but replaced with spaces (ASCII 20h). The 4-digit ffff is the fractional part.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Right ascension of the ascending node</name>
+          <short-name>Ascension</short-name>
+          <brief>Ecodes the ascension in degrees as ddd.ffff, where 3-digit ddd is the integer part. Leading zeros are not stored but replaced with spaces (ASCII 20h). The 4-digit ffff is the fractional part.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="7" pad="0">
+        <meta>
+          <name>Eccentricity</name>
+          <brief>Stores the fractional part of the eccentricity as a 7-digit number with leading zeros.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Argument of perigee</name>
+          <brief>Stores the argument of perigee in degrees, stored as ddd.ffff. The 3-digit ddd field holds the integer part, where leading zeros are stored as space (ASCII 20h). The 4-digit ffff field holds the fractional part.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="8" pad="0">
+        <meta>
+          <name>Mean anomaly</name>
+          <brief>Stores the mean anomaly in degrees as ddd.ffff. The 3-digit ddd part holds the integer part, where leading zeros are replaced by space (ASCII 20h). The 4-digit field ffff contains the fractional part.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Space</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>20</unused>
+      <string format="ascii" width="11" pad="0">
+        <meta>
+          <name>Mean motion</name>
+          <brief>Encodes the mean motion as dd.ffffffff. The 2-digit field dd encodes the integer part, where leading zeros are stored as space (ASCII 20h). The 8-digit ffffffff part encodes the fractional part.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <string format="ascii" width="5" pad="0">
+        <meta>
+          <name>Revolution number at epoch</name>
+          <brief>Encodes the revoution number as 5-digit field ddddd. Leading zeros are stored.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="3h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>FM Downlink Frequency</name>
+          <brief>Stores the frequency in multiples of 10Hz.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>FM Uplink Frequency</name>
+          <brief>Stores the frequency in multiples of 10Hz.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Uplink Tone Type</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>CTCSS</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Downlink Tone Type</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>CTCSS</name>
+        </item>
+        <item value="2">
+          <name>DCS</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>UplinkTone</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>62.5 Hz</name>
+        </item>
+        <item value="1">
+          <name>67.0 Hz</name>
+        </item>
+        <item value="2">
+          <name>69.3 Hz</name>
+        </item>
+        <item value="3">
+          <name>71.9 Hz</name>
+        </item>
+        <item value="4">
+          <name>74.4 Hz</name>
+        </item>
+        <item value="5">
+          <name>77.0 Hz</name>
+        </item>
+        <item value="6">
+          <name>79.7 Hz</name>
+        </item>
+        <item value="7">
+          <name>82.5 Hz</name>
+        </item>
+        <item value="8">
+          <name>85.4 Hz</name>
+        </item>
+        <item value="9">
+          <name>88.5 Hz</name>
+        </item>
+        <item value="10">
+          <name>91.5 Hz</name>
+        </item>
+        <item value="11">
+          <name>94.8 Hz</name>
+        </item>
+        <item value="12">
+          <name>97.4 Hz</name>
+        </item>
+        <item value="13">
+          <name>100.0 Hz</name>
+        </item>
+        <item value="14">
+          <name>103.5 Hz</name>
+        </item>
+        <item value="15">
+          <name>107.2 Hz</name>
+        </item>
+        <item value="16">
+          <name>110.9 Hz</name>
+        </item>
+        <item value="17">
+          <name>114.8 Hz</name>
+        </item>
+        <item value="18">
+          <name>118.8 Hz</name>
+        </item>
+        <item value="19">
+          <name>123.0 Hz</name>
+        </item>
+        <item value="20">
+          <name>127.3 Hz</name>
+        </item>
+        <item value="21">
+          <name>131.8 Hz</name>
+        </item>
+        <item value="22">
+          <name>136.5 Hz</name>
+        </item>
+        <item value="23">
+          <name>141.3 Hz</name>
+        </item>
+        <item value="24">
+          <name>146.2 Hz</name>
+        </item>
+        <item value="25">
+          <name>151.4 Hz</name>
+        </item>
+        <item value="26">
+          <name>156.7 Hz</name>
+        </item>
+        <item value="27">
+          <name>159.8 Hz</name>
+        </item>
+        <item value="28">
+          <name>162.2 Hz</name>
+        </item>
+        <item value="29">
+          <name>165.5 Hz</name>
+        </item>
+        <item value="30">
+          <name>167.9 Hz</name>
+        </item>
+        <item value="31">
+          <name>171.3 Hz</name>
+        </item>
+        <item value="32">
+          <name>173.8 Hz</name>
+        </item>
+        <item value="33">
+          <name>177.3 Hz</name>
+        </item>
+        <item value="34">
+          <name>179.9 Hz</name>
+        </item>
+        <item value="35">
+          <name>183.5 Hz</name>
+        </item>
+        <item value="36">
+          <name>186.2 Hz</name>
+        </item>
+        <item value="37">
+          <name>189.9 Hz</name>
+        </item>
+        <item value="38">
+          <name>192.8 Hz</name>
+        </item>
+        <item value="39">
+          <name>196.6 Hz</name>
+        </item>
+        <item value="40">
+          <name>199.5 Hz</name>
+        </item>
+        <item value="41">
+          <name>203.5 Hz</name>
+        </item>
+        <item value="42">
+          <name>206.5 Hz</name>
+        </item>
+        <item value="43">
+          <name>210.7 Hz</name>
+        </item>
+        <item value="44">
+          <name>218.1 Hz</name>
+        </item>
+        <item value="45">
+          <name>225.7 Hz</name>
+        </item>
+        <item value="46">
+          <name>229.1 Hz</name>
+        </item>
+        <item value="47">
+          <name>233.6 Hz</name>
+        </item>
+        <item value="48">
+          <name>241.8 Hz</name>
+        </item>
+        <item value="49">
+          <name>250.3 Hz</name>
+        </item>
+        <item value="50">
+          <name>254.1 Hz</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Downlink Tone</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>62.5 Hz</name>
+        </item>
+        <item value="1">
+          <name>67.0 Hz</name>
+        </item>
+        <item value="2">
+          <name>69.3 Hz</name>
+        </item>
+        <item value="3">
+          <name>71.9 Hz</name>
+        </item>
+        <item value="4">
+          <name>74.4 Hz</name>
+        </item>
+        <item value="5">
+          <name>77.0 Hz</name>
+        </item>
+        <item value="6">
+          <name>79.7 Hz</name>
+        </item>
+        <item value="7">
+          <name>82.5 Hz</name>
+        </item>
+        <item value="8">
+          <name>85.4 Hz</name>
+        </item>
+        <item value="9">
+          <name>88.5 Hz</name>
+        </item>
+        <item value="10">
+          <name>91.5 Hz</name>
+        </item>
+        <item value="11">
+          <name>94.8 Hz</name>
+        </item>
+        <item value="12">
+          <name>97.4 Hz</name>
+        </item>
+        <item value="13">
+          <name>100.0 Hz</name>
+        </item>
+        <item value="14">
+          <name>103.5 Hz</name>
+        </item>
+        <item value="15">
+          <name>107.2 Hz</name>
+        </item>
+        <item value="16">
+          <name>110.9 Hz</name>
+        </item>
+        <item value="17">
+          <name>114.8 Hz</name>
+        </item>
+        <item value="18">
+          <name>118.8 Hz</name>
+        </item>
+        <item value="19">
+          <name>123.0 Hz</name>
+        </item>
+        <item value="20">
+          <name>127.3 Hz</name>
+        </item>
+        <item value="21">
+          <name>131.8 Hz</name>
+        </item>
+        <item value="22">
+          <name>136.5 Hz</name>
+        </item>
+        <item value="23">
+          <name>141.3 Hz</name>
+        </item>
+        <item value="24">
+          <name>146.2 Hz</name>
+        </item>
+        <item value="25">
+          <name>151.4 Hz</name>
+        </item>
+        <item value="26">
+          <name>156.7 Hz</name>
+        </item>
+        <item value="27">
+          <name>159.8 Hz</name>
+        </item>
+        <item value="28">
+          <name>162.2 Hz</name>
+        </item>
+        <item value="29">
+          <name>165.5 Hz</name>
+        </item>
+        <item value="30">
+          <name>167.9 Hz</name>
+        </item>
+        <item value="31">
+          <name>171.3 Hz</name>
+        </item>
+        <item value="32">
+          <name>173.8 Hz</name>
+        </item>
+        <item value="33">
+          <name>177.3 Hz</name>
+        </item>
+        <item value="34">
+          <name>179.9 Hz</name>
+        </item>
+        <item value="35">
+          <name>183.5 Hz</name>
+        </item>
+        <item value="36">
+          <name>186.2 Hz</name>
+        </item>
+        <item value="37">
+          <name>189.9 Hz</name>
+        </item>
+        <item value="38">
+          <name>192.8 Hz</name>
+        </item>
+        <item value="39">
+          <name>196.6 Hz</name>
+        </item>
+        <item value="40">
+          <name>199.5 Hz</name>
+        </item>
+        <item value="41">
+          <name>203.5 Hz</name>
+        </item>
+        <item value="42">
+          <name>206.5 Hz</name>
+        </item>
+        <item value="43">
+          <name>210.7 Hz</name>
+        </item>
+        <item value="44">
+          <name>218.1 Hz</name>
+        </item>
+        <item value="45">
+          <name>225.7 Hz</name>
+        </item>
+        <item value="46">
+          <name>229.1 Hz</name>
+        </item>
+        <item value="47">
+          <name>233.6 Hz</name>
+        </item>
+        <item value="48">
+          <name>241.8 Hz</name>
+        </item>
+        <item value="49">
+          <name>250.3 Hz</name>
+        </item>
+        <item value="50">
+          <name>254.1 Hz</name>
+        </item>
+      </enum>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Uplink DCS code</name>
+          <brief>The least significant 9 bit encode the DCS code 000h-1ffh. The 10-th bit encodes the inversion flag. That is D023I is encoded as 0213h, and D777I as 03ffh.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Downlink DCS</name>
+          <brief>The least significant 9 bit encode the DCS code 000h-1ffh. The 10-th bit encodes the inversion flag. That is D023I is encoded as 0213h, and D777I as 03ffh.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little" default="4294967295">
+        <meta>
+          <name>APRS Uplink Frequency</name>
+          <brief>Specifies the APRS transmit (uplink) frequency.</brief>
+          <description>The frequency is specified in multiples of 10Hz. If no frequency is set, the value is ffffffffh.</description>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Arm sub tone type</name>
+          <brief>Specifies the subtone type to be send for arming the satellite.</brief>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+          <description>No arm subtone is send.</description>
+        </item>
+        <item value="1">
+          <name>CTCSS</name>
+        </item>
+        <item value="2">
+          <name>DCS</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Arm Tone CTCSS</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>62.5 Hz</name>
+        </item>
+        <item value="1">
+          <name>67.0 Hz</name>
+        </item>
+        <item value="2">
+          <name>69.3 Hz</name>
+        </item>
+        <item value="3">
+          <name>71.9 Hz</name>
+        </item>
+        <item value="4">
+          <name>74.4 Hz</name>
+        </item>
+        <item value="5">
+          <name>77.0 Hz</name>
+        </item>
+        <item value="6">
+          <name>79.7 Hz</name>
+        </item>
+        <item value="7">
+          <name>82.5 Hz</name>
+        </item>
+        <item value="8">
+          <name>85.4 Hz</name>
+        </item>
+        <item value="9">
+          <name>88.5 Hz</name>
+        </item>
+        <item value="10">
+          <name>91.5 Hz</name>
+        </item>
+        <item value="11">
+          <name>94.8 Hz</name>
+        </item>
+        <item value="12">
+          <name>97.4 Hz</name>
+        </item>
+        <item value="13">
+          <name>100.0 Hz</name>
+        </item>
+        <item value="14">
+          <name>103.5 Hz</name>
+        </item>
+        <item value="15">
+          <name>107.2 Hz</name>
+        </item>
+        <item value="16">
+          <name>110.9 Hz</name>
+        </item>
+        <item value="17">
+          <name>114.8 Hz</name>
+        </item>
+        <item value="18">
+          <name>118.8 Hz</name>
+        </item>
+        <item value="19">
+          <name>123.0 Hz</name>
+        </item>
+        <item value="20">
+          <name>127.3 Hz</name>
+        </item>
+        <item value="21">
+          <name>131.8 Hz</name>
+        </item>
+        <item value="22">
+          <name>136.5 Hz</name>
+        </item>
+        <item value="23">
+          <name>141.3 Hz</name>
+        </item>
+        <item value="24">
+          <name>146.2 Hz</name>
+        </item>
+        <item value="25">
+          <name>151.4 Hz</name>
+        </item>
+        <item value="26">
+          <name>156.7 Hz</name>
+        </item>
+        <item value="27">
+          <name>159.8 Hz</name>
+        </item>
+        <item value="28">
+          <name>162.2 Hz</name>
+        </item>
+        <item value="29">
+          <name>165.5 Hz</name>
+        </item>
+        <item value="30">
+          <name>167.9 Hz</name>
+        </item>
+        <item value="31">
+          <name>171.3 Hz</name>
+        </item>
+        <item value="32">
+          <name>173.8 Hz</name>
+        </item>
+        <item value="33">
+          <name>177.3 Hz</name>
+        </item>
+        <item value="34">
+          <name>179.9 Hz</name>
+        </item>
+        <item value="35">
+          <name>183.5 Hz</name>
+        </item>
+        <item value="36">
+          <name>186.2 Hz</name>
+        </item>
+        <item value="37">
+          <name>189.9 Hz</name>
+        </item>
+        <item value="38">
+          <name>192.8 Hz</name>
+        </item>
+        <item value="39">
+          <name>196.6 Hz</name>
+        </item>
+        <item value="40">
+          <name>199.5 Hz</name>
+        </item>
+        <item value="41">
+          <name>203.5 Hz</name>
+        </item>
+        <item value="42">
+          <name>206.5 Hz</name>
+        </item>
+        <item value="43">
+          <name>210.7 Hz</name>
+        </item>
+        <item value="44">
+          <name>218.1 Hz</name>
+        </item>
+        <item value="45">
+          <name>225.7 Hz</name>
+        </item>
+        <item value="46">
+          <name>229.1 Hz</name>
+        </item>
+        <item value="47">
+          <name>233.6 Hz</name>
+        </item>
+        <item value="48">
+          <name>241.8 Hz</name>
+        </item>
+        <item value="49">
+          <name>250.3 Hz</name>
+        </item>
+        <item value="50">
+          <name>254.1 Hz</name>
+        </item>
+      </enum>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Arm DCS code</name>
+          <brief>Encodes the DCS code in a complex way.</brief>
+          <description>The least significant 9 bits encode the binary DCS code. The 9th bit encodes the inversion flag.</description>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="188h">
+        <meta>
+          <name>Unknown data</name>
+          <firmware>2.21b</firmware>
+          <done/>
+        </meta>
+      </unknown>
     </element>
   </repeat>
   <repeat at="4340000h" min="0" max="10000">
