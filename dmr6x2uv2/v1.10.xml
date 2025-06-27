@@ -2,7 +2,7 @@
 <!--vi: set ts=2 sw=2:-->
 <codeplug>
   <meta>
-    <name>BTECH DMR-6X2</name>
+    <name>BTECH DMR-6X2 Pro</name>
     <description>Documents the codeplug format for the BTECH DMR-6X2 UV device.</description>
   </meta>
   <repeat at="800000h" step="40000h" min="1" max="32">
