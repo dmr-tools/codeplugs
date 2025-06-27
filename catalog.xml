@@ -174,7 +174,7 @@
     <url></url>
 
     <memory>
-      <id>31 36 38 55 56 00</id>  <!-- 168UV2 -->
+      <id>31 36 38 55 56 00</id>  <!-- 168UV -->
       <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
       <!-- Some binary blob, read by the CPS from the device. -->
       <map address="02fa0000">
@@ -264,7 +264,7 @@
       </map>
     </memory>
 
-    <firmware name="1.10" released="2024-04-10" codeplug="dmr6x2uv2/1.10/codeplug.xml"/>
+    <firmware name="1.10" released="2024-04-10" codeplug="dmr6x2uv2/v1.10.xml"/>
   </model>
 
 
