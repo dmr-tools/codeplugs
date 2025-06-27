@@ -3,7 +3,7 @@
 <codeplug>
   <meta>
     <name>AnyTone AT-D878UV/AT-D878UV+</name>
-    <firmware>3.06</firmware>
+    <firmware>3.08</firmware>
     <done/>
   </meta>
   <repeat at="800000h" step="40000h" min="1" max="32">
