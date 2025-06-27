@@ -4159,6 +4159,42 @@
       </unused>
     </element>
   </repeat>
+  <repeat at="4000000h" step="40000h">
+    <meta>
+      <name>Call-sign Index Banks</name>
+      <firmware>2.40</firmware>
+      <done/>
+    </meta>
+    <repeat min="0" max="16000">
+      <meta>
+        <name>Call-sign Index Bank</name>
+        <firmware>2.40</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Call-sign Index Entry</name>
+          <firmware>2.40</firmware>
+          <done/>
+        </meta>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>DMR ID and Group Call Flag</name>
+            <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>Contact Offset</name>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+        </int>
+      </element>
+    </repeat>
+  </repeat>
   <repeat at="4340000h" min="0" max="10000">
     <meta>
       <name>Contact Map</name>
@@ -4179,5 +4215,121 @@
         </meta>
       </int>
     </element>
+  </repeat>
+  <element at="44c0000h">
+    <meta>
+      <name>Call-sign Database Limits</name>
+      <firmware>2.40</firmware>
+      <done/>
+    </meta>
+    <int width="4h" format="unsigned" endian="little" default="0">
+      <meta>
+        <name>Entry Count</name>
+        <brief>Specifies the number of entries in the call-sign database.</brief>
+        <firmware>2.40</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>End-of-database address</name>
+        <brief>Absolute memory address of the end-of-database.</brief>
+        <firmware>2.40</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="8h">
+      <meta>
+        <name>Unknown data</name>
+        <firmware>2.40</firmware>
+        <done/>
+      </meta>
+    </unknown>
+  </element>
+  <repeat at="4500000h" step="40000h" max="20000">
+    <meta>
+      <name>Call-sign DB Banks</name>
+      <firmware>2.40</firmware>
+      <done/>
+    </meta>
+    <repeat min="0" max="1000">
+      <meta>
+        <name>Call-sign database bank</name>
+        <firmware>2.40</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Call-sign database entry</name>
+          <firmware>2.40</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Call Type</name>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Private Call</name>
+          </item>
+          <item value="1">
+            <name>Group Call</name>
+          </item>
+          <item value="2">
+            <name>All Call</name>
+          </item>
+        </enum>
+        <int width="4h" format="bcd" endian="big" default="0">
+          <meta>
+            <name>DMR ID</name>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="0h:3">
+          <meta>
+            <name>Unknown data</name>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Friend Flag</name>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="0h:2">
+          <meta>
+            <name>Unknown data</name>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+        </unknown>
+        <int width="0h:2" format="unsigned" default="0">
+          <meta>
+            <name>Ring Tone</name>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+        </int>
+        <string format="ascii" width="93" pad="0">
+          <meta>
+            <name>Description</name>
+            <brief>A 0-separated list of strings. Containing name, city, call, state, country, comment.</brief>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad byte</name>
+            <firmware>2.40</firmware>
+            <done/>
+          </meta>00</unused>
+      </element>
+    </repeat>
   </repeat>
 </codeplug>
