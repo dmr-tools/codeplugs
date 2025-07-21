@@ -5,4 +5,149 @@
     <name>RadTel RT-4D</name>
     <firmware>1.2.0.16</firmware>
   </meta>
+  <repeat at="1000000h" n="1024">
+    <meta>
+      <name>Channel Bank</name>
+    </meta>
+    <element>
+      <meta>
+        <name>Channel</name>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name>DMR ID Source</name>
+        </meta>
+        <item value="0">
+          <name>Channel Id</name>
+        </item>
+        <item value="1">
+          <name>Radio Id</name>
+        </item>
+      </enum>
+      <unknown width="2h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <enum width="1h">
+        <meta>
+          <name>Time slot</name>
+        </meta>
+        <item value="0">
+          <name>TS1</name>
+        </item>
+        <item value="1">
+          <name>TS2</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Color code</name>
+        </meta>
+      </int>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="4h" format="unsigned" endian="little" default="4294967295">
+        <meta>
+          <name>RX Frequency</name>
+          <brief>Specified in multiples of 10Hz</brief>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little" default="4294967295">
+        <meta>
+          <name>TX Frequency</name>
+          <brief>Specified in multiples of 10Hz</brief>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Promiscuous Mode</name>
+        </meta>
+        <item value="1">
+          <name>Promiscuous Mode</name>
+        </item>
+        <item value="255">
+          <name>Normal Mode</name>
+        </item>
+      </enum>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <enum width="1h">
+        <meta>
+          <name>Power</name>
+        </meta>
+        <item value="0">
+          <name>Low</name>
+        </item>
+        <item value="1">
+          <name>High</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Admit criterion</name>
+        </meta>
+        <item value="0">
+          <name>Always</name>
+        </item>
+        <item value="1">
+          <name>Channel Free</name>
+        </item>
+        <item value="2">
+          <name>Color code</name>
+        </item>
+      </enum>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Exclude from scan</name>
+          <brief>Excludes this channel from scan.</brief>
+          <firmware>ScExc</firmware>
+        </meta>
+      </int>
+      <unknown width="0h:7">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Transmit timeout</name>
+          <brief>0=Off, 1=5s, 2=10s, 3=15s, 4=30s, 5=45s, ..., 42=600s So, except for the first two, it is in steps of 15s.</brief>
+        </meta>
+      </int>
+      <unknown width="5h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Encryption Key Index</name>
+          <brief>0 = Off, index+1.</brief>
+        </meta>
+      </int>
+      <int width="4h" format="bcd" endian="little">
+        <meta>
+          <name>Channel DMR Id</name>
+        </meta>
+      </int>
+      <string format="ascii" width="16" pad="255">
+        <meta>
+          <name>Channel Name</name>
+          <brief>Specifies the channel name.</brief>
+        </meta>
+      </string>
+    </element>
+  </repeat>
 </codeplug>
