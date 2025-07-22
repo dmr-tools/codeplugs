@@ -397,6 +397,15 @@
 
     <firmware name="V1.2.0.16" released="2025-06-20" codeplug="rt4d/v1.2.0.16.xml">
     </firmware>
-
   </model>
+
+  <model class="MD32UV" id="md32uv">
+    <name>Baofeng MD-32UV</name>
+    <manufacturer>Baofeng</manufacturer>
+    <url>https://www.baofengradio.com</url>
+
+    <firmware name="V1.1.46" released="2000-01-01" codeplug="md32uv/v1.1.46.xml"/>
+  </model>
+
 </catalog>
+
