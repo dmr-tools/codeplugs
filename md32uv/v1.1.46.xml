@@ -5,4 +5,34 @@
     <name>Baofeng MD-32UV</name>
     <firmware>1.1.46</firmware>
   </meta>
+  <element at="12000h">
+    <meta>
+      <name>ChannelBank</name>
+    </meta>
+    <int width="2h" format="unsigned" endian="little">
+      <meta>
+        <name>Channel Count</name>
+      </meta>
+    </int>
+    <unused width="eh">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+    <element>
+      <meta>
+        <name>Channel</name>
+      </meta>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+        </meta>
+      </string>
+      <unknown width="20h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+    </element>
+  </element>
 </codeplug>
