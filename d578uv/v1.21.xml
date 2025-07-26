@@ -9,19 +9,22 @@
     <meta>
       <name>Channel banks</name>
       <brief>A sparse series of channel banks.</brief>
-      <needs-review/>
+      <firmware>1.21</firmware>
+      <done/>
     </meta>
     <repeat min="1" max="128">
       <meta>
         <name>Channel Bank</name>
         <brief>A single channel bank, holding up to 128 Channels.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Channel</name>
           <brief>Encodes a single FM or DMR channel.</brief>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
         <int width="4h" format="bcd" endian="big">
           <meta>
@@ -65,7 +68,8 @@
           <meta>
             <name>Bandwidth</name>
             <brief>Specifies the bandwidth of the FM channel. DMR channels are always 12.5kHz wide.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Narrow (12.5kHz)</name>
@@ -118,13 +122,15 @@
           <meta>
             <name>Enable talkaround</name>
             <short-name>TlkAr</short-name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Call confirm</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
@@ -132,43 +138,51 @@
             <name>Enable RX only</name>
             <short-name>RXO</short-name>
             <brief>If enabled, no transmission is possible on this channel.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Enable CTCSS phase reversal</name>
-            <needs-review/>
+            <name>Swap RX/TX frequencies</name>
+            <brief>Also swaps signaling.</brief>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable TX DCS</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable TX CTCSS</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX DCS</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX CTCSS</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <enum width="1h">
           <meta>
             <name>TX Tone CTCSS</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>62.5 Hz</name>
@@ -327,7 +341,8 @@
         <enum width="1h">
           <meta>
             <name>RX Tone CTCSS</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>62.5 Hz</name>
@@ -488,7 +503,8 @@
             <name>TX DCS code</name>
             <brief>Encodes the DCS code in a complex way.</brief>
             <description>The least significant 9 bits encode the binary DCS code. The 9th bit encodes the inversion flag.</description>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="2h" format="unsigned" endian="little" default="0">
@@ -496,40 +512,62 @@
             <name>RX DCS code</name>
             <brief>Encodes the DCS code in a complex way.</brief>
             <description>The least significant 9 bits encode the binary DCS code. The 9th bit encodes the inversion flag.</description>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="2h" format="signed" endian="little" default="0">
           <meta>
             <name>Custom CTCSS frequency</name>
             <brief>Specifies a custom CTCSS frequency in 0.1Hz.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="2h" format="unsigned" endian="little" default="0">
           <meta>
             <name>Two-tone decode index</name>
             <brief>Specifies the two-tone decode index.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="4h" format="unsigned" endian="little" default="0">
           <meta>
             <name>Transmit contact index</name>
             <brief>Contact index, 0-based.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Radio ID index</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
-        <unknown width="0h:6">
+        <unknown width="0h:2">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
+          </meta>
+        </unknown>
+        <enum width="0h:1">
+          <meta>
+            <name>Squelch Mode</name>
+            <firmware>1.21</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Carrier</name>
+          </item>
+          <item value="1">
+            <name>Optional Signaling</name>
+          </item>
+        </enum>
+        <unknown width="0h:3">
+          <meta>
+            <name>Unknown data</name>
           </meta>
         </unknown>
         <enum width="0h:2">
@@ -537,7 +575,8 @@
             <name>FM PTT ID transmission mode</name>
             <short-name>TX PTT ID</short-name>
             <brief>Specifies when to transmit the FM PTT id.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -552,15 +591,17 @@
             <name>Both</name>
           </item>
         </enum>
-        <unused width="0h:2">
+        <unknown width="0h:2">
           <meta>
-            <name>Unused data</name>
-            <needs-review/>
-          </meta>00</unused>
+            <name>Unknown data</name>
+            <firmware>1.21</firmware>
+          </meta>
+        </unknown>
         <enum width="0h:2">
           <meta>
             <name>Optional Signaling</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -578,7 +619,6 @@
         <unknown width="0h:2">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
           </meta>
         </unknown>
         <enum width="0h:2">
@@ -606,35 +646,43 @@
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Scan list index</name>
-            <brief>Scan list index, 0-based.</brief>
+            <brief>Scan list index, 0-based. 0xff = None</brief>
             <description>None = 0xff.</description>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
-        <int width="1h" format="unsigned" default="255">
+        <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Group List index</name>
-            <brief>Specifies the group list index.</brief>
+            <brief>Specifies the group list 0-based index. 0xff = None.</brief>
             <description>A 0-based index of the group list. If not set, 0xff.</description>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
           <meta>
-            <name>Two-tone Id</name>
-            <needs-review/>
+            <name>Two-tone Id Index</name>
+            <brief>0-based index.</brief>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
           <meta>
-            <name>Five-tone Id</name>
-            <needs-review/>
+            <name>Five-tone Id Index</name>
+            <brief>0-based index.</brief>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
           <meta>
-            <name>DTMF Id</name>
-            <needs-review/>
+            <name>DTMF Id Index</name>
+            <brief>0-based.</brief>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned">
@@ -655,7 +703,6 @@
         <unknown width="0h:1">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
           </meta>
         </unknown>
         <int width="0h:1" format="unsigned">
@@ -666,12 +713,13 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:1">
+        <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Unknown data</name>
-            <needs-review/>
+            <name>Enable Adaptive TDMA</name>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </int>
         <enum width="0h:2">
           <meta>
             <name>DCMA mode</name>
@@ -692,13 +740,15 @@
           <meta>
             <name>Enable SMS Confirmation</name>
             <short-name>SMS ACK</short-name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <enum width="0h:1">
           <meta>
             <name>Time Slot</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Time Slot 1</name>
@@ -707,10 +757,12 @@
             <name>Time Slot 2</name>
           </item>
         </enum>
-        <int width="1h" format="unsigned">
+        <int width="1h" format="unsigned" default="0">
           <meta>
             <name>AES encryption key index</name>
-            <needs-review/>
+            <brief>Index + 1, 0=Off.</brief>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <string format="ascii" width="16" pad="0">
@@ -726,10 +778,9 @@
             <firmware>1.21</firmware>
             <done/>
           </meta>00</unused>
-        <unknown width="0h:3">
+        <unknown width="0h:1">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
           </meta>
         </unknown>
         <int width="0h:1" format="unsigned" default="0">
@@ -741,18 +792,39 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:1">
+        <enum width="0h:2">
           <meta>
-            <name>Unknown data</name>
+            <name>Interrupt Priority</name>
+            <short-name>IntPri</short-name>
             <firmware>1.21</firmware>
+            <done/>
           </meta>
-        </unknown>
-        <unknown width="0h:1">
+          <item value="0">
+            <name>None</name>
+          </item>
+          <item value="1">
+            <name>Low</name>
+          </item>
+          <item value="2">
+            <name>High</name>
+          </item>
+        </enum>
+        <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Unknown data</name>
+            <name>Enable Noise Reduction</name>
+            <short-name>NoiseRed</short-name>
             <firmware>1.21</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable Bluetooth</name>
+            <short-name>BT</short-name>
+            <firmware>1.21</firmware>
+            <done/>
+          </meta>
+        </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable Simplex</name>
@@ -774,7 +846,8 @@
         <enum width="1h">
           <meta>
             <name>APRS Type</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>None</name>
@@ -788,8 +861,9 @@
         </enum>
         <enum width="1h">
           <meta>
-            <name>DMR APRS PTT mode</name>
-            <needs-review/>
+            <name>FM APRS PTT mode</name>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -803,8 +877,9 @@
         </enum>
         <enum width="1h">
           <meta>
-            <name>FM APRS PTT mode</name>
-            <needs-review/>
+            <name>DMR APRS PTT mode</name>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -816,35 +891,176 @@
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>DMR APRS channel index</name>
-            <brief>Specifies the DMR APRS channel setting index. A value in [0,7].</brief>
-            <needs-review/>
+            <brief>Specifies the 0-based DMR APRS channel setting index. A value in [0,7].</brief>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="1h" format="signed">
           <meta>
             <name>Frequency correction</name>
             <brief>Specifies the frequency correction in multiples of 10Hz.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
+        <enum width="1h">
+          <meta>
+            <name>FM Scambler</name>
+            <firmware>1.21</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>3.3k</name>
+          </item>
+          <item value="2">
+            <name>3.2k</name>
+          </item>
+          <item value="3">
+            <name>3.1k</name>
+          </item>
+          <item value="4">
+            <name>3.0k</name>
+          </item>
+          <item value="5">
+            <name>2.9k</name>
+          </item>
+          <item value="6">
+            <name>2.8k</name>
+          </item>
+          <item value="7">
+            <name>2.7k</name>
+          </item>
+          <item value="8">
+            <name>2.6k</name>
+          </item>
+          <item value="9">
+            <name>2.5k</name>
+          </item>
+          <item value="10">
+            <name>4.095k</name>
+          </item>
+          <item value="11">
+            <name>3.458k</name>
+          </item>
+          <item value="12">
+            <name>Custom</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Custom Scrambler</name>
+            <firmware>1.21</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>1.3k</name>
+          </item>
+          <item value="1">
+            <name>1.4k</name>
+          </item>
+          <item value="2">
+            <name>1.5k</name>
+          </item>
+          <item value="3">
+            <name>1.6k</name>
+          </item>
+          <item value="4">
+            <name>1.7k</name>
+          </item>
+          <item value="5">
+            <name>1.8k</name>
+          </item>
+          <item value="6">
+            <name>1.9k</name>
+          </item>
+          <item value="7">
+            <name>2.0k</name>
+          </item>
+          <item value="8">
+            <name>2.1k</name>
+          </item>
+          <item value="9">
+            <name>2.2k</name>
+          </item>
+          <item value="10">
+            <name>2.3k</name>
+          </item>
+          <item value="11">
+            <name>2.4k</name>
+          </item>
+          <item value="12">
+            <name>2.5k</name>
+          </item>
+          <item value="13">
+            <name>2.6k</name>
+          </item>
+          <item value="14">
+            <name>2.7k</name>
+          </item>
+          <item value="15">
+            <name>2.8k</name>
+          </item>
+          <item value="16">
+            <name>2.9k</name>
+          </item>
+          <item value="17">
+            <name>3.0k</name>
+          </item>
+          <item value="18">
+            <name>3.1k</name>
+          </item>
+          <item value="19">
+            <name>3.2k</name>
+          </item>
+          <item value="20">
+            <name>3.3k</name>
+          </item>
+          <item value="21">
+            <name>3.4k</name>
+          </item>
+          <item value="22">
+            <name>3.5k</name>
+          </item>
+          <item value="23">
+            <name>3.6k</name>
+          </item>
+          <item value="24">
+            <name>3.7k</name>
+          </item>
+          <item value="25">
+            <name>3.8k</name>
+          </item>
+          <item value="26">
+            <name>3.9k</name>
+          </item>
+          <item value="27">
+            <name>4.0k</name>
+          </item>
+          <item value="28">
+            <name>4.1k</name>
+          </item>
+        </enum>
         <unknown width="1h">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
+            <firmware>1.21</firmware>
           </meta>
         </unknown>
-        <unknown width="0h:2">
+        <unknown width="0h:1">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
           </meta>
         </unknown>
         <enum width="0h:1">
           <meta>
-            <name>Encryption type</name>
-            <short-name>CrypType</short-name>
-            <brief>Specifies the encryption type.</brief>
-            <needs-review/>
+            <name>Advanced Encryption Type</name>
+            <brief>Only relevant, if advanced encryption is enabled.</brief>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>AES</name>
@@ -855,47 +1071,12 @@
         </enum>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Send talker alias</name>
-            <short-name>Send TalkAl</short-name>
-            <needs-review/>
+            <name>Send Talker Alias</name>
+            <short-name>TxAlias</short-name>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
-        <int width="0h:1" format="unsigned" default="0">
-          <meta>
-            <name>Mute FM APRS</name>
-            <needs-review/>
-          </meta>
-        </int>
-        <int width="0h:1" format="unsigned">
-          <meta>
-            <name>SMS forbid</name>
-            <needs-review/>
-          </meta>
-        </int>
-        <int width="0h:1" format="unsigned">
-          <meta>
-            <name>Random Key</name>
-            <needs-review/>
-          </meta>
-        </int>
-        <int width="0h:1" format="unsigned">
-          <meta>
-            <name>Multiple Keys</name>
-            <needs-review/>
-          </meta>
-        </int>
-        <int width="1h" format="unsigned" default="0">
-          <meta>
-            <name>FM APRS frequency index</name>
-            <brief>A value in range [0,7].</brief>
-            <needs-review/>
-          </meta>
-        </int>
-        <unknown width="0h:3">
-          <meta>
-            <name>Unknown data</name>
-          </meta>
-        </unknown>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Auto Scan</name>
@@ -913,11 +1094,29 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:3">
+        <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Unknown data</name>
+            <name>Disable RX SMS</name>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable Random Encryption Key</name>
+            <short-name>RandKey</short-name>
+            <firmware>1.21</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="1">
+          <meta>
+            <name>Enable Multiple Encryption Keys</name>
+            <short-name>MulKey</short-name>
+            <firmware>1.21</firmware>
+            <done/>
+          </meta>
+        </int>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>FM ARPS Frequency Index</name>
@@ -942,26 +1141,30 @@
     <meta>
       <name>Channel extension banks</name>
       <brief>A series of channel extension banks corresponding to each encoded channel bank.</brief>
-      <needs-review/>
+      <firmware>1.21</firmware>
+      <done/>
     </meta>
     <repeat min="1" max="128">
       <meta>
         <name>Channel extension bank</name>
         <brief>Encodes several channel extensions corresponding to each encoded channel.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Channel extension</name>
           <brief>Encodes additional channel information.</brief>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>5 Tone PTT ID index BOT</name>
             <brief>Specifies the index of the begin-of-transmission 5 tone PTT ID to send.</brief>
             <description>The index is 0-based. Index 64h means &quot;custom&quot;.</description>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned" default="0">
@@ -969,28 +1172,24 @@
             <name>5 Tone PTT ID index EOT</name>
             <brief>Specifies the index of the 5 tone end-of-transmission PTT ID to send.</brief>
             <description>The index is 0-based. The index 64h means &quot;custom&quot;.</description>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
         <unknown width="1h">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
           </meta>
         </unknown>
-        <int width="1h" format="unsigned" default="1">
+        <unknown width="1h">
           <meta>
-            <name>TX color code</name>
-            <short-name>TX CC</short-name>
-            <brief>Sets the transmit color code.</brief>
-            <description>Usually, this should be equal to the RX color code.</description>
-            <needs-review/>
+            <name>Unknown data</name>
+            <firmware>1.21</firmware>
           </meta>
-        </int>
+        </unknown>
         <unknown width="3ch">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
           </meta>
         </unknown>
       </element>
