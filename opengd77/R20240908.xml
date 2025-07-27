@@ -239,12 +239,26 @@
           <done/>
         </meta>
       </string>
-      <unknown width="7h">
+      <unused width="1h">
         <meta>
-          <name>Unknown data</name>
-          <needs-review/>
+          <name>Pad byte</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="4h" format="unsigned" endian="little" default="309329920">
+        <meta>
+          <name>Unknown integer</name>
+          <brief>Fixed to value 12700000 decimal.</brief>
+          <firmware>R202409080</firmware>
+          <done/>
         </meta>
-      </unknown>
+      </int>
+      <unused width="2h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>R202409080</firmware>
+          <done/>
+        </meta>00</unused>
       <enum width="0h:4">
         <meta>
           <name>Position Masking</name>
@@ -309,6 +323,7 @@
       <unknown width="2h">
         <meta>
           <name>Unknown data</name>
+          <brief>Some unknown data 5241h.</brief>
           <needs-review/>
         </meta>
       </unknown>
@@ -1747,136 +1762,355 @@
       </element>
     </repeat>
   </element>
-  <element at="1000214h">
+  <element at="1000000h">
     <meta>
-      <name>Orbital Elements Bank</name>
+      <name>Additional Settings</name>
+      <brief>This section of flash memory is always of size 11a0h. It may contain several setting elements. E.g., satellite orbital elements, theme settings etc.</brief>
+      <description>Each setting is stored in a block starting with a magic number and followed by its size. The size field only covers the content. The position of each block may vary. The blocks, hoever, are packed densely.</description>
+      <needs-review/>
     </meta>
-    <unknown width="8h">
+    <string format="ascii" width="8" pad="0">
       <meta>
-        <name>Unknown data</name>
+        <name>Fixed string</name>
+        <brief>Just contains &quot;OpenGD77&quot;.</brief>
+        <needs-review/>
       </meta>
-    </unknown>
-    <repeat n="25">
+    </string>
+    <int width="4h" format="unsigned" endian="little" default="0">
       <meta>
-        <name>Orbital Elements</name>
+        <name>Version number</name>
+        <brief>Some unknown integer. Seen value 1.</brief>
+        <description>Possibly a version number/revision of the structure.</description>
+        <needs-review/>
       </meta>
+    </int>
+    <element>
+      <meta>
+        <name>Boot Image</name>
+        <needs-review/>
+      </meta>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Block Type ID</name>
+          <brief>The magic number identifying the block type, alwas set to 1h.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Size</name>
+          <brief>Size of the block content, fixed to 400h</brief>
+          <needs-review/>
+        </meta>
+      </int>
       <element>
         <meta>
-          <name>Orbital Element</name>
+          <name>Image data</name>
+          <needs-review/>
         </meta>
-        <string format="ascii" width="8" pad="0">
+        <unknown width="400h">
           <meta>
-            <name>Name</name>
+            <name>Unknown data</name>
+            <needs-review/>
           </meta>
-        </string>
-        <int width="1h" format="bcd">
-          <meta>
-            <name>Epoch Year</name>
-          </meta>
-        </int>
-        <int width="6h" format="bcd" endian="big">
-          <meta>
-            <name>Epoch julien day</name>
-          </meta>
-        </int>
-        <int width="5h" format="bcd" endian="big">
-          <meta>
-            <name>First derivative of mean motion</name>
-          </meta>
-        </int>
-        <int width="4h" format="bcd" endian="big">
-          <meta>
-            <name>Inclination</name>
-          </meta>
-        </int>
-        <int width="4h" format="bcd" endian="big">
-          <meta>
-            <name>Right ascension of the ascending node</name>
-          </meta>
-        </int>
-        <int width="3h:4" format="bcd" endian="big">
-          <meta>
-            <name>Eccentricity</name>
-          </meta>
-        </int>
-        <int width="4h" format="bcd" endian="big">
-          <meta>
-            <name>Argument of perigee</name>
-          </meta>
-        </int>
-        <int width="4h" format="bcd" endian="big">
-          <meta>
-            <name>Mean anomaly</name>
-          </meta>
-        </int>
-        <int width="5h:4" format="bcd" endian="big">
-          <meta>
-            <name>Mean motion</name>
-          </meta>
-        </int>
-        <int width="2h:4" format="bcd" endian="big">
-          <meta>
-            <name>Revolution number at epoch</name>
-          </meta>
-        </int>
-        <int width="0h:4" format="bcd">
-          <meta>
-            <name>Unused</name>
-            <brief>set to blank bh.</brief>
-          </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
-          <meta>
-            <name>FM Downlink Frequency</name>
-          </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
-          <meta>
-            <name>FM Uplinkrequency</name>
-          </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
-          <meta>
-            <name>CTCSS tone frequency</name>
-            <brief>Encoded frequency in 0.1Hz.</brief>
-          </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
-          <meta>
-            <name>APRS Downlink Frequency</name>
-          </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
-          <meta>
-            <name>APRS Uplink Frequency</name>
-          </meta>
-        </int>
-        <int width="4h" format="unsigned" endian="little">
-          <meta>
-            <name>Beacon Frequency</name>
-          </meta>
-        </int>
-        <unused width="4h">
-          <meta>
-            <name>Unused data</name>
-          </meta>00</unused>
-        <string format="ascii" width="24" pad="0">
-          <meta>
-            <name>APRS path</name>
-          </meta>
-        </string>
+        </unknown>
       </element>
-    </repeat>
+    </element>
+    <element>
+      <meta>
+        <name>Boot Melody</name>
+        <needs-review/>
+      </meta>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Block Type ID</name>
+          <brief>The magic number identifying the block type. This one is unknown, seen 2h.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Size</name>
+          <brief>Size of the block content, fixed to 200h</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <element>
+        <meta>
+          <name>Unknown Settings</name>
+          <needs-review/>
+        </meta>
+        <unknown width="200h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+      </element>
+    </element>
+    <element>
+      <meta>
+        <name>Orbital Elements Bank</name>
+        <needs-review/>
+      </meta>
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Block Type ID</name>
+          <brief>Specifies, that his block is a set of orbital elements. The value is fixed to 3.</brief>
+          <description>Either also a revision number or a field count.</description>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Size</name>
+          <brief>Contains the size of the entire bank, incluing the header. That is 9d8h.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <repeat n="25">
+        <meta>
+          <name>Orbital Elements</name>
+          <needs-review/>
+        </meta>
+        <element>
+          <meta>
+            <name>Orbital Element</name>
+            <needs-review/>
+          </meta>
+          <string format="ascii" width="8" pad="0">
+            <meta>
+              <name>Name</name>
+              <needs-review/>
+            </meta>
+          </string>
+          <int width="1h" format="bcd">
+            <meta>
+              <name>Epoch Year</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="6h" format="bcd" endian="big">
+            <meta>
+              <name>Epoch julien day</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="5h" format="bcd" endian="big">
+            <meta>
+              <name>First derivative of mean motion</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="big">
+            <meta>
+              <name>Inclination</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="big">
+            <meta>
+              <name>Right ascension of the ascending node</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="3h:4" format="bcd" endian="big">
+            <meta>
+              <name>Eccentricity</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="big">
+            <meta>
+              <name>Argument of perigee</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="bcd" endian="big">
+            <meta>
+              <name>Mean anomaly</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="5h:4" format="bcd" endian="big">
+            <meta>
+              <name>Mean motion</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="2h:4" format="bcd" endian="big">
+            <meta>
+              <name>Revolution number at epoch</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="0h:4" format="bcd">
+            <meta>
+              <name>Unused</name>
+              <brief>set to blank bh.</brief>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>FM Downlink Frequency</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>FM Uplinkrequency</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>CTCSS tone frequency</name>
+              <brief>Encoded frequency in 0.1Hz.</brief>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>APRS Downlink Frequency</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>APRS Uplink Frequency</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <int width="4h" format="unsigned" endian="little">
+            <meta>
+              <name>Beacon Frequency</name>
+              <needs-review/>
+            </meta>
+          </int>
+          <unused width="4h">
+            <meta>
+              <name>Unused data</name>
+              <needs-review/>
+            </meta>00</unused>
+          <string format="ascii" width="24" pad="0">
+            <meta>
+              <name>APRS path</name>
+              <needs-review/>
+            </meta>
+          </string>
+        </element>
+      </repeat>
+      <unused width="14h">
+        <meta>
+          <name>Unused data</name>
+        </meta>
+      </unused>
+    </element>
+    <unused width="1a4h">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>ff</unused>
   </element>
   <element at="1030000h">
     <meta>
       <name>Callsign DB Segment 0</name>
+      <needs-review/>
     </meta>
-    <unknown width="40000h">
+    <string format="ascii" width="2" pad="0">
       <meta>
-        <name>Unknown data</name>
+        <name>Magic String</name>
+        <brief>A fixed ASCII string 'Id'.</brief>
+        <needs-review/>
       </meta>
-    </unknown>
+    </string>
+    <enum width="1h">
+      <meta>
+        <name>Format</name>
+        <needs-review/>
+      </meta>
+      <item value="45">
+        <name>Uncompressed</name>
+        <description>Old uncompressed format</description>
+      </item>
+      <item value="78">
+        <name>Compressed</name>
+        <description>New compressed format</description>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Entry size</name>
+        <brief>Specifies the size of every entry. The encoding is quiet weird: 59h=15bytes, 5d=19bytes, ..., 50bytes.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <string format="ascii" width="3" pad="0">
+      <meta>
+        <name>Version string</name>
+        <brief>Fixed to '001'.</brief>
+        <needs-review/>
+      </meta>
+    </string>
+    <unused width="1h">
+      <meta>
+        <name>Pad byte</name>
+        <needs-review/>
+      </meta>00</unused>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>Entry count</name>
+        <brief>Specifies the number of entries in the callsign db.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <repeat n="17475">
+      <meta>
+        <name>Entries</name>
+        <needs-review/>
+      </meta>
+      <element>
+        <meta>
+          <name>Entry</name>
+          <needs-review/>
+        </meta>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>DMR ID</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <repeat n="4">
+          <meta>
+            <name>Call etc</name>
+            <brief>Text field containing the callsign, name, city, etc. This is encoded in a compressed form. Chars are encoded using a simple 6bit table and stored in 4-chars groups as 3bytes each. Padding is 00h (space).</brief>
+            <needs-review/>
+          </meta>
+          <repeat n="4">
+            <meta>
+              <name>Char Group</name>
+              <brief>Contains 4 6-bit chars</brief>
+              <needs-review/>
+            </meta>
+            <int width="0h:6" format="unsigned">
+              <meta>
+                <name>Single char</name>
+                <brief>Using translation table [' ', '0', ..., '9', 'A', ..., 'Z', 'a', ..., 'z', '.'].</brief>
+                <needs-review/>
+              </meta>
+            </int>
+          </repeat>
+        </repeat>
+      </element>
+    </repeat>
+    <unused width="7h">
+      <meta>
+        <name>Unused data</name>
+        <brief>Whatever is left over.</brief>
+        <needs-review/>
+      </meta>
+    </unused>
   </element>
   <repeat at="107b1b0h" n="7">
     <meta>
@@ -2479,11 +2713,52 @@
   <element at="10b8000h">
     <meta>
       <name>Callsign DB Segment 1</name>
+      <brief>Remaining entries of the callsign DB</brief>
+      <needs-review/>
     </meta>
-    <unknown width="48000h">
+    <repeat n="19660">
       <meta>
-        <name>Unknown data</name>
+        <name>Entries</name>
+        <needs-review/>
       </meta>
-    </unknown>
+      <element>
+        <meta>
+          <name>Entry</name>
+          <needs-review/>
+        </meta>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>DMR ID</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <repeat n="4">
+          <meta>
+            <name>Call etc</name>
+            <brief>Text field containing the callsign, name, city, etc. This is encoded in a compressed form. Chars are encoded using a simple 6bit table and stored in 4-chars groups as 3bytes each. Padding is 00h (space).</brief>
+            <needs-review/>
+          </meta>
+          <repeat n="4">
+            <meta>
+              <name>Char Group</name>
+              <brief>Contains 4 6-bit chars</brief>
+              <needs-review/>
+            </meta>
+            <int width="0h:6" format="unsigned">
+              <meta>
+                <name>Single char</name>
+                <brief>Using translation table [' ', '0', ..., '9', 'A', ..., 'Z', 'a', ..., 'z', '.'].</brief>
+                <needs-review/>
+              </meta>
+            </int>
+          </repeat>
+        </repeat>
+      </element>
+    </repeat>
+    <unused width="ch">
+      <meta>
+        <name>Unused data</name>
+        <needs-review/>
+      </meta>00</unused>
   </element>
 </codeplug>
