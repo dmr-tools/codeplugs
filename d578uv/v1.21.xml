@@ -4439,6 +4439,56 @@
       </int>
     </repeat>
   </repeat>
+  <element at="2500600h">
+    <meta>
+      <name>Boot Settings</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <string format="ascii" width="14" pad="0">
+      <meta>
+        <name>Boot text line 1</name>
+        <brief>Specifies the first line of the boot text.</brief>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unused width="2h">
+      <meta>
+        <name>Pad bytes</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>0000</unused>
+    <string format="ascii" width="14" pad="0">
+      <meta>
+        <name>Boot text line 2</name>
+        <brief>Encodes the second line of the boot text.</brief>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unused width="2h">
+      <meta>
+        <name>Pad bytes</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>0000</unused>
+    <string format="ascii" width="8" pad="0">
+      <meta>
+        <name>Boot password</name>
+        <brief>Plain boot password.</brief>
+        <description>Although this is an ASCII string, only digits are allowed. That is 30h-39h.</description>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unused width="8h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
   <repeat at="2540000h" min="1" max="250">
     <meta>
       <name>Zone Names</name>
