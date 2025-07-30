@@ -2384,20 +2384,23 @@
     <meta>
       <name>Roaming channel bank</name>
       <brief>Encodes a bank of up to 250 roaming channels.</brief>
-      <needs-review/>
+      <firmware>1.21</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>Roaming channel</name>
         <brief>Encodes a single roaming channel.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <int width="4h" format="bcd" endian="big">
         <meta>
           <name>RX frequency</name>
           <brief>Specifies the RX frequency.</brief>
           <description>The frequency is stored in multiples of 10Hz.</description>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
       </int>
       <int width="4h" format="bcd" endian="big">
@@ -2405,7 +2408,8 @@
           <name>TX frequency</name>
           <brief>Encodes the transmit frequency.</brief>
           <description>The frequency is encoded in multiples of 10Hz.</description>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="0">
@@ -2413,14 +2417,16 @@
           <name>Color code override</name>
           <brief>Specifies the color code to override the current channels setting with.</brief>
           <description>If set to 16 (10h), there is no override.</description>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
       </int>
       <enum width="1h">
         <meta>
           <name>Time slot override</name>
           <brief>Specifies if and how the current channels time slot gets overridden.</brief>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>Time Slot 1</name>
@@ -2436,38 +2442,44 @@
       <string format="ascii" width="16" pad="0">
         <meta>
           <name>Name</name>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
       </string>
       <unused width="6h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
   <element at="1042000h">
     <meta>
       <name>Roaming channel bitmap</name>
-      <needs-review/>
+      <firmware>1.21</firmware>
+      <done/>
     </meta>
     <repeat n="250">
       <meta>
         <name>Roaming channel bits</name>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
           <name>Roaming channel bit</name>
           <brief>Single bit encoding whether a roaming channel is valid.</brief>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unused width="0h:6">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <element at="1042080h">
@@ -2830,6 +2842,99 @@
       </meta>
     </string>
   </repeat>
+  <repeat at="2480000h" min="0" max="100">
+    <meta>
+      <name>FM broadcast channel frequencies</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <int width="4h" format="bcd" endian="big">
+      <meta>
+        <name>Channel frequency</name>
+        <brief>Specified in multiples of 100Hz</brief>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
+  </repeat>
+  <element at="2480200h">
+    <meta>
+      <name>FM broadcast VFO frequency</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <int width="4h" format="bcd" endian="big">
+      <meta>
+        <name>VFO frequency</name>
+        <brief>Specified in multiples of 100Hz</brief>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="ch">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
+  <element at="2480210h">
+    <meta>
+      <name>FM broadcast channel bitmap</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name>FM broadcast channel bits</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="signed">
+        <meta>
+          <name>Channel bit</name>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="3h:4">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
+  <element at="2480220h">
+    <meta>
+      <name>FM broadcast channel scan bitmap</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name>FM broadcast channel scan bits</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="signed">
+        <meta>
+          <name>Channel bit</name>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="3h:4">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
   <repeat at="24c0000h" min="0" max="100">
     <meta>
       <name>5-Tone IDs</name>
@@ -4543,4 +4648,117 @@
         </meta>00</unused>
     </element>
   </repeat>
+  <repeat at="2bc0000h" min="0" max="100">
+    <meta>
+      <name>Air Band Channel Bank</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Air Band Channel</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <int width="4h" format="bcd" endian="big" default="276824064">
+        <meta>
+          <name>Frequency</name>
+          <brief>Specifies the channel frequency in multiples of 10Hz.</brief>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+      </int>
+      <string format="ascii" width="16" pad="0">
+        <meta>
+          <name>Channel Name</name>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="ch">
+        <meta>
+          <name>Unused data</name>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
+  <element at="2bc1000h">
+    <meta>
+      <name>Air Band VFO Channel</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <int width="4h" format="bcd" endian="big" default="276824064">
+      <meta>
+        <name>Frequency</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="1ch">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
+  <element at="2bc1020h">
+    <meta>
+      <name>Air Band Channel Bitmap</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name>Channel Bitmap</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Channel Enable Bit</name>
+          <short-name>CEB</short-name>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="13h:4">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
+  <element at="2bc1040h">
+    <meta>
+      <name>Air Band Scan Enable Bitmap</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name>Scan Enable Bits</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Scan Enable Bit</name>
+          <brief>If set, the corresponding channel is included in the air band scan.</brief>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="13h:4">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
 </codeplug>
