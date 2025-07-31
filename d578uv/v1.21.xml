@@ -4489,7 +4489,6 @@
   <element at="2500000h">
     <meta>
       <name>General Settings</name>
-      <incomplete/>
     </meta>
     <enum width="1h">
       <meta>
@@ -5121,11 +5120,15 @@
         <needs-review/>
       </meta>
     </int>
-    <unknown width="1h">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
-        <name>Unknown data</name>
+        <name>Long press duration</name>
+        <brief>Specifies the duration in n-1 seconds.</brief>
+        <description>That is, 0=1s, 1=2s, ..., 4=5s.</description>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
-    </unknown>
+    </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Show volume bar</name>
@@ -5944,7 +5947,391 @@
         <done/>
       </meta>
     </int>
-    <unknown width="15h">
+    <repeat n="10">
+      <meta>
+        <name>Short-press key functions</name>
+        <brief>Functions for programmable keys 1, ..., 6, A, ..., D.</brief>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name>Function</name>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Off</name>
+        </item>
+        <item value="1">
+          <name>Voltage</name>
+        </item>
+        <item value="2">
+          <name>Power</name>
+        </item>
+        <item value="3">
+          <name>Talk Around</name>
+        </item>
+        <item value="4">
+          <name>Reverse</name>
+        </item>
+        <item value="5">
+          <name>DMR Encryption</name>
+        </item>
+        <item value="6">
+          <name>Call</name>
+        </item>
+        <item value="7">
+          <name>VFO/Channel</name>
+        </item>
+        <item value="8">
+          <name>Scan</name>
+        </item>
+        <item value="9">
+          <name>FM Broadcast</name>
+        </item>
+        <item value="10">
+          <name>Alarm</name>
+        </item>
+        <item value="11">
+          <name>Record Switch</name>
+        </item>
+        <item value="12">
+          <name>Record</name>
+        </item>
+        <item value="13">
+          <name>SMS</name>
+        </item>
+        <item value="14">
+          <name>Dial</name>
+        </item>
+        <item value="15">
+          <name>GPS Information</name>
+        </item>
+        <item value="16">
+          <name>Monitor</name>
+        </item>
+        <item value="17">
+          <name>Main Channel Toggle</name>
+        </item>
+        <item value="18">
+          <name>Hot Key 1</name>
+        </item>
+        <item value="19">
+          <name>Hot Key 2</name>
+        </item>
+        <item value="20">
+          <name>Hot Key 3</name>
+        </item>
+        <item value="21">
+          <name>Hot Key 4</name>
+        </item>
+        <item value="22">
+          <name>Hot Key 5</name>
+        </item>
+        <item value="23">
+          <name>Hot Key 6</name>
+        </item>
+        <item value="24">
+          <name>Work Alone</name>
+        </item>
+        <item value="25">
+          <name>Nuisance Delete</name>
+        </item>
+        <item value="26">
+          <name>DMR Monitor</name>
+        </item>
+        <item value="27">
+          <name>Sub Channel Toggle</name>
+        </item>
+        <item value="28">
+          <name>Priority Zone</name>
+        </item>
+        <item value="29">
+          <name>VFO Scan</name>
+        </item>
+        <item value="30">
+          <name>Mic Sound Quality</name>
+        </item>
+        <item value="31">
+          <name>Last Call Reply</name>
+        </item>
+        <item value="32">
+          <name>Toggle Channel Type</name>
+        </item>
+        <item value="33">
+          <name>Ranging</name>
+        </item>
+        <item value="34">
+          <name>Roaming</name>
+        </item>
+        <item value="35">
+          <name>Channel Ranging</name>
+        </item>
+        <item value="36">
+          <name>Set Max Volume</name>
+        </item>
+        <item value="37">
+          <name>Timeslot Toggle</name>
+        </item>
+        <item value="38">
+          <name>APRS Type Toggle</name>
+        </item>
+        <item value="39">
+          <name>Select Zone</name>
+        </item>
+        <item value="40">
+          <name>A Mute</name>
+        </item>
+        <item value="41">
+          <name>B Mute</name>
+        </item>
+        <item value="42">
+          <name>Roaming Settings</name>
+        </item>
+        <item value="43">
+          <name>APRS Settings</name>
+        </item>
+        <item value="44">
+          <name>Zone increment</name>
+        </item>
+        <item value="45">
+          <name>Zone decrement</name>
+        </item>
+        <item value="47">
+          <name>Unknown</name>
+        </item>
+        <item value="48">
+          <name>Unknown</name>
+        </item>
+        <item value="49">
+          <name>Speaker Mode</name>
+        </item>
+        <item value="50">
+          <name>Channel Name</name>
+        </item>
+        <item value="51">
+          <name>Bluetooth</name>
+        </item>
+        <item value="52">
+          <name>GPS</name>
+        </item>
+        <item value="53">
+          <name>CTCSS/DTS Scan</name>
+        </item>
+        <item value="54">
+          <name>TBST</name>
+        </item>
+        <item value="55">
+          <name>APRS Send</name>
+        </item>
+        <item value="56">
+          <name>FM APRS Info</name>
+        </item>
+        <item value="57">
+          <name>GPS Roaming</name>
+        </item>
+        <item value="58">
+          <name>Noise Reduction RX</name>
+        </item>
+        <item value="59">
+          <name>Noise Reduction TX</name>
+        </item>
+      </enum>
+    </repeat>
+    <repeat n="10">
+      <meta>
+        <name>Long-press key functions</name>
+        <brief>Functions for programmable keys 1, ..., 6, A, ..., D.</brief>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <enum width="1h">
+        <meta>
+          <name>Function</name>
+          <firmware>1.21</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Off</name>
+        </item>
+        <item value="1">
+          <name>Voltage</name>
+        </item>
+        <item value="2">
+          <name>Power</name>
+        </item>
+        <item value="3">
+          <name>Talk Around</name>
+        </item>
+        <item value="4">
+          <name>Reverse</name>
+        </item>
+        <item value="5">
+          <name>DMR Encryption</name>
+        </item>
+        <item value="6">
+          <name>Call</name>
+        </item>
+        <item value="7">
+          <name>VFO/Channel</name>
+        </item>
+        <item value="8">
+          <name>Scan</name>
+        </item>
+        <item value="9">
+          <name>FM Broadcast</name>
+        </item>
+        <item value="10">
+          <name>Alarm</name>
+        </item>
+        <item value="11">
+          <name>Record Switch</name>
+        </item>
+        <item value="12">
+          <name>Record</name>
+        </item>
+        <item value="13">
+          <name>SMS</name>
+        </item>
+        <item value="14">
+          <name>Dial</name>
+        </item>
+        <item value="15">
+          <name>GPS Information</name>
+        </item>
+        <item value="16">
+          <name>Monitor</name>
+        </item>
+        <item value="17">
+          <name>Main Channel Toggle</name>
+        </item>
+        <item value="18">
+          <name>Hot Key 1</name>
+        </item>
+        <item value="19">
+          <name>Hot Key 2</name>
+        </item>
+        <item value="20">
+          <name>Hot Key 3</name>
+        </item>
+        <item value="21">
+          <name>Hot Key 4</name>
+        </item>
+        <item value="22">
+          <name>Hot Key 5</name>
+        </item>
+        <item value="23">
+          <name>Hot Key 6</name>
+        </item>
+        <item value="24">
+          <name>Work Alone</name>
+        </item>
+        <item value="25">
+          <name>Nuisance Delete</name>
+        </item>
+        <item value="26">
+          <name>DMR Monitor</name>
+        </item>
+        <item value="27">
+          <name>Sub Channel Toggle</name>
+        </item>
+        <item value="28">
+          <name>Priority Zone</name>
+        </item>
+        <item value="29">
+          <name>VFO Scan</name>
+        </item>
+        <item value="30">
+          <name>Mic Sound Quality</name>
+        </item>
+        <item value="31">
+          <name>Last Call Reply</name>
+        </item>
+        <item value="32">
+          <name>Toggle Channel Type</name>
+        </item>
+        <item value="33">
+          <name>Ranging</name>
+        </item>
+        <item value="34">
+          <name>Roaming</name>
+        </item>
+        <item value="35">
+          <name>Channel Ranging</name>
+        </item>
+        <item value="36">
+          <name>Set Max Volume</name>
+        </item>
+        <item value="37">
+          <name>Timeslot Toggle</name>
+        </item>
+        <item value="38">
+          <name>APRS Type Toggle</name>
+        </item>
+        <item value="39">
+          <name>Select Zone</name>
+        </item>
+        <item value="40">
+          <name>A Mute</name>
+        </item>
+        <item value="41">
+          <name>B Mute</name>
+        </item>
+        <item value="42">
+          <name>Roaming Settings</name>
+        </item>
+        <item value="43">
+          <name>APRS Settings</name>
+        </item>
+        <item value="44">
+          <name>Zone increment</name>
+        </item>
+        <item value="45">
+          <name>Zone decrement</name>
+        </item>
+        <item value="47">
+          <name>Unknown</name>
+        </item>
+        <item value="48">
+          <name>Unknown</name>
+        </item>
+        <item value="49">
+          <name>Speaker Mode</name>
+        </item>
+        <item value="50">
+          <name>Channel Name</name>
+        </item>
+        <item value="51">
+          <name>Bluetooth</name>
+        </item>
+        <item value="52">
+          <name>GPS</name>
+        </item>
+        <item value="53">
+          <name>CTCSS/DTS Scan</name>
+        </item>
+        <item value="54">
+          <name>TBST</name>
+        </item>
+        <item value="55">
+          <name>APRS Send</name>
+        </item>
+        <item value="56">
+          <name>FM APRS Info</name>
+        </item>
+        <item value="57">
+          <name>GPS Roaming</name>
+        </item>
+        <item value="58">
+          <name>Noise Reduction RX</name>
+        </item>
+        <item value="59">
+          <name>Noise Reduction TX</name>
+        </item>
+      </enum>
+    </repeat>
+    <unknown width="1h">
       <meta>
         <name>Unknown data</name>
       </meta>
