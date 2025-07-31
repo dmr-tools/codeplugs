@@ -4587,7 +4587,8 @@
     <enum width="1h">
       <meta>
         <name>Language</name>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>English</name>
@@ -4623,7 +4624,8 @@
       <meta>
         <name>Frequency step size</name>
         <brief>Specifies the frequency step size.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>2.5 kHz</name>
@@ -4673,22 +4675,12 @@
         <done/>
       </meta>
     </int>
-    <enum width="1h">
+    <unknown width="1h">
       <meta>
-        <name>Power save mode</name>
+        <name>Unknown data</name>
         <firmware>1.21</firmware>
-        <needs-review/>
       </meta>
-      <item value="0">
-        <name>Off</name>
-      </item>
-      <item value="1">
-        <name>1:1 (50%)</name>
-      </item>
-      <item value="2">
-        <name>1:2 (66%)</name>
-      </item>
-    </enum>
+    </unknown>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>DMR mic gain</name>
@@ -5638,7 +5630,8 @@
       <meta>
         <name>Forced lock</name>
         <short-name>FoLk</short-name>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
@@ -5646,7 +5639,8 @@
         <name>Side key lock</name>
         <short-name>SkLk</short-name>
         <brief>If set, the side keys are locked too.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="0h:1">
@@ -5659,7 +5653,8 @@
         <name>Enable keyboard lock</name>
         <short-name>KbLk</short-name>
         <brief>If enabled, the keyboard is locked.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0">
@@ -5667,7 +5662,8 @@
         <name>Enable knob lock</name>
         <short-name>KnLk</short-name>
         <brief>If set, the knob is also locked.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -5873,7 +5869,8 @@
       <meta>
         <name>Show menu separator</name>
         <brief>If set to 1, shows menu separators.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -5889,7 +5886,8 @@
         <name>Channel A name color</name>
         <brief>Specifies the color of the channel name.</brief>
         <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -7379,175 +7377,27 @@
       <name>General Settings Extension</name>
       <incomplete/>
     </meta>
-    <unknown width="0h:5">
+    <unknown width="20h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
-    <int width="0h:1" format="unsigned" default="0">
-      <meta>
-        <name>Show color code</name>
-        <short-name>ShCoCo</short-name>
-        <brief>If enabled, the color code is shown.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned" default="0">
-      <meta>
-        <name>Show time slot</name>
-        <short-name>ShTiSl</short-name>
-        <brief>If enabled, the time slot is shown.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="0h:1" format="unsigned" default="0">
-      <meta>
-        <name>Show channel type</name>
-        <short-name>ShChTy</short-name>
-        <brief>If enables, the channel type is shown.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <unknown width="1h">
-      <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
-    <enum width="1h">
-      <meta>
-        <name>Date format</name>
-        <brief>Specifies the format, the date is shown in.</brief>
-        <needs-review/>
-      </meta>
-      <item value="0">
-        <name>Big Endian</name>
-        <description>YYYY/MM/DD</description>
-      </item>
-      <item value="1">
-        <name>Little Endian</name>
-        <description>DD/MM/YYYY</description>
-      </item>
-    </enum>
-    <unknown width="1bh">
-      <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
-    <enum width="1h">
-      <meta>
-        <name>Talker alias priority</name>
-        <needs-review/>
-      </meta>
-      <item value="0">
-        <name>Off</name>
-      </item>
-      <item value="1">
-        <name>Contact</name>
-      </item>
-      <item value="2">
-        <name>Over the air</name>
-      </item>
-    </enum>
-    <enum width="1h">
-      <meta>
-        <name>Talker alias encoding</name>
-        <needs-review/>
-      </meta>
-      <item value="0">
-        <name>ISO 7</name>
-      </item>
-      <item value="1">
-        <name>ISO 8</name>
-      </item>
-      <item value="2">
-        <name>Unicode</name>
-      </item>
-    </enum>
-    <unknown width="1h">
-      <meta>
-        <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>Enable blue tooth PTT latch</name>
-        <brief>If set to 1, one press with lattch the PTT and a second press will unlatch the PTT again.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="1h" format="unsigned" default="255">
-      <meta>
-        <name>UHF auto-repeater 2 offset index</name>
-        <brief>Specifies the 0-based index of the offset frequency for the second UHF auto-repeater frequency range.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <int width="1h" format="unsigned" default="255">
-      <meta>
-        <name>VHF auto-repeater 2 offset index</name>
-        <brief>Specifies the 0-based index of the offset frequency for the second VHF auto-repeater frequency range.</brief>
-        <needs-review/>
-      </meta>
-    </int>
-    <unknown width="4h">
-      <meta>
-        <name>Unknown data</name>
-        <firmware>1.21</firmware>
-      </meta>
-    </unknown>
-    <unknown width="4h">
-      <meta>
-        <name>Unknown data</name>
-        <firmware>1.21</firmware>
-      </meta>
-    </unknown>
-    <unknown width="4h">
-      <meta>
-        <name>Unknown data</name>
-        <firmware>1.21</firmware>
-      </meta>
-    </unknown>
-    <unknown width="1h">
-      <meta>
-        <name>Unknown data</name>
-      </meta>
-    </unknown>
-    <enum width="1h">
-      <meta>
-        <name>UI Mode</name>
-        <brief>Specifies the freedom in the UI.</brief>
-        <description>That is, in amateur mode, you can set a lot of stuff using the radio itself. In professional mode, you are basically locked in.</description>
-        <firmware>1.21</firmware>
+        <name>Enable Weather Alarm</name>
         <done/>
       </meta>
-      <item value="0">
-        <name>Amateur</name>
-      </item>
-      <item value="1">
-        <name>Professional</name>
-      </item>
-    </enum>
-    <unknown width="2h">
+    </int>
+    <unknown width="5h">
       <meta>
         <name>Unknown data</name>
       </meta>
     </unknown>
-    <int width="1h" format="unsigned" default="2">
-      <meta>
-        <name>Blue tooth PTT sleep delay</name>
-        <brief>Specifies the delay befor the BT PTT button goes into sleep mode.</brief>
-        <description>Encodes as minutes. Valid values are [Infinite, 1min, ..., 4min], where 0=Infinite.</description>
-        <needs-review/>
-      </meta>
-    </int>
     <enum width="1h">
       <meta>
         <name>GPS Modes</name>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>GPS</name>
@@ -7559,33 +7409,418 @@
         <name>Both</name>
       </item>
     </enum>
-    <int width="1h" format="unsigned" default="37">
+    <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>STE duration</name>
-        <brief>Specifies the STE duration in mutliples of 10ms. Valid values are [10ms-1000ms]</brief>
-        <needs-review/>
+        <name>Enable bluetooth PTT latch</name>
+        <brief>If set to 1, one press with lattch the PTT and a second press will unlatch the PTT again.</brief>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
+        <name>Bluetooth PTT sleep delay</name>
+        <brief>Specifies the delay befor the BT PTT button goes into sleep mode.</brief>
+        <description>Encodes as minutes. Valid values are [Infinite, 1min, ..., 4min], where 0=Infinite.</description>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
         <name>Manual dial group call hang time</name>
         <brief>Specifies hang time in seconds. That is. 0=1s, ..., 29=30s, 30=30min, 31=infinite.</brief>
-        <needs-review/>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Manual dial private call hang time</name>
         <brief>Specifies hang time in seconds. That is. 0=1s, ..., 29=30s, 30=30min, 31=infinite.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
+    <enum width="1h">
+      <meta>
+        <name>Channel Knob Short-Press Function</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Voltage</name>
+      </item>
+      <item value="2">
+        <name>Power</name>
+      </item>
+      <item value="3">
+        <name>Talk Around</name>
+      </item>
+      <item value="4">
+        <name>Reverse</name>
+      </item>
+      <item value="5">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>Call</name>
+      </item>
+      <item value="7">
+        <name>VFO/Channel</name>
+      </item>
+      <item value="8">
+        <name>Scan</name>
+      </item>
+      <item value="9">
+        <name>FM Broadcast</name>
+      </item>
+      <item value="10">
+        <name>Alarm</name>
+      </item>
+      <item value="11">
+        <name>Record Switch</name>
+      </item>
+      <item value="12">
+        <name>Record</name>
+      </item>
+      <item value="13">
+        <name>SMS</name>
+      </item>
+      <item value="14">
+        <name>Dial</name>
+      </item>
+      <item value="15">
+        <name>GPS Information</name>
+      </item>
+      <item value="16">
+        <name>Monitor</name>
+      </item>
+      <item value="17">
+        <name>Main Channel Toggle</name>
+      </item>
+      <item value="18">
+        <name>Hot Key 1</name>
+      </item>
+      <item value="19">
+        <name>Hot Key 2</name>
+      </item>
+      <item value="20">
+        <name>Hot Key 3</name>
+      </item>
+      <item value="21">
+        <name>Hot Key 4</name>
+      </item>
+      <item value="22">
+        <name>Hot Key 5</name>
+      </item>
+      <item value="23">
+        <name>Hot Key 6</name>
+      </item>
+      <item value="24">
+        <name>Work Alone</name>
+      </item>
+      <item value="25">
+        <name>Nuisance Delete</name>
+      </item>
+      <item value="26">
+        <name>DMR Monitor</name>
+      </item>
+      <item value="27">
+        <name>Sub Channel Toggle</name>
+      </item>
+      <item value="28">
+        <name>Priority Zone</name>
+      </item>
+      <item value="29">
+        <name>VFO Scan</name>
+      </item>
+      <item value="30">
+        <name>Mic Sound Quality</name>
+      </item>
+      <item value="31">
+        <name>Last Call Reply</name>
+      </item>
+      <item value="32">
+        <name>Toggle Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Ranging</name>
+      </item>
+      <item value="34">
+        <name>Roaming</name>
+      </item>
+      <item value="35">
+        <name>Channel Ranging</name>
+      </item>
+      <item value="36">
+        <name>Set Max Volume</name>
+      </item>
+      <item value="37">
+        <name>Timeslot Toggle</name>
+      </item>
+      <item value="38">
+        <name>APRS Type Toggle</name>
+      </item>
+      <item value="39">
+        <name>Select Zone</name>
+      </item>
+      <item value="40">
+        <name>A Mute</name>
+      </item>
+      <item value="41">
+        <name>B Mute</name>
+      </item>
+      <item value="42">
+        <name>Roaming Settings</name>
+      </item>
+      <item value="43">
+        <name>APRS Settings</name>
+      </item>
+      <item value="44">
+        <name>Zone increment</name>
+      </item>
+      <item value="45">
+        <name>Zone decrement</name>
+      </item>
+      <item value="47">
+        <name>Unknown</name>
+      </item>
+      <item value="48">
+        <name>Unknown</name>
+      </item>
+      <item value="49">
+        <name>Speaker Mode</name>
+      </item>
+      <item value="50">
+        <name>Channel Name</name>
+      </item>
+      <item value="51">
+        <name>Bluetooth</name>
+      </item>
+      <item value="52">
+        <name>GPS</name>
+      </item>
+      <item value="53">
+        <name>CTCSS/DTS Scan</name>
+      </item>
+      <item value="54">
+        <name>TBST</name>
+      </item>
+      <item value="55">
+        <name>APRS Send</name>
+      </item>
+      <item value="56">
+        <name>FM APRS Info</name>
+      </item>
+      <item value="57">
+        <name>GPS Roaming</name>
+      </item>
+      <item value="58">
+        <name>Noise Reduction RX</name>
+      </item>
+      <item value="59">
+        <name>Noise Reduction TX</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Channel Knob Long-Press Function</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Voltage</name>
+      </item>
+      <item value="2">
+        <name>Power</name>
+      </item>
+      <item value="3">
+        <name>Talk Around</name>
+      </item>
+      <item value="4">
+        <name>Reverse</name>
+      </item>
+      <item value="5">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>Call</name>
+      </item>
+      <item value="7">
+        <name>VFO/Channel</name>
+      </item>
+      <item value="8">
+        <name>Scan</name>
+      </item>
+      <item value="9">
+        <name>FM Broadcast</name>
+      </item>
+      <item value="10">
+        <name>Alarm</name>
+      </item>
+      <item value="11">
+        <name>Record Switch</name>
+      </item>
+      <item value="12">
+        <name>Record</name>
+      </item>
+      <item value="13">
+        <name>SMS</name>
+      </item>
+      <item value="14">
+        <name>Dial</name>
+      </item>
+      <item value="15">
+        <name>GPS Information</name>
+      </item>
+      <item value="16">
+        <name>Monitor</name>
+      </item>
+      <item value="17">
+        <name>Main Channel Toggle</name>
+      </item>
+      <item value="18">
+        <name>Hot Key 1</name>
+      </item>
+      <item value="19">
+        <name>Hot Key 2</name>
+      </item>
+      <item value="20">
+        <name>Hot Key 3</name>
+      </item>
+      <item value="21">
+        <name>Hot Key 4</name>
+      </item>
+      <item value="22">
+        <name>Hot Key 5</name>
+      </item>
+      <item value="23">
+        <name>Hot Key 6</name>
+      </item>
+      <item value="24">
+        <name>Work Alone</name>
+      </item>
+      <item value="25">
+        <name>Nuisance Delete</name>
+      </item>
+      <item value="26">
+        <name>DMR Monitor</name>
+      </item>
+      <item value="27">
+        <name>Sub Channel Toggle</name>
+      </item>
+      <item value="28">
+        <name>Priority Zone</name>
+      </item>
+      <item value="29">
+        <name>VFO Scan</name>
+      </item>
+      <item value="30">
+        <name>Mic Sound Quality</name>
+      </item>
+      <item value="31">
+        <name>Last Call Reply</name>
+      </item>
+      <item value="32">
+        <name>Toggle Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Ranging</name>
+      </item>
+      <item value="34">
+        <name>Roaming</name>
+      </item>
+      <item value="35">
+        <name>Channel Ranging</name>
+      </item>
+      <item value="36">
+        <name>Set Max Volume</name>
+      </item>
+      <item value="37">
+        <name>Timeslot Toggle</name>
+      </item>
+      <item value="38">
+        <name>APRS Type Toggle</name>
+      </item>
+      <item value="39">
+        <name>Select Zone</name>
+      </item>
+      <item value="40">
+        <name>A Mute</name>
+      </item>
+      <item value="41">
+        <name>B Mute</name>
+      </item>
+      <item value="42">
+        <name>Roaming Settings</name>
+      </item>
+      <item value="43">
+        <name>APRS Settings</name>
+      </item>
+      <item value="44">
+        <name>Zone increment</name>
+      </item>
+      <item value="45">
+        <name>Zone decrement</name>
+      </item>
+      <item value="47">
+        <name>Unknown</name>
+      </item>
+      <item value="48">
+        <name>Unknown</name>
+      </item>
+      <item value="49">
+        <name>Speaker Mode</name>
+      </item>
+      <item value="50">
+        <name>Channel Name</name>
+      </item>
+      <item value="51">
+        <name>Bluetooth</name>
+      </item>
+      <item value="52">
+        <name>GPS</name>
+      </item>
+      <item value="53">
+        <name>CTCSS/DTS Scan</name>
+      </item>
+      <item value="54">
+        <name>TBST</name>
+      </item>
+      <item value="55">
+        <name>APRS Send</name>
+      </item>
+      <item value="56">
+        <name>FM APRS Info</name>
+      </item>
+      <item value="57">
+        <name>GPS Roaming</name>
+      </item>
+      <item value="58">
+        <name>Noise Reduction RX</name>
+      </item>
+      <item value="59">
+        <name>Noise Reduction TX</name>
+      </item>
+    </enum>
     <enum width="1h">
       <meta>
         <name>Channel B name color</name>
         <brief>Specifies the color of the channel name.</brief>
         <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -7612,7 +7847,7 @@
     <enum width="1h">
       <meta>
         <name>Encryption Type</name>
-        <needs-review/>
+        <done/>
       </meta>
       <item value="0">
         <name>Common/DMR</name>
@@ -7621,25 +7856,41 @@
         <name>AES/ARC4</name>
       </item>
     </enum>
+    <enum width="1h">
+      <meta>
+        <name>UI Mode</name>
+        <brief>Specifies the freedom in the UI.</brief>
+        <description>That is, in amateur mode, you can set a lot of stuff using the radio itself. In professional mode, you are basically locked in.</description>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Amateur</name>
+      </item>
+      <item value="1">
+        <name>Professional</name>
+      </item>
+    </enum>
     <int width="1h" format="unsigned" default="0">
       <meta>
-        <name>Enable TOT reminder</name>
-        <brief>If set to 1, five seconds before the transmit timeout, a warn tone sounds.</brief>
-        <needs-review/>
+        <name>STE duration</name>
+        <brief>Specifies the STE duration in mutliples of 10ms. Valid values are [10ms-1000ms]</brief>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0">
+    <unknown width="1h">
       <meta>
-        <name>Enable transmit power AGC</name>
-        <needs-review/>
+        <name>Unknown data</name>
       </meta>
-    </int>
+    </unknown>
     <enum width="1h">
       <meta>
         <name>Zone A name color</name>
         <brief>Specifies the color of the zone name.</brief>
         <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -7668,7 +7919,8 @@
         <name>Zone B name color</name>
         <brief>Specifies the color of the zone name.</brief>
         <description>Because it is incredible important to be able to set it. Default is orange (0).</description>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Orange</name>
@@ -7696,75 +7948,132 @@
       <meta>
         <name>Disable auto-shutoff timer reset on call</name>
         <brief>If set to 1, the auto-shutoff timer is not reset by a call.</brief>
-        <needs-review/>
+        <done/>
       </meta>
     </int>
-    <unknown width="1h">
+    <unknown width="4h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.21</firmware>
       </meta>
     </unknown>
+    <unused width="0h:5">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </unused>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Show color code</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Schow time slot</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Show channel type</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable FM channel free tone</name>
-        <incomplete/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
-    <unknown width="1h">
+    <enum width="1h">
       <meta>
-        <name>Unknown data</name>
-        <needs-review/>
+        <name>Date format</name>
+        <brief>Specifies the format, the date is shown in.</brief>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
-    </unknown>
+      <item value="0">
+        <name>Big Endian</name>
+        <description>YYYY/MM/DD</description>
+      </item>
+      <item value="1">
+        <name>Little Endian</name>
+        <description>DD/MM/YYYY</description>
+      </item>
+    </enum>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>FM mic gain</name>
         <brief>Specifies the FM microphone gain.</brief>
         <description>Valid values are [1, ..., 5], encoded as n + 1. That is, 0=1, ..., 4=5.</description>
-        <needs-review/>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="ah">
+      <meta>
+        <name>Unknown data</name>
+        <firmware>1.21</firmware>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable TOT reminder</name>
+        <brief>If set to 1, five seconds before the transmit timeout, a warn tone sounds.</brief>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable GPS roaming.</name>
-        <needs-review/>
+        <done/>
       </meta>
     </int>
-    <unknown width="1h">
+    <unknown width="dh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <element>
       <meta>
-        <name>Call end melody</name>
-        <needs-review/>
+        <name>Call-end melody</name>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Tones</name>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <brief>in Hz.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <brief>in ms.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -7772,68 +8081,51 @@
     <element>
       <meta>
         <name>All-call melody</name>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Tones</name>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Frequency</name>
             <brief>in Hz.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="5">
         <meta>
           <name>Durations</name>
-          <needs-review/>
+          <firmware>1.21</firmware>
+          <done/>
         </meta>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Duration</name>
             <brief>in ms.</brief>
-            <needs-review/>
+            <firmware>1.21</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
     </element>
-    <int width="1h" format="unsigned" default="2">
+    <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Header repetitions</name>
         <brief>Specifies how often the so-called voice header is repeated. Valid values are 2, ..., 8.</brief>
-        <needs-review/>
+        <firmware>1.21</firmware>
+        <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0">
-      <meta>
-        <name>Satellite fixed location index</name>
-        <brief>Specifies the location source for the satellite prediction.</brief>
-        <description>Speicfies the index +1 of the fixed location (APRS settings). If set to 0, the GPS location is used.</description>
-        <needs-review/>
-      </meta>
-    </int>
-    <unknown width="1h">
+    <unknown width="17fh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
-    <int width="1h" format="unsigned" default="0">
-      <meta>
-        <name>Satellite FM channel squelch</name>
-        <brief>Encodes the squelch level for all satellite FM channels.</brief>
-        <description>Valid values are [0,5], where 0=open.</description>
-        <needs-review/>
-      </meta>
-    </int>
-    <unknown width="18eh">
-      <meta>
-        <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
   </element>
