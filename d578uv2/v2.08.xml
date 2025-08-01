@@ -3,6 +3,8 @@
 <codeplug>
   <meta>
     <name>AnyTone AT-D578UV+/AT-D578UVIII+</name>
+    <brief>Implements the codeplug for the second generation D578UV devices. These are AT-D578UV PLUS, AT-D578UV III PLUS.</brief>
+    <description>Officially, the codeplug format is identicial to the D578UV one.</description>
     <firmware>2.08</firmware>
   </meta>
   <repeat at="800000h" step="40000h" min="1" max="32">
@@ -5086,7 +5088,7 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="1">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable call-end notification.</name>
         <brief>If enabled, a small box is shown at the end of the call.</brief>
@@ -6870,7 +6872,7 @@
         <name>On</name>
       </item>
     </enum>
-    <int width="1h" format="unsigned" default="0" min="0" max="1">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable fixed location</name>
         <firmware>1.21</firmware>
@@ -7359,7 +7361,7 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="0">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable Repeater</name>
         <brief>Enables the radio to act as a local repeater.</brief>
