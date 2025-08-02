@@ -2,8 +2,10 @@
 <!--vi: set ts=2 sw=2:-->
 <codeplug>
   <meta>
-    <name>AnyTone AT-D578UV</name>
-    <firmware>1.21</firmware>
+    <name>AnyTone AT-D578UV+/AT-D578UVIII+</name>
+    <brief>Implements the codeplug for the second generation D578UV devices. These are AT-D578UV PLUS, AT-D578UV III PLUS.</brief>
+    <description>Officially, the codeplug format is identicial to the D578UV one.</description>
+    <firmware>2.08</firmware>
   </meta>
   <repeat at="800000h" step="40000h" min="1" max="32">
     <meta>
@@ -47,7 +49,6 @@
         <enum width="0h:2">
           <meta>
             <name>Repeater direction</name>
-            <short-name>Rep Dir</short-name>
             <brief>Specifies the offset direction for the repeater mode.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -68,7 +69,6 @@
         <enum width="0h:2">
           <meta>
             <name>Bandwidth</name>
-            <short-name>BndWdt</short-name>
             <brief>Specifies the bandwidth of the FM channel. DMR channels are always 12.5kHz wide.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -83,7 +83,6 @@
         <enum width="0h:2">
           <meta>
             <name>Transmit power</name>
-            <short-name>PWR</short-name>
             <brief>Specifies the transmit power of the channel.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -104,7 +103,6 @@
         <enum width="0h:2">
           <meta>
             <name>Channel mode</name>
-            <short-name>Mode</short-name>
             <brief>Specifies the mode of the channel.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -133,7 +131,6 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Call confirm</name>
-            <short-name>ClCnf</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -150,7 +147,6 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Swap RX/TX frequencies</name>
-            <short-name>sw Rx/Tx</short-name>
             <brief>Also swaps signaling.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -159,7 +155,6 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable TX DCS</name>
-            <short-name>TxDcs</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -167,7 +162,6 @@
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable TX CTCSS</name>
-            <short-name>TxCtc</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -175,7 +169,6 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX DCS</name>
-            <short-name>RxDcs</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -183,7 +176,6 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX CTCSS</name>
-            <short-name>RxCtc</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -565,7 +557,6 @@
         <enum width="0h:1">
           <meta>
             <name>Squelch Mode</name>
-            <short-name>SqMo</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -611,7 +602,6 @@
         <enum width="0h:2">
           <meta>
             <name>Optional Signaling</name>
-            <short-name>Opt Sig</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -636,7 +626,6 @@
         <enum width="0h:2">
           <meta>
             <name>Admit Criterium</name>
-            <short-name>Adm Crit</short-name>
             <brief>This is a mess. Similar admid criteria for FM and DMR are encoded differently. E.g., channel free and different CC/tone.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -729,7 +718,6 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable Adaptive TDMA</name>
-            <short-name>aTDMA</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -761,7 +749,6 @@
         <enum width="0h:1">
           <meta>
             <name>Time Slot</name>
-            <short-name>TS</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -801,7 +788,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Exclude Channel from Roaming</name>
-            <short-name>nRoam</short-name>
+            <short-name>xclRoam</short-name>
             <brief>If enabled, the channel gets excluded from roaming.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -1073,7 +1060,6 @@
         <enum width="0h:1">
           <meta>
             <name>Advanced Encryption Type</name>
-            <short-name>advEnc</short-name>
             <brief>Only relevant, if advanced encryption is enabled.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -1096,7 +1082,6 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Auto Scan</name>
-            <short-name>ASc</short-name>
             <brief>Enables auto scan.</brief>
             <firmware>1.21</firmware>
             <done/>
@@ -1114,7 +1099,6 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Disable RX SMS</name>
-            <short-name>nSMS</short-name>
             <firmware>1.21</firmware>
             <done/>
           </meta>
@@ -5104,7 +5088,7 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="1">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable call-end notification.</name>
         <brief>If enabled, a small box is shown at the end of the call.</brief>
@@ -6888,7 +6872,7 @@
         <name>On</name>
       </item>
     </enum>
-    <int width="1h" format="unsigned" default="0" min="0" max="1">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable fixed location</name>
         <firmware>1.21</firmware>
@@ -7377,7 +7361,7 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="0">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable Repeater</name>
         <brief>Enables the radio to act as a local repeater.</brief>
