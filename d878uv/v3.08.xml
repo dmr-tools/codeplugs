@@ -821,8 +821,9 @@
         </enum>
         <enum width="1h">
           <meta>
-            <name>DMR APRS PTT mode</name>
-            <firmware>3.04</firmware>
+            <name>FM APRS PTT mode</name>
+            <brief>Specifies, when to send the APRS information.</brief>
+            <firmware>3.08</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -837,8 +838,8 @@
         </enum>
         <enum width="1h">
           <meta>
-            <name>FM APRS PTT mode</name>
-            <firmware>3.04</firmware>
+            <name>DMR APRS PTT mode</name>
+            <firmware>3.08</firmware>
             <done/>
           </meta>
           <item value="0">
