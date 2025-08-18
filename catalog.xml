@@ -163,7 +163,6 @@
       </map>
     </memory>
 
-    <firmware name="2.03" released="2022-07-05" codeplug="d578uv2/v2.03.xml"/>
     <firmware name="2.08" released="2024-06-19" codeplug="d578uv2/v2.08.xml"/>
   </model>
 
