@@ -557,10 +557,33 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:6">
+        <unknown width="0h:1">
           <meta>
             <name>Unknown data</name>
-            <firmware>3.04</firmware>
+          </meta>
+        </unknown>
+        <enum width="0h:3">
+          <meta>
+            <name>Squelch Mode</name>
+            <firmware>3.08</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Carrier</name>
+          </item>
+          <item value="1">
+            <name>CTCSS/DSC</name>
+          </item>
+          <item value="2">
+            <name>Optional Signaling</name>
+          </item>
+          <item value="3">
+            <name>CTCSS/DSC and Optional Signaling</name>
+          </item>
+        </enum>
+        <unknown width="0h:2">
+          <meta>
+            <name>Unknown data</name>
           </meta>
         </unknown>
         <enum width="0h:2">

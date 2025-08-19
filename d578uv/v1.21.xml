@@ -557,26 +557,30 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:2">
+        <unknown width="0h:1">
           <meta>
             <name>Unknown data</name>
           </meta>
         </unknown>
-        <enum width="0h:1">
+        <enum width="0h:3">
           <meta>
             <name>Squelch Mode</name>
-            <short-name>SqMo</short-name>
-            <firmware>1.21</firmware>
-            <done/>
+            <needs-review/>
           </meta>
           <item value="0">
             <name>Carrier</name>
           </item>
           <item value="1">
+            <name>CTCSS/DSC</name>
+          </item>
+          <item value="2">
             <name>Optional Signaling</name>
           </item>
+          <item value="3">
+            <name>CTCSS/DSC and Optional Signaling</name>
+          </item>
         </enum>
-        <unknown width="0h:3">
+        <unknown width="0h:2">
           <meta>
             <name>Unknown data</name>
           </meta>
@@ -5104,7 +5108,7 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="1">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable call-end notification.</name>
         <brief>If enabled, a small box is shown at the end of the call.</brief>
@@ -6888,7 +6892,7 @@
         <name>On</name>
       </item>
     </enum>
-    <int width="1h" format="unsigned" default="0" min="0" max="1">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable fixed location</name>
         <firmware>1.21</firmware>
@@ -7377,7 +7381,7 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="0">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Enable Repeater</name>
         <brief>Enables the radio to act as a local repeater.</brief>
