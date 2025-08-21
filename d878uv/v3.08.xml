@@ -730,12 +730,14 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:1">
+        <int width="0h:1" format="unsigned" default="0" min="0" max="1">
           <meta>
-            <name>Unknown data</name>
-            <firmware>3.04</firmware>
+            <name>Enable adaptive TDMA</name>
+            <short-name>aTDMA</short-name>
+            <firmware>3.08</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </int>
         <enum width="0h:2">
           <meta>
             <name>DCMA mode</name>
