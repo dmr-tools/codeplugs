@@ -99,11 +99,13 @@
     </memory>
 
     <firmware name="3.04" released="2024-09-14" codeplug="d878uv2/v3.04.xml"/>
+    <firmware name="3.08" released="2025-06-14" codeplug="d878uv2/v3.08.xml"/>
+    <firmware name="4.00" released="2025-08-15" codeplug="d878uv2/v4.00.xml"/>
   </model>
 
 
   <model class="AnyTone" id="d578uv">
-    <name>AT-D578UV</name>
+    <name>AT-D578UV(+) / AT-D578UV(+) III</name>
     <manufacturer>AnyTone</manufacturer>
     <url></url>
 
@@ -134,39 +136,6 @@
     <firmware name="1.21" released="2024-06-19" codeplug="d578uv/v1.21.xml"/>
   </model>
 
-
-  <model class="AnyTone" id="d578uv2">
-    <name>AT-D578UV III</name>
-    <manufacturer>AnyTone</manufacturer>
-    <url></url>
-
-    <memory>
-      <id>35 37 38 55 56 32</id>  <!-- 578UV2 -->
-      <revision>56 31 31 31 00 00</revision> <!-- V111\0\0 -->
-      <!-- Some binary blob, read by the CPS from the device. -->
-      <map address="02fa0000">
-        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
-        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
-        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-      </map>
-    </memory>
-
-    <firmware name="2.03" released="2022-07-05" codeplug="d578uv2/v2.03.xml"/>
-    <firmware name="2.08" released="2024-06-19" codeplug="d578uv2/v2.08.xml"/>
-  </model>
 
 
   <model class="AnyTone" id="d168uv">
@@ -391,4 +360,13 @@
     </firmware>
   </model>
 
+  <model class="Radtel" id="rt4d">
+    <name>Radtel RT-4D</name>
+    <manufacturer>Radtel</manufacturer>
+    <url>https://www.radtels.com</url>
+
+    <firmware name="V1.2.0.16" released="2025-06-20" codeplug="rt4d/v1.2.0.16.xml">
+    </firmware>
+
+  </model>
 </catalog>
