@@ -65,6 +65,7 @@
 
     <firmware name="3.05" released="2024-12-12" codeplug="d878uv/v3.05.xml"/>
     <firmware name="3.08" released="2025-06-14" codeplug="d878uv/v3.08.xml"/>
+    <firmware name="4.00" released="2025-08-15" codeplug="d878uv/v4.00.xml"/>
   </model>
 
 
