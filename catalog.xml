@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog>
+<catalog xmlns:xi="http://www.w3.org/2001/XInclude">
   <model class="AnyTone" id="d868uve">
     <name>AT-D868UVE</name>
     <manufacturer>AnyTone</manufacturer>
@@ -136,39 +136,7 @@
     <firmware name="1.21" released="2024-06-19" codeplug="d578uv/v1.21.xml"/>
   </model>
 
-
-
-  <model class="AnyTone" id="d168uv">
-    <name>AT-D168UV</name>
-    <manufacturer>AnyTone</manufacturer>
-    <url></url>
-
-    <memory>
-      <id>31 36 38 55 56 00</id>  <!-- 168UV -->
-      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
-      <!-- Some binary blob, read by the CPS from the device. -->
-      <map address="02fa0000">
-        00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
-        44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff
-        ff ff ff ff 00 00 ff ff 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        31 32 33 34 35 36 37 38 ff ff ff ff ff ff ff ff
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-        00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-      </map>
-    </memory>
-
-    <firmware name="1.03" released="2022-07-05" codeplug="d168uv/v1.03.xml"/>
-  </model>
+  <xi:include href="d168uv/model.xml"/>
 
   <model class="AnyTone" id="dmr6x2uv">
     <name>DMR-6X2UV</name>
