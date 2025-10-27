@@ -14,7 +14,7 @@
   <xi:include href="djmd5x/model.xml"/> -->
   
   <xi:include href="opengd77/model.xml"/>
-  <xi:include href="openuv380/model.xml"/>
+  <xi:include href="openmduv380/model.xml"/>
 
   <xi:include href="rt4d/model.xml"/>  
 </catalog>
