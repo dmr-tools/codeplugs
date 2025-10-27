@@ -18,7 +18,7 @@
     </map>
   </memory>
 
-  <firmware name="R20240908" released="2024-09-08" codeplug="openmduv380/R20240908.xml">
+  <firmware name="R20240908" released="2024-09-08" codeplug="R20240908.xml">
     <memory>
       <map address="02000008">
         36 35 66 61 38 39 61 36 00 00 00 00 00 00 00 00 <!-- git Revision -->

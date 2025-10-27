@@ -29,5 +29,5 @@
     </map>
   </memory>
 
-  <firmware name="1.21" released="2024-06-19" codeplug="d578uv/v1.21.xml"/>
+  <firmware name="1.21" released="2024-06-19" codeplug="v1.21.xml"/>
 </model>
