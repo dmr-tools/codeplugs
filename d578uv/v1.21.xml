@@ -4699,12 +4699,26 @@
         <done/>
       </meta>
     </int>
-    <unknown width="1h">
+    <enum width="1h">
       <meta>
-        <name>Unknown data</name>
+        <name>VFO Scan Type</name>
+        <brief>Specifies if and when a scan continues.</brief>
         <firmware>1.21</firmware>
+        <done/>
       </meta>
-    </unknown>
+      <item value="0">
+        <name>Fixed Time</name>
+        <description>Continues after a fixed time period.</description>
+      </item>
+      <item value="1">
+        <name>Carrier</name>
+        <description>Continues once the carrier is gone.</description>
+      </item>
+      <item value="2">
+        <name>Stop</name>
+        <description>Stops the scan after the first signal is recieved.</description>
+      </item>
+    </enum>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>DMR mic gain</name>
@@ -4831,12 +4845,30 @@
         <name>VFO</name>
       </item>
     </enum>
-    <unknown width="3h">
+    <int width="1h" format="unsigned">
       <meta>
-        <name>Unknown data</name>
+        <name>Boot Zone A</name>
+        <brief>When work mode for VFO A is set to Channel, this index specifies the zone. 0-based zone index.</brief>
         <firmware>1.21</firmware>
+        <done/>
       </meta>
-    </unknown>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Boot Zone B</name>
+        <brief>When work mode for VFO B is set to Channel, this index specifies the zone. 0-based zone index.</brief>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Enable FM broadcast monitor</name>
+        <brief>If set to 1, radio calls are received while listening to the FM broadcast.</brief>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </int>
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable Recording</name>
@@ -5140,12 +5172,13 @@
         <done/>
       </meta>
     </int>
-    <unknown width="1h">
+    <int width="1h" format="unsigned">
       <meta>
-        <name>Unknown data</name>
+        <name>Enable RX DMR APRS Positions</name>
         <firmware>1.21</firmware>
+        <done/>
       </meta>
-    </unknown>
+    </int>
     <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>Long press duration</name>
