@@ -2850,7 +2850,7 @@
       </element>
     </repeat>
   </repeat>
-  <repeat at="2450000h" min="1" max="250">
+  <repeat at="2540000h" min="1" max="250">
     <meta>
       <name>Zone Names</name>
       <firmware>1.21</firmware>
@@ -7403,11 +7403,43 @@
       <firmware>1.21</firmware>
       <done/>
     </meta>
-    <unknown width="20h">
+    <unknown width="1eh">
       <meta>
         <name>Unknown data</name>
       </meta>
     </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Talker alias priority</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Contact</name>
+      </item>
+      <item value="2">
+        <name>Over the air</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Talker alias encoding</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>ISO 7</name>
+      </item>
+      <item value="1">
+        <name>ISO 8</name>
+      </item>
+      <item value="2">
+        <name>Unicode</name>
+      </item>
+    </enum>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable Weather Alarm</name>
@@ -8309,7 +8341,9 @@
     </repeat>
     <repeat n="3">
       <meta>
-        <name>BT Handset Long-Press Key Functions 1</name>
+        <name>BT Handset Long-Press Key Functions</name>
+        <brief>Functions for long-press side-keys P1-P3.</brief>
+        <description>A long-press is long, if it is at least 1.5s long.</description>
         <firmware>1.21</firmware>
         <done/>
       </meta>
@@ -8663,7 +8697,9 @@
     </int>
     <repeat n="3">
       <meta>
-        <name>BT Handset Long-Press Key Functions 2</name>
+        <name>BT Handset Very-Long-Press Key Functions</name>
+        <brief>Functions for very-long-press of side keys P1-P3.</brief>
+        <description>A long-press is very-long, if it lasts at least 3s.</description>
         <firmware>1.21</firmware>
         <done/>
       </meta>
@@ -8875,14 +8911,14 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0">
+    <int width="1h" format="unsigned" default="0" min="0" max="0">
       <meta>
         <name>BT Handset Volume VFO A</name>
         <firmware>1.21</firmware>
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0">
+    <int width="1h" format="unsigned" default="0" min="0" max="0">
       <meta>
         <name>BT Handset Volume VFO B</name>
         <firmware>1.21</firmware>
