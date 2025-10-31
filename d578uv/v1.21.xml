@@ -2850,20 +2850,6 @@
       </element>
     </repeat>
   </repeat>
-  <repeat at="2540000h" min="1" max="250">
-    <meta>
-      <name>Zone Names</name>
-      <firmware>1.21</firmware>
-      <done/>
-    </meta>
-    <string format="ascii" width="32" pad="0">
-      <meta>
-        <name>Zone Name</name>
-        <firmware>1.21</firmware>
-        <done/>
-      </meta>
-    </string>
-  </repeat>
   <repeat at="2480000h" min="0" max="100">
     <meta>
       <name>FM broadcast channel frequencies</name>
@@ -8911,14 +8897,14 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="0">
+    <int width="1h" format="unsigned" default="0" min="0" max="32">
       <meta>
         <name>BT Handset Volume VFO A</name>
         <firmware>1.21</firmware>
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="0">
+    <int width="1h" format="unsigned" default="0" min="0" max="32">
       <meta>
         <name>BT Handset Volume VFO B</name>
         <firmware>1.21</firmware>
@@ -9194,6 +9180,20 @@
           <done/>
         </meta>00</unused>
     </element>
+  </repeat>
+  <repeat at="2540000h" min="1" max="250">
+    <meta>
+      <name>Zone Names</name>
+      <firmware>1.21</firmware>
+      <done/>
+    </meta>
+    <string format="ascii" width="32" pad="0">
+      <meta>
+        <name>Zone Name</name>
+        <firmware>1.21</firmware>
+        <done/>
+      </meta>
+    </string>
   </repeat>
   <repeat at="2540000h" min="1" max="250">
     <meta>
