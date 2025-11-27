@@ -13,8 +13,10 @@
                                       10: RT84/DM1701 (RGB)-->
       00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- git Revision (FW, ASCII) -->
       00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <!-- build DateTime (FW, ASCII) -->
-      14 40 00 00 <!-- flash ID (le) -->
-      00 00       <!-- features (le) -->
+      18 40 00 00 <!-- flash ID (le) -->
+      02 00       <!-- features (le) bit 0: inverted display 
+                                     bit 1: use voice prompt memory for call-sign DB
+                                     bit 2: voice prompt written -->
     </map>
   </memory>
 
