@@ -6164,11 +6164,14 @@
         <item value="45">
           <name>Zone decrement</name>
         </item>
+        <item value="46">
+          <name>Exit</name>
+        </item>
         <item value="47">
-          <name>Unknown</name>
+          <name>Menu</name>
         </item>
         <item value="48">
-          <name>Unknown</name>
+          <name>Cross Band Repeater</name>
         </item>
         <item value="49">
           <name>Speaker Mode</name>
@@ -6356,11 +6359,14 @@
         <item value="45">
           <name>Zone decrement</name>
         </item>
+        <item value="46">
+          <name>Exit</name>
+        </item>
         <item value="47">
-          <name>Unknown</name>
+          <name>Menu</name>
         </item>
         <item value="48">
-          <name>Unknown</name>
+          <name>Cross Band Repeater</name>
         </item>
         <item value="49">
           <name>Speaker Mode</name>
@@ -7699,11 +7705,14 @@
       <item value="45">
         <name>Zone decrement</name>
       </item>
+      <item value="46">
+        <name>Exit</name>
+      </item>
       <item value="47">
-        <name>Unknown</name>
+        <name>Menu</name>
       </item>
       <item value="48">
-        <name>Unknown</name>
+        <name>Cross Band Repeater</name>
       </item>
       <item value="49">
         <name>Speaker Mode</name>
@@ -7883,11 +7892,14 @@
       <item value="45">
         <name>Zone decrement</name>
       </item>
+      <item value="46">
+        <name>Exit</name>
+      </item>
       <item value="47">
-        <name>Unknown</name>
+        <name>Menu</name>
       </item>
       <item value="48">
-        <name>Unknown</name>
+        <name>Cross Band Repeater</name>
       </item>
       <item value="49">
         <name>Speaker Mode</name>
@@ -8284,11 +8296,14 @@
         <item value="45">
           <name>Zone decrement</name>
         </item>
+        <item value="46">
+          <name>Exit</name>
+        </item>
         <item value="47">
-          <name>Unknown</name>
+          <name>Menu</name>
         </item>
         <item value="48">
-          <name>Unknown</name>
+          <name>Cross Band Repeater</name>
         </item>
         <item value="49">
           <name>Speaker Mode</name>
@@ -8477,11 +8492,14 @@
         <item value="45">
           <name>Zone decrement</name>
         </item>
+        <item value="46">
+          <name>Exit</name>
+        </item>
         <item value="47">
-          <name>Unknown</name>
+          <name>Menu</name>
         </item>
         <item value="48">
-          <name>Unknown</name>
+          <name>Cross Band Repeater</name>
         </item>
         <item value="49">
           <name>Speaker Mode</name>
@@ -8833,11 +8851,14 @@
         <item value="45">
           <name>Zone decrement</name>
         </item>
+        <item value="46">
+          <name>Exit</name>
+        </item>
         <item value="47">
-          <name>Unknown</name>
+          <name>Menu</name>
         </item>
         <item value="48">
-          <name>Unknown</name>
+          <name>Cross Band Repeater</name>
         </item>
         <item value="49">
           <name>Speaker Mode</name>
