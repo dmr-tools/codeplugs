@@ -6370,14 +6370,62 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0">
+    <enum width="1h">
       <meta>
         <name>Backlight duration</name>
-        <brief>Multiples of 5s, 0=always</brief>
-        <firmware>3.05</firmware>
+        <brief>Specifies the time, the backlight stays on after every event. E.g, button press or call.</brief>
+        <firmware>3.08</firmware>
         <done/>
       </meta>
-    </int>
+      <item value="0">
+        <name>Infinite</name>
+      </item>
+      <item value="1">
+        <name>5s</name>
+      </item>
+      <item value="2">
+        <name>10s</name>
+      </item>
+      <item value="3">
+        <name>15s</name>
+      </item>
+      <item value="4">
+        <name>20s</name>
+      </item>
+      <item value="5">
+        <name>25s</name>
+      </item>
+      <item value="6">
+        <name>30s</name>
+      </item>
+      <item value="7">
+        <name>1min</name>
+      </item>
+      <item value="8">
+        <name>2min</name>
+      </item>
+      <item value="9">
+        <name>3min</name>
+      </item>
+      <item value="10">
+        <name>4min</name>
+      </item>
+      <item value="11">
+        <name>5min</name>
+      </item>
+      <item value="12">
+        <name>15min</name>
+      </item>
+      <item value="13">
+        <name>30min</name>
+      </item>
+      <item value="14">
+        <name>45min</name>
+      </item>
+      <item value="15">
+        <name>1h</name>
+      </item>
+    </enum>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable GPS</name>
@@ -11682,35 +11730,6 @@
       </element>
     </repeat>
   </repeat>
-  <repeat at="4800000h" min="0" max="10000">
-    <meta>
-      <name>Contact Map</name>
-      <firmware>3.04</firmware>
-      <done/>
-    </meta>
-    <element>
-      <meta>
-        <name>Contact Map Entry</name>
-        <firmware>3.04</firmware>
-        <done/>
-      </meta>
-      <int width="4h" format="bcd" endian="big">
-        <meta>
-          <name>DMR ID and Group Call Flag</name>
-          <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>Contact Index</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-    </element>
-  </repeat>
   <element at="44c0000h">
     <meta>
       <name>Call-sign Database Limits</name>
@@ -11826,5 +11845,34 @@
           </meta>00</unused>
       </element>
     </repeat>
+  </repeat>
+  <repeat at="4800000h" min="0" max="10000">
+    <meta>
+      <name>Contact Map</name>
+      <firmware>3.04</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Contact Map Entry</name>
+        <firmware>3.04</firmware>
+        <done/>
+      </meta>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>DMR ID and Group Call Flag</name>
+          <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Contact Index</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
   </repeat>
 </codeplug>

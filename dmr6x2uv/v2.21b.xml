@@ -5024,7 +5024,7 @@
       <meta>
         <name>Backlight duration</name>
         <firmware>2.21b</firmware>
-        <done/>
+        <needs-review/>
       </meta>
       <item value="0">
         <name>Always</name>

@@ -730,7 +730,7 @@
             <done/>
           </meta>
         </int>
-        <int width="0h:1" format="unsigned" default="0" min="0" max="1">
+        <int width="0h:1" format="unsigned" default="0" min="0">
           <meta>
             <name>Enable adaptive TDMA</name>
             <short-name>aTDMA</short-name>
@@ -6375,7 +6375,7 @@
         <name>Backlight duration</name>
         <brief>Multiples of 5s, 0=always</brief>
         <firmware>3.05</firmware>
-        <done/>
+        <needs-review/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
