@@ -3041,12 +3041,50 @@
         <name>Display Brightness</name>
       </meta>
     </int>
-    <int width="1h" format="unsigned">
+    <enum width="1h">
       <meta>
         <name>Backlight duration</name>
-        <brief>Multiple of 5s, 0=always</brief>
+        <brief>Specifies the time, the backlight stays on after every event. E.g, button press or call.</brief>
+        <firmware>2.40</firmware>
+        <done/>
       </meta>
-    </int>
+      <item value="0">
+        <name>Infinite</name>
+      </item>
+      <item value="1">
+        <name>5s</name>
+      </item>
+      <item value="2">
+        <name>10s</name>
+      </item>
+      <item value="3">
+        <name>15s</name>
+      </item>
+      <item value="4">
+        <name>20s</name>
+      </item>
+      <item value="5">
+        <name>25s</name>
+      </item>
+      <item value="6">
+        <name>30s</name>
+      </item>
+      <item value="7">
+        <name>1min</name>
+      </item>
+      <item value="8">
+        <name>2min</name>
+      </item>
+      <item value="9">
+        <name>3min</name>
+      </item>
+      <item value="10">
+        <name>4min</name>
+      </item>
+      <item value="11">
+        <name>5min</name>
+      </item>
+    </enum>
     <int width="1h" format="unsigned">
       <meta>
         <name>Enable GPS</name>

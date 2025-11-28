@@ -8918,14 +8918,14 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="32">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>BT Handset Volume VFO A</name>
         <firmware>1.21</firmware>
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0" min="0" max="32">
+    <int width="1h" format="unsigned" default="0" min="0">
       <meta>
         <name>BT Handset Volume VFO B</name>
         <firmware>1.21</firmware>

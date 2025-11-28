@@ -8507,8 +8507,8 @@
       <meta>
         <name>Backlight duration RX</name>
         <brief>Specifies the duration of the backlight during RX.</brief>
-        <description>The duration is specified in multiples of 5s. If set to 0 the backlight stays on.</description>
-        <firmware>3.05</firmware>
+        <description>The duration is specified in seconds. Valid values are [1,30] seconds. If set to 0, the backlight stays on.</description>
+        <firmware>3.08</firmware>
         <done/>
       </meta>
     </int>
