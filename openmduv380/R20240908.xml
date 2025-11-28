@@ -483,12 +483,16 @@
             <done/>
           </meta>
         </int>
-        <unused width="1h">
+        <int width="1h" format="unsigned" default="0" min="0">
           <meta>
-            <name>Unused data</name>
+            <name>Transmit Timout</name>
+            <short-name>TOT</short-name>
+            <brief>Specifies the transmit timeout.</brief>
+            <description>The timeout is specified in multiples of 15s, where 0 disables the timeout (infinite timeout). Valid field values are 0, 1, ..., 33, corresponding to infinite, 15s, ..., 495s.</description>
             <firmware>R202409080</firmware>
             <done/>
-          </meta>00</unused>
+          </meta>
+        </int>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Latitude MSB</name>
@@ -4568,7 +4572,7 @@
       <name>Callsign DB Segment 1</name>
       <brief>Remaining entries of the callsign DB</brief>
     </meta>
-    <repeat n="19660">
+    <repeat n="919688">
       <meta>
         <name>Entries</name>
       </meta>
@@ -4601,7 +4605,7 @@
         </repeat>
       </element>
     </repeat>
-    <unused width="ch">
+    <unused width="8h">
       <meta>
         <name>Unused data</name>
       </meta>00</unused>

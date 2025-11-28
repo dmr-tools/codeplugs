@@ -628,19 +628,20 @@
             <done/>
           </meta>
         </int>
-        <unused width="0h:7">
+        <enum width="1h">
           <meta>
-            <name>Unused data</name>
-            <firmware>2.40</firmware>
-            <done/>
-          </meta>00</unused>
-        <int width="0h:1" format="unsigned">
-          <meta>
-            <name>Enable TX ARPS</name>
+            <name>TX APRS Type</name>
+            <brief>Specifies the type of the APRS transmission.</brief>
             <firmware>2.40</firmware>
             <done/>
           </meta>
-        </int>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>DMR</name>
+          </item>
+        </enum>
         <int width="1h" format="unsigned">
           <meta>
             <name>DMR APRS index</name>

@@ -47,6 +47,7 @@
         <enum width="0h:2">
           <meta>
             <name>Repeater direction</name>
+            <short-name>RepDir</short-name>
             <brief>Specifies the offset direction for the repeater mode.</brief>
             <firmware>3.04</firmware>
             <done/>
@@ -66,7 +67,7 @@
         </enum>
         <enum width="0h:2">
           <meta>
-            <name>Bandwidth</name>
+            <name>BndWd</name>
             <brief>Specifies the bandwidth of the FM channel. DMR channels are always 12.5kHz wide.</brief>
             <firmware>3.04</firmware>
             <done/>
@@ -81,6 +82,7 @@
         <enum width="0h:2">
           <meta>
             <name>Transmit power</name>
+            <short-name>PWR</short-name>
             <brief>Specifies the transmit power of the channel.</brief>
             <firmware>3.04</firmware>
             <done/>
@@ -101,6 +103,7 @@
         <enum width="0h:2">
           <meta>
             <name>Channel mode</name>
+            <short-name>ChMode</short-name>
             <brief>Specifies the mode of the channel.</brief>
             <firmware>3.04</firmware>
             <done/>
@@ -129,6 +132,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Call confirm</name>
+            <short-name>CllCnf</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -145,6 +149,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable CTCSS phase reversal</name>
+            <short-name>CTCPhRev</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -152,6 +157,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable TX DCS</name>
+            <short-name>TxDcs</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -159,6 +165,7 @@
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable TX CTCSS</name>
+            <short-name>TxCtc</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -166,6 +173,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX DCS</name>
+            <short-name>RxDcs</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -173,6 +181,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable RX CTCSS</name>
+            <short-name>RxCtc</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -582,6 +591,7 @@
         <enum width="0h:2">
           <meta>
             <name>Optional Signaling</name>
+            <short-name>Opt Sig</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -607,6 +617,7 @@
         <enum width="0h:2">
           <meta>
             <name>Admit Criterium</name>
+            <short-name>Adm Crit</short-name>
             <brief>This is a mess. Similar admid criteria for FM and DMR are encoded differently. E.g., channel free and different CC/tone.</brief>
             <firmware>3.04</firmware>
             <done/>
@@ -712,6 +723,7 @@
         <enum width="0h:2">
           <meta>
             <name>DCMA mode</name>
+            <short-name>DCMA</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -736,6 +748,7 @@
         <enum width="0h:1">
           <meta>
             <name>Time Slot</name>
+            <short-name>TS</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -776,6 +789,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Auto scan</name>
+            <short-name>ASc</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -791,6 +805,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Exclude channel from roaming</name>
+            <short-name>nRoam</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -889,7 +904,7 @@
         <enum width="0h:1">
           <meta>
             <name>Encryption type</name>
-            <short-name>CrypType</short-name>
+            <short-name>Cryp Type</short-name>
             <brief>Specifies the encryption type.</brief>
             <firmware>3.04</firmware>
             <done/>
@@ -904,7 +919,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Send talker alias</name>
-            <short-name>Send TalkAl</short-name>
+            <short-name>Tx TalkAl</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -912,6 +927,7 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Mute FM APRS</name>
+            <short-name>nFmAprs</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -919,6 +935,7 @@
         <int width="0h:1" format="unsigned">
           <meta>
             <name>SMS forbid</name>
+            <short-name>nSMS</short-name>
             <firmware>3.04</firmware>
             <done/>
           </meta>

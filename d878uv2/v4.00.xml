@@ -2,8 +2,8 @@
 <!--vi: set ts=2 sw=2:-->
 <codeplug>
   <meta>
-    <name>AnyTone AT-D878UV/AT-D878UV+</name>
-    <firmware>3.08</firmware>
+    <name>AnyTone AT-D878UVII/AT-D878UVII+</name>
+    <firmware>4.00</firmware>
     <done/>
   </meta>
   <repeat at="800000h" step="40000h" min="1" max="32">
@@ -6370,14 +6370,62 @@
         <done/>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0">
+    <enum width="1h">
       <meta>
         <name>Backlight duration</name>
-        <brief>Multiples of 5s, 0=always</brief>
-        <firmware>3.05</firmware>
-        <needs-review/>
+        <brief>Specifies the time, the backlight stays on after every event. E.g, button press or call.</brief>
+        <firmware>4.00</firmware>
+        <done/>
       </meta>
-    </int>
+      <item value="0">
+        <name>Infinite</name>
+      </item>
+      <item value="1">
+        <name>5s</name>
+      </item>
+      <item value="2">
+        <name>10s</name>
+      </item>
+      <item value="3">
+        <name>15s</name>
+      </item>
+      <item value="4">
+        <name>20s</name>
+      </item>
+      <item value="5">
+        <name>25s</name>
+      </item>
+      <item value="6">
+        <name>30s</name>
+      </item>
+      <item value="7">
+        <name>1min</name>
+      </item>
+      <item value="8">
+        <name>2min</name>
+      </item>
+      <item value="9">
+        <name>3min</name>
+      </item>
+      <item value="10">
+        <name>4min</name>
+      </item>
+      <item value="11">
+        <name>5min</name>
+      </item>
+      <item value="12">
+        <name>15min</name>
+      </item>
+      <item value="13">
+        <name>30min</name>
+      </item>
+      <item value="14">
+        <name>45min</name>
+      </item>
+      <item value="15">
+        <name>1h</name>
+      </item>
+    </enum>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable GPS</name>
@@ -10916,736 +10964,6 @@
       </unused>
     </element>
   </repeat>
-  <repeat at="2ec0000h" min="0" max="50">
-    <meta>
-      <name>Orbital Element Sets</name>
-      <brief>Holds the orbital elements for some sattelites.</brief>
-      <firmware>3.04</firmware>
-      <done/>
-    </meta>
-    <element>
-      <meta>
-        <name>Orbital Element</name>
-        <brief>Holds the (TLE) orbital elements for a single sat.</brief>
-        <firmware>3.04</firmware>
-        <done/>
-      </meta>
-      <string format="ascii" width="8" pad="32">
-        <meta>
-          <name>Satellite Name</name>
-          <brief>Simple ASCII string.</brief>
-          <description>Unused chars are stored as space.</description>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <string format="ascii" width="2" pad="0">
-        <meta>
-          <name>Epoch Year</name>
-          <brief>The two-digit year with leading 0.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <string format="ascii" width="12" pad="0">
-        <meta>
-          <name>Epoch Julien Day</name>
-          <brief>Fractional Julien day in format ddd.ffffffff. The 3-digit ddd part is the day of year with leading zeros, while the 8-digit ffffffff encodes the fractional part of the day.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <unused width="1h">
-        <meta>
-          <name>Space</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>20</unused>
-      <string format="ascii" width="10" pad="0">
-        <meta>
-          <name>First derivative mean motion</name>
-          <brief>Encodes the fractional value as s.ffffffff, where s is the sign. Either &quot; &quot; or &quot;-&quot; and the 8-digit field ffffffff contains the fractional part.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <string format="ascii" width="8" pad="0">
-        <meta>
-          <name>Inclination</name>
-          <brief>Ecodes the inclination in degrees as ddd.ffff, where 3-digit ddd is the integer part. Leading zeros are not stored but replaced with spaces (ASCII 20h). The 4-digit ffff is the fractional part.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <unused width="1h">
-        <meta>
-          <name>Space</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>20</unused>
-      <string format="ascii" width="8" pad="0">
-        <meta>
-          <name>Right ascension of the ascending node</name>
-          <short-name>Ascension</short-name>
-          <brief>Ecodes the ascension in degrees as ddd.ffff, where 3-digit ddd is the integer part. Leading zeros are not stored but replaced with spaces (ASCII 20h). The 4-digit ffff is the fractional part.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <unused width="1h">
-        <meta>
-          <name>Space</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>20</unused>
-      <string format="ascii" width="7" pad="0">
-        <meta>
-          <name>Eccentricity</name>
-          <brief>Stores the fractional part of the eccentricity as a 7-digit number with leading zeros.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <unused width="1h">
-        <meta>
-          <name>Unused data</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>20</unused>
-      <string format="ascii" width="8" pad="0">
-        <meta>
-          <name>Argument of perigee</name>
-          <brief>Stores the argument of perigee in degrees, stored as ddd.ffff. The 3-digit ddd field holds the integer part, where leading zeros are stored as space (ASCII 20h). The 4-digit ffff field holds the fractional part.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <unused width="1h">
-        <meta>
-          <name>Space</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>20</unused>
-      <string format="ascii" width="8" pad="0">
-        <meta>
-          <name>Mean anomaly</name>
-          <brief>Stores the mean anomaly in degrees as ddd.ffff. The 3-digit ddd part holds the integer part, where leading zeros are replaced by space (ASCII 20h). The 4-digit field ffff contains the fractional part.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <unused width="1h">
-        <meta>
-          <name>Space</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>20</unused>
-      <string format="ascii" width="11" pad="0">
-        <meta>
-          <name>Mean motion</name>
-          <brief>Encodes the mean motion as dd.ffffffff. The 2-digit field dd encodes the integer part, where leading zeros are stored as space (ASCII 20h). The 8-digit ffffffff part encodes the fractional part.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <string format="ascii" width="5" pad="0">
-        <meta>
-          <name>Revolution number at epoch</name>
-          <brief>Encodes the revoution number as 5-digit field ddddd. Leading zeros are stored.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </string>
-      <unused width="3h">
-        <meta>
-          <name>Unused data</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>00</unused>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>FM Downlink Frequency</name>
-          <brief>Stores the frequency in multiples of 10Hz.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>FM Uplink Frequency</name>
-          <brief>Stores the frequency in multiples of 10Hz.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-      <enum width="1h">
-        <meta>
-          <name>Uplink Tone Type</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-        <item value="0">
-          <name>None</name>
-        </item>
-        <item value="1">
-          <name>CTCSS</name>
-        </item>
-      </enum>
-      <enum width="1h">
-        <meta>
-          <name>Downlink Tone Type</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-        <item value="0">
-          <name>None</name>
-        </item>
-        <item value="1">
-          <name>CTCSS</name>
-        </item>
-        <item value="2">
-          <name>DCS</name>
-        </item>
-      </enum>
-      <enum width="1h">
-        <meta>
-          <name>UplinkTone</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-        <item value="0">
-          <name>62.5 Hz</name>
-        </item>
-        <item value="1">
-          <name>67.0 Hz</name>
-        </item>
-        <item value="2">
-          <name>69.3 Hz</name>
-        </item>
-        <item value="3">
-          <name>71.9 Hz</name>
-        </item>
-        <item value="4">
-          <name>74.4 Hz</name>
-        </item>
-        <item value="5">
-          <name>77.0 Hz</name>
-        </item>
-        <item value="6">
-          <name>79.7 Hz</name>
-        </item>
-        <item value="7">
-          <name>82.5 Hz</name>
-        </item>
-        <item value="8">
-          <name>85.4 Hz</name>
-        </item>
-        <item value="9">
-          <name>88.5 Hz</name>
-        </item>
-        <item value="10">
-          <name>91.5 Hz</name>
-        </item>
-        <item value="11">
-          <name>94.8 Hz</name>
-        </item>
-        <item value="12">
-          <name>97.4 Hz</name>
-        </item>
-        <item value="13">
-          <name>100.0 Hz</name>
-        </item>
-        <item value="14">
-          <name>103.5 Hz</name>
-        </item>
-        <item value="15">
-          <name>107.2 Hz</name>
-        </item>
-        <item value="16">
-          <name>110.9 Hz</name>
-        </item>
-        <item value="17">
-          <name>114.8 Hz</name>
-        </item>
-        <item value="18">
-          <name>118.8 Hz</name>
-        </item>
-        <item value="19">
-          <name>123.0 Hz</name>
-        </item>
-        <item value="20">
-          <name>127.3 Hz</name>
-        </item>
-        <item value="21">
-          <name>131.8 Hz</name>
-        </item>
-        <item value="22">
-          <name>136.5 Hz</name>
-        </item>
-        <item value="23">
-          <name>141.3 Hz</name>
-        </item>
-        <item value="24">
-          <name>146.2 Hz</name>
-        </item>
-        <item value="25">
-          <name>151.4 Hz</name>
-        </item>
-        <item value="26">
-          <name>156.7 Hz</name>
-        </item>
-        <item value="27">
-          <name>159.8 Hz</name>
-        </item>
-        <item value="28">
-          <name>162.2 Hz</name>
-        </item>
-        <item value="29">
-          <name>165.5 Hz</name>
-        </item>
-        <item value="30">
-          <name>167.9 Hz</name>
-        </item>
-        <item value="31">
-          <name>171.3 Hz</name>
-        </item>
-        <item value="32">
-          <name>173.8 Hz</name>
-        </item>
-        <item value="33">
-          <name>177.3 Hz</name>
-        </item>
-        <item value="34">
-          <name>179.9 Hz</name>
-        </item>
-        <item value="35">
-          <name>183.5 Hz</name>
-        </item>
-        <item value="36">
-          <name>186.2 Hz</name>
-        </item>
-        <item value="37">
-          <name>189.9 Hz</name>
-        </item>
-        <item value="38">
-          <name>192.8 Hz</name>
-        </item>
-        <item value="39">
-          <name>196.6 Hz</name>
-        </item>
-        <item value="40">
-          <name>199.5 Hz</name>
-        </item>
-        <item value="41">
-          <name>203.5 Hz</name>
-        </item>
-        <item value="42">
-          <name>206.5 Hz</name>
-        </item>
-        <item value="43">
-          <name>210.7 Hz</name>
-        </item>
-        <item value="44">
-          <name>218.1 Hz</name>
-        </item>
-        <item value="45">
-          <name>225.7 Hz</name>
-        </item>
-        <item value="46">
-          <name>229.1 Hz</name>
-        </item>
-        <item value="47">
-          <name>233.6 Hz</name>
-        </item>
-        <item value="48">
-          <name>241.8 Hz</name>
-        </item>
-        <item value="49">
-          <name>250.3 Hz</name>
-        </item>
-        <item value="50">
-          <name>254.1 Hz</name>
-        </item>
-      </enum>
-      <enum width="1h">
-        <meta>
-          <name>Downlink Tone</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-        <item value="0">
-          <name>62.5 Hz</name>
-        </item>
-        <item value="1">
-          <name>67.0 Hz</name>
-        </item>
-        <item value="2">
-          <name>69.3 Hz</name>
-        </item>
-        <item value="3">
-          <name>71.9 Hz</name>
-        </item>
-        <item value="4">
-          <name>74.4 Hz</name>
-        </item>
-        <item value="5">
-          <name>77.0 Hz</name>
-        </item>
-        <item value="6">
-          <name>79.7 Hz</name>
-        </item>
-        <item value="7">
-          <name>82.5 Hz</name>
-        </item>
-        <item value="8">
-          <name>85.4 Hz</name>
-        </item>
-        <item value="9">
-          <name>88.5 Hz</name>
-        </item>
-        <item value="10">
-          <name>91.5 Hz</name>
-        </item>
-        <item value="11">
-          <name>94.8 Hz</name>
-        </item>
-        <item value="12">
-          <name>97.4 Hz</name>
-        </item>
-        <item value="13">
-          <name>100.0 Hz</name>
-        </item>
-        <item value="14">
-          <name>103.5 Hz</name>
-        </item>
-        <item value="15">
-          <name>107.2 Hz</name>
-        </item>
-        <item value="16">
-          <name>110.9 Hz</name>
-        </item>
-        <item value="17">
-          <name>114.8 Hz</name>
-        </item>
-        <item value="18">
-          <name>118.8 Hz</name>
-        </item>
-        <item value="19">
-          <name>123.0 Hz</name>
-        </item>
-        <item value="20">
-          <name>127.3 Hz</name>
-        </item>
-        <item value="21">
-          <name>131.8 Hz</name>
-        </item>
-        <item value="22">
-          <name>136.5 Hz</name>
-        </item>
-        <item value="23">
-          <name>141.3 Hz</name>
-        </item>
-        <item value="24">
-          <name>146.2 Hz</name>
-        </item>
-        <item value="25">
-          <name>151.4 Hz</name>
-        </item>
-        <item value="26">
-          <name>156.7 Hz</name>
-        </item>
-        <item value="27">
-          <name>159.8 Hz</name>
-        </item>
-        <item value="28">
-          <name>162.2 Hz</name>
-        </item>
-        <item value="29">
-          <name>165.5 Hz</name>
-        </item>
-        <item value="30">
-          <name>167.9 Hz</name>
-        </item>
-        <item value="31">
-          <name>171.3 Hz</name>
-        </item>
-        <item value="32">
-          <name>173.8 Hz</name>
-        </item>
-        <item value="33">
-          <name>177.3 Hz</name>
-        </item>
-        <item value="34">
-          <name>179.9 Hz</name>
-        </item>
-        <item value="35">
-          <name>183.5 Hz</name>
-        </item>
-        <item value="36">
-          <name>186.2 Hz</name>
-        </item>
-        <item value="37">
-          <name>189.9 Hz</name>
-        </item>
-        <item value="38">
-          <name>192.8 Hz</name>
-        </item>
-        <item value="39">
-          <name>196.6 Hz</name>
-        </item>
-        <item value="40">
-          <name>199.5 Hz</name>
-        </item>
-        <item value="41">
-          <name>203.5 Hz</name>
-        </item>
-        <item value="42">
-          <name>206.5 Hz</name>
-        </item>
-        <item value="43">
-          <name>210.7 Hz</name>
-        </item>
-        <item value="44">
-          <name>218.1 Hz</name>
-        </item>
-        <item value="45">
-          <name>225.7 Hz</name>
-        </item>
-        <item value="46">
-          <name>229.1 Hz</name>
-        </item>
-        <item value="47">
-          <name>233.6 Hz</name>
-        </item>
-        <item value="48">
-          <name>241.8 Hz</name>
-        </item>
-        <item value="49">
-          <name>250.3 Hz</name>
-        </item>
-        <item value="50">
-          <name>254.1 Hz</name>
-        </item>
-      </enum>
-      <int width="2h" format="unsigned" endian="little" default="0">
-        <meta>
-          <name>Uplink DCS code</name>
-          <brief>The least significant 9 bit encode the DCS code 000h-1ffh. The 10-th bit encodes the inversion flag. That is D023I is encoded as 0213h, and D777I as 03ffh.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-      <int width="2h" format="unsigned" endian="little" default="0">
-        <meta>
-          <name>Downlink DCS</name>
-          <brief>The least significant 9 bit encode the DCS code 000h-1ffh. The 10-th bit encodes the inversion flag. That is D023I is encoded as 0213h, and D777I as 03ffh.</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little" default="4294967295">
-        <meta>
-          <name>APRS Uplink Frequency</name>
-          <brief>Specifies the APRS transmit (uplink) frequency.</brief>
-          <description>The frequency is specified in multiples of 10Hz. If no frequency is set, the value is ffffffffh.</description>
-          <firmware>3.06</firmware>
-          <done/>
-        </meta>
-      </int>
-      <enum width="1h">
-        <meta>
-          <name>Arm sub tone type</name>
-          <brief>Specifies the subtone type to be send for arming the satellite.</brief>
-          <firmware>3.06</firmware>
-          <done/>
-        </meta>
-        <item value="0">
-          <name>None</name>
-          <description>No arm subtone is send.</description>
-        </item>
-        <item value="1">
-          <name>CTCSS</name>
-        </item>
-        <item value="2">
-          <name>DCS</name>
-        </item>
-      </enum>
-      <enum width="1h">
-        <meta>
-          <name>Arm Tone CTCSS</name>
-          <firmware>3.06</firmware>
-          <done/>
-        </meta>
-        <item value="0">
-          <name>62.5 Hz</name>
-        </item>
-        <item value="1">
-          <name>67.0 Hz</name>
-        </item>
-        <item value="2">
-          <name>69.3 Hz</name>
-        </item>
-        <item value="3">
-          <name>71.9 Hz</name>
-        </item>
-        <item value="4">
-          <name>74.4 Hz</name>
-        </item>
-        <item value="5">
-          <name>77.0 Hz</name>
-        </item>
-        <item value="6">
-          <name>79.7 Hz</name>
-        </item>
-        <item value="7">
-          <name>82.5 Hz</name>
-        </item>
-        <item value="8">
-          <name>85.4 Hz</name>
-        </item>
-        <item value="9">
-          <name>88.5 Hz</name>
-        </item>
-        <item value="10">
-          <name>91.5 Hz</name>
-        </item>
-        <item value="11">
-          <name>94.8 Hz</name>
-        </item>
-        <item value="12">
-          <name>97.4 Hz</name>
-        </item>
-        <item value="13">
-          <name>100.0 Hz</name>
-        </item>
-        <item value="14">
-          <name>103.5 Hz</name>
-        </item>
-        <item value="15">
-          <name>107.2 Hz</name>
-        </item>
-        <item value="16">
-          <name>110.9 Hz</name>
-        </item>
-        <item value="17">
-          <name>114.8 Hz</name>
-        </item>
-        <item value="18">
-          <name>118.8 Hz</name>
-        </item>
-        <item value="19">
-          <name>123.0 Hz</name>
-        </item>
-        <item value="20">
-          <name>127.3 Hz</name>
-        </item>
-        <item value="21">
-          <name>131.8 Hz</name>
-        </item>
-        <item value="22">
-          <name>136.5 Hz</name>
-        </item>
-        <item value="23">
-          <name>141.3 Hz</name>
-        </item>
-        <item value="24">
-          <name>146.2 Hz</name>
-        </item>
-        <item value="25">
-          <name>151.4 Hz</name>
-        </item>
-        <item value="26">
-          <name>156.7 Hz</name>
-        </item>
-        <item value="27">
-          <name>159.8 Hz</name>
-        </item>
-        <item value="28">
-          <name>162.2 Hz</name>
-        </item>
-        <item value="29">
-          <name>165.5 Hz</name>
-        </item>
-        <item value="30">
-          <name>167.9 Hz</name>
-        </item>
-        <item value="31">
-          <name>171.3 Hz</name>
-        </item>
-        <item value="32">
-          <name>173.8 Hz</name>
-        </item>
-        <item value="33">
-          <name>177.3 Hz</name>
-        </item>
-        <item value="34">
-          <name>179.9 Hz</name>
-        </item>
-        <item value="35">
-          <name>183.5 Hz</name>
-        </item>
-        <item value="36">
-          <name>186.2 Hz</name>
-        </item>
-        <item value="37">
-          <name>189.9 Hz</name>
-        </item>
-        <item value="38">
-          <name>192.8 Hz</name>
-        </item>
-        <item value="39">
-          <name>196.6 Hz</name>
-        </item>
-        <item value="40">
-          <name>199.5 Hz</name>
-        </item>
-        <item value="41">
-          <name>203.5 Hz</name>
-        </item>
-        <item value="42">
-          <name>206.5 Hz</name>
-        </item>
-        <item value="43">
-          <name>210.7 Hz</name>
-        </item>
-        <item value="44">
-          <name>218.1 Hz</name>
-        </item>
-        <item value="45">
-          <name>225.7 Hz</name>
-        </item>
-        <item value="46">
-          <name>229.1 Hz</name>
-        </item>
-        <item value="47">
-          <name>233.6 Hz</name>
-        </item>
-        <item value="48">
-          <name>241.8 Hz</name>
-        </item>
-        <item value="49">
-          <name>250.3 Hz</name>
-        </item>
-        <item value="50">
-          <name>254.1 Hz</name>
-        </item>
-      </enum>
-      <int width="2h" format="unsigned" endian="little" default="0">
-        <meta>
-          <name>Arm DCS code</name>
-          <brief>Encodes the DCS code in a complex way.</brief>
-          <description>The least significant 9 bits encode the binary DCS code. The 9th bit encodes the inversion flag.</description>
-          <firmware>3.06</firmware>
-          <done/>
-        </meta>
-      </int>
-      <unknown width="188h">
-        <meta>
-          <name>Unknown data</name>
-        </meta>
-      </unknown>
-    </element>
-  </repeat>
   <repeat at="4000000h" step="40000h">
     <meta>
       <name>Call-sign Index Banks</name>
@@ -11681,35 +10999,6 @@
         </int>
       </element>
     </repeat>
-  </repeat>
-  <repeat at="4340000h" min="0" max="10000">
-    <meta>
-      <name>Contact Map</name>
-      <firmware>3.04</firmware>
-      <done/>
-    </meta>
-    <element>
-      <meta>
-        <name>Contact Map Entry</name>
-        <firmware>3.04</firmware>
-        <done/>
-      </meta>
-      <int width="4h" format="bcd" endian="big">
-        <meta>
-          <name>DMR ID and Group Call Flag</name>
-          <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little">
-        <meta>
-          <name>Contact Index</name>
-          <firmware>3.04</firmware>
-          <done/>
-        </meta>
-      </int>
-    </element>
   </repeat>
   <element at="44c0000h">
     <meta>
@@ -11826,5 +11115,34 @@
           </meta>00</unused>
       </element>
     </repeat>
+  </repeat>
+  <repeat at="4800000h" min="0" max="10000">
+    <meta>
+      <name>Contact Map</name>
+      <firmware>3.04</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Contact Map Entry</name>
+        <firmware>3.04</firmware>
+        <done/>
+      </meta>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>DMR ID and Group Call Flag</name>
+          <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>Contact Index</name>
+          <firmware>3.04</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
   </repeat>
 </codeplug>
