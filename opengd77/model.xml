@@ -26,7 +26,8 @@
       </map>
     </memory>
   </firmware>
-  <firmware name="R20250119" released="2025-01-19" codeplug="opengd77/R20250119.xml">
+
+  <firmware name="R20250119" released="2025-01-19" codeplug="R20250119.xml">
     <memory>
       <map address="02000008">
         36 35 66 61 38 39 61 36 00 00 00 00 00 00 00 00 <!-- git Revision -->
