@@ -10938,7 +10938,7 @@
           <firmware>3.08</firmware>
           <done/>
         </meta>
-        <int width="4h" format="bcd" endian="big">
+        <int width="4h" format="unsigned" endian="little">
           <meta>
             <name>DMR ID and Group Call Flag</name>
             <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
@@ -10968,7 +10968,7 @@
         <firmware>3.04</firmware>
         <done/>
       </meta>
-      <int width="4h" format="bcd" endian="big">
+      <int width="4h" format="unsigned" endian="little">
         <meta>
           <name>DMR ID and Group Call Flag</name>
           <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
