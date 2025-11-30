@@ -11730,7 +11730,7 @@
       </element>
     </repeat>
   </repeat>
-  <element at="44c0000h">
+  <element at="4840000h">
     <meta>
       <name>Call-sign Database Limits</name>
       <firmware>3.08</firmware>
@@ -11760,7 +11760,7 @@
       </meta>
     </unknown>
   </element>
-  <repeat at="4500000h" step="40000h" max="20000">
+  <repeat at="5500000h" step="40000h" max="20000">
     <meta>
       <name>Call-sign DB Banks</name>
       <firmware>3.08</firmware>
