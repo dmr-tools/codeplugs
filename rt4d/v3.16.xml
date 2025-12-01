@@ -3,7 +3,7 @@
 <codeplug>
   <meta>
     <name>RadTel RT-4D</name>
-    <firmware>1.2.0.16</firmware>
+    <firmware>3.16</firmware>
   </meta>
   <element at="0h">
     <meta>
