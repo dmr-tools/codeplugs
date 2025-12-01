@@ -2095,21 +2095,14 @@
           <done/>
         </meta>
       </string>
-      <repeat n="32">
+      <int width="20h" format="unsigned" endian="big" default="0">
         <meta>
-          <name>Keydata</name>
-          <brief>The key data is stored as a 64/128/256 bit, big endian unsigned integer value, depending on the key type.</brief>
+          <name>Key</name>
+          <brief>Stores the key data in big endian. Depending on the key type, the key might be 64/128/256 bits large.</brief>
           <firmware>1.2.0.16</firmware>
           <done/>
         </meta>
-        <int width="1h" format="unsigned">
-          <meta>
-            <name>Key Byte</name>
-            <firmware>1.2.0.16</firmware>
-            <done/>
-          </meta>
-        </int>
-      </repeat>
+      </int>
     </element>
   </repeat>
   <repeat at="7000000h" n="16">
