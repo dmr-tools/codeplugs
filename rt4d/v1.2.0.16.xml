@@ -1392,191 +1392,462 @@
     <meta>
       <name>Channel bank</name>
     </meta>
-    <element>
+    <union>
       <meta>
         <name>Channel</name>
+        <brief>Union of either a DMR or Analog channel.</brief>
       </meta>
-      <enum width="1h">
+      <element>
         <meta>
-          <name>DMR ID Source</name>
+          <name>DMR Channel</name>
         </meta>
-        <item value="0">
-          <name>Channel Id</name>
-        </item>
-        <item value="1">
-          <name>Radio Id</name>
-        </item>
-      </enum>
-      <unknown width="2h">
-        <meta>
-          <name>Unknown data</name>
-        </meta>
-      </unknown>
-      <int width="1h" format="unsigned">
-        <meta>
-          <name>Time slot or Bandwidth</name>
-          <brief>Stores the union of time slot and bandwidth.</brief>
-          <description>If DMR channel, holds the time slot. That is 0=TS1 and 1=TS2. If FM channel, holds the band width. That is 0=Wide and 1=Narrow.</description>
-          <firmware>1.2.0.16</firmware>
-          <done/>
-        </meta>
-      </int>
-      <union>
-        <meta>
-          <name>Colorcode or RX Tone</name>
-        </meta>
-        <element>
+        <enum width="1h">
           <meta>
-            <name>Colorcode and ...</name>
+            <name>DMR Source ID</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
           </meta>
-          <int width="1h" format="unsigned" default="0" min="0" max="16">
-            <meta>
-              <name>Colorcode</name>
-              <firmware>1.2.0.16</firmware>
-              <done/>
-            </meta>
-          </int>
-          <unknown width="1h">
-            <meta>
-              <name>Unknown data</name>
-            </meta>
-          </unknown>
-        </element>
+          <item value="0">
+            <name>Radio ID</name>
+          </item>
+          <item value="1">
+            <name>Channel ID</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="1h">
+          <meta>
+            <name>Channel Type</name>
+            <brief>Specifies the channel type.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>DMR</name>
+          </item>
+          <item value="1">
+            <name>Analog</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Timeslot</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>TS 1</name>
+          </item>
+          <item value="1">
+            <name>TS 2</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned" default="0" min="0" max="15">
+          <meta>
+            <name>Color Code</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0" min="0" max="1">
+          <meta>
+            <name>Enable DCDM</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>RX Frequency</name>
+            <brief>Specifies the RX frequency in multiples of 10Hz.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>TX Frequency</name>
+            <brief>Specifies the TX Frequency in multiples of 10Hz.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="2h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="1h" format="unsigned" default="0" min="0" max="1">
+          <meta>
+            <name>Enable Promiscuous Mode</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="1h">
+          <meta>
+            <name>Power</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>High</name>
+          </item>
+          <item value="1">
+            <name>Low</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Admid Criterion</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Always</name>
+          </item>
+          <item value="1">
+            <name>Channel Free</name>
+          </item>
+          <item value="2">
+            <name>Color Code and Idle</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0" min="0" max="1">
+          <meta>
+            <name>Include in Scan</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="0h:7">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="1h">
+          <meta>
+            <name>Transmit Timeout</name>
+            <brief>Up to 600s ToT. Gosh.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>5 s</name>
+          </item>
+          <item value="2">
+            <name>10 s</name>
+          </item>
+          <item value="3">
+            <name>15 s</name>
+          </item>
+          <item value="4">
+            <name>30 s</name>
+          </item>
+          <item value="5">
+            <name>45 s</name>
+          </item>
+          <item value="6">
+            <name>60 s</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="1h" format="unsigned" default="0" min="0">
+          <meta>
+            <name>Group List Index</name>
+            <brief>Specifies the group list index+1.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="2h" format="unsigned" endian="little" default="0" min="0">
+          <meta>
+            <name>Transmit Contact Index</name>
+            <brief>Specifies the contact index+1. If set to 0, none is selected.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0" min="0" max="256">
+          <meta>
+            <name>Encryption Key Index</name>
+            <brief>Specifies the encryption key index+1. If set to 0, no key is set.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="little" default="1" min="0">
+          <meta>
+            <name>Channel DMR ID</name>
+            <brief>Specifies the source DMR ID.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Name</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </string>
+      </element>
+      <element>
+        <meta>
+          <name>Analog Channel</name>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Analog Channel RX Mode</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>FM</name>
+          </item>
+          <item value="1">
+            <name>AM</name>
+          </item>
+          <item value="2">
+            <name>SSB</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <enum width="1h">
+          <meta>
+            <name>Channel Type</name>
+            <brief>Specifies the channel type.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>DMR</name>
+          </item>
+          <item value="1">
+            <name>Analog</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Bandwidth</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Wide</name>
+          </item>
+          <item value="1">
+            <name>Narrow</name>
+          </item>
+        </enum>
         <int width="2h" format="unsigned" endian="little" default="0">
           <meta>
             <name>RX Tone</name>
-            <brief>RX CTCSS frequency or RX DCS codes.</brief>
-            <description>If FM channel and most significant 4 bit == 0, then no RX tone is set. If FM channel and most significant 4 bit == 1, then CTCSS frequency is stored in the least significant 12bit in multiples of 0.1Hz. If FM channel and most signifcant 4 bit == 2, then non-inverted DCS code is stored in binary. That is 023N is stored as 0213h. If FM channel and most signifcant 4 bit == 3, then inverted DCS code is stored in binary. That is 023I is stored as 0313h.</description>
+            <brief>Union of CTCSS Frequency and DCS codes.</brief>
+            <description>If most significant 4bit 0, disabled. If most significant 4bit is 1, encodes CTCSS frequency inside the least significant 12bit as multiple of 0.1Hz. If most significant 4 bit are 2, stores non-inverted DCS code in least significant 12bit as binary code. If most significant 4 bit are 3, stores inverted DCS code in least significant 12bit as binary code.</description>
             <firmware>1.2.0.16</firmware>
             <done/>
           </meta>
         </int>
-      </union>
-      <int width="4h" format="unsigned" endian="little" default="4294967295">
-        <meta>
-          <name>RX Frequency</name>
-          <brief>Specified in multiples of 10Hz</brief>
-          <firmware>1.2.0.16</firmware>
-          <done/>
-        </meta>
-      </int>
-      <int width="4h" format="unsigned" endian="little" default="4294967295">
-        <meta>
-          <name>TX Frequency</name>
-          <brief>Specified in multiples of 10Hz</brief>
-          <firmware>1.2.0.16</firmware>
-          <done/>
-        </meta>
-      </int>
-      <union>
-        <meta>
-          <name>Promiscuous Mode or TX Tone</name>
-        </meta>
-        <element>
+        <int width="3h" format="unsigned" endian="little">
           <meta>
-            <name>Promiscous Mode</name>
+            <name>RX Frequency</name>
+            <brief>Specifies the RX frequency in multiples of 10Hz.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
           </meta>
-          <int width="1h" format="unsigned" default="0" min="0" max="1">
-            <meta>
-              <name>Promiscuous Mode</name>
-              <firmware>1.2.0.16</firmware>
-              <done/>
-            </meta>
-          </int>
-          <unknown width="1h">
-            <meta>
-              <name>Unknown data</name>
-            </meta>
-          </unknown>
-        </element>
+        </int>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>TX Frequency</name>
+            <brief>Specifies the TX Frequency in multiples of 10Hz.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="2h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
         <int width="2h" format="unsigned" endian="little" default="0">
           <meta>
-            <name>Promiscuous Mode or TX Tone</name>
-            <brief>TX CTCSS/DCS setting for FM channels.</brief>
-            <description>If FM channel and the most significant 4bit = 0, TX tone is disabled. If FM channel and the most significan 4bit = 1, the TX CTCSS frequency is stored in the lower 12bit in terms of multiples of 0.1Hz. If FM channel and most significant 4bit = 2, the non-inverted DSC code is stored in binary in the lower 12bit. That is, 023N is stored as 0213h. If FM channel and most significant 4bit = 3, the inverted DSC code is stored in binary in the lower 12bit. That is, 023I is stored as 0313h.</description>
+            <name>TX Tone</name>
+            <brief>Union of CTCSS Frequency and DCS codes.</brief>
+            <description>If most significant 4bit 0, disabled. If most significant 4bit is 1, encodes CTCSS frequency inside the least significant 12bit as multiple of 0.1Hz. If most significant 4 bit are 2, stores non-inverted DCS code in least significant 12bit as binary code. If most significant 4 bit are 3, stores inverted DCS code in least significant 12bit as binary code.</description>
             <firmware>1.2.0.16</firmware>
             <done/>
           </meta>
         </int>
-      </union>
-      <enum width="1h">
-        <meta>
-          <name>Power</name>
-          <firmware>1.2.0.16</firmware>
-          <done/>
-        </meta>
-        <item value="0">
-          <name>Low</name>
-        </item>
-        <item value="1">
-          <name>High</name>
-        </item>
-      </enum>
-      <enum width="1h">
-        <meta>
-          <name>Admit criterion</name>
-          <firmware>1.2.0.16</firmware>
-          <done/>
-        </meta>
-        <item value="0">
-          <name>Always</name>
-        </item>
-        <item value="1">
-          <name>Channel Free</name>
-        </item>
-        <item value="2">
-          <name>Color code/CTCSS</name>
-          <description>Meaning depends on the channel type.</description>
-        </item>
-      </enum>
-      <unknown width="1h">
-        <meta>
-          <name>Unknown data</name>
-        </meta>
-      </unknown>
-      <int width="0h:1" format="unsigned" default="0">
-        <meta>
-          <name>Exclude from scan</name>
-          <brief>Excludes this channel from scan.</brief>
-          <firmware>ScExc</firmware>
-        </meta>
-      </int>
-      <unknown width="0h:7">
-        <meta>
-          <name>Unknown data</name>
-        </meta>
-      </unknown>
-      <int width="1h" format="unsigned">
-        <meta>
-          <name>Transmit timeout</name>
-          <brief>0=Off, 1=5s, 2=10s, 3=15s, 4=30s, 5=45s, ..., 42=600s So, except for the first two, it is in steps of 15s.</brief>
-        </meta>
-      </int>
-      <unknown width="5h">
-        <meta>
-          <name>Unknown data</name>
-        </meta>
-      </unknown>
-      <int width="2h" format="unsigned" endian="little" default="0">
-        <meta>
-          <name>Encryption Key Index</name>
-          <brief>0 = Off, index+1.</brief>
-        </meta>
-      </int>
-      <int width="4h" format="bcd" endian="little">
-        <meta>
-          <name>Channel DMR Id</name>
-          <firmware>1.2.0.16</firmware>
-          <done/>
-        </meta>
-      </int>
-      <string format="ascii" width="16" pad="255">
-        <meta>
-          <name>Channel Name</name>
-          <brief>Specifies the channel name.</brief>
-        </meta>
-      </string>
-    </element>
+        <enum width="1h">
+          <meta>
+            <name>Power</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>High</name>
+          </item>
+          <item value="1">
+            <name>Low</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Admid Criterion</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Always</name>
+          </item>
+          <item value="1">
+            <name>Channel Free</name>
+          </item>
+          <item value="2">
+            <name>Tone</name>
+          </item>
+        </enum>
+        <enum width="0h:3">
+          <meta>
+            <name>DCS Type</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Normal</name>
+          </item>
+          <item value="1">
+            <name>Encrypt 1</name>
+          </item>
+          <item value="2">
+            <name>Encrypt 2</name>
+          </item>
+          <item value="3">
+            <name>Encrypt 3</name>
+          </item>
+          <item value="4">
+            <name>Mute Code</name>
+          </item>
+        </enum>
+        <enum width="0h:5">
+          <meta>
+            <name>Transmit Timeout</name>
+            <brief>Specifies the transmit timeout in multiples of 15 s up to 600s. Except for the first few entries.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>5 s</name>
+          </item>
+          <item value="2">
+            <name>10 s</name>
+          </item>
+          <item value="3">
+            <name>15 s</name>
+          </item>
+          <item value="4">
+            <name>30 s</name>
+          </item>
+          <item value="5">
+            <name>45 s</name>
+          </item>
+          <item value="6">
+            <name>60 s</name>
+          </item>
+        </enum>
+        <int width="0h:1" format="unsigned" default="0" min="0" max="1">
+          <meta>
+            <name>Include in Scan</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="0h:3">
+          <meta>
+            <name>Squelch Tail Eliminiation</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>0 deg</name>
+          </item>
+          <item value="2">
+            <name>120 deg</name>
+          </item>
+          <item value="3">
+            <name>180 deg</name>
+          </item>
+          <item value="4">
+            <name>240 deg</name>
+          </item>
+        </enum>
+        <int width="0h:4" format="unsigned" default="0" min="0" max="8">
+          <meta>
+            <name>Scambler Index</name>
+            <brief>Specifies the scrambler index+1.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="3h" format="bcd" endian="little" default="0" min="0">
+          <meta>
+            <name>Mute Code</name>
+            <brief>Specifies the mute code as 6-digit BCD in little endian.</brief>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="9h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Name</name>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </string>
+      </element>
+    </union>
   </repeat>
   <repeat at="2000000h" n="256">
     <meta>
