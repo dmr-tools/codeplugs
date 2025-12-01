@@ -1421,15 +1421,37 @@
           <done/>
         </meta>
       </int>
-      <int width="2h" format="unsigned" endian="little" default="0">
+      <union>
         <meta>
-          <name>Color code or RX Tone</name>
-          <brief>Union of color code, RX CTCSS frequency or RX DCS codes.</brief>
-          <description>If DMR channel, just the color code. If FM channel and most significant 4 bit == 0, then no RX tone is set. If FM channel and most significant 4 bit == 1, then CTCSS frequency is stored in the least significant 12bit in multiples of 0.1Hz. If FM channel and most signifcant 4 bit == 2, then non-inverted DCS code is stored in binary. That is 023N is stored as 0213h. If FM channel and most signifcant 4 bit == 3, then inverted DCS code is stored in binary. That is 023I is stored as 0313h.</description>
-          <firmware>1.2.0.16</firmware>
-          <incomplete/>
+          <name>Colorcode or RX Tone</name>
         </meta>
-      </int>
+        <element>
+          <meta>
+            <name>Colorcode and ...</name>
+          </meta>
+          <int width="1h" format="unsigned" default="0" min="0" max="16">
+            <meta>
+              <name>Colorcode</name>
+              <firmware>1.2.0.16</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unknown width="1h">
+            <meta>
+              <name>Unknown data</name>
+            </meta>
+          </unknown>
+        </element>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>RX Tone</name>
+            <brief>RX CTCSS frequency or RX DCS codes.</brief>
+            <description>If FM channel and most significant 4 bit == 0, then no RX tone is set. If FM channel and most significant 4 bit == 1, then CTCSS frequency is stored in the least significant 12bit in multiples of 0.1Hz. If FM channel and most signifcant 4 bit == 2, then non-inverted DCS code is stored in binary. That is 023N is stored as 0213h. If FM channel and most signifcant 4 bit == 3, then inverted DCS code is stored in binary. That is 023I is stored as 0313h.</description>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+      </union>
       <int width="4h" format="unsigned" endian="little" default="4294967295">
         <meta>
           <name>RX Frequency</name>
@@ -1446,15 +1468,37 @@
           <done/>
         </meta>
       </int>
-      <int width="2h" format="unsigned" endian="little" default="0">
+      <union>
         <meta>
           <name>Promiscuous Mode or TX Tone</name>
-          <brief>This integer field stores the promiscuous mode setting for DMR and RX CTCSS/DCS setting for FM channels.</brief>
-          <description>If DMR channel and 0, the promiscuous mode is disabled. If 1, it is enabled. If FM channel and the most significant 4bit = 0, TX tone is disabled. If FM channel and the most significan 4bit = 1, the TX CTCSS frequency is stored in the lower 12bit in terms of multiples of 0.1Hz. If FM channel and most significant 4bit = 2, the non-inverted DSC code is stored in binary in the lower 12bit. That is, 023N is stored as 0213h. If FM channel and most significant 4bit = 3, the inverted DSC code is stored in binary in the lower 12bit. That is, 023I is stored as 0313h.</description>
-          <firmware>1.2.0.16</firmware>
-          <done/>
         </meta>
-      </int>
+        <element>
+          <meta>
+            <name>Promiscous Mode</name>
+          </meta>
+          <int width="1h" format="unsigned" default="0" min="0" max="1">
+            <meta>
+              <name>Promiscuous Mode</name>
+              <firmware>1.2.0.16</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unknown width="1h">
+            <meta>
+              <name>Unknown data</name>
+            </meta>
+          </unknown>
+        </element>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Promiscuous Mode or TX Tone</name>
+            <brief>TX CTCSS/DCS setting for FM channels.</brief>
+            <description>If FM channel and the most significant 4bit = 0, TX tone is disabled. If FM channel and the most significan 4bit = 1, the TX CTCSS frequency is stored in the lower 12bit in terms of multiples of 0.1Hz. If FM channel and most significant 4bit = 2, the non-inverted DSC code is stored in binary in the lower 12bit. That is, 023N is stored as 0213h. If FM channel and most significant 4bit = 3, the inverted DSC code is stored in binary in the lower 12bit. That is, 023I is stored as 0313h.</description>
+            <firmware>1.2.0.16</firmware>
+            <done/>
+          </meta>
+        </int>
+      </union>
       <enum width="1h">
         <meta>
           <name>Power</name>
