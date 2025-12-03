@@ -5,4 +5,1578 @@
     <name>RadTel RT-4D</name>
     <firmware>3.20</firmware>
   </meta>
+  <element at="0h">
+    <meta>
+      <name>First Settings Block</name>
+    </meta>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Boot Image</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Boot Tone</name>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Boot Text</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="0">
+      <meta>
+        <name>Boot Message Start Line</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="40" min="0">
+      <meta>
+        <name>Boot Message Start Column</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Boot Password Enable</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <string format="ascii" width="16" pad="255">
+      <meta>
+        <name>Boot Password</name>
+      </meta>
+    </string>
+    <string format="ascii" width="32" pad="255">
+      <meta>
+        <name>Boot Message</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </string>
+    <string format="ascii" width="16" pad="255">
+      <meta>
+        <name>Radio Name</name>
+      </meta>
+    </string>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Voice Prompt</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Key Tone</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Key Lock Delay</name>
+        <brief>Weird implementation of an alomst regular time specification. Continues to 600s in 15s steps. 0=Off.</brief>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>5 s</name>
+      </item>
+      <item value="2">
+        <name>10 s</name>
+      </item>
+      <item value="3">
+        <name>15 s</name>
+      </item>
+      <item value="4">
+        <name>30 s</name>
+      </item>
+      <item value="5">
+        <name>45 s</name>
+      </item>
+      <item value="6">
+        <name>60 s</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Backlight</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="3">
+      <meta>
+        <name>Display Brightness</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Display Shut-off Delay</name>
+        <brief>Weird implementation of an alomst regular time specification. Continues to 600s in 15s steps. 0=Off.</brief>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>5 s</name>
+      </item>
+      <item value="2">
+        <name>10 s</name>
+      </item>
+      <item value="3">
+        <name>15 s</name>
+      </item>
+      <item value="4">
+        <name>30 s</name>
+      </item>
+      <item value="5">
+        <name>45 s</name>
+      </item>
+      <item value="6">
+        <name>60 s</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Power Save Mode</name>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>50 %</name>
+      </item>
+      <item value="2">
+        <name>66 %</name>
+      </item>
+      <item value="3">
+        <name>75 %</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="48" min="0" max="200">
+      <meta>
+        <name>Power Save Delay</name>
+        <brief>Specifies the delay in seconds.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Menu Exit Delay</name>
+        <brief>Weird implementation of an alomst regular time specification. Continues to 600s in 15s steps. 0=Off.</brief>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>5 s</name>
+      </item>
+      <item value="2">
+        <name>10 s</name>
+      </item>
+      <item value="3">
+        <name>15 s</name>
+      </item>
+      <item value="4">
+        <name>30 s</name>
+      </item>
+      <item value="5">
+        <name>45 s</name>
+      </item>
+      <item value="6">
+        <name>60 s</name>
+      </item>
+    </enum>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Talkaround</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Enabled</name>
+      </item>
+      <item value="2">
+        <name>Inverse</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Alarm Type</name>
+      </meta>
+      <item value="0">
+        <name>Sound</name>
+      </item>
+      <item value="1">
+        <name>Transmit</name>
+      </item>
+      <item value="2">
+        <name>Sound and Transmit</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Auto-Shutdown</name>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>Auto-Shutdown Delay</name>
+        <brief>Specifies the time-out in seconds.</brief>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>PTT</name>
+        <brief>Specifies which channel gets controlled by the PTT button.</brief>
+      </meta>
+      <item value="0">
+        <name>Main Channel</name>
+      </item>
+      <item value="1">
+        <name>VFO A</name>
+      </item>
+    </enum>
+    <unknown width="dh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>TX Priority</name>
+        <brief>WTF?</brief>
+      </meta>
+      <item value="0">
+        <name>Busy</name>
+      </item>
+      <item value="1">
+        <name>Edit</name>
+      </item>
+    </enum>
+    <unknown width="fh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="4">
+      <meta>
+        <name>Frequency Ranges</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Frequency Range</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Lock Type</name>
+            <brief>Specifies the possible locking type for the frequency range.</brief>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Unlocked</name>
+            <description>Can RX and TX</description>
+          </item>
+          <item value="1">
+            <name>RX Only</name>
+            <description>Can RX only</description>
+          </item>
+          <item value="2">
+            <name>Forbidden</name>
+            <description>Can not be used.</description>
+          </item>
+        </enum>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Lower Frequency</name>
+            <brief>Specifies the lower bound of the frequency range in MHz.</brief>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little">
+          <meta>
+            <name>Upper Frequency</name>
+            <brief>Specifies the upper frequency bound in MHz.</brief>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+        </int>
+      </element>
+    </repeat>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Scan Mode</name>
+        <brief>Specifies the action taken, when a signal is found during scan.</brief>
+        <description>If Carrier, the scan halts as long as there is a carrier prenset and continues afterwards. If Time is set, the scan stops for a specified duration. If Stop is set, the scan stops and does not resume.</description>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Carrier</name>
+      </item>
+      <item value="1">
+        <name>Time</name>
+      </item>
+      <item value="2">
+        <name>Stop</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Scan Return Channel</name>
+        <brief>Specifies the channel to switch to, after a scan ended.</brief>
+      </meta>
+      <item value="0">
+        <name>Active Channel</name>
+      </item>
+      <item value="1">
+        <name>Original Channel</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="5" min="0" max="30">
+      <meta>
+        <name>Scan Dwell Time</name>
+        <brief>Specifies the dwell time in seconds.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="5" min="0" max="30">
+      <meta>
+        <name>Scan Interval Duration</name>
+        <brief>Specifies the duration in seconds.</brief>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="0" max="20">
+      <meta>
+        <name>RSSI Update Period</name>
+        <brief>Specifies the update period in multiples of 100ms. 0=Off.</brief>
+      </meta>
+    </int>
+    <unknown width="3fh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="5" max="25">
+      <meta>
+        <name>Display Contrast</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Frequency Precision</name>
+        <brief>Specifies the number of digits for frequencies.</brief>
+      </meta>
+      <item value="0">
+        <name>6 digits</name>
+      </item>
+      <item value="1">
+        <name>8 digits</name>
+      </item>
+    </enum>
+    <unknown width="15h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="2h" format="unsigned" endian="little" default="1750" min="0">
+      <meta>
+        <name>TBST Frequency</name>
+        <brief>Specifies the frequency in Hz.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="4" min="0" max="10">
+      <meta>
+        <name>Squelch Level</name>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="15" min="0" max="31">
+      <meta>
+        <name>FM MIC Gain</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="55" min="0" max="63">
+      <meta>
+        <name>FM Speaker Gain</name>
+      </meta>
+    </int>
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable BOT Tone</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>EOT Tone</name>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Roger 1</name>
+      </item>
+      <item value="2">
+        <name>Roger 2</name>
+      </item>
+      <item value="3">
+        <name>MDC1200</name>
+      </item>
+      <item value="4">
+        <name>GPS</name>
+      </item>
+    </enum>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Frequency Detect Range</name>
+        <brief>WTF?</brief>
+        <needs-review/>
+      </meta>
+      <item value="0">
+        <name>18 - 64 MHz</name>
+      </item>
+      <item value="1">
+        <name>64 - 136 MHz</name>
+      </item>
+      <item value="2">
+        <name>136 - 174 MHz</name>
+      </item>
+      <item value="3">
+        <name>174 - 240 MHz</name>
+      </item>
+      <item value="4">
+        <name>240 - 320 MHz</name>
+      </item>
+      <item value="5">
+        <name>320 - 400 MHz</name>
+      </item>
+      <item value="6">
+        <name>400 - 480 MHz</name>
+      </item>
+      <item value="7">
+        <name>480 - 560 MHz</name>
+      </item>
+      <item value="8">
+        <name>560 - 640 MHz</name>
+      </item>
+      <item value="9">
+        <name>840 - 920 MHz</name>
+      </item>
+      <item value="10">
+        <name>920 - 1000 Mhz</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="5" min="0" max="20">
+      <meta>
+        <name>Repeat Detect Delay</name>
+        <brief>Specifies the delay in multiples of 100ms.</brief>
+        <needs-review/>
+      </meta>
+    </int>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="6" min="0" max="10">
+      <meta>
+        <name>FM Glitch Threshold</name>
+        <brief>WTF?</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="5" min="0" max="120">
+      <meta>
+        <name>TBST Duration</name>
+        <brief>Specifies the TBST duration in seconds.</brief>
+      </meta>
+    </int>
+    <unknown width="6ah">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="4h" format="bcd" endian="little">
+      <meta>
+        <name>Radio DMR ID</name>
+        <brief>Specifies the DMR ID in little endian 8-digit BCD.</brief>
+      </meta>
+    </int>
+    <unknown width="1c6h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Swap RX and TX Frequencies</name>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>Lower Scan Frequency</name>
+        <brief>Specifies the lower boundary of the scan frequency range.</brief>
+        <description>The frequency is specified in multiples of 10Hz.</description>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>Upper Scan Frequency</name>
+        <brief>Specifies the upper bound of the scan frequency range.</brief>
+        <description>The frequency is specified in multiples of 10Hz.</description>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable LED</name>
+      </meta>
+    </int>
+    <unknown width="abh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
+  <repeat at="1000000h" n="1024">
+    <meta>
+      <name>Channel bank</name>
+      <firmware>3.20</firmware>
+      <done/>
+    </meta>
+    <union>
+      <meta>
+        <name>Channel</name>
+        <brief>Union of either a DMR or Analog channel.</brief>
+        <needs-review/>
+      </meta>
+      <element>
+        <meta>
+          <name>DMR Channel</name>
+          <needs-review/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>DMR Source ID</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Radio ID</name>
+          </item>
+          <item value="1">
+            <name>Channel ID</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <enum width="1h">
+          <meta>
+            <name>Channel Type</name>
+            <brief>Specifies the channel type.</brief>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>DMR</name>
+          </item>
+          <item value="1">
+            <name>Analog</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Timeslot</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>TS 1</name>
+          </item>
+          <item value="1">
+            <name>TS 2</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned" default="0" min="0" max="15">
+          <meta>
+            <name>Color Code</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0" min="0" max="1">
+          <meta>
+            <name>Enable DCDM</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>RX Frequency</name>
+            <brief>Specifies the RX frequency in multiples of 10Hz.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>TX Frequency</name>
+            <brief>Specifies the TX Frequency in multiples of 10Hz.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <unknown width="2h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <int width="1h" format="unsigned" default="0" min="0" max="1">
+          <meta>
+            <name>Enable Promiscuous Mode</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <enum width="1h">
+          <meta>
+            <name>Power</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>High</name>
+          </item>
+          <item value="1">
+            <name>Low</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Admid Criterion</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Always</name>
+          </item>
+          <item value="1">
+            <name>Channel Free</name>
+          </item>
+          <item value="2">
+            <name>Color Code and Idle</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0" min="0" max="1">
+          <meta>
+            <name>Include in Scan</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <unknown width="0h:7">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <enum width="1h">
+          <meta>
+            <name>Transmit Timeout</name>
+            <brief>Up to 600s ToT. Gosh.</brief>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>5 s</name>
+          </item>
+          <item value="2">
+            <name>10 s</name>
+          </item>
+          <item value="3">
+            <name>15 s</name>
+          </item>
+          <item value="4">
+            <name>30 s</name>
+          </item>
+          <item value="5">
+            <name>45 s</name>
+          </item>
+          <item value="6">
+            <name>60 s</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <int width="1h" format="unsigned" default="0" min="0">
+          <meta>
+            <name>Group List Index</name>
+            <brief>Specifies the group list index+1.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <int width="2h" format="unsigned" endian="little" default="0" min="0">
+          <meta>
+            <name>Transmit Contact Index</name>
+            <brief>Specifies the contact index+1. If set to 0, none is selected.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0" min="0" max="256">
+          <meta>
+            <name>Encryption Key Index</name>
+            <brief>Specifies the encryption key index+1. If set to 0, no key is set.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="little" default="1" min="0">
+          <meta>
+            <name>Channel DMR ID</name>
+            <brief>Specifies the source DMR ID.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Name</name>
+            <needs-review/>
+          </meta>
+        </string>
+      </element>
+      <element>
+        <meta>
+          <name>Analog Channel</name>
+          <needs-review/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Analog Channel RX Mode</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>FM</name>
+          </item>
+          <item value="1">
+            <name>AM</name>
+          </item>
+          <item value="2">
+            <name>SSB</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <enum width="1h">
+          <meta>
+            <name>Channel Type</name>
+            <brief>Specifies the channel type.</brief>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>DMR</name>
+          </item>
+          <item value="1">
+            <name>Analog</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Bandwidth</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Wide</name>
+          </item>
+          <item value="1">
+            <name>Narrow</name>
+          </item>
+        </enum>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>RX Tone</name>
+            <brief>Union of CTCSS Frequency and DCS codes.</brief>
+            <description>If most significant 4bit 0, disabled. If most significant 4bit is 1, encodes CTCSS frequency inside the least significant 12bit as multiple of 0.1Hz. If most significant 4 bit are 2, stores non-inverted DCS code in least significant 12bit as binary code. If most significant 4 bit are 3, stores inverted DCS code in least significant 12bit as binary code.</description>
+            <needs-review/>
+          </meta>
+        </int>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>RX Frequency</name>
+            <brief>Specifies the RX frequency in multiples of 10Hz.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <int width="3h" format="unsigned" endian="little">
+          <meta>
+            <name>TX Frequency</name>
+            <brief>Specifies the TX Frequency in multiples of 10Hz.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <unknown width="2h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>TX Tone</name>
+            <brief>Union of CTCSS Frequency and DCS codes.</brief>
+            <description>If most significant 4bit 0, disabled. If most significant 4bit is 1, encodes CTCSS frequency inside the least significant 12bit as multiple of 0.1Hz. If most significant 4 bit are 2, stores non-inverted DCS code in least significant 12bit as binary code. If most significant 4 bit are 3, stores inverted DCS code in least significant 12bit as binary code.</description>
+            <needs-review/>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Power</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>High</name>
+          </item>
+          <item value="1">
+            <name>Low</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Admid Criterion</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Always</name>
+          </item>
+          <item value="1">
+            <name>Channel Free</name>
+          </item>
+          <item value="2">
+            <name>Tone</name>
+          </item>
+        </enum>
+        <enum width="0h:3">
+          <meta>
+            <name>DCS Type</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Normal</name>
+          </item>
+          <item value="1">
+            <name>Encrypt 1</name>
+          </item>
+          <item value="2">
+            <name>Encrypt 2</name>
+          </item>
+          <item value="3">
+            <name>Encrypt 3</name>
+          </item>
+          <item value="4">
+            <name>Mute Code</name>
+          </item>
+        </enum>
+        <enum width="0h:5">
+          <meta>
+            <name>Transmit Timeout</name>
+            <brief>Specifies the transmit timeout in multiples of 15 s up to 600s. Except for the first few entries.</brief>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>5 s</name>
+          </item>
+          <item value="2">
+            <name>10 s</name>
+          </item>
+          <item value="3">
+            <name>15 s</name>
+          </item>
+          <item value="4">
+            <name>30 s</name>
+          </item>
+          <item value="5">
+            <name>45 s</name>
+          </item>
+          <item value="6">
+            <name>60 s</name>
+          </item>
+        </enum>
+        <int width="0h:1" format="unsigned" default="0" min="0" max="1">
+          <meta>
+            <name>Include in Scan</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <enum width="0h:3">
+          <meta>
+            <name>Squelch Tail Eliminiation</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>0 deg</name>
+          </item>
+          <item value="2">
+            <name>120 deg</name>
+          </item>
+          <item value="3">
+            <name>180 deg</name>
+          </item>
+          <item value="4">
+            <name>240 deg</name>
+          </item>
+        </enum>
+        <int width="0h:4" format="unsigned" default="0" min="0" max="8">
+          <meta>
+            <name>Scambler Index</name>
+            <brief>Specifies the scrambler index+1.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <int width="3h" format="bcd" endian="little" default="0" min="0">
+          <meta>
+            <name>Mute Code</name>
+            <brief>Specifies the mute code as 6-digit BCD in little endian.</brief>
+            <needs-review/>
+          </meta>
+        </int>
+        <unknown width="9h">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Name</name>
+            <needs-review/>
+          </meta>
+        </string>
+      </element>
+    </union>
+  </repeat>
+  <element at="2000000h">
+    <meta>
+      <name>Second Settings Block</name>
+    </meta>
+    <unknown width="60h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Enable Key Lock</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Active VFO</name>
+        <brief>Specifies which VFO is active.</brief>
+      </meta>
+      <item value="0">
+        <name>A</name>
+      </item>
+      <item value="1">
+        <name>B</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Dual Wait</name>
+        <brief>Enables simultaneous observation of both VFOs.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Display Mode</name>
+      </meta>
+      <item value="0">
+        <name>Dual</name>
+      </item>
+      <item value="1">
+        <name>Single</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Scan Direction</name>
+      </meta>
+      <item value="0">
+        <name>Up</name>
+      </item>
+      <item value="1">
+        <name>Down</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>VFO Step Size</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>250 Hz</name>
+      </item>
+      <item value="1">
+        <name>1.25 kHz</name>
+      </item>
+      <item value="2">
+        <name>2.5 kHz</name>
+      </item>
+      <item value="3">
+        <name>5 kHz</name>
+      </item>
+      <item value="4">
+        <name>6.25 kHz</name>
+      </item>
+      <item value="5">
+        <name>10 kHz</name>
+      </item>
+      <item value="6">
+        <name>12.5 kHz</name>
+      </item>
+      <item value="7">
+        <name>20 kHz</name>
+      </item>
+      <item value="8">
+        <name>25 kHz</name>
+      </item>
+      <item value="9">
+        <name>50 kHz</name>
+      </item>
+      <item value="10">
+        <name>100 kHz</name>
+      </item>
+      <item value="11">
+        <name>500 kHz</name>
+      </item>
+      <item value="12">
+        <name>1 MHz</name>
+      </item>
+      <item value="13">
+        <name>5 MHz</name>
+      </item>
+    </enum>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="4h" format="unsigned" endian="little" default="43512500" min="0">
+      <meta>
+        <name>Spectrum Center Frequency</name>
+        <brief>Specified in multiple of 10Hz.</brief>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little" default="101" min="0">
+      <meta>
+        <name>Spectrum Frequency Step</name>
+        <brief>Specified in Hz.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="80" min="0" max="255">
+      <meta>
+        <name>Spectrum Threshold</name>
+        <brief>In -dBm?</brief>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="0" max="79">
+      <meta>
+        <name>FM Broadcast Standby Channel</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable FM Broadcast Standby</name>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>VFO A Mode</name>
+      </meta>
+      <item value="0">
+        <name>Frequency</name>
+      </item>
+      <item value="1">
+        <name>Channel</name>
+      </item>
+      <item value="2">
+        <name>Zone</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>VFO B Mode</name>
+      </meta>
+      <item value="0">
+        <name>Frequency</name>
+      </item>
+      <item value="1">
+        <name>Channel</name>
+      </item>
+      <item value="2">
+        <name>Zone</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>VFO A Channel Display Mode</name>
+      </meta>
+      <item value="0">
+        <name>Number</name>
+      </item>
+      <item value="1">
+        <name>Frequency</name>
+      </item>
+      <item value="2">
+        <name>Name</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>VFO B Channel Display Mode</name>
+      </meta>
+      <item value="0">
+        <name>Number</name>
+      </item>
+      <item value="1">
+        <name>Frequency</name>
+      </item>
+      <item value="2">
+        <name>Name</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0" min="0" max="249">
+      <meta>
+        <name>VFO A Zone Index</name>
+        <brief>0-base index.</brief>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="249">
+      <meta>
+        <name>VFO B Zone Index</name>
+        <brief>0-base index.</brief>
+      </meta>
+    </int>
+    <int width="2h" format="unsigned" endian="little" default="0" min="0">
+      <meta>
+        <name>VFO A Channel Index</name>
+      </meta>
+    </int>
+    <int width="2h" format="unsigned" endian="little" default="0" min="0">
+      <meta>
+        <name>VFO B Channel Index</name>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Sub-PTT</name>
+      </meta>
+    </int>
+    <unknown width="381h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
+  <repeat at="3000000h" n="256">
+    <meta>
+      <name>Zone bank</name>
+      <brief>Holds all 256 zones.</brief>
+      <firmware>3.20</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Zone</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <int width="2h" format="unsigned" endian="little" default="0" min="0">
+        <meta>
+          <name>Default Channel Index VFO A</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0" min="0">
+        <meta>
+          <name>Default Channel Index VFO B</name>
+          <brief>Yes, again.</brief>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </int>
+      <string format="ascii" width="16" pad="255">
+        <meta>
+          <name>Zone name</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </string>
+      <repeat n="200">
+        <meta>
+          <name>Channels</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+        <int width="2h" format="unsigned" endian="little" default="65535">
+          <meta>
+            <name>Channel index</name>
+            <brief>If not used, set to ffffh.</brief>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <unused width="5ch">
+        <meta>
+          <name>Unused data</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
+  <element at="4000000h">
+    <meta>
+      <name>Contact bank</name>
+      <firmware>3.20</firmware>
+      <done/>
+    </meta>
+    <repeat n="10000">
+      <meta>
+        <name>Contacts</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Contact</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Contact Type</name>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Private Call</name>
+          </item>
+          <item value="1">
+            <name>Group Call</name>
+          </item>
+          <item value="2">
+            <name>All Call</name>
+          </item>
+        </enum>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>DMR ID</name>
+            <brief>Specifies the DMR ID in 8 digit BCD little endian!</brief>
+            <description>If call type is all-call, the stored number is aaaaaaaah.</description>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+        </int>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Contact Name</name>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+        </string>
+      </element>
+    </repeat>
+    <unused width="bb0h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>ff</unused>
+  </element>
+  <element at="5000000h">
+    <meta>
+      <name>Group List Bank</name>
+      <firmware>3.20</firmware>
+      <done/>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Group Lists</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Group List</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="14" pad="255">
+          <meta>
+            <name>Name</name>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="2h">
+          <meta>
+            <name>Pad Chars</name>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>ffff</unused>
+        <repeat n="32">
+          <meta>
+            <name>Group Call Indices</name>
+            <firmware>3.20</firmware>
+            <done/>
+          </meta>
+          <int width="2h" format="unsigned" endian="little" default="65535">
+            <meta>
+              <name>Group Call Index</name>
+              <brief>Specifies the 0-based index of the group call. Set to ffffh, if not used.</brief>
+              <firmware>3.20</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+      </element>
+    </repeat>
+    <unused width="1e0h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="6000000h" n="256">
+    <meta>
+      <name>Encryption Keys</name>
+      <firmware>3.20</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Encryption Key</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Key Index (LSB)</name>
+          <brief>Just the least signficant byte of the encryption key index + 1.</brief>
+          <description>This field is set, irrespective whether the key is valid or not.</description>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Key Type</name>
+          <brief>Specifies the key type.</brief>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>ARC-4</name>
+        </item>
+        <item value="1">
+          <name>AES-128</name>
+        </item>
+        <item value="2">
+          <name>AES-256</name>
+        </item>
+      </enum>
+      <string format="ascii" width="14" pad="255">
+        <meta>
+          <name>Name</name>
+          <brief>Specifies the key name.</brief>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </string>
+      <int width="20h" format="unsigned" endian="big" default="0">
+        <meta>
+          <name>Key</name>
+          <brief>Stores the key data in big endian. Depending on the key type, the key might be 64/128/256 bits large.</brief>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
+  </repeat>
+  <repeat at="7000000h" n="16">
+    <meta>
+      <name>Messages</name>
+      <firmware>3.20</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Message</name>
+        <firmware>3.20</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned" default="598" min="0">
+        <meta>
+          <name>Index</name>
+          <brief>Stores the 0-based index of the message. If set to ff, message is invalid.</brief>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="37h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>ff</unused>
+      <string format="ascii" width="200" pad="255">
+        <meta>
+          <name>Text</name>
+          <firmware>3.20</firmware>
+          <done/>
+        </meta>
+      </string>
+    </element>
+  </repeat>
+  <element at="8000000h">
+    <meta>
+      <name>FM Broadcast Channel Bank</name>
+    </meta>
+    <unknown width="1000h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
 </codeplug>
