@@ -1,4 +1,4 @@
-<!ELEMENT codeplug (meta, (repeat|element|int|string|enum|unused|unknown)*)>
+<!ELEMENT codeplug (meta, (repeat|element|union|int|string|enum|unused|unknown)*)>
 
 <!ELEMENT meta (name, short-name?, brief?, description?, firmware?, (done | needs-review | incomplete)?)>
 <!ELEMENT name (#PCDATA)>
@@ -11,7 +11,7 @@
 <!ELEMENT incomplete EMPTY>
 
 
-<!ELEMENT repeat (meta, (repeat | element |
+<!ELEMENT repeat (meta, (repeat | element | union |
                          int | uint8 | int8 | uint16le | int16le | uint16be | int16be |
                          uint32le | int32le | uint32be | int32be | bcd | bcd8 |
                          string | enum |
@@ -23,11 +23,18 @@
                  n CDATA #IMPLIED>
 
 
-<!ELEMENT element (meta, (repeat | element |
+<!ELEMENT element (meta, (repeat | element | union |
                           int | uint8 | int8 | uint16le | int16le | uint16be | int16be |
                           uint32le | int32le | uint32be | int32be | bcd | bcd8 |
                           string | enum | unused | unknown)+)>
 <!ATTLIST element at CDATA #IMPLIED>
+
+
+<!ELEMENT union (meta, (repeat | element | union |
+                          int | uint8 | int8 | uint16le | int16le | uint16be | int16be |
+                          uint32le | int32le | uint32be | int32be | bcd | bcd8 |
+                          string | enum | unused | unknown)+)>
+<!ATTLIST union at CDATA #IMPLIED>
 
 
 <!ELEMENT int (meta)>
