@@ -8164,31 +8164,29 @@
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Key Id</name>
-            <brief>Stores the key ID.</brief>
-            <description>The ID is 1-based, where 0=Off.</description>
+            <brief>1-based key Id. 0=Off.</brief>
             <firmware>2.21b</firmware>
             <done/>
           </meta>
         </int>
-        <unused width="20h">
+        <int width="20h" format="unsigned" endian="big" default="0">
           <meta>
-            <name>256 bit key data</name>
-            <brief>Encodes up to 256 bit of key data.</brief>
-            <description>If the key is smaller than 256bit, it gets stored right-aligned. That is, 0-bits are added to the front to extend the size to 256bits.</description>
+            <name>Key Data</name>
+            <brief>Up to 256 bit AES key. The key is right aligned. You may consider it as a big-endian integer.</brief>
             <firmware>2.21b</firmware>
             <done/>
-          </meta>00</unused>
+          </meta>
+        </int>
         <unused width="1h">
           <meta>
             <name>Unused data</name>
             <firmware>2.21b</firmware>
             <done/>
           </meta>00</unused>
-        <int width="1h" format="unsigned">
+        <int width="1h" format="unsigned" default="64" min="32" max="64">
           <meta>
-            <name>Key Size</name>
-            <brief>Specifies the key-size in nibbles.</brief>
-            <description>That is, in multiples of 4bits.</description>
+            <name>Key size</name>
+            <brief>Specifies the key size in multiples of 4bit.</brief>
             <firmware>2.21b</firmware>
             <done/>
           </meta>

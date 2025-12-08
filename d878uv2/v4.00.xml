@@ -5031,51 +5031,55 @@
   <element at="24c4000h">
     <meta>
       <name>AES encryption key bank</name>
-      <firmware>3.04</firmware>
+      <firmware>4.00</firmware>
       <done/>
     </meta>
     <repeat n="255">
       <meta>
         <name>AES encryption keys</name>
-        <firmware>3.04</firmware>
+        <firmware>4.00</firmware>
         <done/>
       </meta>
       <element>
         <meta>
           <name>AES encryption key</name>
-          <firmware>3.04</firmware>
+          <firmware>4.00</firmware>
           <done/>
         </meta>
         <int width="1h" format="unsigned" default="0">
           <meta>
             <name>Key Id</name>
             <brief>1-based key Id. 0=Off.</brief>
-            <firmware>3.04</firmware>
+            <firmware>4.00</firmware>
             <done/>
           </meta>
         </int>
-        <unused width="20h">
+        <int width="20h" format="unsigned" endian="big" default="0">
           <meta>
-            <name>256 bit key data</name>
-            <firmware>3.04</firmware>
+            <name>Key Data</name>
+            <brief>Up to 256 bit AES key. The key is right aligned. You may consider it as a big-endian integer.</brief>
+            <firmware>4.00</firmware>
             <done/>
-          </meta>00</unused>
+          </meta>
+        </int>
         <unused width="1h">
           <meta>
             <name>Unused data</name>
-            <firmware>3.04</firmware>
+            <firmware>4.00</firmware>
             <done/>
           </meta>00</unused>
-        <unused width="1h">
+        <int width="1h" format="unsigned" default="64" min="32" max="64">
           <meta>
-            <name>Fixed to 40h.</name>
-            <firmware>3.04</firmware>
+            <name>Key size</name>
+            <brief>Specifies the key size in multiples of 4bit.</brief>
+            <firmware>4.00</firmware>
             <done/>
-          </meta>40</unused>
+          </meta>
+        </int>
         <unused width="1dh">
           <meta>
             <name>Unused data</name>
-            <firmware>3.04</firmware>
+            <firmware>4.00</firmware>
             <done/>
           </meta>00</unused>
       </element>
@@ -5083,7 +5087,7 @@
     <unused width="40h">
       <meta>
         <name>Unused data</name>
-        <firmware>3.04</firmware>
+        <firmware>4.00</firmware>
         <done/>
       </meta>00</unused>
   </element>

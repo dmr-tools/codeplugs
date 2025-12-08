@@ -4432,22 +4432,24 @@
             <done/>
           </meta>
         </int>
-        <unused width="20h">
+        <int width="20h" format="unsigned" endian="big" default="0">
           <meta>
-            <name>256 bit key data</name>
+            <name>Key Data</name>
+            <brief>Up to 256 bit AES key. The key is right aligned. You may consider it as a big-endian integer.</brief>
             <firmware>1.21</firmware>
             <done/>
-          </meta>00</unused>
+          </meta>
+        </int>
         <unused width="1h">
           <meta>
             <name>Unused data</name>
             <firmware>1.21</firmware>
             <done/>
           </meta>00</unused>
-        <int width="1h" format="unsigned" default="0">
+        <int width="1h" format="unsigned" default="64" min="32" max="64">
           <meta>
-            <name>Key Size</name>
-            <brief>Specifies the key-size in nibbles (multiples of 4bit).</brief>
+            <name>Key size</name>
+            <brief>Specifies the key size in multiples of 4bit.</brief>
             <firmware>1.21</firmware>
             <done/>
           </meta>
