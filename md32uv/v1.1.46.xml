@@ -1613,6 +1613,171 @@
         </meta>ff</unused>
     </element>
   </repeat>
+  <element at="65000h">
+    <meta>
+      <name>Roaming Zone Bank</name>
+    </meta>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Roaming Zone Count</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Auto-Roaming</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="1" min="0" max="255">
+      <meta>
+        <name>Roaming Delay</name>
+        <brief>Duration is specified in minutes.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="1">
+      <meta>
+        <name>Default Roaming Zone Index</name>
+        <brief>Specifies the index+1 of the default roaming zone.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="ch">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="64">
+      <meta>
+        <name>Roaming Zones</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Roaming Zone</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Name</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </string>
+        <int width="1h" format="unsigned" min="0" max="16">
+          <meta>
+            <name>Roaming Channel Count</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <repeat n="16">
+          <meta>
+            <name>Roaming Channel Indices</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <int width="1h" format="unsigned" default="0">
+            <meta>
+              <name>Roaming Channel Index</name>
+              <brief>Specifies the roaming channel index+1.</brief>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+      </element>
+    </repeat>
+    <unused width="7b0h">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+  </element>
+  <element at="66000h">
+    <meta>
+      <name>Roaming Channel Bank</name>
+    </meta>
+    <repeat n="150">
+      <meta>
+        <name>Roaming Channels</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Roaming Channel</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Name</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </string>
+        <int width="4h" format="bcd" endian="little">
+          <meta>
+            <name>RX Frequency</name>
+            <brief>Specifies the frequency in multiples of 10Hz.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="little">
+          <meta>
+            <name>TX Frequency</name>
+            <brief>Specifies the frequency in multiples of 10Hz.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" default="0" min="0" max="15">
+          <meta>
+            <name>Color Code</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Time Slot</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Time Slot 1</name>
+          </item>
+          <item value="1">
+            <name>Time Slot 2</name>
+          </item>
+        </enum>
+      </element>
+    </repeat>
+    <unused width="b4h">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+    <int width="1h" format="unsigned" min="0" max="150">
+      <meta>
+        <name>Channel Count</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="fh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
   <element at="67000h">
     <meta>
       <name>Radio ID Bank</name>
