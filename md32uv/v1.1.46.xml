@@ -5,6 +5,360 @@
     <name>Baofeng MD-32UV</name>
     <firmware>1.1.46</firmware>
   </meta>
+  <element at="3000h">
+    <meta>
+      <name>Two/Five Tone Settings</name>
+    </meta>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Two Tone Code Count</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="2eh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <element>
+      <meta>
+        <name>Two Tone Settings</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned" default="5" min="0" max="50">
+        <meta>
+          <name>Prewave Delay</name>
+          <brief>Duration is specified as multiples of 0.1s</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="5" min="1" max="50">
+        <meta>
+          <name>First Tone Duration</name>
+          <brief>Specified in terms of multiple of 0.1s.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="5" min="1" max="50">
+        <meta>
+          <name>Second Tone Duration</name>
+          <brief>Specified in terms of 0.1s.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="5" min="1" max="50">
+        <meta>
+          <name>Lone Tone Duration</name>
+          <brief>Specified in terms of 0.1s.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0" min="0" max="20">
+        <meta>
+          <name>Interval Duration</name>
+          <brief>Specified in multiples of 0.1s.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </unknown>
+      <int width="1h" format="unsigned" default="0" min="0" max="50">
+        <meta>
+          <name>Polite Wait Duration</name>
+          <brief>Specified in multiples of 0.1s.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="3217">
+        <meta>
+          <name>A Tone Frequency</name>
+          <brief>Specified in terms of 0.1Hz.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="3217">
+        <meta>
+          <name>B Tone Frequency</name>
+          <brief>Specified in terms of 0.1Hz.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="3217">
+        <meta>
+          <name>C Tone Frequency</name>
+          <brief>Specified in terms of 0.1Hz.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="3217">
+        <meta>
+          <name>D Tone Frequency</name>
+          <brief>Specified in terms of 0.1Hz.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="0h:6">
+        <meta>
+          <name>Unused data</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>00</unused>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable Side Tone</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="1">
+        <meta>
+          <name>Enable Idle ACK</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="1" min="1" max="255">
+        <meta>
+          <name>Auto Reset Time</name>
+          <brief>Specified in seconds.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <repeat n="4">
+        <meta>
+          <name>Two Tone IDs</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <element>
+          <meta>
+            <name>Two Tone ID</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <enum width="1h">
+            <meta>
+              <name>Code</name>
+              <brief>Refers to the tones specified for A-D.</brief>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <item value="255">
+              <name>Off</name>
+            </item>
+            <item value="1">
+              <name>A-B</name>
+            </item>
+            <item value="2">
+              <name>A-C</name>
+            </item>
+            <item value="3">
+              <name>A-D</name>
+            </item>
+            <item value="16">
+              <name>B-A</name>
+            </item>
+            <item value="18">
+              <name>B-C</name>
+            </item>
+            <item value="19">
+              <name>B-D</name>
+            </item>
+            <item value="32">
+              <name>C-A</name>
+            </item>
+            <item value="33">
+              <name>C-B</name>
+            </item>
+            <item value="35">
+              <name>C-D</name>
+            </item>
+            <item value="48">
+              <name>D-A</name>
+            </item>
+            <item value="49">
+              <name>D-B</name>
+            </item>
+            <item value="50">
+              <name>D-C</name>
+            </item>
+            <item value="15">
+              <name>A-A</name>
+            </item>
+            <item value="31">
+              <name>B-B</name>
+            </item>
+            <item value="47">
+              <name>C-C</name>
+            </item>
+            <item value="63">
+              <name>D-D</name>
+            </item>
+          </enum>
+          <enum width="1h">
+            <meta>
+              <name>Call Type</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>None</name>
+            </item>
+            <item value="1">
+              <name>Call Alert</name>
+            </item>
+            <item value="2">
+              <name>Voice Call Alert</name>
+            </item>
+            <item value="3">
+              <name>Select Call</name>
+            </item>
+          </enum>
+          <int width="1h" format="unsigned" default="0" min="0" max="1">
+            <meta>
+              <name>Enable Reply</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unknown width="1h">
+            <meta>
+              <name>Unknown data</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+          </unknown>
+        </element>
+      </repeat>
+      <unknown width="fh">
+        <meta>
+          <name>Unknown data</name>
+          <firmware>1.1.46</firmware>
+        </meta>
+      </unknown>
+    </element>
+    <unknown width="1c0h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="32">
+      <meta>
+        <name>Two Tone Codes</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Two Tone Code</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <string format="unicode" width="16" pad="0">
+          <meta>
+            <name>Name</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </string>
+        <enum width="1h">
+          <meta>
+            <name>Format</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Two Tone</name>
+          </item>
+          <item value="1">
+            <name>Single Tone</name>
+          </item>
+        </enum>
+        <unknown width="1h">
+          <meta>
+            <name>Unknown data</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </unknown>
+        <int width="2h" format="unsigned" endian="little" default="5000">
+          <meta>
+            <name>First Tone</name>
+            <brief>Specified in 0.1Hz.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="10003">
+          <meta>
+            <name>Second Tone</name>
+            <brief>Specified in terms of 0.1Hz.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="2h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>00</unused>
+      </element>
+    </repeat>
+    <unknown width="10h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <element>
+      <meta>
+        <name>Five Tone Settings</name>
+      </meta>
+      <repeat n="5">
+        <meta>
+          <name>Radio Id</name>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>Digit</name>
+          </meta>
+        </int>
+      </repeat>
+      <unknown width="2bh">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+    </element>
+    <unknown width="8a0h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
   <element at="4000h">
     <meta>
       <name>Settings Block</name>
@@ -2869,6 +3223,213 @@
       </meta>
     </int>
     <unknown width="af8h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
+  <element at="6000h">
+    <meta>
+      <name>DTMF Settings</name>
+    </meta>
+    <repeat n="16">
+      <meta>
+        <name>DTMF IDs</name>
+      </meta>
+      <repeat n="16">
+        <meta>
+          <name>DTMF ID</name>
+        </meta>
+        <int width="1h" format="unsigned" default="255" min="0" max="15">
+          <meta>
+            <name>DTMF Digit</name>
+            <brief>If not set ffh.</brief>
+          </meta>
+        </int>
+      </repeat>
+    </repeat>
+    <element>
+      <meta>
+        <name>DTMF Settings</name>
+      </meta>
+      <int width="1h" format="unsigned" default="15" min="15" max="97">
+        <meta>
+          <name>Prewave Delay</name>
+          <brief>Somehow broken.</brief>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0" min="0" max="18">
+        <meta>
+          <name>First Digit Duration</name>
+          <brief>Duration specified in multiples of 50ms. That is D = 100ms + n*50ms.</brief>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="1" min="0" max="192">
+        <meta>
+          <name>Tone Duration</name>
+          <brief>Duration specified in multiples of 10ms. That is D = 80ms + n*10ms.</brief>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="1" min="0" max="192">
+        <meta>
+          <name>Pause Duration</name>
+          <brief>Duration specified in multiples of 10ms. That is D = 80ms + n*10ms.</brief>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="10" min="1" max="255">
+        <meta>
+          <name>Autor Reset Time</name>
+          <brief>Duration specified in seconds.</brief>
+        </meta>
+      </int>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <repeat n="3">
+        <meta>
+          <name>DTMF ID</name>
+        </meta>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>ID Digit</name>
+          </meta>
+        </int>
+      </repeat>
+      <enum width="1h">
+        <meta>
+          <name>Group Code</name>
+          <brief>At some time, I have to find out what this means.</brief>
+        </meta>
+        <item value="255">
+          <name>Off</name>
+        </item>
+        <item value="10">
+          <name>A</name>
+        </item>
+        <item value="11">
+          <name>B</name>
+        </item>
+        <item value="12">
+          <name>C</name>
+        </item>
+        <item value="13">
+          <name>D</name>
+        </item>
+        <item value="14">
+          <name>*</name>
+        </item>
+        <item value="15">
+          <name>#</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Interval Char</name>
+          <brief>At some time, I have to find out what this means.</brief>
+        </meta>
+        <item value="10">
+          <name>A</name>
+        </item>
+        <item value="11">
+          <name>B</name>
+        </item>
+        <item value="12">
+          <name>C</name>
+        </item>
+        <item value="13">
+          <name>D</name>
+        </item>
+        <item value="14">
+          <name>*</name>
+        </item>
+        <item value="15">
+          <name>#</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Auto Answer</name>
+        </meta>
+        <item value="0">
+          <name>Off</name>
+        </item>
+        <item value="1">
+          <name>Alert</name>
+        </item>
+        <item value="2">
+          <name>Alert and Transmit</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="0" min="5" max="75">
+        <meta>
+          <name>PTT Id Pause</name>
+          <brief>Specified in seconds. 0=Off</brief>
+        </meta>
+      </int>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="1h" format="unsigned" default="0" min="0" max="99">
+        <meta>
+          <name>Dial Code Duration</name>
+          <brief>Specified in multiples of 25ms. T = 25ms + n*25ms.</brief>
+        </meta>
+      </int>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <repeat n="16">
+        <meta>
+          <name>DTMF PTT ID BOT</name>
+        </meta>
+        <int width="1h" format="unsigned" default="255" min="0" max="15">
+          <meta>
+            <name>DTMF Digit</name>
+            <brief>End of number is marked by ffh.</brief>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="16">
+        <meta>
+          <name>DTMF PTT ID EOT</name>
+        </meta>
+        <int width="1h" format="unsigned" default="255" min="0" max="15">
+          <meta>
+            <name>DTMF Digit</name>
+            <brief>End of number is marked by ffh.</brief>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="16">
+        <meta>
+          <name>DTMF Stun Code</name>
+        </meta>
+        <int width="1h" format="unsigned" default="255" min="0" max="15">
+          <meta>
+            <name>DTMF Digit</name>
+            <brief>End of number is marked by ffh.</brief>
+          </meta>
+        </int>
+      </repeat>
+      <repeat n="16">
+        <meta>
+          <name>DTMF Kill Code</name>
+        </meta>
+        <int width="1h" format="unsigned" default="255" min="0" max="15">
+          <meta>
+            <name>DTMF Digit</name>
+            <brief>End of number is marked by ffh.</brief>
+          </meta>
+        </int>
+      </repeat>
+    </element>
+    <unknown width="eb0h">
       <meta>
         <name>Unknown data</name>
       </meta>
