@@ -3086,9 +3086,79 @@
   </element>
   <element at="10000h">
     <meta>
-      <name>Emergency Settings</name>
+      <name>Extended Settings</name>
     </meta>
-    <unknown width="b00h">
+    <unknown width="300h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="32">
+      <meta>
+        <name>Encryption Keys</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Encryption Key</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned" default="1" min="1" max="255">
+          <meta>
+            <name>Key ID</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <string format="ascii" width="10" pad="0">
+          <meta>
+            <name>Name</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </string>
+        <enum width="1h">
+          <meta>
+            <name>Key Type</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>Custom</name>
+          </item>
+          <item value="2">
+            <name>ARC4</name>
+          </item>
+          <item value="3">
+            <name>AES128</name>
+          </item>
+          <item value="4">
+            <name>AES256</name>
+          </item>
+        </enum>
+        <int width="1fh:6" format="unsigned" endian="little">
+          <meta>
+            <name>Key Data</name>
+            <brief>Left-aligned, size depends on type. Custom: 56bit, ARC4: 40bit, AES128: 128bit and AES256: 256bit.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="0h:2">
+          <meta>
+            <name>Unknown data</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </unknown>
+      </element>
+    </repeat>
+    <unknown width="280h">
       <meta>
         <name>Unknown data</name>
       </meta>
