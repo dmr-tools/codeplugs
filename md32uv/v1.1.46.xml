@@ -8,6 +8,8 @@
   <element at="4000h">
     <meta>
       <name>Settings Block</name>
+      <firmware>1.1.46</firmware>
+      <done/>
     </meta>
     <enum width="1h">
       <meta>
@@ -2347,7 +2349,95 @@
         <done/>
       </meta>
     </unused>
-    <unknown width="1c0h">
+    <unknown width="91h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="1" min="0" max="240">
+      <meta>
+        <name>APRS Update Period</name>
+        <brief>Period is specified in muliples of 30s.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Fixed Beacon</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <string format="ascii" width="10" pad="0">
+      <meta>
+        <name>Fixed Beacon Latitude</name>
+        <brief>The latitude is written as a string DD.FFFFFFH. DD - Degree, FF - fractional part, H hemisphere. E.g., 15.123456N</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </string>
+    <string format="ascii" width="10" pad="0">
+      <meta>
+        <name>Fixed Beacon Longitude</name>
+        <brief>The longitude is specified as text. E.g., DDD.FFFFFH. Where DDD is degree, FFFFF fractional part and H the hemisphere. E.g., 112.12345E.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unknown width="6h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="8">
+      <meta>
+        <name>DMR APRS Revert Channels</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>Channel Index</name>
+          <brief>Specifies the revert channel index+1. If set to 0 = Current channel.</brief>
+        </meta>
+      </int>
+    </repeat>
+    <int width="1h" format="unsigned" default="0" min="0" max="10">
+      <meta>
+        <name>DMR APRS Prewave Delay</name>
+        <brief>Delay specified as multiples of 100ms.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>DMR APRS Call Type</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Private Call</name>
+      </item>
+      <item value="1">
+        <name>Group Call</name>
+      </item>
+    </enum>
+    <int width="3h" format="unsigned" endian="little" default="1">
+      <meta>
+        <name>DMR APRS Destination ID</name>
+        <brief>Specifies the destination DMR Id.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="fbh">
       <meta>
         <name>Unknown data</name>
       </meta>
