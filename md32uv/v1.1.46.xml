@@ -5,6 +5,2785 @@
     <name>Baofeng MD-32UV</name>
     <firmware>1.1.46</firmware>
   </meta>
+  <element at="4000h">
+    <meta>
+      <name>Settings Block</name>
+    </meta>
+    <enum width="1h">
+      <meta>
+        <name>Boot Display</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Image</name>
+      </item>
+      <item value="1">
+        <name>Message</name>
+      </item>
+      <item value="2">
+        <name>Voltage</name>
+      </item>
+    </enum>
+    <string format="ascii" width="14" pad="0">
+      <meta>
+        <name>Boot Message Line 1</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </string>
+    <string format="ascii" width="14" pad="0">
+      <meta>
+        <name>Boot Message Line 2</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </string>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Allow Reset</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Auto Power Off Delay</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>30 min</name>
+      </item>
+      <item value="2">
+        <name>60 min</name>
+      </item>
+      <item value="3">
+        <name>2 h</name>
+      </item>
+      <item value="4">
+        <name>4 h</name>
+      </item>
+      <item value="5">
+        <name>8 h</name>
+      </item>
+    </enum>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable Radio Silent</name>
+        <short-name>RSlt</short-name>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable Key Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable SMS Alert</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable Group Call Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable Private Call Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable EOT Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable Talk Permit Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Boot Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Voice Prompt</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Low Battery Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="0h:1">
+      <meta>
+        <name>Unknown Bit</name>
+        <brief>Set to 1</brief>
+      </meta>
+    </unknown>
+    <unknown width="0h:3">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:2">
+      <meta>
+        <name>FM Roger Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>Beep</name>
+      </item>
+      <item value="2">
+        <name>BDC</name>
+      </item>
+    </enum>
+    <unknown width="eh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="4" min="0" max="5">
+      <meta>
+        <name>Display Brightness</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Backlight Duration</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Always</name>
+      </item>
+      <item value="1">
+        <name>5 s</name>
+      </item>
+      <item value="2">
+        <name>10 s</name>
+      </item>
+      <item value="3">
+        <name>15 s</name>
+      </item>
+      <item value="4">
+        <name>20 s</name>
+      </item>
+      <item value="5">
+        <name>25 s</name>
+      </item>
+      <item value="6">
+        <name>30 s</name>
+      </item>
+      <item value="7">
+        <name>1 min</name>
+      </item>
+      <item value="8">
+        <name>2 min</name>
+      </item>
+      <item value="9">
+        <name>3 min</name>
+      </item>
+      <item value="10">
+        <name>4 min</name>
+      </item>
+      <item value="11">
+        <name>5 min</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="2" min="0" max="12">
+      <meta>
+        <name>Menu Exit Time</name>
+        <brief>The delay is specified in mutliples of 5s. If set to 0 = neven/infinite.</brief>
+      </meta>
+    </int>
+    <unknown width="0h:3">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Show Volume Change</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="0h:1">
+      <meta>
+        <name>Date Format</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>YYYY/MM/DD</name>
+      </item>
+      <item value="1">
+        <name>DD/MM/YYYY</name>
+      </item>
+    </enum>
+    <unknown width="0h:2">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Show Time</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>Call Display Color</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>White</name>
+      </item>
+      <item value="1">
+        <name>Black</name>
+      </item>
+      <item value="2">
+        <name>Orange</name>
+      </item>
+      <item value="3">
+        <name>Red</name>
+      </item>
+      <item value="4">
+        <name>Yellow</name>
+      </item>
+      <item value="5">
+        <name>Green</name>
+      </item>
+      <item value="6">
+        <name>Cyan</name>
+      </item>
+      <item value="7">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Standby Text Color</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>White</name>
+      </item>
+      <item value="1">
+        <name>Black</name>
+      </item>
+      <item value="2">
+        <name>Orange</name>
+      </item>
+      <item value="3">
+        <name>Red</name>
+      </item>
+      <item value="4">
+        <name>Yellow</name>
+      </item>
+      <item value="5">
+        <name>Green</name>
+      </item>
+      <item value="6">
+        <name>Cyan</name>
+      </item>
+      <item value="7">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Channel A Name Color</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>White</name>
+      </item>
+      <item value="1">
+        <name>Black</name>
+      </item>
+      <item value="2">
+        <name>Orange</name>
+      </item>
+      <item value="3">
+        <name>Red</name>
+      </item>
+      <item value="4">
+        <name>Yellow</name>
+      </item>
+      <item value="5">
+        <name>Green</name>
+      </item>
+      <item value="6">
+        <name>Cyan</name>
+      </item>
+      <item value="7">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Channel B Name Color</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>White</name>
+      </item>
+      <item value="1">
+        <name>Black</name>
+      </item>
+      <item value="2">
+        <name>Orange</name>
+      </item>
+      <item value="3">
+        <name>Red</name>
+      </item>
+      <item value="4">
+        <name>Yellow</name>
+      </item>
+      <item value="5">
+        <name>Green</name>
+      </item>
+      <item value="6">
+        <name>Cyan</name>
+      </item>
+      <item value="7">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Zonel A Name Color</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>White</name>
+      </item>
+      <item value="1">
+        <name>Black</name>
+      </item>
+      <item value="2">
+        <name>Orange</name>
+      </item>
+      <item value="3">
+        <name>Red</name>
+      </item>
+      <item value="4">
+        <name>Yellow</name>
+      </item>
+      <item value="5">
+        <name>Green</name>
+      </item>
+      <item value="6">
+        <name>Cyan</name>
+      </item>
+      <item value="7">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Zonel B Name Color</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>White</name>
+      </item>
+      <item value="1">
+        <name>Black</name>
+      </item>
+      <item value="2">
+        <name>Orange</name>
+      </item>
+      <item value="3">
+        <name>Red</name>
+      </item>
+      <item value="4">
+        <name>Yellow</name>
+      </item>
+      <item value="5">
+        <name>Green</name>
+      </item>
+      <item value="6">
+        <name>Cyan</name>
+      </item>
+      <item value="7">
+        <name>Blue</name>
+      </item>
+    </enum>
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unknown width="0h:1">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:1">
+      <meta>
+        <name>Position Format</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Fractional</name>
+      </item>
+      <item value="1">
+        <name>Degree/Minute/Second</name>
+      </item>
+    </enum>
+    <unknown width="0h:2">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:2">
+      <meta>
+        <name>GNSS Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>GPS</name>
+      </item>
+      <item value="1">
+        <name>Baidou</name>
+      </item>
+      <item value="2">
+        <name>Both</name>
+      </item>
+    </enum>
+    <unknown width="0h:1">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable GNSS</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0">
+      <meta>
+        <name>Time Zone</name>
+        <brief>The zone is specified in a weird UTC Offset. That is O = n - 11h.</brief>
+        <description>I.e., 0: UTC-11h, 1: UTC-10h, ...</description>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="5" min="5" max="255">
+      <meta>
+        <name>Position Update Period</name>
+        <brief>Time period is specified in minutes.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="0h:5">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:2">
+      <meta>
+        <name>Recording Selection</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>RX</name>
+      </item>
+      <item value="1">
+        <name>TX</name>
+      </item>
+      <item value="2">
+        <name>Both</name>
+      </item>
+    </enum>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable Recording</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1ah">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Group Call Match</name>
+        <brief>Receive only group calls listed in group list.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Private Call Match</name>
+        <brief>Only receive private calls, if the DMR match.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="4" min="0">
+      <meta>
+        <name>DMR Call Hang Time</name>
+        <brief>Specifies the hang time in multiples of 0.5s.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="7" min="1" max="151">
+      <meta>
+        <name>Active Wait Time</name>
+        <brief>WTF? Specifies the duration in multiples of 30ms as T = 300ms + n*30ms.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="5" min="1" max="8">
+      <meta>
+        <name>Active Retries</name>
+        <brief>WTF?</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="2" min="0" max="71">
+      <meta>
+        <name>DMR Preamble Duration</name>
+        <brief>Specifies the preamble duration as multiples of 120ms as T = 120ms + n*120ms.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable DMR Remote Monitor</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable DMR Kill Switch</name>
+        <brief>Enables the remote disable feature.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable DMR Radio Check</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable DMR Remote Reenable</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable RX DMR Alert</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="0h:2">
+      <meta>
+        <name>SMS Format</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Hytera</name>
+      </item>
+      <item value="1">
+        <name>Motorola</name>
+      </item>
+      <item value="2">
+        <name>DMR Standard</name>
+      </item>
+    </enum>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Missed Call Notification</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="11">
+      <meta>
+        <name>DMR Remote Monitor Duration</name>
+        <brief>Specifies the duration as multiples of 10s as T = 10s + n*10s.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="0h:3">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:1">
+      <meta>
+        <name>Talkeralias Format</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>ISO-8</name>
+      </item>
+      <item value="1">
+        <name>Unicode U16</name>
+      </item>
+    </enum>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable TX Talker Alias</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="0h:1">
+      <meta>
+        <name>Talker Alias Source</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Callsign DB</name>
+      </item>
+      <item value="1">
+        <name>Over the Air</name>
+      </item>
+    </enum>
+    <unknown width="0h:2">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unknown width="18h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:2">
+      <meta>
+        <name>Dual Standby Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Single VFO</name>
+      </item>
+      <item value="1">
+        <name>Double Standby</name>
+      </item>
+      <item value="2">
+        <name>Single Standby</name>
+      </item>
+    </enum>
+    <enum width="0h:1">
+      <meta>
+        <name>Main VFO</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>A</name>
+      </item>
+      <item value="1">
+        <name>B</name>
+      </item>
+    </enum>
+    <enum width="0h:1">
+      <meta>
+        <name>VFO B Display Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Frequency</name>
+      </item>
+      <item value="1">
+        <name>Channel Name</name>
+      </item>
+    </enum>
+    <enum width="0h:1">
+      <meta>
+        <name>VFO A Display Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Frequency</name>
+      </item>
+      <item value="1">
+        <name>Channel Name</name>
+      </item>
+    </enum>
+    <enum width="0h:1">
+      <meta>
+        <name>VFO B Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Channel</name>
+      </item>
+      <item value="1">
+        <name>VFO</name>
+      </item>
+    </enum>
+    <enum width="0h:1">
+      <meta>
+        <name>VFO A Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Channel</name>
+      </item>
+      <item value="1">
+        <name>VFO</name>
+      </item>
+    </enum>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Disable VFO Mode</name>
+        <brief>If set, the radio can only operate in channel mode.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="1" min="0" max="13">
+      <meta>
+        <name>Dual Standby Hang Time</name>
+        <brief>Specifies the time, the radio keeps the last active VFO as main channel.</brief>
+        <description>Duration is specified in multiples of 500ms.</description>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unknown width="0h:5">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Side Key Lock</name>
+        <short-name>SkLk</short-name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Knob Lock</name>
+        <short-name>KbLk</short-name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="0h:1">
+      <meta>
+        <name>Key Lock</name>
+        <short-name>KyLk</short-name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Manual</name>
+      </item>
+      <item value="1">
+        <name>Auto</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0" min="0" max="55">
+      <meta>
+        <name>Auto Key Lock Delay</name>
+        <brief>Specifies the delay in some unknown units (likely minutes). Delay is encoded as D = 5 + n.</brief>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>SK1 Short Press Function</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Power Select</name>
+      </item>
+      <item value="2">
+        <name>Volt</name>
+      </item>
+      <item value="3">
+        <name>Talkaround</name>
+      </item>
+      <item value="4">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>VOX</name>
+      </item>
+      <item value="7">
+        <name>Channel Mode</name>
+      </item>
+      <item value="8">
+        <name>Alarm</name>
+      </item>
+      <item value="9">
+        <name>One Touch 1</name>
+      </item>
+      <item value="10">
+        <name>One Touch 2</name>
+      </item>
+      <item value="11">
+        <name>One Touch 3</name>
+      </item>
+      <item value="12">
+        <name>One Touch 4</name>
+      </item>
+      <item value="13">
+        <name>One Touch 5</name>
+      </item>
+      <item value="14">
+        <name>SMS</name>
+      </item>
+      <item value="15">
+        <name>Contacts</name>
+      </item>
+      <item value="16">
+        <name>Zone Up</name>
+      </item>
+      <item value="17">
+        <name>Zone Down</name>
+      </item>
+      <item value="18">
+        <name>Scan</name>
+      </item>
+      <item value="19">
+        <name>Toggle Record</name>
+      </item>
+      <item value="20">
+        <name>Previous Record</name>
+      </item>
+      <item value="21">
+        <name>Next Record</name>
+      </item>
+      <item value="22">
+        <name>FM BC Radio</name>
+      </item>
+      <item value="23">
+        <name>FM BC Scan</name>
+      </item>
+      <item value="24">
+        <name>GPS Information</name>
+      </item>
+      <item value="25">
+        <name>Monitor</name>
+      </item>
+      <item value="26">
+        <name>Toggle Main Channel</name>
+      </item>
+      <item value="27">
+        <name>Lone Worker</name>
+      </item>
+      <item value="28">
+        <name>Keypad Lock</name>
+      </item>
+      <item value="29">
+        <name>Mute</name>
+      </item>
+      <item value="30">
+        <name>TBST</name>
+      </item>
+      <item value="31">
+        <name>APRS TX</name>
+      </item>
+      <item value="32">
+        <name>Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Display Mode</name>
+      </item>
+      <item value="34">
+        <name>CTCSS/DSC Scan</name>
+      </item>
+      <item value="35">
+        <name>CTCSS/DSC Settings</name>
+      </item>
+      <item value="36">
+        <name>Silent Tone</name>
+        <description>WTF?</description>
+      </item>
+      <item value="37">
+        <name>Roaming</name>
+      </item>
+      <item value="38">
+        <name>Sub-PTT</name>
+      </item>
+      <item value="40">
+        <name>One-key Scan Frequency</name>
+        <description>WTF?</description>
+      </item>
+      <item value="41">
+        <name>Flashlight</name>
+      </item>
+      <item value="42">
+        <name>Alarm</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>SK1 Long Press Function</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Power Select</name>
+      </item>
+      <item value="2">
+        <name>Volt</name>
+      </item>
+      <item value="3">
+        <name>Talkaround</name>
+      </item>
+      <item value="4">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>VOX</name>
+      </item>
+      <item value="7">
+        <name>Channel Mode</name>
+      </item>
+      <item value="8">
+        <name>Alarm</name>
+      </item>
+      <item value="9">
+        <name>One Touch 1</name>
+      </item>
+      <item value="10">
+        <name>One Touch 2</name>
+      </item>
+      <item value="11">
+        <name>One Touch 3</name>
+      </item>
+      <item value="12">
+        <name>One Touch 4</name>
+      </item>
+      <item value="13">
+        <name>One Touch 5</name>
+      </item>
+      <item value="14">
+        <name>SMS</name>
+      </item>
+      <item value="15">
+        <name>Contacts</name>
+      </item>
+      <item value="16">
+        <name>Zone Up</name>
+      </item>
+      <item value="17">
+        <name>Zone Down</name>
+      </item>
+      <item value="18">
+        <name>Scan</name>
+      </item>
+      <item value="19">
+        <name>Toggle Record</name>
+      </item>
+      <item value="20">
+        <name>Previous Record</name>
+      </item>
+      <item value="21">
+        <name>Next Record</name>
+      </item>
+      <item value="22">
+        <name>FM BC Radio</name>
+      </item>
+      <item value="23">
+        <name>FM BC Scan</name>
+      </item>
+      <item value="24">
+        <name>GPS Information</name>
+      </item>
+      <item value="25">
+        <name>Monitor</name>
+      </item>
+      <item value="26">
+        <name>Toggle Main Channel</name>
+      </item>
+      <item value="27">
+        <name>Lone Worker</name>
+      </item>
+      <item value="28">
+        <name>Keypad Lock</name>
+      </item>
+      <item value="29">
+        <name>Mute</name>
+      </item>
+      <item value="30">
+        <name>TBST</name>
+      </item>
+      <item value="31">
+        <name>APRS TX</name>
+      </item>
+      <item value="32">
+        <name>Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Display Mode</name>
+      </item>
+      <item value="34">
+        <name>CTCSS/DSC Scan</name>
+      </item>
+      <item value="35">
+        <name>CTCSS/DSC Settings</name>
+      </item>
+      <item value="36">
+        <name>Silent Tone</name>
+        <description>WTF?</description>
+      </item>
+      <item value="37">
+        <name>Roaming</name>
+      </item>
+      <item value="38">
+        <name>Sub-PTT</name>
+      </item>
+      <item value="40">
+        <name>One-key Scan Frequency</name>
+        <description>WTF?</description>
+      </item>
+      <item value="41">
+        <name>Flashlight</name>
+      </item>
+      <item value="42">
+        <name>Alarm</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>SK2 Short Press Function</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Power Select</name>
+      </item>
+      <item value="2">
+        <name>Volt</name>
+      </item>
+      <item value="3">
+        <name>Talkaround</name>
+      </item>
+      <item value="4">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>VOX</name>
+      </item>
+      <item value="7">
+        <name>Channel Mode</name>
+      </item>
+      <item value="8">
+        <name>Alarm</name>
+      </item>
+      <item value="9">
+        <name>One Touch 1</name>
+      </item>
+      <item value="10">
+        <name>One Touch 2</name>
+      </item>
+      <item value="11">
+        <name>One Touch 3</name>
+      </item>
+      <item value="12">
+        <name>One Touch 4</name>
+      </item>
+      <item value="13">
+        <name>One Touch 5</name>
+      </item>
+      <item value="14">
+        <name>SMS</name>
+      </item>
+      <item value="15">
+        <name>Contacts</name>
+      </item>
+      <item value="16">
+        <name>Zone Up</name>
+      </item>
+      <item value="17">
+        <name>Zone Down</name>
+      </item>
+      <item value="18">
+        <name>Scan</name>
+      </item>
+      <item value="19">
+        <name>Toggle Record</name>
+      </item>
+      <item value="20">
+        <name>Previous Record</name>
+      </item>
+      <item value="21">
+        <name>Next Record</name>
+      </item>
+      <item value="22">
+        <name>FM BC Radio</name>
+      </item>
+      <item value="23">
+        <name>FM BC Scan</name>
+      </item>
+      <item value="24">
+        <name>GPS Information</name>
+      </item>
+      <item value="25">
+        <name>Monitor</name>
+      </item>
+      <item value="26">
+        <name>Toggle Main Channel</name>
+      </item>
+      <item value="27">
+        <name>Lone Worker</name>
+      </item>
+      <item value="28">
+        <name>Keypad Lock</name>
+      </item>
+      <item value="29">
+        <name>Mute</name>
+      </item>
+      <item value="30">
+        <name>TBST</name>
+      </item>
+      <item value="31">
+        <name>APRS TX</name>
+      </item>
+      <item value="32">
+        <name>Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Display Mode</name>
+      </item>
+      <item value="34">
+        <name>CTCSS/DSC Scan</name>
+      </item>
+      <item value="35">
+        <name>CTCSS/DSC Settings</name>
+      </item>
+      <item value="36">
+        <name>Silent Tone</name>
+        <description>WTF?</description>
+      </item>
+      <item value="37">
+        <name>Roaming</name>
+      </item>
+      <item value="38">
+        <name>Sub-PTT</name>
+      </item>
+      <item value="40">
+        <name>One-key Scan Frequency</name>
+        <description>WTF?</description>
+      </item>
+      <item value="41">
+        <name>Flashlight</name>
+      </item>
+      <item value="42">
+        <name>Alarm</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>SK2 Long Press Function</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Power Select</name>
+      </item>
+      <item value="2">
+        <name>Volt</name>
+      </item>
+      <item value="3">
+        <name>Talkaround</name>
+      </item>
+      <item value="4">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>VOX</name>
+      </item>
+      <item value="7">
+        <name>Channel Mode</name>
+      </item>
+      <item value="8">
+        <name>Alarm</name>
+      </item>
+      <item value="9">
+        <name>One Touch 1</name>
+      </item>
+      <item value="10">
+        <name>One Touch 2</name>
+      </item>
+      <item value="11">
+        <name>One Touch 3</name>
+      </item>
+      <item value="12">
+        <name>One Touch 4</name>
+      </item>
+      <item value="13">
+        <name>One Touch 5</name>
+      </item>
+      <item value="14">
+        <name>SMS</name>
+      </item>
+      <item value="15">
+        <name>Contacts</name>
+      </item>
+      <item value="16">
+        <name>Zone Up</name>
+      </item>
+      <item value="17">
+        <name>Zone Down</name>
+      </item>
+      <item value="18">
+        <name>Scan</name>
+      </item>
+      <item value="19">
+        <name>Toggle Record</name>
+      </item>
+      <item value="20">
+        <name>Previous Record</name>
+      </item>
+      <item value="21">
+        <name>Next Record</name>
+      </item>
+      <item value="22">
+        <name>FM BC Radio</name>
+      </item>
+      <item value="23">
+        <name>FM BC Scan</name>
+      </item>
+      <item value="24">
+        <name>GPS Information</name>
+      </item>
+      <item value="25">
+        <name>Monitor</name>
+      </item>
+      <item value="26">
+        <name>Toggle Main Channel</name>
+      </item>
+      <item value="27">
+        <name>Lone Worker</name>
+      </item>
+      <item value="28">
+        <name>Keypad Lock</name>
+      </item>
+      <item value="29">
+        <name>Mute</name>
+      </item>
+      <item value="30">
+        <name>TBST</name>
+      </item>
+      <item value="31">
+        <name>APRS TX</name>
+      </item>
+      <item value="32">
+        <name>Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Display Mode</name>
+      </item>
+      <item value="34">
+        <name>CTCSS/DSC Scan</name>
+      </item>
+      <item value="35">
+        <name>CTCSS/DSC Settings</name>
+      </item>
+      <item value="36">
+        <name>Silent Tone</name>
+        <description>WTF?</description>
+      </item>
+      <item value="37">
+        <name>Roaming</name>
+      </item>
+      <item value="38">
+        <name>Sub-PTT</name>
+      </item>
+      <item value="40">
+        <name>One-key Scan Frequency</name>
+        <description>WTF?</description>
+      </item>
+      <item value="41">
+        <name>Flashlight</name>
+      </item>
+      <item value="42">
+        <name>Alarm</name>
+      </item>
+    </enum>
+    <unknown width="2h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>P1 Short Press Function</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Power Select</name>
+      </item>
+      <item value="2">
+        <name>Volt</name>
+      </item>
+      <item value="3">
+        <name>Talkaround</name>
+      </item>
+      <item value="4">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>VOX</name>
+      </item>
+      <item value="7">
+        <name>Channel Mode</name>
+      </item>
+      <item value="8">
+        <name>Alarm</name>
+      </item>
+      <item value="9">
+        <name>One Touch 1</name>
+      </item>
+      <item value="10">
+        <name>One Touch 2</name>
+      </item>
+      <item value="11">
+        <name>One Touch 3</name>
+      </item>
+      <item value="12">
+        <name>One Touch 4</name>
+      </item>
+      <item value="13">
+        <name>One Touch 5</name>
+      </item>
+      <item value="14">
+        <name>SMS</name>
+      </item>
+      <item value="15">
+        <name>Contacts</name>
+      </item>
+      <item value="16">
+        <name>Zone Up</name>
+      </item>
+      <item value="17">
+        <name>Zone Down</name>
+      </item>
+      <item value="18">
+        <name>Scan</name>
+      </item>
+      <item value="19">
+        <name>Toggle Record</name>
+      </item>
+      <item value="20">
+        <name>Previous Record</name>
+      </item>
+      <item value="21">
+        <name>Next Record</name>
+      </item>
+      <item value="22">
+        <name>FM BC Radio</name>
+      </item>
+      <item value="23">
+        <name>FM BC Scan</name>
+      </item>
+      <item value="24">
+        <name>GPS Information</name>
+      </item>
+      <item value="25">
+        <name>Monitor</name>
+      </item>
+      <item value="26">
+        <name>Toggle Main Channel</name>
+      </item>
+      <item value="27">
+        <name>Lone Worker</name>
+      </item>
+      <item value="28">
+        <name>Keypad Lock</name>
+      </item>
+      <item value="29">
+        <name>Mute</name>
+      </item>
+      <item value="30">
+        <name>TBST</name>
+      </item>
+      <item value="31">
+        <name>APRS TX</name>
+      </item>
+      <item value="32">
+        <name>Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Display Mode</name>
+      </item>
+      <item value="34">
+        <name>CTCSS/DSC Scan</name>
+      </item>
+      <item value="35">
+        <name>CTCSS/DSC Settings</name>
+      </item>
+      <item value="36">
+        <name>Silent Tone</name>
+        <description>WTF?</description>
+      </item>
+      <item value="37">
+        <name>Roaming</name>
+      </item>
+      <item value="38">
+        <name>Sub-PTT</name>
+      </item>
+      <item value="40">
+        <name>One-key Scan Frequency</name>
+        <description>WTF?</description>
+      </item>
+      <item value="41">
+        <name>Flashlight</name>
+      </item>
+      <item value="42">
+        <name>Alarm</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>P1 Long Press Function</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Power Select</name>
+      </item>
+      <item value="2">
+        <name>Volt</name>
+      </item>
+      <item value="3">
+        <name>Talkaround</name>
+      </item>
+      <item value="4">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>VOX</name>
+      </item>
+      <item value="7">
+        <name>Channel Mode</name>
+      </item>
+      <item value="8">
+        <name>Alarm</name>
+      </item>
+      <item value="9">
+        <name>One Touch 1</name>
+      </item>
+      <item value="10">
+        <name>One Touch 2</name>
+      </item>
+      <item value="11">
+        <name>One Touch 3</name>
+      </item>
+      <item value="12">
+        <name>One Touch 4</name>
+      </item>
+      <item value="13">
+        <name>One Touch 5</name>
+      </item>
+      <item value="14">
+        <name>SMS</name>
+      </item>
+      <item value="15">
+        <name>Contacts</name>
+      </item>
+      <item value="16">
+        <name>Zone Up</name>
+      </item>
+      <item value="17">
+        <name>Zone Down</name>
+      </item>
+      <item value="18">
+        <name>Scan</name>
+      </item>
+      <item value="19">
+        <name>Toggle Record</name>
+      </item>
+      <item value="20">
+        <name>Previous Record</name>
+      </item>
+      <item value="21">
+        <name>Next Record</name>
+      </item>
+      <item value="22">
+        <name>FM BC Radio</name>
+      </item>
+      <item value="23">
+        <name>FM BC Scan</name>
+      </item>
+      <item value="24">
+        <name>GPS Information</name>
+      </item>
+      <item value="25">
+        <name>Monitor</name>
+      </item>
+      <item value="26">
+        <name>Toggle Main Channel</name>
+      </item>
+      <item value="27">
+        <name>Lone Worker</name>
+      </item>
+      <item value="28">
+        <name>Keypad Lock</name>
+      </item>
+      <item value="29">
+        <name>Mute</name>
+      </item>
+      <item value="30">
+        <name>TBST</name>
+      </item>
+      <item value="31">
+        <name>APRS TX</name>
+      </item>
+      <item value="32">
+        <name>Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Display Mode</name>
+      </item>
+      <item value="34">
+        <name>CTCSS/DSC Scan</name>
+      </item>
+      <item value="35">
+        <name>CTCSS/DSC Settings</name>
+      </item>
+      <item value="36">
+        <name>Silent Tone</name>
+        <description>WTF?</description>
+      </item>
+      <item value="37">
+        <name>Roaming</name>
+      </item>
+      <item value="38">
+        <name>Sub-PTT</name>
+      </item>
+      <item value="40">
+        <name>One-key Scan Frequency</name>
+        <description>WTF?</description>
+      </item>
+      <item value="41">
+        <name>Flashlight</name>
+      </item>
+      <item value="42">
+        <name>Alarm</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>P2 Short Press Function</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Power Select</name>
+      </item>
+      <item value="2">
+        <name>Volt</name>
+      </item>
+      <item value="3">
+        <name>Talkaround</name>
+      </item>
+      <item value="4">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>VOX</name>
+      </item>
+      <item value="7">
+        <name>Channel Mode</name>
+      </item>
+      <item value="8">
+        <name>Alarm</name>
+      </item>
+      <item value="9">
+        <name>One Touch 1</name>
+      </item>
+      <item value="10">
+        <name>One Touch 2</name>
+      </item>
+      <item value="11">
+        <name>One Touch 3</name>
+      </item>
+      <item value="12">
+        <name>One Touch 4</name>
+      </item>
+      <item value="13">
+        <name>One Touch 5</name>
+      </item>
+      <item value="14">
+        <name>SMS</name>
+      </item>
+      <item value="15">
+        <name>Contacts</name>
+      </item>
+      <item value="16">
+        <name>Zone Up</name>
+      </item>
+      <item value="17">
+        <name>Zone Down</name>
+      </item>
+      <item value="18">
+        <name>Scan</name>
+      </item>
+      <item value="19">
+        <name>Toggle Record</name>
+      </item>
+      <item value="20">
+        <name>Previous Record</name>
+      </item>
+      <item value="21">
+        <name>Next Record</name>
+      </item>
+      <item value="22">
+        <name>FM BC Radio</name>
+      </item>
+      <item value="23">
+        <name>FM BC Scan</name>
+      </item>
+      <item value="24">
+        <name>GPS Information</name>
+      </item>
+      <item value="25">
+        <name>Monitor</name>
+      </item>
+      <item value="26">
+        <name>Toggle Main Channel</name>
+      </item>
+      <item value="27">
+        <name>Lone Worker</name>
+      </item>
+      <item value="28">
+        <name>Keypad Lock</name>
+      </item>
+      <item value="29">
+        <name>Mute</name>
+      </item>
+      <item value="30">
+        <name>TBST</name>
+      </item>
+      <item value="31">
+        <name>APRS TX</name>
+      </item>
+      <item value="32">
+        <name>Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Display Mode</name>
+      </item>
+      <item value="34">
+        <name>CTCSS/DSC Scan</name>
+      </item>
+      <item value="35">
+        <name>CTCSS/DSC Settings</name>
+      </item>
+      <item value="36">
+        <name>Silent Tone</name>
+        <description>WTF?</description>
+      </item>
+      <item value="37">
+        <name>Roaming</name>
+      </item>
+      <item value="38">
+        <name>Sub-PTT</name>
+      </item>
+      <item value="40">
+        <name>One-key Scan Frequency</name>
+        <description>WTF?</description>
+      </item>
+      <item value="41">
+        <name>Flashlight</name>
+      </item>
+      <item value="42">
+        <name>Alarm</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>P2 Long Press Function</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>None</name>
+      </item>
+      <item value="1">
+        <name>Power Select</name>
+      </item>
+      <item value="2">
+        <name>Volt</name>
+      </item>
+      <item value="3">
+        <name>Talkaround</name>
+      </item>
+      <item value="4">
+        <name>DMR Encryption</name>
+      </item>
+      <item value="6">
+        <name>VOX</name>
+      </item>
+      <item value="7">
+        <name>Channel Mode</name>
+      </item>
+      <item value="8">
+        <name>Alarm</name>
+      </item>
+      <item value="9">
+        <name>One Touch 1</name>
+      </item>
+      <item value="10">
+        <name>One Touch 2</name>
+      </item>
+      <item value="11">
+        <name>One Touch 3</name>
+      </item>
+      <item value="12">
+        <name>One Touch 4</name>
+      </item>
+      <item value="13">
+        <name>One Touch 5</name>
+      </item>
+      <item value="14">
+        <name>SMS</name>
+      </item>
+      <item value="15">
+        <name>Contacts</name>
+      </item>
+      <item value="16">
+        <name>Zone Up</name>
+      </item>
+      <item value="17">
+        <name>Zone Down</name>
+      </item>
+      <item value="18">
+        <name>Scan</name>
+      </item>
+      <item value="19">
+        <name>Toggle Record</name>
+      </item>
+      <item value="20">
+        <name>Previous Record</name>
+      </item>
+      <item value="21">
+        <name>Next Record</name>
+      </item>
+      <item value="22">
+        <name>FM BC Radio</name>
+      </item>
+      <item value="23">
+        <name>FM BC Scan</name>
+      </item>
+      <item value="24">
+        <name>GPS Information</name>
+      </item>
+      <item value="25">
+        <name>Monitor</name>
+      </item>
+      <item value="26">
+        <name>Toggle Main Channel</name>
+      </item>
+      <item value="27">
+        <name>Lone Worker</name>
+      </item>
+      <item value="28">
+        <name>Keypad Lock</name>
+      </item>
+      <item value="29">
+        <name>Mute</name>
+      </item>
+      <item value="30">
+        <name>TBST</name>
+      </item>
+      <item value="31">
+        <name>APRS TX</name>
+      </item>
+      <item value="32">
+        <name>Channel Type</name>
+      </item>
+      <item value="33">
+        <name>Display Mode</name>
+      </item>
+      <item value="34">
+        <name>CTCSS/DSC Scan</name>
+      </item>
+      <item value="35">
+        <name>CTCSS/DSC Settings</name>
+      </item>
+      <item value="36">
+        <name>Silent Tone</name>
+        <description>WTF?</description>
+      </item>
+      <item value="37">
+        <name>Roaming</name>
+      </item>
+      <item value="38">
+        <name>Sub-PTT</name>
+      </item>
+      <item value="40">
+        <name>One-key Scan Frequency</name>
+        <description>WTF?</description>
+      </item>
+      <item value="41">
+        <name>Flashlight</name>
+      </item>
+      <item value="42">
+        <name>Alarm</name>
+      </item>
+    </enum>
+    <unknown width="3h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="2" min="0" max="4">
+      <meta>
+        <name>Long Press Duration</name>
+        <brief>Specifies the long-press duration in seconds as D = 1 + n.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="bh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="4" min="0" max="97">
+      <meta>
+        <name>Transmit Timout</name>
+        <brief>Duration is specified in multiples of 5s. If set to 0=Off, otherwise t = 15s + n*5s.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="5" min="0" max="10">
+      <meta>
+        <name>Transmit Timout reminder</name>
+        <brief>Specifies the ToT reminder time. In seconds, 0 = Off.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="4">
+      <meta>
+        <name>VOX Level</name>
+        <brief>Specifies the VOX sensitivity level+1.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="3" min="3" max="50">
+      <meta>
+        <name>VOX Delay</name>
+        <brief>Specified in multiples of 100ms.</brief>
+      </meta>
+    </int>
+    <unknown width="0h:2">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:2">
+      <meta>
+        <name>Power Save Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>50 %</name>
+      </item>
+      <item value="2">
+        <name>66 %</name>
+      </item>
+      <item value="3">
+        <name>75 %</name>
+      </item>
+    </enum>
+    <unknown width="0h:1">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Enable Weather Alarm</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="0h:1">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="0h:1" format="unsigned" default="0">
+      <meta>
+        <name>Disable All LEDs</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="0h:2">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:2">
+      <meta>
+        <name>TBST Frequency</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>1000 Hz</name>
+      </item>
+      <item value="1">
+        <name>1450 Hz</name>
+      </item>
+      <item value="2">
+        <name>1750 Hz</name>
+      </item>
+      <item value="3">
+        <name>2100 Hz</name>
+      </item>
+    </enum>
+    <unknown width="0h:2">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="0h:2">
+      <meta>
+        <name>Squelch Tail Elimination</name>
+        <short-name>STE</short-name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>120 deg</name>
+      </item>
+      <item value="2">
+        <name>180 deg</name>
+      </item>
+      <item value="3">
+        <name>55 Hz</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="2" min="0" max="4">
+      <meta>
+        <name>FM Mic Level</name>
+        <brief>Specifies the FM mic level+1</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>DMR Mic Level</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>1</name>
+      </item>
+      <item value="1">
+        <name>2</name>
+      </item>
+      <item value="2">
+        <name>3</name>
+      </item>
+      <item value="3">
+        <name>4</name>
+      </item>
+      <item value="4">
+        <name>5</name>
+      </item>
+      <item value="5">
+        <name>Enhanced 1</name>
+      </item>
+      <item value="6">
+        <name>Enhanced 2</name>
+      </item>
+      <item value="7">
+        <name>Enhanced 3</name>
+      </item>
+    </enum>
+    <unknown width="78h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="4">
+      <meta>
+        <name>Analog Calls</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Analog Call</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Call Type</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>DTMF</name>
+          </item>
+          <item value="2">
+            <name>Two Tone</name>
+          </item>
+          <item value="3">
+            <name>Five Tone</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned" default="0" min="0" max="32">
+          <meta>
+            <name>Call Index</name>
+            <brief>Stores the index+1. If set to 0 = Off.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+      </element>
+    </repeat>
+    <unused width="8h">
+      <meta>
+        <name>Unused data</name>
+      </meta>
+    </unused>
+    <unknown width="d0h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="5">
+      <meta>
+        <name>One Touch Calls</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>One Touch Call</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Call Type</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>FM</name>
+          </item>
+          <item value="2">
+            <name>DMR</name>
+          </item>
+        </enum>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Contact Index</name>
+            <brief>Contact index+1. If set to 0=Off.</brief>
+            <description>This holds the index for both, FM and DMR calls.</description>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Action</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="2">
+            <name>Group Call</name>
+          </item>
+          <item value="3">
+            <name>Message</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Message Index</name>
+            <brief>Stores the message index+1. If set to 0=Off.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+      </element>
+    </repeat>
+    <unknown width="17h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="9">
+      <meta>
+        <name>Numpad Key Functions</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Numpad Key Function</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Function Type</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Call</name>
+          </item>
+          <item value="1">
+            <name>Menu</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Menu Item</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>SMS</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Call Type</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>FM</name>
+          </item>
+          <item value="2">
+            <name>DMR</name>
+          </item>
+        </enum>
+        <int width="2h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>Contact Index</name>
+            <brief>Specifies the DMR and FM contact index+1. If set to 0=Off.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Action</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="2">
+            <name>Group Call</name>
+          </item>
+          <item value="3">
+            <name>Message</name>
+          </item>
+        </enum>
+        <int width="1h" format="unsigned" default="0">
+          <meta>
+            <name>Message Index</name>
+            <brief>Stores the message index+1. If set to 0=Off.</brief>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+      </element>
+    </repeat>
+    <unused width="1h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </unused>
+    <unknown width="1c0h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>EnableBoot Password</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="165">
+        <name>On</name>
+      </item>
+    </enum>
+    <string format="ascii" width="8" pad="0">
+      <meta>
+        <name>Boot Password</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </string>
+    <enum width="1h">
+      <meta>
+        <name>Enable Write Password</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="165">
+        <name>On</name>
+      </item>
+    </enum>
+    <enum width="1h">
+      <meta>
+        <name>Enable Read Password</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="165">
+        <name>On</name>
+      </item>
+    </enum>
+    <string format="ascii" width="8" pad="0">
+      <meta>
+        <name>Write Password</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </string>
+    <string format="ascii" width="8" pad="0">
+      <meta>
+        <name>Read Password</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unknown width="b5h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu New Zone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu List Zones</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="0h:2">
+      <meta>
+        <name>Unused data</name>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Measure Period</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Remote Kill Radio</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Reenable Radio</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Remote Monitor</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Radio Check</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Call Alert</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Match Group Call</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Display Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Match Private Call</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Language Select</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Boot Display</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Transmit Power</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Alert Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu Talkaround</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="0h:1">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Record</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu APRS</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu GNSS</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Power Save</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Sub-Channel Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu FM BC Radio</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu SMS Format</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="0h:1">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu CSV Contacts</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Contact Manual Dial</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu Contact Send Message</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu Contact Functionality</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Edit Contact</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Delete Contact</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Menu Enable Add Contact</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="0h:4">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Clear Calllog</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Outgoing Calls</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Answered Calls</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Missed Calls</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu Radio Name</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Radio ID</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Time Slot</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Color Code</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu TX Contact</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu CTCSS/DCS</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu TX Frequency</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu RX Frequency</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="0h:3">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>00</unused>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu Channel Name</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu Add Channel</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned">
+      <meta>
+        <name>Enable Menu Group List</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu DCDM</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="0h:1" format="unsigned" default="1">
+      <meta>
+        <name>Enable Menu Channel Type</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="af8h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
   <element at="a000h">
     <meta>
       <name>Preset Message Bank</name>
@@ -215,6 +2994,73 @@
         <name>Unused data</name>
       </meta>00</unused>
   </element>
+  <element at="10000h">
+    <meta>
+      <name>Emergency Settings</name>
+    </meta>
+    <unknown width="b00h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>Enable Lone Worker</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="10" min="1" max="255">
+      <meta>
+        <name>Lone Worker Response Time</name>
+        <brief>Specifies duration in minutes.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="10" min="0" max="255">
+      <meta>
+        <name>Lone Worker Reminder Period</name>
+        <brief>Period specified in seconds.</brief>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="0h:4">
+      <meta>
+        <name>Lone Worker Alert Tone</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Tone 1</name>
+      </item>
+      <item value="1">
+        <name>Tone 2</name>
+      </item>
+      <item value="2">
+        <name>Tone 3</name>
+      </item>
+    </enum>
+    <enum width="0h:4">
+      <meta>
+        <name>Lone Worker Mode</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Message</name>
+      </item>
+      <item value="1">
+        <name>Tone</name>
+      </item>
+    </enum>
+    <unknown width="4fch">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+  </element>
   <element at="11000h">
     <meta>
       <name>Scan List Bank</name>
@@ -363,6 +3209,55 @@
         </unknown>
       </element>
     </repeat>
+    <unknown width="6dfh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Scan Mode</name>
+      </meta>
+      <item value="0">
+        <name>Time</name>
+      </item>
+      <item value="1">
+        <name>Carrier</name>
+      </item>
+      <item value="2">
+        <name>Search</name>
+        <description>WTF?</description>
+      </item>
+    </enum>
+    <int width="2h" format="bcd" endian="little" default="310" min="311" max="373">
+      <meta>
+        <name>VHF Scan Lower Bound</name>
+        <brief>Specifies the lower bound of the VHF scan range in MHz.</brief>
+      </meta>
+    </int>
+    <int width="2h" format="bcd" endian="little" default="373" min="311" max="373">
+      <meta>
+        <name>VHF Scan Upper Bound</name>
+        <brief>Specifies the upper bound of the VHF scan range in MHz.</brief>
+      </meta>
+    </int>
+    <int width="2h" format="bcd" endian="little" default="1024" min="1024" max="1136">
+      <meta>
+        <name>UHF Scan Lower Bound</name>
+        <brief>Specifies the lower bound of the UHF scan range in MHz.</brief>
+      </meta>
+    </int>
+    <int width="2h" format="bcd" endian="little" default="1024" min="1024" max="1136">
+      <meta>
+        <name>UHF Scan Upper Bound</name>
+        <brief>Specifies the upper bound of the UHF scan range in MHz.</brief>
+      </meta>
+    </int>
+    <unknown width="1f7h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
   </element>
   <element at="12000h">
     <meta>
