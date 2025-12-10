@@ -3429,7 +3429,60 @@
         </int>
       </repeat>
     </element>
-    <unknown width="eb0h">
+    <unknown width="afh">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>DTMF Contact Count</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+    </int>
+    <repeat n="64">
+      <meta>
+        <name>DTMF Contacts</name>
+        <firmware>1.1.46</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>DTMF Contact</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Name</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </string>
+        <repeat n="5">
+          <meta>
+            <name>Digits</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <int width="1h" format="unsigned" default="255" min="0" max="9">
+            <meta>
+              <name>Digit</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+        <unused width="bh">
+          <meta>
+            <name>Unused data</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>ff</unused>
+      </element>
+    </repeat>
+    <unknown width="600h">
       <meta>
         <name>Unknown data</name>
       </meta>
