@@ -580,6 +580,8 @@
         <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>Digit</name>
+            <firmware>1.1.46</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -622,13 +624,158 @@
           <done/>
         </meta>
       </int>
-      <unknown width="3eh">
+      <unknown width="1eh">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <repeat n="32">
+        <meta>
+          <name>Five Tone Calls</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <element>
+          <meta>
+            <name>Five Tone Call</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <enum width="1h">
+            <meta>
+              <name>Call Type</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <item value="255">
+              <name>Off</name>
+            </item>
+            <item value="0">
+              <name>ANI</name>
+            </item>
+            <item value="1">
+              <name>Data</name>
+            </item>
+          </enum>
+          <repeat n="5">
+            <meta>
+              <name>Side Data</name>
+              <brief>WTF?</brief>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <int width="1h" format="unsigned" default="255" min="0" max="15">
+              <meta>
+                <name>Digit</name>
+                <firmware>1.1.46</firmware>
+                <done/>
+              </meta>
+            </int>
+          </repeat>
+          <enum width="1h">
+            <meta>
+              <name>Mid Pause</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>No Pause</name>
+            </item>
+            <item value="1">
+              <name>A</name>
+            </item>
+            <item value="2">
+              <name>B</name>
+            </item>
+            <item value="3">
+              <name>C</name>
+            </item>
+            <item value="4">
+              <name>D</name>
+            </item>
+            <item value="5">
+              <name>E</name>
+            </item>
+            <item value="6">
+              <name>F</name>
+            </item>
+          </enum>
+          <enum width="1h">
+            <meta>
+              <name>Standard</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>ZVEI I</name>
+            </item>
+            <item value="1">
+              <name>ZVEI II</name>
+            </item>
+            <item value="2">
+              <name>ZVEI III</name>
+            </item>
+            <item value="3">
+              <name>CCIR I</name>
+            </item>
+            <item value="4">
+              <name>CCIR II</name>
+            </item>
+            <item value="5">
+              <name>CCIR III</name>
+            </item>
+            <item value="6">
+              <name>EEA</name>
+            </item>
+            <item value="7">
+              <name>EEI</name>
+            </item>
+          </enum>
+          <int width="1h" format="unsigned" default="7" min="3" max="16">
+            <meta>
+              <name>Tone Duration</name>
+              <brief>Specifies the duration in multiples of 10ms.</brief>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+          </int>
+          <unused width="7h">
+            <meta>
+              <name>Unused data</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>00</unused>
+          <repeat n="16">
+            <meta>
+              <name>Data</name>
+              <brief>Content for data call.</brief>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <int width="1h" format="unsigned" default="255" min="0" max="15">
+              <meta>
+                <name>Digit</name>
+                <firmware>1.1.46</firmware>
+                <done/>
+              </meta>
+            </int>
+          </repeat>
+          <string format="ascii" width="16" pad="0">
+            <meta>
+              <name>Name</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+          </string>
+        </element>
+      </repeat>
+      <unknown width="20h">
         <meta>
           <name>Unknown data</name>
         </meta>
       </unknown>
     </element>
-    <unknown width="7c0h">
+    <unknown width="1c0h">
       <meta>
         <name>Unknown data</name>
       </meta>
