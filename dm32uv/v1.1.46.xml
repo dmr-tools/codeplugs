@@ -2,7 +2,7 @@
 <!--vi: set ts=2 sw=2:-->
 <codeplug>
   <meta>
-    <name>Baofeng MD-32UV</name>
+    <name>Baofeng DM-32UV</name>
     <firmware>1.1.46</firmware>
   </meta>
   <element at="3000h">
@@ -4646,7 +4646,7 @@
             <done/>
           </meta>
         </int>
-        <int width="4h" format="unsigned" endian="little" default="1073741824">
+        <int width="4h" format="bcd" endian="little" default="1073741824">
           <meta>
             <name>TX Frequency</name>
             <brief>Specifies the TX frequency.</brief>

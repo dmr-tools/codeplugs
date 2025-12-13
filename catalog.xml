@@ -17,5 +17,5 @@
   <xi:include href="openmduv380/model.xml"/>
 
   <xi:include href="rt4d/model.xml"/>  
-  <xi:include href="md32uv/model.xml"/>  
+  <xi:include href="dm32uv/model.xml"/>  
 </catalog>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>Baofeng DM-32UV</name>
+    <brief>This appears a variant of the FW revision 1.1.48, where the recording feature was removed to increase the callsign DB.</brief>
+    <firmware>1.L1.48</firmware>
+  </meta>
+</codeplug>
