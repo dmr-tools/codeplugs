@@ -1823,34 +1823,196 @@
     <element>
       <meta>
         <name>Boot Melody</name>
-        <needs-review/>
+        <firmware>R202409080</firmware>
+        <done/>
       </meta>
       <int width="4h" format="unsigned" endian="little">
         <meta>
           <name>Block Type ID</name>
           <brief>The magic number identifying the block type. This one is unknown, seen 2h.</brief>
-          <needs-review/>
+          <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </int>
       <int width="4h" format="unsigned" endian="little">
         <meta>
           <name>Size</name>
           <brief>Size of the block content, fixed to 200h</brief>
-          <needs-review/>
+          <firmware>R202409080</firmware>
+          <done/>
         </meta>
       </int>
-      <element>
+      <repeat n="256">
         <meta>
-          <name>Unknown Settings</name>
-          <needs-review/>
+          <name>Melody</name>
+          <firmware>R202409080</firmware>
+          <done/>
         </meta>
-        <unknown width="200h">
+        <element>
           <meta>
-            <name>Unknown data</name>
-            <needs-review/>
+            <name>Tone</name>
+            <brief>Specifies a tone in terms of pitch and duration.</brief>
+            <firmware>R202409080</firmware>
+            <done/>
           </meta>
-        </unknown>
-      </element>
+          <enum width="1h">
+            <meta>
+              <name>Pitch</name>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>Off/Silence</name>
+            </item>
+            <item value="1">
+              <name>A2</name>
+              <description>110Hz</description>
+            </item>
+            <item value="2">
+              <name>A#2</name>
+            </item>
+            <item value="3">
+              <name>B2</name>
+            </item>
+            <item value="4">
+              <name>C3</name>
+            </item>
+            <item value="5">
+              <name>C#3</name>
+            </item>
+            <item value="6">
+              <name>D3</name>
+            </item>
+            <item value="7">
+              <name>D#3</name>
+            </item>
+            <item value="8">
+              <name>E3</name>
+            </item>
+            <item value="9">
+              <name>F3</name>
+            </item>
+            <item value="10">
+              <name>F#3</name>
+            </item>
+            <item value="11">
+              <name>G3</name>
+            </item>
+            <item value="12">
+              <name>G#3</name>
+            </item>
+            <item value="13">
+              <name>A3</name>
+              <description>220 Hz</description>
+            </item>
+            <item value="14">
+              <name>A#3</name>
+            </item>
+            <item value="15">
+              <name>B3</name>
+            </item>
+            <item value="16">
+              <name>C4</name>
+            </item>
+            <item value="17">
+              <name>C#4</name>
+            </item>
+            <item value="18">
+              <name>D4</name>
+            </item>
+            <item value="19">
+              <name>D#4</name>
+            </item>
+            <item value="20">
+              <name>E4</name>
+            </item>
+            <item value="21">
+              <name>F4</name>
+            </item>
+            <item value="22">
+              <name>F#4</name>
+            </item>
+            <item value="23">
+              <name>G4</name>
+            </item>
+            <item value="24">
+              <name>G#4</name>
+            </item>
+            <item value="25">
+              <name>A4</name>
+              <description>440 Hz</description>
+            </item>
+            <item value="26">
+              <name>A#4</name>
+            </item>
+            <item value="27">
+              <name>B4</name>
+            </item>
+            <item value="28">
+              <name>C5</name>
+            </item>
+            <item value="29">
+              <name>C#5</name>
+            </item>
+            <item value="30">
+              <name>D5</name>
+            </item>
+            <item value="31">
+              <name>D#5</name>
+            </item>
+            <item value="32">
+              <name>E5</name>
+            </item>
+            <item value="33">
+              <name>F5</name>
+            </item>
+            <item value="34">
+              <name>F#5</name>
+            </item>
+            <item value="35">
+              <name>G5</name>
+            </item>
+            <item value="36">
+              <name>G#5</name>
+            </item>
+            <item value="37">
+              <name>A5</name>
+            </item>
+            <item value="38">
+              <name>A#5</name>
+            </item>
+            <item value="39">
+              <name>B5</name>
+            </item>
+            <item value="40">
+              <name>C6</name>
+            </item>
+            <item value="41">
+              <name>C#6</name>
+            </item>
+            <item value="42">
+              <name>D6</name>
+            </item>
+            <item value="43">
+              <name>D#6</name>
+            </item>
+            <item value="44">
+              <name>E6</name>
+            </item>
+            <item value="45">
+              <name>F6</name>
+            </item>
+          </enum>
+          <int width="1h" format="unsigned" default="0" min="0" max="255">
+            <meta>
+              <name>Duration</name>
+              <brief>Specifies the tone duration in 100ms?!?</brief>
+              <firmware>R202409080</firmware>
+              <done/>
+            </meta>
+          </int>
+        </element>
+      </repeat>
     </element>
     <element>
       <meta>
