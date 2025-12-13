@@ -340,20 +340,295 @@
       <repeat n="5">
         <meta>
           <name>Radio Id</name>
+          <firmware>1.1.46</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned">
+          <meta>
+            <name>Digit</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <enum width="1h">
+        <meta>
+          <name>Decode Standard</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>ZVEI I</name>
+        </item>
+        <item value="1">
+          <name>ZVEI II</name>
+        </item>
+        <item value="2">
+          <name>ZWEI III</name>
+        </item>
+        <item value="3">
+          <name>CCIR I</name>
+        </item>
+        <item value="4">
+          <name>CCIR II</name>
+        </item>
+        <item value="5">
+          <name>CCIR III</name>
+        </item>
+        <item value="6">
+          <name>EEA</name>
+        </item>
+        <item value="7">
+          <name>EIA</name>
+        </item>
+      </enum>
+      <enum width="1h">
+        <meta>
+          <name>Response</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>Alert</name>
+        </item>
+        <item value="2">
+          <name>Alert and ACK</name>
+        </item>
+      </enum>
+      <unknown width="3h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Prewave Delay</name>
+          <brief>Specified in multiples of 50ms. However, somehow broken.</brief>
+          <needs-review/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="10" min="1" max="255">
+        <meta>
+          <name>Auto Reset Time</name>
+          <brief>Specified in terms of seconds.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="1" min="1" max="255">
+        <meta>
+          <name>Post TX Delay</name>
+          <brief>Specifies in multiples of 10ms.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0" min="5" max="75">
+        <meta>
+          <name>PTT ID Rekey Delay</name>
+          <brief>Specified in seconds.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="12h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <repeat n="8">
+        <meta>
+          <name>Five Tone Functions</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <element>
+          <meta>
+            <name>Five Tone Function</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <enum width="1h">
+            <meta>
+              <name>Function</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>Open Squelch</name>
+            </item>
+            <item value="1">
+              <name>All Call</name>
+            </item>
+            <item value="2">
+              <name>Alarm</name>
+            </item>
+            <item value="3">
+              <name>Stun</name>
+            </item>
+            <item value="4">
+              <name>Kill</name>
+            </item>
+            <item value="5">
+              <name>Reenable</name>
+            </item>
+            <item value="6">
+              <name>Group Call</name>
+            </item>
+          </enum>
+          <enum width="1h">
+            <meta>
+              <name>Response</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <item value="0">
+              <name>None</name>
+            </item>
+            <item value="1">
+              <name>Alert</name>
+            </item>
+          </enum>
+          <repeat n="12">
+            <meta>
+              <name>Function ID</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <int width="1h" format="unsigned" default="255" min="0" max="15">
+              <meta>
+                <name>Digit</name>
+                <firmware>1.1.46</firmware>
+                <done/>
+              </meta>
+            </int>
+          </repeat>
+          <unknown width="2h">
+            <meta>
+              <name>Unknown data</name>
+            </meta>
+          </unknown>
+        </element>
+      </repeat>
+      <repeat n="16">
+        <meta>
+          <name>BOT PTT ID</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned" default="255" min="0" max="15">
+          <meta>
+            <name>Digit</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+        </int>
+      </repeat>
+      <enum width="1h">
+        <meta>
+          <name>BOT ID Standard</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>ZVEI I</name>
+        </item>
+        <item value="1">
+          <name>ZVEI II</name>
+        </item>
+        <item value="2">
+          <name>ZWEI III</name>
+        </item>
+        <item value="3">
+          <name>CCIR I</name>
+        </item>
+        <item value="4">
+          <name>CCIR II</name>
+        </item>
+        <item value="5">
+          <name>CCIR III</name>
+        </item>
+        <item value="6">
+          <name>EEA</name>
+        </item>
+        <item value="7">
+          <name>EIA</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="7" min="3" max="10">
+        <meta>
+          <name>BOT ID Tone Duration</name>
+          <brief>Duration specified in multiples of 10ms.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="eh">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <repeat n="16">
+        <meta>
+          <name>EOT PTT ID</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>Digit</name>
           </meta>
         </int>
       </repeat>
-      <unknown width="2bh">
+      <enum width="1h">
+        <meta>
+          <name>EOT ID Standard</name>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>ZVEI I</name>
+        </item>
+        <item value="1">
+          <name>ZVEI II</name>
+        </item>
+        <item value="2">
+          <name>ZWEI III</name>
+        </item>
+        <item value="3">
+          <name>CCIR I</name>
+        </item>
+        <item value="4">
+          <name>CCIR II</name>
+        </item>
+        <item value="5">
+          <name>CCIR III</name>
+        </item>
+        <item value="6">
+          <name>EEA</name>
+        </item>
+        <item value="7">
+          <name>EIA</name>
+        </item>
+      </enum>
+      <int width="1h" format="unsigned" default="7" min="3" max="10">
+        <meta>
+          <name>EOT ID Tone Duration</name>
+          <brief>Duration specified in multiples of 10ms.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="3eh">
         <meta>
           <name>Unknown data</name>
         </meta>
       </unknown>
     </element>
-    <unknown width="8a0h">
+    <unknown width="7c0h">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -3230,7 +3505,7 @@
   </element>
   <element at="6000h">
     <meta>
-      <name>DTMF Settings</name>
+      <name>DTMF/BDC Settings</name>
     </meta>
     <repeat n="16">
       <meta>
