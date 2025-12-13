@@ -3916,35 +3916,63 @@
       <int width="2h" format="bcd" endian="little" default="1">
         <meta>
           <name>Radio ID</name>
+          <firmware>1.1.46</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="bcd" endian="little" default="57344">
         <meta>
           <name>Group ID</name>
+          <firmware>1.1.46</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="15" min="15">
         <meta>
           <name>Prewave delay</name>
           <brief>Specifies the delay in some broken way. fh = 300ms, 10h = 350ms, ...</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
         </meta>
       </int>
-      <unknown width="1h">
+      <unknown width="0h:6">
         <meta>
           <name>Unknown data</name>
         </meta>
       </unknown>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>PTT ID Decode</name>
+        </meta>
+      </int>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable PTT Tone</name>
+        </meta>
+      </int>
       <int width="1h" format="unsigned" default="0" min="0" max="96">
         <meta>
           <name>Bitsync Length</name>
+          <firmware>1.1.46</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="1" min="0" max="255">
         <meta>
           <name>Auto Reset Delay</name>
+          <firmware>1.1.46</firmware>
+          <done/>
         </meta>
       </int>
-      <unknown width="68h">
+      <int width="1h" format="unsigned" default="0" min="5" max="75">
+        <meta>
+          <name>PTT Dead Time</name>
+          <brief>Specified in multiples of 1s. If set to 0 = disabled.</brief>
+          <firmware>1.1.46</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="67h">
         <meta>
           <name>Unknown data</name>
         </meta>
@@ -3952,23 +3980,17 @@
       <element>
         <meta>
           <name>Contact Bank</name>
+          <firmware>1.1.46</firmware>
+          <done/>
         </meta>
-        <unknown width="5h:6">
+        <int width="1h" format="unsigned" default="0" min="0" max="64">
           <meta>
-            <name>Unknown data</name>
-          </meta>
-        </unknown>
-        <int width="0h:1" format="unsigned" default="0">
-          <meta>
-            <name>PTT ID Decode</name>
+            <name>Contact Count</name>
+            <firmware>1.1.46</firmware>
+            <done/>
           </meta>
         </int>
-        <int width="0h:1" format="unsigned" default="0">
-          <meta>
-            <name>Enable PTT Tone</name>
-          </meta>
-        </int>
-        <unknown width="ah">
+        <unknown width="fh">
           <meta>
             <name>Unknown data</name>
           </meta>
