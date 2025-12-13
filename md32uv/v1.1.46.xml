@@ -3904,11 +3904,132 @@
           </meta>ff</unused>
       </element>
     </repeat>
-    <unknown width="600h">
+    <unknown width="20h">
       <meta>
         <name>Unknown data</name>
       </meta>
     </unknown>
+    <element>
+      <meta>
+        <name>BDC1200 Settings</name>
+      </meta>
+      <int width="2h" format="bcd" endian="little" default="1">
+        <meta>
+          <name>Radio ID</name>
+        </meta>
+      </int>
+      <int width="2h" format="bcd" endian="little" default="57344">
+        <meta>
+          <name>Group ID</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="15" min="15">
+        <meta>
+          <name>Prewave delay</name>
+          <brief>Specifies the delay in some broken way. fh = 300ms, 10h = 350ms, ...</brief>
+        </meta>
+      </int>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="1h" format="unsigned" default="0" min="0" max="96">
+        <meta>
+          <name>Bitsync Length</name>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="1" min="0" max="255">
+        <meta>
+          <name>Auto Reset Delay</name>
+        </meta>
+      </int>
+      <unknown width="68h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <element>
+        <meta>
+          <name>Contact Bank</name>
+        </meta>
+        <unknown width="5h:6">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>PTT ID Decode</name>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Enable PTT Tone</name>
+          </meta>
+        </int>
+        <unknown width="ah">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
+        <repeat n="64">
+          <meta>
+            <name>Contacts</name>
+            <firmware>1.1.46</firmware>
+            <done/>
+          </meta>
+          <element>
+            <meta>
+              <name>Contact</name>
+              <firmware>1.1.46</firmware>
+              <done/>
+            </meta>
+            <string format="ascii" width="16" pad="0">
+              <meta>
+                <name>Name</name>
+                <firmware>1.1.46</firmware>
+                <done/>
+              </meta>
+            </string>
+            <int width="2h" format="unsigned" endian="little" default="57345">
+              <meta>
+                <name>Number</name>
+                <firmware>1.1.46</firmware>
+                <done/>
+              </meta>
+            </int>
+            <unused width="1h">
+              <meta>
+                <name>Unused data</name>
+                <firmware>1.1.46</firmware>
+                <done/>
+              </meta>ff</unused>
+            <enum width="1h">
+              <meta>
+                <name>Call Type</name>
+                <firmware>1.1.46</firmware>
+                <done/>
+              </meta>
+              <item value="0">
+                <name>Group Call</name>
+              </item>
+              <item value="1">
+                <name>Private Call</name>
+              </item>
+              <item value="2">
+                <name>All Call</name>
+              </item>
+            </enum>
+          </element>
+        </repeat>
+      </element>
+      <unknown width="60h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+    </element>
   </element>
   <element at="a000h">
     <meta>
