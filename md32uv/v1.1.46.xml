@@ -4922,7 +4922,7 @@
             <done/>
           </meta>
         </int>
-        <unknown width="1h:3">
+        <unknown width="1h:1">
           <meta>
             <name>Unknown data</name>
             <firmware>1.1.46</firmware>
@@ -4937,7 +4937,7 @@
             <done/>
           </meta>
         </int>
-        <int width="0h:4" format="unsigned" default="0" min="0">
+        <int width="0h:6" format="unsigned" default="0" min="0">
           <meta>
             <name>Group List Index</name>
             <brief>Specifies the group list index +1. If set to 0, no group list is selected.</brief>
@@ -5406,7 +5406,7 @@
               <done/>
             </meta>
           </int>
-          <unknown width="1h:3">
+          <unknown width="1h:1">
             <meta>
               <name>Unknown data</name>
               <firmware>1.1.46</firmware>
@@ -5421,7 +5421,7 @@
               <done/>
             </meta>
           </int>
-          <int width="0h:4" format="unsigned" default="0" min="0">
+          <int width="0h:6" format="unsigned" default="0" min="0">
             <meta>
               <name>Group List Index</name>
               <brief>Specifies the group list index +1. If set to 0, no group list is selected.</brief>
