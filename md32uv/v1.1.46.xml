@@ -4240,22 +4240,28 @@
         <meta>
           <name>Group List</name>
         </meta>
-        <string format="ascii" width="10" pad="0">
+        <string format="ascii" width="11" pad="0">
           <meta>
             <name>Name</name>
           </meta>
         </string>
-        <repeat n="33">
+        <repeat n="32">
           <meta>
-            <name>Contact Indices</name>
+            <name>DMR IDs</name>
           </meta>
           <int width="3h" format="unsigned" endian="little" default="0">
             <meta>
-              <name>Contact Index</name>
-              <brief>Specifies the contact index +1. If 0, disabled.</brief>
+              <name>DMR ID</name>
+              <brief>Yes! THE DMR ID!</brief>
+              <description>Okay, dear Baofeng engineer. You fucked it up. This is really stupid. You have a list of group calls and you do not store the index for these entries? This certainly does not produce any issues, when resolving the group call name.</description>
             </meta>
           </int>
         </repeat>
+        <unknown width="2h">
+          <meta>
+            <name>Unknown data</name>
+          </meta>
+        </unknown>
       </element>
     </repeat>
     <unused width="24fh">
