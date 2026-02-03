@@ -4207,51 +4207,26 @@
         <name>Definition Index</name>
         <brief>The n-th entry corresponds to the n-th contact, irrespective of the DMR id.</brief>
       </meta>
-      <element>
+      <int width="2h" format="unsigned" endian="little" default="65535">
         <meta>
           <name>Index Entry</name>
+          <brief>Encodes the index entry in a complex way joining call type and index.</brief>
+          <description>Consists of two fields. The most significant 4 bit contain the call type. That is 3=private call, 4= group call and 5=all call. The remaining least significant 12 bit contain the contact index.</description>
         </meta>
-        <unknown width="1h">
-          <meta>
-            <name>Unknown data</name>
-          </meta>
-        </unknown>
-        <enum width="0h:4">
-          <meta>
-            <name>Call Type</name>
-          </meta>
-          <item value="3">
-            <name>Private Call</name>
-          </item>
-          <item value="4">
-            <name>Group Call</name>
-          </item>
-          <item value="5">
-            <name>All Call</name>
-          </item>
-        </enum>
-        <unknown width="0h:4">
-          <meta>
-            <name>Unknown data</name>
-          </meta>
-        </unknown>
-      </element>
+      </int>
     </repeat>
     <repeat n="800">
       <meta>
         <name>Sorted Index</name>
         <brief>Same index but sorted by DMR Id.</brief>
       </meta>
-      <element>
+      <int width="2h" format="unsigned" endian="little" default="65535">
         <meta>
           <name>Index Entry</name>
+          <brief>Encodes the index entry in a complex way joining call type and index.</brief>
+          <description>Consists of two fields. The most significant 4 bit contain the call type. That is 3=private call, 4= group call and 5=all call. The remaining least significant 12 bit contain the contact index.</description>
         </meta>
-        <unknown width="2h">
-          <meta>
-            <name>Unknown data</name>
-          </meta>
-        </unknown>
-      </element>
+      </int>
     </repeat>
     <unknown width="280h">
       <meta>
