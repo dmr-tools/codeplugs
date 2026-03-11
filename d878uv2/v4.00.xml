@@ -6504,107 +6504,13 @@
         <done/>
       </meta>
     </int>
-    <enum width="1h">
+    <int width="1h" format="unsigned">
       <meta>
-        <name>Time Zone</name>
-        <description>How about encoding it as a singed integer in multiples of 5min? Also, UTC+13h were you drunk?</description>
-        <firmware>3.05</firmware>
-        <done/>
+        <name>Time zone</name>
+        <brief>Specifies the time zone as an UTC offset.</brief>
+        <description>The offset is encodes as multiples of 30min. Starting from 0=-12:00, 1=-11:30, ...,18h=UTC, ..., 31h=+12:30, 32h=+13:00.</description>
       </meta>
-      <item value="0">
-        <name>UTC-12:00h</name>
-      </item>
-      <item value="1">
-        <name>UTC-11:00h</name>
-      </item>
-      <item value="2">
-        <name>UTC-10:00h</name>
-      </item>
-      <item value="3">
-        <name>UTC-09:00h</name>
-      </item>
-      <item value="4">
-        <name>UTC-08:00h</name>
-      </item>
-      <item value="5">
-        <name>UTC-07:00h</name>
-      </item>
-      <item value="6">
-        <name>UTC-06:00h</name>
-      </item>
-      <item value="7">
-        <name>UTC-05:00h</name>
-      </item>
-      <item value="8">
-        <name>UTC-04:00h</name>
-      </item>
-      <item value="9">
-        <name>UTC-03:30h</name>
-      </item>
-      <item value="10">
-        <name>UTC-02:00h</name>
-      </item>
-      <item value="11">
-        <name>UTC-01:00h</name>
-      </item>
-      <item value="12">
-        <name>UTC</name>
-      </item>
-      <item value="13">
-        <name>UTC+01:00h</name>
-      </item>
-      <item value="14">
-        <name>UTC+02:00h</name>
-      </item>
-      <item value="15">
-        <name>UTC+03:00h</name>
-      </item>
-      <item value="16">
-        <name>UTC+03:30h</name>
-      </item>
-      <item value="17">
-        <name>UTC+04:00h</name>
-      </item>
-      <item value="18">
-        <name>UTC+04:30h</name>
-      </item>
-      <item value="19">
-        <name>UTC+05:00h</name>
-      </item>
-      <item value="20">
-        <name>UTC+05:30h</name>
-      </item>
-      <item value="21">
-        <name>UTC+05:45h</name>
-      </item>
-      <item value="22">
-        <name>UTC+06:00h</name>
-      </item>
-      <item value="23">
-        <name>UTC+07:00h</name>
-      </item>
-      <item value="24">
-        <name>UTC+08:00h</name>
-      </item>
-      <item value="25">
-        <name>UTC+08:30h</name>
-      </item>
-      <item value="26">
-        <name>UTC+09:00h</name>
-      </item>
-      <item value="27">
-        <name>UTC+10:00h</name>
-      </item>
-      <item value="28">
-        <name>UTC+11:00h</name>
-      </item>
-      <item value="29">
-        <name>UTC+12:00h</name>
-      </item>
-      <item value="30">
-        <name>UTC+13:00h</name>
-      </item>
-    </enum>
+    </int>
     <enum width="1h">
       <meta>
         <name>Talk permit tone</name>
