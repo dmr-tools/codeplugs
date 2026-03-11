@@ -6509,6 +6509,8 @@
         <name>Time zone</name>
         <brief>Specifies the time zone as an UTC offset.</brief>
         <description>The offset is encodes as multiples of 30min. Starting from 0=-12:00, 1=-11:30, ...,18h=UTC, ..., 31h=+12:30, 32h=+13:00.</description>
+        <firmware>4.00</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
