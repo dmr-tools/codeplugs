@@ -45,7 +45,7 @@ jobs:
         run: |
           mkdir generated-docs/
           cd generated-docs/
-          python3 ../codeplug-doc-gen/src/cpdgen/cli.py --multi-file ../catalog.xml  
+          python3 ../codeplug-doc-gen/src/cpdgen/cli.py --multi-document ../catalog.xml  
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
