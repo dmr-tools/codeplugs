@@ -10,146 +10,169 @@
   <element at="3000h">
     <meta>
       <name>Two/Five Tone Settings</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned">
       <meta>
         <name>Two Tone Code Count</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="2eh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <element>
       <meta>
         <name>Two Tone Settings</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <int width="1h" format="unsigned" default="5" min="0" max="50">
         <meta>
           <name>Prewave Delay</name>
           <brief>Duration is specified as multiples of 0.1s</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="5" min="1" max="50">
         <meta>
           <name>First Tone Duration</name>
           <brief>Specified in terms of multiple of 0.1s.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="5" min="1" max="50">
         <meta>
           <name>Second Tone Duration</name>
           <brief>Specified in terms of 0.1s.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="5" min="1" max="50">
         <meta>
           <name>Lone Tone Duration</name>
           <brief>Specified in terms of 0.1s.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="0" min="0" max="20">
         <meta>
           <name>Interval Duration</name>
           <brief>Specified in multiples of 0.1s.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="1h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <int width="1h" format="unsigned" default="0" min="0" max="50">
         <meta>
           <name>Polite Wait Duration</name>
           <brief>Specified in multiples of 0.1s.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="unsigned" endian="little" default="3217">
         <meta>
           <name>A Tone Frequency</name>
           <brief>Specified in terms of 0.1Hz.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="unsigned" endian="little" default="3217">
         <meta>
           <name>B Tone Frequency</name>
           <brief>Specified in terms of 0.1Hz.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="unsigned" endian="little" default="3217">
         <meta>
           <name>C Tone Frequency</name>
           <brief>Specified in terms of 0.1Hz.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="unsigned" endian="little" default="3217">
         <meta>
           <name>D Tone Frequency</name>
           <brief>Specified in terms of 0.1Hz.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unused width="0h:6">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>00</unused>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
           <name>Enable Side Tone</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="0h:1" format="unsigned" default="1">
         <meta>
           <name>Enable Idle ACK</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="1" min="1" max="255">
         <meta>
           <name>Auto Reset Time</name>
           <brief>Specified in seconds.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <repeat n="4">
         <meta>
           <name>Two Tone IDs</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <element>
           <meta>
             <name>Two Tone ID</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <enum width="1h">
             <meta>
               <name>Code</name>
               <brief>Refers to the tones specified for A-D.</brief>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <item value="255">
               <name>Off</name>
@@ -206,7 +229,8 @@
           <enum width="1h">
             <meta>
               <name>Call Type</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <item value="0">
               <name>None</name>
@@ -224,13 +248,15 @@
           <int width="1h" format="unsigned" default="0" min="0" max="1">
             <meta>
               <name>Enable Reply</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </int>
           <unknown width="1h">
             <meta>
               <name>Unknown data</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </unknown>
         </element>
@@ -238,36 +264,42 @@
       <unknown width="fh">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
     </element>
     <unknown width="1c0h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="32">
       <meta>
         <name>Two Tone Codes</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Two Tone Code</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <string format="unicode" width="16" pad="0">
           <meta>
             <name>Name</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <enum width="1h">
           <meta>
             <name>Format</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Two Tone</name>
@@ -279,57 +311,66 @@
         <unknown width="1h">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </unknown>
         <int width="2h" format="unsigned" endian="little" default="5000">
           <meta>
             <name>First Tone</name>
             <brief>Specified in 0.1Hz.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <int width="2h" format="unsigned" endian="little" default="10003">
           <meta>
             <name>Second Tone</name>
             <brief>Specified in terms of 0.1Hz.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <unused width="2h">
           <meta>
             <name>Unused data</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>00</unused>
       </element>
     </repeat>
     <unknown width="10h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <element>
       <meta>
         <name>Five Tone Settings</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <repeat n="5">
         <meta>
           <name>Radio Id</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>Digit</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <enum width="1h">
         <meta>
           <name>Decode Standard</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>ZVEI I</name>
@@ -359,7 +400,8 @@
       <enum width="1h">
         <meta>
           <name>Response</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>None</name>
@@ -374,57 +416,66 @@
       <unknown width="3h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <int width="1h" format="unsigned">
         <meta>
           <name>Prewave Delay</name>
           <brief>Specified in multiples of 50ms. However, somehow broken.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="10" min="1" max="255">
         <meta>
           <name>Auto Reset Time</name>
           <brief>Specified in terms of seconds.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="1" min="1" max="255">
         <meta>
           <name>Post TX Delay</name>
           <brief>Specifies in multiples of 10ms.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="0" min="5" max="75">
         <meta>
           <name>PTT ID Rekey Delay</name>
           <brief>Specified in seconds.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="12h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <repeat n="8">
         <meta>
           <name>Five Tone Functions</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <element>
           <meta>
             <name>Five Tone Function</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <enum width="1h">
             <meta>
               <name>Function</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <item value="0">
               <name>Open Squelch</name>
@@ -451,7 +502,8 @@
           <enum width="1h">
             <meta>
               <name>Response</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <item value="0">
               <name>None</name>
@@ -463,19 +515,22 @@
           <repeat n="12">
             <meta>
               <name>Function ID</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <int width="1h" format="unsigned" default="255" min="0" max="15">
               <meta>
                 <name>Digit</name>
-                <needs-review/>
+                <firmware>1.L1.48</firmware>
+                <done/>
               </meta>
             </int>
           </repeat>
           <unknown width="2h">
             <meta>
               <name>Unknown data</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </unknown>
         </element>
@@ -483,19 +538,22 @@
       <repeat n="16">
         <meta>
           <name>BOT PTT ID</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>Digit</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <enum width="1h">
         <meta>
           <name>BOT ID Standard</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>ZVEI I</name>
@@ -526,31 +584,36 @@
         <meta>
           <name>BOT ID Tone Duration</name>
           <brief>Duration specified in multiples of 10ms.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="eh">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <repeat n="16">
         <meta>
           <name>EOT PTT ID</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>Digit</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <enum width="1h">
         <meta>
           <name>EOT ID Standard</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>ZVEI I</name>
@@ -581,29 +644,34 @@
         <meta>
           <name>EOT ID Tone Duration</name>
           <brief>Duration specified in multiples of 10ms.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="1eh">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <repeat n="32">
         <meta>
           <name>Five Tone Calls</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <element>
           <meta>
             <name>Five Tone Call</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <enum width="1h">
             <meta>
               <name>Call Type</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <item value="255">
               <name>Off</name>
@@ -619,19 +687,22 @@
             <meta>
               <name>Side Data</name>
               <brief>WTF?</brief>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <int width="1h" format="unsigned" default="255" min="0" max="15">
               <meta>
                 <name>Digit</name>
-                <needs-review/>
+                <firmware>1.L1.48</firmware>
+                <done/>
               </meta>
             </int>
           </repeat>
           <enum width="1h">
             <meta>
               <name>Mid Pause</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <item value="0">
               <name>No Pause</name>
@@ -658,7 +729,8 @@
           <enum width="1h">
             <meta>
               <name>Standard</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <item value="0">
               <name>ZVEI I</name>
@@ -689,31 +761,36 @@
             <meta>
               <name>Tone Duration</name>
               <brief>Specifies the duration in multiples of 10ms.</brief>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </int>
           <unused width="7h">
             <meta>
               <name>Unused data</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>00</unused>
           <repeat n="16">
             <meta>
               <name>Data</name>
               <brief>Content for data call.</brief>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <int width="1h" format="unsigned" default="255" min="0" max="15">
               <meta>
                 <name>Digit</name>
-                <needs-review/>
+                <firmware>1.L1.48</firmware>
+                <done/>
               </meta>
             </int>
           </repeat>
           <string format="ascii" width="16" pad="0">
             <meta>
               <name>Name</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </string>
         </element>
@@ -721,26 +798,30 @@
       <unknown width="20h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
     </element>
     <unknown width="1c0h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
   </element>
   <element at="4000h">
     <meta>
       <name>Settings Block</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <enum width="1h">
       <meta>
         <name>Boot Display</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Image</name>
@@ -755,25 +836,29 @@
     <string format="ascii" width="14" pad="0">
       <meta>
         <name>Boot Message Line 1</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </string>
     <string format="ascii" width="14" pad="0">
       <meta>
         <name>Boot Message Line 2</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </string>
     <int width="1h" format="unsigned" default="0" min="0" max="1">
       <meta>
         <name>Allow Reset</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Auto Power Off Delay</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -797,87 +882,101 @@
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable Radio Silent</name>
         <short-name>RSlt</short-name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable Key Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable SMS Alert</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable Group Call Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable Private Call Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable EOT Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable Talk Permit Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Boot Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Voice Prompt</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Low Battery Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="0h:1">
       <meta>
         <name>Unknown Bit</name>
         <brief>Set to 1</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <unknown width="0h:3">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:2">
       <meta>
         <name>FM Roger Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -892,19 +991,22 @@
     <unknown width="eh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="4" min="0" max="5">
       <meta>
         <name>Display Brightness</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Backlight Duration</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Always</name>
@@ -947,25 +1049,29 @@
       <meta>
         <name>Menu Exit Time</name>
         <brief>The delay is specified in mutliples of 5s. If set to 0 = neven/infinite.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="0h:3">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Show Volume Change</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="0h:1">
       <meta>
         <name>Date Format</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>YYYY/MM/DD</name>
@@ -977,19 +1083,22 @@
     <unknown width="0h:2">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Show Time</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>Call Display Color</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>White</name>
@@ -1019,7 +1128,8 @@
     <enum width="1h">
       <meta>
         <name>Standby Text Color</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>White</name>
@@ -1049,13 +1159,15 @@
     <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="1h">
       <meta>
         <name>Channel A Name Color</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>White</name>
@@ -1085,7 +1197,8 @@
     <enum width="1h">
       <meta>
         <name>Channel B Name Color</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>White</name>
@@ -1115,7 +1228,8 @@
     <enum width="1h">
       <meta>
         <name>Zonel A Name Color</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>White</name>
@@ -1145,7 +1259,8 @@
     <enum width="1h">
       <meta>
         <name>Zonel B Name Color</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>White</name>
@@ -1175,19 +1290,22 @@
     <unknown width="4h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <unknown width="0h:1">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:1">
       <meta>
         <name>Position Format</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Fractional</name>
@@ -1199,13 +1317,15 @@
     <unknown width="0h:2">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:2">
       <meta>
         <name>GNSS Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>GPS</name>
@@ -1220,13 +1340,15 @@
     <unknown width="0h:1">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable GNSS</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -1234,26 +1356,30 @@
         <name>Time Zone</name>
         <brief>The zone is specified in a weird UTC Offset. That is O = n - 11h.</brief>
         <description>I.e., 0: UTC-11h, 1: UTC-10h, ...</description>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="5" min="5" max="255">
       <meta>
         <name>Position Update Period</name>
         <brief>Time period is specified in minutes.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="0h:5">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:2">
       <meta>
         <name>Recording Selection</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>RX</name>
@@ -1268,103 +1394,119 @@
     <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable Recording</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1ah">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <unused width="0h:6">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Group Call Match</name>
         <brief>Receive only group calls listed in group list.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Private Call Match</name>
         <brief>Only receive private calls, if the DMR match.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="4" min="0">
       <meta>
         <name>DMR Call Hang Time</name>
         <brief>Specifies the hang time in multiples of 0.5s.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="7" min="1" max="151">
       <meta>
         <name>Active Wait Time</name>
         <brief>WTF? Specifies the duration in multiples of 30ms as T = 300ms + n*30ms.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="5" min="1" max="8">
       <meta>
         <name>Active Retries</name>
         <brief>WTF?</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="2" min="0" max="71">
       <meta>
         <name>DMR Preamble Duration</name>
         <brief>Specifies the preamble duration as multiples of 120ms as T = 120ms + n*120ms.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable DMR Remote Monitor</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable DMR Kill Switch</name>
         <brief>Enables the remote disable feature.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable DMR Radio Check</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable DMR Remote Reenable</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable RX DMR Alert</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="0h:2">
       <meta>
         <name>SMS Format</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Hytera</name>
@@ -1379,26 +1521,30 @@
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Missed Call Notification</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0" min="0" max="11">
       <meta>
         <name>DMR Remote Monitor Duration</name>
         <brief>Specifies the duration as multiples of 10s as T = 10s + n*10s.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="0h:3">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:1">
       <meta>
         <name>Talkeralias Format</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>ISO-8</name>
@@ -1410,13 +1556,15 @@
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable TX Talker Alias</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="0h:1">
       <meta>
         <name>Talker Alias Source</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Callsign DB</name>
@@ -1428,19 +1576,22 @@
     <unknown width="0h:2">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <unknown width="18h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:2">
       <meta>
         <name>Dual Standby Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Single VFO</name>
@@ -1455,7 +1606,8 @@
     <enum width="0h:1">
       <meta>
         <name>Main VFO</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>A</name>
@@ -1467,7 +1619,8 @@
     <enum width="0h:1">
       <meta>
         <name>VFO B Display Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Frequency</name>
@@ -1479,7 +1632,8 @@
     <enum width="0h:1">
       <meta>
         <name>VFO A Display Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Frequency</name>
@@ -1491,7 +1645,8 @@
     <enum width="0h:1">
       <meta>
         <name>VFO B Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Channel</name>
@@ -1503,7 +1658,8 @@
     <enum width="0h:1">
       <meta>
         <name>VFO A Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Channel</name>
@@ -1516,7 +1672,8 @@
       <meta>
         <name>Disable VFO Mode</name>
         <brief>If set, the radio can only operate in channel mode.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="1" min="0" max="13">
@@ -1524,40 +1681,46 @@
         <name>Dual Standby Hang Time</name>
         <brief>Specifies the time, the radio keeps the last active VFO as main channel.</brief>
         <description>Duration is specified in multiples of 500ms.</description>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="3h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <unknown width="0h:5">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="0h:1" format="unsigned" default="0" min="0" max="1">
       <meta>
         <name>Enable Side Key Lock</name>
         <short-name>SkLk</short-name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="0" min="0" max="1">
       <meta>
         <name>Enable Knob Lock</name>
         <short-name>KbLk</short-name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="0h:1">
       <meta>
         <name>Key Lock</name>
         <short-name>KyLk</short-name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Manual</name>
@@ -1570,13 +1733,15 @@
       <meta>
         <name>Auto Key Lock Delay</name>
         <brief>Specifies the delay in some unknown units (likely minutes). Delay is encoded as D = 5 + n.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>SK1 Short Press Function</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -1707,7 +1872,8 @@
     <enum width="1h">
       <meta>
         <name>SK1 Long Press Function</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -1838,7 +2004,8 @@
     <enum width="1h">
       <meta>
         <name>SK2 Short Press Function</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -1969,7 +2136,8 @@
     <enum width="1h">
       <meta>
         <name>SK2 Long Press Function</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -2100,13 +2268,15 @@
     <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="1h">
       <meta>
         <name>P1 Short Press Function</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -2237,7 +2407,8 @@
     <enum width="1h">
       <meta>
         <name>P1 Long Press Function</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -2368,7 +2539,8 @@
     <enum width="1h">
       <meta>
         <name>P2 Short Press Function</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -2499,7 +2671,8 @@
     <enum width="1h">
       <meta>
         <name>P2 Long Press Function</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>None</name>
@@ -2630,60 +2803,69 @@
     <unknown width="3h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="2" min="0" max="4">
       <meta>
         <name>Long Press Duration</name>
         <brief>Specifies the long-press duration in seconds as D = 1 + n.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="bh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="4" min="0" max="97">
       <meta>
         <name>Transmit Timout</name>
         <brief>Duration is specified in multiples of 5s. If set to 0=Off, otherwise t = 15s + n*5s.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="5" min="0" max="10">
       <meta>
         <name>Transmit Timout reminder</name>
         <brief>Specifies the ToT reminder time. In seconds, 0 = Off.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0" min="0" max="4">
       <meta>
         <name>VOX Level</name>
         <brief>Specifies the VOX sensitivity level+1.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="3" min="3" max="50">
       <meta>
         <name>VOX Delay</name>
         <brief>Specified in multiples of 100ms.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="0h:2">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:2">
       <meta>
         <name>Power Save Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -2701,37 +2883,43 @@
     <unknown width="0h:1">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Enable Weather Alarm</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="0h:1">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="0h:1" format="unsigned" default="0">
       <meta>
         <name>Disable All LEDs</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="0h:2">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:2">
       <meta>
         <name>TBST Frequency</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>1000 Hz</name>
@@ -2749,14 +2937,16 @@
     <unknown width="0h:2">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="0h:2">
       <meta>
         <name>Squelch Tail Elimination</name>
         <short-name>STE</short-name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -2775,13 +2965,15 @@
       <meta>
         <name>FM Mic Level</name>
         <brief>Specifies the FM mic level+1</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>DMR Mic Level</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>1</name>
@@ -2811,23 +3003,27 @@
     <unknown width="78h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="4">
       <meta>
         <name>Analog Calls</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Analog Call</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <enum width="1h">
           <meta>
             <name>Call Type</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -2846,7 +3042,8 @@
           <meta>
             <name>Call Index</name>
             <brief>Stores the index+1. If set to 0 = Off.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </element>
@@ -2854,29 +3051,34 @@
     <unused width="8h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unused>
     <unknown width="d0h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="5">
       <meta>
         <name>One Touch Calls</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>One Touch Call</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <enum width="1h">
           <meta>
             <name>Call Type</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -2893,13 +3095,15 @@
             <name>Contact Index</name>
             <brief>Contact index+1. If set to 0=Off.</brief>
             <description>This holds the index for both, FM and DMR calls.</description>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <enum width="1h">
           <meta>
             <name>Action</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -2915,7 +3119,8 @@
           <meta>
             <name>Message Index</name>
             <brief>Stores the message index+1. If set to 0=Off.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </element>
@@ -2923,23 +3128,27 @@
     <unknown width="17h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="9">
       <meta>
         <name>Numpad Key Functions</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Numpad Key Function</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <enum width="1h">
           <meta>
             <name>Function Type</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Call</name>
@@ -2951,7 +3160,8 @@
         <enum width="1h">
           <meta>
             <name>Menu Item</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>SMS</name>
@@ -2960,7 +3170,8 @@
         <enum width="1h">
           <meta>
             <name>Call Type</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -2976,13 +3187,15 @@
           <meta>
             <name>Contact Index</name>
             <brief>Specifies the DMR and FM contact index+1. If set to 0=Off.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <enum width="1h">
           <meta>
             <name>Action</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -2998,7 +3211,8 @@
           <meta>
             <name>Message Index</name>
             <brief>Stores the message index+1. If set to 0=Off.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </element>
@@ -3006,64 +3220,74 @@
     <unused width="1h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unused>
     <unknown width="91h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="1" min="0" max="240">
       <meta>
         <name>APRS Update Period</name>
         <brief>Period is specified in muliples of 30s.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0" min="0" max="1">
       <meta>
         <name>Enable Fixed Beacon</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="3h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <string format="ascii" width="10" pad="0">
       <meta>
         <name>Fixed Beacon Latitude</name>
         <brief>The latitude is written as a string DD.FFFFFFH. DD - Degree, FF - fractional part, H hemisphere. E.g., 15.123456N</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </string>
     <string format="ascii" width="10" pad="0">
       <meta>
         <name>Fixed Beacon Longitude</name>
         <brief>The longitude is specified as text. E.g., DDD.FFFFFH. Where DDD is degree, FFFFF fractional part and H the hemisphere. E.g., 112.12345E.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </string>
     <unknown width="6h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="8">
       <meta>
         <name>DMR APRS Revert Channels</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <int width="2h" format="unsigned" endian="little" default="0">
         <meta>
           <name>Channel Index</name>
           <brief>Specifies the revert channel index+1. If set to 0 = Current channel.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
@@ -3071,13 +3295,15 @@
       <meta>
         <name>DMR APRS Prewave Delay</name>
         <brief>Delay specified as multiples of 100ms.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
       <meta>
         <name>DMR APRS Call Type</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Private Call</name>
@@ -3090,19 +3316,22 @@
       <meta>
         <name>DMR APRS Destination ID</name>
         <brief>Specifies the destination DMR Id.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="fbh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="1h">
       <meta>
         <name>EnableBoot Password</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -3114,13 +3343,15 @@
     <string format="ascii" width="8" pad="0">
       <meta>
         <name>Boot Password</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </string>
     <enum width="1h">
       <meta>
         <name>Enable Write Password</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -3132,7 +3363,8 @@
     <enum width="1h">
       <meta>
         <name>Enable Read Password</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -3144,360 +3376,421 @@
     <string format="ascii" width="8" pad="0">
       <meta>
         <name>Write Password</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </string>
     <string format="ascii" width="8" pad="0">
       <meta>
         <name>Read Password</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </string>
     <unknown width="b5h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <unused width="0h:6">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu New Zone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu List Zones</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="0h:2">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Measure Period</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Remote Kill Radio</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Reenable Radio</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Remote Monitor</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Radio Check</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Call Alert</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Match Group Call</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Display Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Match Private Call</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Language Select</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Boot Display</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Transmit Power</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Alert Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu Talkaround</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="0h:1">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Record</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu APRS</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu GNSS</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Power Save</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Sub-Channel Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu FM BC Radio</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu SMS Format</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="0h:1">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu CSV Contacts</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Contact Manual Dial</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu Contact Send Message</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu Contact Functionality</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Edit Contact</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Delete Contact</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Menu Enable Add Contact</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="0h:4">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Clear Calllog</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Outgoing Calls</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Answered Calls</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Missed Calls</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu Radio Name</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Radio ID</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Time Slot</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Color Code</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu TX Contact</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu CTCSS/DCS</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu TX Frequency</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu RX Frequency</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unused width="0h:3">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu Channel Name</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu Add Channel</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned">
       <meta>
         <name>Enable Menu Group List</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu DCDM</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="0h:1" format="unsigned" default="1">
       <meta>
         <name>Enable Menu Channel Type</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="af8h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
   </element>
   <element at="6000h">
     <meta>
       <name>DTMF/BDC Settings</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <repeat n="16">
       <meta>
         <name>DTMF IDs</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <repeat n="16">
         <meta>
           <name>DTMF ID</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>DTMF Digit</name>
             <brief>If not set ffh.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -3505,58 +3798,67 @@
     <element>
       <meta>
         <name>DTMF Settings</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <int width="1h" format="unsigned" default="15" min="15" max="97">
         <meta>
           <name>Prewave Delay</name>
           <brief>Somehow broken.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="0" min="0" max="18">
         <meta>
           <name>First Digit Duration</name>
           <brief>Duration specified in multiples of 50ms. That is D = 100ms + n*50ms.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="1" min="0" max="192">
         <meta>
           <name>Tone Duration</name>
           <brief>Duration specified in multiples of 10ms. That is D = 80ms + n*10ms.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="1" min="0" max="192">
         <meta>
           <name>Pause Duration</name>
           <brief>Duration specified in multiples of 10ms. That is D = 80ms + n*10ms.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="10" min="1" max="255">
         <meta>
           <name>Autor Reset Time</name>
           <brief>Duration specified in seconds.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="1h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <repeat n="3">
         <meta>
           <name>DTMF ID</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>ID Digit</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -3564,7 +3866,8 @@
         <meta>
           <name>Group Code</name>
           <brief>At some time, I have to find out what this means.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <item value="255">
           <name>Off</name>
@@ -3592,7 +3895,8 @@
         <meta>
           <name>Interval Char</name>
           <brief>At some time, I have to find out what this means.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <item value="10">
           <name>A</name>
@@ -3616,7 +3920,8 @@
       <enum width="1h">
         <meta>
           <name>Auto Answer</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>Off</name>
@@ -3632,77 +3937,89 @@
         <meta>
           <name>PTT Id Pause</name>
           <brief>Specified in seconds. 0=Off</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="1h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <int width="1h" format="unsigned" default="0" min="0" max="99">
         <meta>
           <name>Dial Code Duration</name>
           <brief>Specified in multiples of 25ms. T = 25ms + n*25ms.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="1h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <repeat n="16">
         <meta>
           <name>DTMF PTT ID BOT</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>DTMF Digit</name>
             <brief>End of number is marked by ffh.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="16">
         <meta>
           <name>DTMF PTT ID EOT</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>DTMF Digit</name>
             <brief>End of number is marked by ffh.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="16">
         <meta>
           <name>DTMF Stun Code</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>DTMF Digit</name>
             <brief>End of number is marked by ffh.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
       <repeat n="16">
         <meta>
           <name>DTMF Kill Code</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="255" min="0" max="15">
           <meta>
             <name>DTMF Digit</name>
             <brief>End of number is marked by ffh.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
@@ -3710,171 +4027,200 @@
     <unknown width="afh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned">
       <meta>
         <name>DTMF Contact Count</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <repeat n="64">
       <meta>
         <name>DTMF Contacts</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>DTMF Contact</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <string format="ascii" width="16" pad="255">
           <meta>
             <name>Name</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <repeat n="5">
           <meta>
             <name>Digits</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <int width="1h" format="unsigned" default="255" min="0" max="9">
             <meta>
               <name>Digit</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </int>
         </repeat>
         <unused width="bh">
           <meta>
             <name>Unused data</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>ff</unused>
       </element>
     </repeat>
     <unknown width="20h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <element>
       <meta>
         <name>BDC1200 Settings</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <int width="2h" format="bcd" endian="little" default="1">
         <meta>
           <name>Radio ID</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="2h" format="bcd" endian="little" default="57344">
         <meta>
           <name>Group ID</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="15" min="15">
         <meta>
           <name>Prewave delay</name>
           <brief>Specifies the delay in some broken way. fh = 300ms, 10h = 350ms, ...</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="0h:6">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <int width="0h:1" format="unsigned">
         <meta>
           <name>PTT ID Decode</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
           <name>Enable PTT Tone</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="0" min="0" max="96">
         <meta>
           <name>Bitsync Length</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="1" min="0" max="255">
         <meta>
           <name>Auto Reset Delay</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <int width="1h" format="unsigned" default="0" min="5" max="75">
         <meta>
           <name>PTT Dead Time</name>
           <brief>Specified in multiples of 1s. If set to 0 = disabled.</brief>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
       <unknown width="67h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
       <element>
         <meta>
           <name>Contact Bank</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="0" min="0" max="64">
           <meta>
             <name>Contact Count</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <unknown width="fh">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </unknown>
         <repeat n="64">
           <meta>
             <name>Contacts</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <element>
             <meta>
               <name>Contact</name>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
             <string format="ascii" width="16" pad="0">
               <meta>
                 <name>Name</name>
-                <needs-review/>
+                <firmware>1.L1.48</firmware>
+                <done/>
               </meta>
             </string>
             <int width="2h" format="unsigned" endian="little" default="57345">
               <meta>
                 <name>Number</name>
-                <needs-review/>
+                <firmware>1.L1.48</firmware>
+                <done/>
               </meta>
             </int>
             <unused width="1h">
               <meta>
                 <name>Unused data</name>
-                <needs-review/>
+                <firmware>1.L1.48</firmware>
+                <done/>
               </meta>ff</unused>
             <enum width="1h">
               <meta>
                 <name>Call Type</name>
-                <needs-review/>
+                <firmware>1.L1.48</firmware>
+                <done/>
               </meta>
               <item value="0">
                 <name>Group Call</name>
@@ -3892,7 +4238,8 @@
       <unknown width="60h">
         <meta>
           <name>Unknown data</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </unknown>
     </element>
@@ -3900,54 +4247,63 @@
   <element at="a000h">
     <meta>
       <name>Preset Message Bank</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <int width="1h" format="unsigned" min="0" max="20">
       <meta>
         <name>Message Count</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="fh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="20">
       <meta>
         <name>Messages</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Message</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="0" min="0" max="126">
           <meta>
             <name>Message Length</name>
             <brief>Specifies the message length. If set to 0, the message is not set.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <string format="ascii" width="126" pad="0">
           <meta>
             <name>Message Text</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <unused width="2h">
           <meta>
             <name>Pad</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>00</unused>
       </element>
     </repeat>
     <unused width="5dch">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <element at="b000h">
@@ -4052,52 +4408,61 @@
   <element at="f000h">
     <meta>
       <name>RX Group List Settings</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <repeat n="32">
       <meta>
         <name>Group List Bitmap</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <int width="0h:1" format="unsigned" default="0" min="0" max="1">
         <meta>
           <name>Single Group List Enable bit</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
       </int>
     </repeat>
     <unknown width="dh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="32">
       <meta>
         <name>Group Lists</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Group List</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <string format="ascii" width="10" pad="0">
           <meta>
             <name>Name</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <repeat n="33">
           <meta>
             <name>Contact Indices</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <int width="3h" format="unsigned" endian="little" default="0">
             <meta>
               <name>Contact Index</name>
               <brief>Specifies the contact index +1. If 0, disabled.</brief>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </int>
         </repeat>
@@ -4106,46 +4471,54 @@
     <unused width="24fh">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <element at="10000h">
     <meta>
       <name>Extended Settings</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <unknown width="300h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="32">
       <meta>
         <name>Encryption Keys</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Encryption Key</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned" default="1" min="1" max="255">
           <meta>
             <name>Key ID</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <string format="ascii" width="10" pad="0">
           <meta>
             <name>Name</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <enum width="1h">
           <meta>
             <name>Key Type</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Off</name>
@@ -4167,13 +4540,15 @@
           <meta>
             <name>Key Data</name>
             <brief>Left-aligned, size depends on type. Custom: 56bit, ARC4: 40bit, AES128: 128bit and AES256: 256bit.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <unknown width="0h:2">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </unknown>
       </element>
@@ -4181,33 +4556,38 @@
     <unknown width="280h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="0" min="0" max="1">
       <meta>
         <name>Enable Lone Worker</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="10" min="1" max="255">
       <meta>
         <name>Lone Worker Response Time</name>
         <brief>Specifies duration in minutes.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="10" min="0" max="255">
       <meta>
         <name>Lone Worker Reminder Period</name>
         <brief>Period specified in seconds.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="0h:4">
       <meta>
         <name>Lone Worker Alert Tone</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Tone 1</name>
@@ -4222,7 +4602,8 @@
     <enum width="0h:4">
       <meta>
         <name>Lone Worker Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Message</name>
@@ -4234,47 +4615,55 @@
     <unknown width="4fch">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
   </element>
   <element at="11000h">
     <meta>
       <name>Scan List Bank</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <int width="1h" format="unsigned" min="0" max="32">
       <meta>
         <name>Scan List Count</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <repeat n="32">
       <meta>
         <name>Scan Lists</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>ScanList</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <string format="ascii" width="11" pad="0">
           <meta>
             <name>Name</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <int width="1h" format="unsigned" min="0">
           <meta>
             <name>Channel Count</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <enum width="0h:4">
           <meta>
             <name>Transmit Channel</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Current Channel</name>
@@ -4289,7 +4678,8 @@
         <enum width="0h:4">
           <meta>
             <name>CTCSS/DCS Detection</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>No CTCSS/DCS detection</name>
@@ -4307,41 +4697,47 @@
         <unknown width="0h:4">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </unknown>
         <int width="0h:4" format="unsigned" default="6" min="1" max="20">
           <meta>
             <name>Hang Time Duration</name>
             <brief>Specifies the hang time in multiples of 0.5s.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:4" format="unsigned" default="0" min="0" max="15">
           <meta>
             <name>Secondary Priority Channel Index</name>
             <brief>Specifies the index+1 of the secondary priority channel. The index refers to the index of the channel within the scan list. Disabled if set to 0.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:4" format="unsigned" default="0" min="0" max="64">
           <meta>
             <name>Primary Priority Channel Index</name>
             <brief>Specifies the index+1 of the primary priority channel. The index refers to the index of the channel within the scan list. Disabled if set to 0.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <int width="2h" format="unsigned" endian="little">
           <meta>
             <name>Designated TX Channel Index</name>
             <brief>Specifies the channel index +1</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <unknown width="4h">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </unknown>
         <int width="0h:6" format="unsigned" default="0" min="0" max="63">
@@ -4349,32 +4745,37 @@
             <name>Priority Sweep Time</name>
             <brief>Specified in multiples of 300ms + 500ms.</brief>
             <description>That is T = 500ms + n*300ms.</description>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <unknown width="2h:2">
           <meta>
             <name>Unknown data</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </unknown>
         <repeat n="15">
           <meta>
             <name>Channel Indices</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <int width="2h" format="unsigned" endian="little" default="0">
             <meta>
               <name>Channel Index</name>
               <brief>Specifies the Channel index+1. If 0=Current channel.</brief>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </int>
         </repeat>
         <unknown width="3h">
           <meta>
             <name>Pad</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </unknown>
       </element>
@@ -4382,13 +4783,15 @@
     <unknown width="6dfh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <enum width="1h">
       <meta>
         <name>Scan Mode</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Time</name>
@@ -4405,34 +4808,39 @@
       <meta>
         <name>VHF Scan Lower Bound</name>
         <brief>Specifies the lower bound of the VHF scan range in MHz.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="2h" format="bcd" endian="little" default="373" min="311" max="373">
       <meta>
         <name>VHF Scan Upper Bound</name>
         <brief>Specifies the upper bound of the VHF scan range in MHz.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="2h" format="bcd" endian="little" default="1024" min="1024" max="1136">
       <meta>
         <name>UHF Scan Lower Bound</name>
         <brief>Specifies the lower bound of the UHF scan range in MHz.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="2h" format="bcd" endian="little" default="1024" min="1024" max="1136">
       <meta>
         <name>UHF Scan Upper Bound</name>
         <brief>Specifies the upper bound of the UHF scan range in MHz.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1f7h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
   </element>
@@ -5428,6 +5836,8 @@
   <repeat at="42000h" n="2">
     <meta>
       <name>Extended Channel Setting Banks</name>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
@@ -5460,6 +5870,8 @@
             <meta>
               <name>Unknown data</name>
               <brief>Fixed to value 1.</brief>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </unknown>
           <int width="1h" format="unsigned" default="0" min="0" max="255">
@@ -5477,6 +5889,8 @@
         <meta>
           <name>Unused data</name>
           <brief>Place for the address prefix.</brief>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
@@ -5691,9 +6105,9 @@
         <done/>
       </meta>ff</unused>
   </element>
-  <repeat at="5d000h" min="0" max="7">
+  <repeat at="5d000h" min="0" max="8">
     <meta>
-      <name>Zone Banks 1-7</name>
+      <name>Zone Banks 1-8</name>
       <brief>Remaining zones</brief>
       <firmware>1.L1.48</firmware>
       <done/>
@@ -5759,72 +6173,84 @@
   <element at="65000h">
     <meta>
       <name>Roaming Zone Bank</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <int width="1h" format="unsigned">
       <meta>
         <name>Roaming Zone Count</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0" min="0" max="1">
       <meta>
         <name>Enable Auto-Roaming</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="1" min="0" max="255">
       <meta>
         <name>Roaming Delay</name>
         <brief>Duration is specified in minutes.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Default Roaming Zone Index</name>
         <brief>Specifies the index+1 of the default roaming zone.</brief>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="ch">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="64">
       <meta>
         <name>Roaming Zones</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Roaming Zone</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <string format="ascii" width="16" pad="0">
           <meta>
             <name>Name</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <int width="1h" format="unsigned" min="0" max="16">
           <meta>
             <name>Roaming Channel Count</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <repeat n="16">
           <meta>
             <name>Roaming Channel Indices</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <int width="1h" format="unsigned" default="0">
             <meta>
               <name>Roaming Channel Index</name>
               <brief>Specifies the roaming channel index+1.</brief>
-              <needs-review/>
+              <firmware>1.L1.48</firmware>
+              <done/>
             </meta>
           </int>
         </repeat>
@@ -5833,54 +6259,63 @@
     <unused width="7b0h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
   </element>
   <element at="66000h">
     <meta>
       <name>Roaming Channel Bank</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <repeat n="150">
       <meta>
         <name>Roaming Channels</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Roaming Channel</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <string format="ascii" width="16" pad="0">
           <meta>
             <name>Name</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <int width="4h" format="bcd" endian="little">
           <meta>
             <name>RX Frequency</name>
             <brief>Specifies the frequency in multiples of 10Hz.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <int width="4h" format="bcd" endian="little">
           <meta>
             <name>TX Frequency</name>
             <brief>Specifies the frequency in multiples of 10Hz.</brief>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <int width="1h" format="unsigned" default="0" min="0" max="15">
           <meta>
             <name>Color Code</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <enum width="1h">
           <meta>
             <name>Time Slot</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Time Slot 1</name>
@@ -5894,71 +6329,83 @@
     <unused width="b4h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
     <int width="1h" format="unsigned" min="0" max="150">
       <meta>
         <name>Channel Count</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="fh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
   </element>
   <element at="67000h">
     <meta>
       <name>Radio ID Bank</name>
-      <needs-review/>
+      <firmware>1.L1.48</firmware>
+      <done/>
     </meta>
     <int width="1h" format="unsigned" default="1">
       <meta>
         <name>Number of IDs</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="fh">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
     </unknown>
     <repeat n="250">
       <meta>
         <name>Radio IDs</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Radio Id</name>
-          <needs-review/>
+          <firmware>1.L1.48</firmware>
+          <done/>
         </meta>
         <int width="3h" format="unsigned" endian="little">
           <meta>
             <name>DMR ID</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </int>
         <string format="ascii" width="12" pad="0">
           <meta>
             <name>Name</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>
         </string>
         <unused width="1h">
           <meta>
             <name>Pad</name>
-            <needs-review/>
+            <firmware>1.L1.48</firmware>
+            <done/>
           </meta>00</unused>
       </element>
     </repeat>
     <unused width="50h">
       <meta>
         <name>Unused data</name>
-        <needs-review/>
+        <firmware>1.L1.48</firmware>
+        <done/>
       </meta>00</unused>
   </element>
 </codeplug>
