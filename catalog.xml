@@ -6,6 +6,7 @@
   <xi:include href="d878uv2/model.xml"/>
   <xi:include href="d578uv/model.xml"/>
   <xi:include href="d168uv/model.xml"/>
+  <xi:include href="d890uv/model.xml"/>
 
   <xi:include href="dmr6x2uv/model.xml"/>
   <xi:include href="dmr6x2uv2/model.xml"/>
