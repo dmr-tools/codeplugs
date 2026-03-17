@@ -5,6 +5,15 @@
   <manufacturer>Baofeng</manufacturer>
   <url>https://www.baofengradio.com</url>
   
-  <firmware name="V1.1.46" released="2000-01-01" codeplug="v1.1.46.xml"/>
-  <firmware name="V1.L1.48" released="2025-08-21" codeplug="v1.L1.48.xml"/>
+  <firmware name="V1.1.46" released="2000-01-01" codeplug="v1.1.46.xml">
+    <firmware-version><![CDATA[32.01.01.04]]></firmware-version>
+    <contacts address="278000" size="464000"/>
+    <contact-count>50000</contact-count>
+  </firmware>
+
+  <firmware name="V1.L1.48" released="2025-08-21" codeplug="v1.L1.48.xml">
+    <firmware-version><![CDATA[32.01.L01.048]]></firmware-version>
+    <contacts address="278000" size="d88000"/>
+    <contact-count>250000</contact-count>
+  </firmware>
 </model>
