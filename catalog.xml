@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog xmlns:xi="http://www.w3.org/2001/XInclude">
+<catalog xmlns="https://static.dm3mat.de/schema/anytone-emu-catalog.dtd"
+         xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <xi:include href="d868uve/model.xml"/>
   <xi:include href="d878uv/model.xml"/>

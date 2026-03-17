@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<model class="AnyTone" id="d878uv2">
+<model xmlns="https://static.dm3mat.de/schema/anytone-emu-catalog.dtd"
+       xmlns:anytone="https://static.dm3mat.de/schema/anytone-emu-catalog-anytone.dtd"
+       class="AnyTone" id="d878uv2">
   <name>AT-D878UVII / AT-D878UVII+</name>
   <manufacturer>AnyTone</manufacturer>
   <url>https://www.anytone.net/video/products-detail-935380</url>
 
   <memory>
-    <id>38 37 38 55 56 32</id>  <!-- 878UV2 -->
-    <revision>56 31 30 31 00 00</revision> <!-- V100\0\0 -->
+    <anytone:id>38 37 38 55 56 32</anytone:id>  <!-- 878UV2 -->
+    <anytone:revision>56 31 30 31 00 00</anytone:revision> <!-- V100\0\0 -->
     <!-- Some binary blob, read by the CPS from the device. -->
     <map address="02fa0000">
       00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff

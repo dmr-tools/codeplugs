@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<model class="AnyTone" id="d578uv">   
+<model xmlns="https://static.dm3mat.de/schema/anytone-emu-catalog.dtd"
+       xmlns:anytone="https://static.dm3mat.de/schema/anytone-emu-catalog-anytone.dtd"
+       class="AnyTone" id="d578uv">
   <name>AT-D578UV(+) / AT-D578UV(+) III</name>
   <manufacturer>AnyTone</manufacturer>
   <url></url>
 
   <memory>
-    <id>35 37 38 55 56 00</id>  <!-- 578UV -->
-    <revision>56 31 31 31 00 00</revision> <!-- V111\0\0 -->
+    <anytone:id>35 37 38 55 56 00</anytone:id>  <!-- 578UV -->
+    <anytone:revision>56 31 31 31 00 00</anytone:revision> <!-- V111\0\0 -->
     <!-- Some binary blob, read by the CPS from the device. -->
     <map address="02fa0000">
       00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff

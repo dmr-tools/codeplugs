@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<model class="AnyTone" id="dmr6x2uv">
+<model xmlns="https://static.dm3mat.de/schema/anytone-emu-catalog.dtd"
+       xmlns:anytone="https://static.dm3mat.de/schema/anytone-emu-catalog-anytone.dtd"
+       class="AnyTone" id="dmr6x2uv">
   <name>DMR-6X2UV</name>
   <manufacturer>BTECH</manufacturer>
   <description></description>
   <url>https://baofengtech.com/product/dmr-6x2/</url>
 
   <memory>
-    <id>36 58 32 55 56 00</id>  <!-- 6X2UV\0 -->
-    <revision>56 31 30 32 00 00</revision> <!-- V102\0\0 -->
+    <anytone:id>36 58 32 55 56 00</anytone:id>  <!-- 6X2UV\0 -->
+    <anytone:revision>56 31 30 32 00 00</anytone:revision> <!-- V102\0\0 -->
     <!-- Some binary blob, read by the CPS from the device. -->
     <map address="02fa0000">
         00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff

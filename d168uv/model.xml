@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <model class="AnyTone" id="d168uv"
+       xmlns="https://static.dm3mat.de/schema/anytone-emu-catalog.dtd"
+       xmlns:anytone="https://static.dm3mat.de/schema/anytone-emu-catalog-anytone.dtd"
        xmlns:xi="http://www.w3.org/2001/XInclude">
     <name>AT-D168UV</name>
     <manufacturer>AnyTone</manufacturer>
     <url></url>
 
     <memory>
-      <id>31 36 38 55 56 00</id>  <!-- 168UV -->
-      <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+      <anytone:id>31 36 38 55 56 00</anytone:id>  <!-- 168UV -->
+      <anytone:revision>56 31 30 30 00 00</anytone:revision> <!-- V100\0\0 -->
       <!-- Some binary blob, read by the CPS from the device. -->
       <map address="02fa0000">
         00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff

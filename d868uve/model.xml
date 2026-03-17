@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<model class="AnyTone" id="d868uve">
+<model xmlns="https://static.dm3mat.de/schema/anytone-emu-catalog.dtd"
+       xmlns:anytone="https://static.dm3mat.de/schema/anytone-emu-catalog-anytone.dtd"
+       class="AnyTone" id="d868uve">
   <name>AT-D868UVE</name>
   <manufacturer>AnyTone</manufacturer>
   <description></description>
   <url>https://www.anytone.net/pro_info60.html</url>
 
   <memory>
-    <id>38 36 38 55 56 45</id>  <!-- 868UVE -->
-    <revision>56 31 30 32 00 00</revision> <!-- V102\0\0 -->
+    <anytone:id>38 36 38 55 56 45</anytone:id>  <!-- 868UVE -->
+    <anytone:revision>56 31 30 32 00 00</anytone:revision> <!-- V102\0\0 -->
     <!-- Some binary blob, read by the CPS from the device. -->
     <map address="02fa0000">
       00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff

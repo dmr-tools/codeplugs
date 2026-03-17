@@ -1,11 +1,15 @@
-<model class="AnyTone" id="djmd5">
+<?xml version="1.0"?>
+
+<model xmlns="https://static.dm3mat.de/schema/anytone-emu-catalog.dtd"
+       xmlns:anytone="https://static.dm3mat.de/schema/anytone-emu-catalog-anytone.dtd"
+       class="AnyTone" id="djmd5">
   <name>DJ-MD5</name>
   <manufacturer>Alinco</manufacturer>
   <url></url>
 
   <memory>
-    <id>4A 4D 44 35 00 00</id>
-    <revision>56 31 30 30 00 00</revision>
+    <anytone:id>4A 4D 44 35 00 00</anytone:id>
+    <anytone:revision>56 31 30 30 00 00</anytone:revision>
     <map address="02fa0000">
         00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
         44 38 37 38 55 56 00 01 00 ff ff ff ff ff ff ff

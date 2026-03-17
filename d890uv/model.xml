@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<model class="AnyTone" id="d890uv">
+<model xmlns="https://static.dm3mat.de/schema/anytone-emu-catalog.dtd"
+       xmlns:anytone="https://static.dm3mat.de/schema/anytone-emu-catalog-anytone.dtd"
+       class="AnyTone" id="d890uv">
   <name>AT-D890UV</name>
   <manufacturer>AnyTone</manufacturer>
 
   <memory>
-    <id>38 39 30 55 56 00</id>  <!-- 890UV -->
-    <revision>56 31 30 30 00 00</revision> <!-- V100\0\0 -->
+    <anytone:id>38 39 30 55 56 00</anytone:id>  <!-- 890UV -->
+    <anytone:revision>56 31 30 30 00 00</anytone:revision> <!-- V100\0\0 -->
     <!-- Some binary blob, read by the CPS from the device. -->
     <map address="04f80000">
       00 00 00 00 01 01 01 00 00 01 01 20 20 20 20 ff
