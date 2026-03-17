@@ -6408,4 +6408,202 @@
         <done/>
       </meta>00</unused>
   </element>
+  <element at="278000h">
+    <meta>
+      <name>Call Sign DB Bank 0</name>
+      <brief>The first of many call-sign DB banks.</brief>
+      <description>These banks are not subject to the stupid address scrabling. That is, the virtual address of these documented elements are also the physical address.</description>
+      <firmware>1.L1.48</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Header</name>
+        <firmware>1.L1.48</firmware>
+        <done/>
+      </meta>
+      <int width="4h" format="unsigned" endian="little" default="0" min="0">
+        <meta>
+          <name>Entry Count</name>
+          <brief>Specifies the number of entries of the callsign DB.</brief>
+          <firmware>1.L1.48</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="ch">
+        <meta>
+          <name>Unused data</name>
+          <firmware>1.L1.48</firmware>
+          <done/>
+        </meta>00</unused>
+    </element>
+    <repeat n="44">
+      <meta>
+        <name>Entries</name>
+        <brief>Just the collection of some entries. If disabled, the ID is set to 0.</brief>
+        <description>The entries are not sorted or indexed.</description>
+        <firmware>1.L1.48</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Entry</name>
+          <brief>A single callsign DB entry.</brief>
+          <firmware>1.L1.48</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Name/Call</name>
+            <brief>Specifies the name or callsign of the entry.</brief>
+            <firmware>1.L1.48</firmware>
+            <done/>
+          </meta>
+        </string>
+        <int width="4h" format="unsigned" endian="little" default="0">
+          <meta>
+            <name>DMR ID</name>
+            <brief>Specifies the DMR ID.</brief>
+            <description>If set to 0, the entry is disabled.</description>
+            <firmware>1.L1.48</firmware>
+            <done/>
+          </meta>
+        </int>
+        <string format="ascii" width="8" pad="255">
+          <meta>
+            <name>Repeater</name>
+            <brief>The repeater field.</brief>
+            <firmware>1.L1.48</firmware>
+            <done/>
+          </meta>
+        </string>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>City</name>
+            <brief>Specifies the city field.</brief>
+            <firmware>1.L1.48</firmware>
+            <done/>
+          </meta>
+        </string>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Province</name>
+            <firmware>1.L1.48</firmware>
+            <done/>
+          </meta>
+        </string>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Country</name>
+            <firmware>1.L1.48</firmware>
+            <done/>
+          </meta>
+        </string>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Remark</name>
+            <firmware>1.L1.48</firmware>
+            <done/>
+          </meta>
+        </string>
+      </element>
+    </repeat>
+    <unused width="20h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.L1.48</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="279000h" min="0" max="5681">
+    <meta>
+      <name>Call Sign DB Banks 1-5682</name>
+      <brief>Remaining call sign DB entries.</brief>
+      <firmware>1.L1.48</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Call Sign DB Bank</name>
+        <firmware>1.L1.48</firmware>
+        <done/>
+      </meta>
+      <repeat n="44">
+        <meta>
+          <name>Entries</name>
+          <firmware>1.L1.48</firmware>
+          <done/>
+        </meta>
+        <element>
+          <meta>
+            <name>Entry</name>
+            <brief>A single callsign DB entry.</brief>
+            <firmware>1.L1.48</firmware>
+            <done/>
+          </meta>
+          <string format="ascii" width="16" pad="0">
+            <meta>
+              <name>Name/Call</name>
+              <brief>Specifies the name or callsign of the entry.</brief>
+              <firmware>1.L1.48</firmware>
+              <done/>
+            </meta>
+          </string>
+          <int width="4h" format="unsigned" endian="little" default="0">
+            <meta>
+              <name>DMR ID</name>
+              <brief>Specifies the DMR ID.</brief>
+              <firmware>1.L1.48</firmware>
+              <done/>
+            </meta>
+          </int>
+          <string format="ascii" width="8" pad="255">
+            <meta>
+              <name>Repeater</name>
+              <brief>The repeater field.</brief>
+              <firmware>1.L1.48</firmware>
+              <done/>
+            </meta>
+          </string>
+          <string format="ascii" width="16" pad="255">
+            <meta>
+              <name>City</name>
+              <brief>Specifies the city field.</brief>
+              <firmware>1.L1.48</firmware>
+              <done/>
+            </meta>
+          </string>
+          <string format="ascii" width="16" pad="255">
+            <meta>
+              <name>Province</name>
+              <firmware>1.L1.48</firmware>
+              <done/>
+            </meta>
+          </string>
+          <string format="ascii" width="16" pad="255">
+            <meta>
+              <name>Country</name>
+              <firmware>1.L1.48</firmware>
+              <done/>
+            </meta>
+          </string>
+          <string format="ascii" width="16" pad="255">
+            <meta>
+              <name>Remark</name>
+              <firmware>1.L1.48</firmware>
+              <done/>
+            </meta>
+          </string>
+        </element>
+      </repeat>
+      <unused width="30h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>1.L1.48</firmware>
+          <done/>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
 </codeplug>
