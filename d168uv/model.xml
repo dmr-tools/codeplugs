@@ -33,4 +33,5 @@
     </memory>
 
     <firmware name="1.03" released="2022-07-05" codeplug="v1.03.xml"/>
+    <firmware name="1.07" released="2025-06-14" codeplug="v1.07.xml"/>
 </model>

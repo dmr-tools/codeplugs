@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>AnyTone AT-D168UV</name>
+    <description>Documents the codeplug format for the AnyTone AT-D168UV device.</description>
+    <firmware>1.07</firmware>
+  </meta>
+</codeplug>
