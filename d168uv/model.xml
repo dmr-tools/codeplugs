@@ -7,6 +7,7 @@
     <name>AT-D168UV</name>
     <manufacturer>AnyTone</manufacturer>
     <url></url>
+    <anytone:band>3</anytone:band>
 
     <memory>
       <anytone:id>31 36 38 55 56 00</anytone:id>  <!-- 168UV -->
