@@ -7,6 +7,7 @@
     <name>AT-D168UV</name>
     <manufacturer>AnyTone</manufacturer>
     <url></url>
+    <anytone:band>3</anytone:band>
 
     <memory>
       <anytone:id>31 36 38 55 56 00</anytone:id>  <!-- 168UV -->
@@ -33,4 +34,5 @@
     </memory>
 
     <firmware name="1.03" released="2022-07-05" codeplug="v1.03.xml"/>
+    <firmware name="1.07" released="2025-06-14" codeplug="v1.07.xml"/>
 </model>
