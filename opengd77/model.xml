@@ -35,4 +35,13 @@
       </map>
     </memory>
   </firmware>
+
+  <firmware name="R20260131" released="2026-01-31" codeplug="R20260131.xml">
+    <memory>
+      <map address="02000008">
+        36 35 66 61 38 39 61 36 00 00 00 00 00 00 00 00 <!-- git Revision -->
+        32 30 32 36 30 31 33 31 30 30 30 30 30 30 00 00 <!-- build DateTime -->
+      </map>
+    </memory>
+  </firmware>
 </model>
