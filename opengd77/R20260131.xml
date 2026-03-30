@@ -292,13 +292,12 @@
           <name>0.5°</name>
         </item>
       </enum>
-      <unused width="0h:1">
+      <int width="0h:1" format="unsigned" default="0" min="0" max="1">
         <meta>
-          <name>Unused data</name>
-          <firmware>R20260131</firmware>
-          <done/>
+          <name>Enable Monitor</name>
+          <brief>Enables the speaker during transmission.</brief>
         </meta>
-      </unused>
+      </int>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
           <name>Transmit QSY</name>
