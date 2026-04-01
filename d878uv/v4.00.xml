@@ -4372,7 +4372,7 @@
         <done/>
       </meta>
     </int>
-    <enum width="1h:1">
+    <enum width="1h">
       <meta>
         <name>Side tone</name>
         <brief>Enables side tone.</brief>
@@ -4386,7 +4386,7 @@
         <name>On</name>
       </item>
     </enum>
-    <unknown width="0h:7">
+    <unknown width="1h">
       <meta>
         <name>Unknown data</name>
       </meta>
