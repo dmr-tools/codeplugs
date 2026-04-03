@@ -5351,10 +5351,12 @@
     <element>
       <meta>
         <name>ChannelBank</name>
+        <brief>In contrast to channel bank 0, the remaining channel banks can hold a channel more.</brief>
+        <description>That is, 85 instead of 84.</description>
         <firmware>1.L1.48</firmware>
         <done/>
       </meta>
-      <repeat n="84">
+      <repeat n="85">
         <meta>
           <name>Channels</name>
           <firmware>1.L1.48</firmware>
