@@ -149,7 +149,7 @@
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Swap RX/TX frequencies</name>
+            <name>Swap RX/TX</name>
             <short-name>sw Rx/Tx</short-name>
             <brief>Also swaps signaling.</brief>
             <firmware>1.21</firmware>
@@ -347,6 +347,9 @@
           <item value="50">
             <name>254.1 Hz</name>
           </item>
+          <item value="51">
+            <name>Custom</name>
+          </item>
         </enum>
         <enum width="1h">
           <meta>
@@ -506,6 +509,9 @@
           </item>
           <item value="50">
             <name>254.1 Hz</name>
+          </item>
+          <item value="51">
+            <name>Custom</name>
           </item>
         </enum>
         <int width="2h" format="unsigned" endian="little" default="0">
@@ -1337,7 +1343,7 @@
       </int>
       <int width="0h:1" format="unsigned" default="0">
         <meta>
-          <name>Swap RX/TX frequencies</name>
+          <name>Swap RX/TX</name>
           <brief>Also swaps signaling.</brief>
           <firmware>1.21</firmware>
           <done/>

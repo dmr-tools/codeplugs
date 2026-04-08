@@ -340,6 +340,9 @@
           <item value="50">
             <name>254.1 Hz</name>
           </item>
+          <item value="51">
+            <name>Custom</name>
+          </item>
         </enum>
         <enum width="1h">
           <meta>
@@ -499,6 +502,9 @@
           </item>
           <item value="50">
             <name>254.1 Hz</name>
+          </item>
+          <item value="51">
+            <name>Custom</name>
           </item>
         </enum>
         <int width="2h" format="unsigned" endian="little">

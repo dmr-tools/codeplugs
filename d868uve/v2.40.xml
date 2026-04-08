@@ -144,7 +144,8 @@
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Enable CTCSS phase reversal</name>
+            <name>Swap RX/TX</name>
+            <brief>Swaps RX and TX frequencies.</brief>
             <firmware>2.40</firmware>
             <done/>
           </meta>
@@ -335,6 +336,9 @@
           </item>
           <item value="50">
             <name>254.1 Hz</name>
+          </item>
+          <item value="51">
+            <name>Custom</name>
           </item>
         </enum>
         <enum width="1h">
@@ -1018,6 +1022,9 @@
         </item>
         <item value="50">
           <name>254.1 Hz</name>
+        </item>
+        <item value="51">
+          <name>Custom</name>
         </item>
       </enum>
       <enum width="1h">

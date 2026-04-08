@@ -38,18 +38,15 @@
           </meta>
           <item value="0">
             <name>simplex</name>
-            <description>Transmit frequency offset is ignored. Transmit and receive frequencies are
-            the same.</description>
+            <description>Transmit frequency offset is ignored. Transmit and receive frequencies are the same.</description>
           </item>
           <item value="1">
             <name>positive</name>
-            <description>Transmit frequency offset is positive. Transmit frequency lays above the
-            receive frequency.</description>
+            <description>Transmit frequency offset is positive. Transmit frequency lays above the receive frequency.</description>
           </item>
           <item value="2">
             <name>positive</name>
-            <description>Transmit frequency offset is negative. Transmit frequency lays below the
-            receive frequency.</description>
+            <description>Transmit frequency offset is negative. Transmit frequency lays below the receive frequency.</description>
           </item>
         </enum>
         <unused width="0h:1">
@@ -122,7 +119,8 @@
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Enable CTCSS phase reversal</name>
+            <name>Swap RX/TX</name>
+            <brief>Swaps RX and TX frequencies.</brief>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
@@ -470,18 +468,15 @@
         </meta>
         <item value="0">
           <name>simplex</name>
-          <description>Transmit frequency offset is ignored. Transmit and receive frequencies are
-            the same.</description>
+          <description>Transmit frequency offset is ignored. Transmit and receive frequencies are the same.</description>
         </item>
         <item value="1">
           <name>positive</name>
-          <description>Transmit frequency offset is positive. Transmit frequency lays above the
-            receive frequency.</description>
+          <description>Transmit frequency offset is positive. Transmit frequency lays above the receive frequency.</description>
         </item>
         <item value="2">
           <name>positive</name>
-          <description>Transmit frequency offset is negative. Transmit frequency lays below the
-            receive frequency.</description>
+          <description>Transmit frequency offset is negative. Transmit frequency lays below the receive frequency.</description>
         </item>
       </enum>
       <unused width="0h:1">
@@ -1140,7 +1135,7 @@
   </element>
   <element at="24c1280h">
     <meta>
-      <name>2-tone encoding bitmap block</name>
+      <name>2-tone settings</name>
     </meta>
     <unknown width="10h">
       <meta>
@@ -1150,7 +1145,7 @@
   </element>
   <element at="24c1280h">
     <meta>
-      <name>2-tone settings</name>
+      <name>2-tone encoding bitmap block</name>
     </meta>
     <unknown width="10h">
       <meta>

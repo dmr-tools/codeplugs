@@ -147,7 +147,8 @@
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Enable CTCSS phase reversal</name>
+            <name>Swap RX/TX</name>
+            <brief>Swaps RX and TX frequencies.</brief>
             <firmware>2.21b</firmware>
             <done/>
           </meta>
@@ -1114,7 +1115,8 @@
       </int>
       <int width="0h:1" format="unsigned">
         <meta>
-          <name>Enable CTCSS phase reversal</name>
+          <name>Swap RX/TX</name>
+          <brief>Swaps RX and TX frequencies.</brief>
           <firmware>2.21b</firmware>
           <done/>
         </meta>

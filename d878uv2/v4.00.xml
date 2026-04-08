@@ -150,9 +150,10 @@
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Enable CTCSS phase reversal</name>
-            <short-name>PhRev</short-name>
-            <firmware>3.04</firmware>
+            <name>Swap RX/TX</name>
+            <short-name>SwRxTx</short-name>
+            <brief>Swaps RX and TX frequencies.</brief>
+            <firmware>4.00</firmware>
             <done/>
           </meta>
         </int>
@@ -347,6 +348,9 @@
           <item value="50">
             <name>254.1 Hz</name>
           </item>
+          <item value="51">
+            <name>Custom</name>
+          </item>
         </enum>
         <enum width="1h">
           <meta>
@@ -506,6 +510,9 @@
           </item>
           <item value="50">
             <name>254.1 Hz</name>
+          </item>
+          <item value="51">
+            <name>Custom</name>
           </item>
         </enum>
         <int width="2h" format="unsigned" endian="little" default="0">
@@ -730,12 +737,14 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:1">
+        <int width="0h:1" format="unsigned" default="0" min="0" max="1">
           <meta>
-            <name>Unknown data</name>
+            <name>Ignore time-slot.</name>
+            <short-name>IgnTS</short-name>
             <firmware>4.00</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </int>
         <enum width="0h:2">
           <meta>
             <name>DCMA mode</name>
