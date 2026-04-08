@@ -729,7 +729,7 @@
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Ignore time-slot</name>
+            <name>Enable adaptive TDMA</name>
             <short-name>IgnTS</short-name>
             <firmware>4.00</firmware>
             <done/>

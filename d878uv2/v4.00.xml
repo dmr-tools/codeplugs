@@ -739,8 +739,9 @@
         </int>
         <int width="0h:1" format="unsigned" default="0" min="0" max="1">
           <meta>
-            <name>Ignore time-slot.</name>
+            <name>Enable adaptive TDMA</name>
             <short-name>IgnTS</short-name>
+            <brief>If enabled, the time-slot setting is ignored. the radio will receive on both time-slots.</brief>
             <firmware>4.00</firmware>
             <done/>
           </meta>
