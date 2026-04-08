@@ -555,7 +555,35 @@
             <done/>
           </meta>
         </int>
-        <unused width="0h:6">
+        <unused width="0h:1">
+          <meta>
+            <name>Unused data</name>
+            <firmware>1.07</firmware>
+            <done/>
+          </meta>00</unused>
+        <enum width="0h:3">
+          <meta>
+            <name>Squelch Mode</name>
+            <firmware>1.07</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Carrier</name>
+          </item>
+          <item value="1">
+            <name>CTCSS/DCS</name>
+          </item>
+          <item value="2">
+            <name>Optional Signaling</name>
+          </item>
+          <item value="3">
+            <name>CTCSS/DCS and Optional Signaling</name>
+          </item>
+          <item value="4">
+            <name>CTCSS/DCS or Optional Signaling</name>
+          </item>
+        </enum>
+        <unused width="0h:2">
           <meta>
             <name>Unused data</name>
             <firmware>1.07</firmware>
