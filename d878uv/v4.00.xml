@@ -10,21 +10,21 @@
     <meta>
       <name>Channel banks</name>
       <brief>A sparse series of channel banks.</brief>
-      <firmware>2.40</firmware>
+      <firmware>4.00</firmware>
       <done/>
     </meta>
     <repeat min="1" max="128">
       <meta>
         <name>Channel Bank</name>
         <brief>A single channel bank, holding up to 128 Channels.</brief>
-        <firmware>2.40</firmware>
+        <firmware>4.00</firmware>
         <done/>
       </meta>
       <element>
         <meta>
           <name>Channel</name>
           <brief>Encodes a single FM or DMR channel.</brief>
-          <firmware>2.40</firmware>
+          <firmware>4.00</firmware>
           <done/>
         </meta>
         <int width="4h" format="bcd" endian="big">
@@ -547,12 +547,37 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:6">
+        <unused width="0h:1">
           <meta>
-            <name>Unknown data</name>
-            <firmware>3.04</firmware>
+            <name>Unused data</name>
           </meta>
-        </unknown>
+        </unused>
+        <enum width="0h:3">
+          <meta>
+            <name>Squelch Mode</name>
+            <firmware>4.00</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Carrier</name>
+          </item>
+          <item value="1">
+            <name>CTCSS/DSC</name>
+          </item>
+          <item value="2">
+            <name>Optional Signaling</name>
+          </item>
+          <item value="3">
+            <name>CTCSS/DSC and Optional Signaling</name>
+          </item>
+        </enum>
+        <unused width="0h:2">
+          <meta>
+            <name>Unused data</name>
+            <firmware>4.00</firmware>
+            <done/>
+          </meta>
+        </unused>
         <enum width="0h:2">
           <meta>
             <name>FM PTT ID transmission mode</name>
@@ -704,7 +729,7 @@
         <enum width="0h:2">
           <meta>
             <name>DCMA mode</name>
-            <firmware>3.04</firmware>
+            <firmware>4.00</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -821,24 +846,25 @@
         </enum>
         <enum width="1h">
           <meta>
-            <name>DMR APRS PTT mode</name>
-            <firmware>3.04</firmware>
+            <name>FM APRS PTT mode</name>
+            <brief>Specifies, when to send the APRS information.</brief>
+            <firmware>4.00</firmware>
             <done/>
           </meta>
           <item value="0">
             <name>Off</name>
           </item>
           <item value="1">
-            <name>Start of transmission</name>
+            <name>Start of Transmission</name>
           </item>
           <item value="2">
-            <name>End of transmission</name>
+            <name>End of Transmission</name>
           </item>
         </enum>
         <enum width="1h">
           <meta>
-            <name>FM APRS PTT mode</name>
-            <firmware>3.04</firmware>
+            <name>DMR APRS PTT mode</name>
+            <firmware>4.00</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -4372,7 +4398,7 @@
         <done/>
       </meta>
     </int>
-    <enum width="1h:1">
+    <enum width="1h">
       <meta>
         <name>Side tone</name>
         <brief>Enables side tone.</brief>
@@ -4386,7 +4412,7 @@
         <name>On</name>
       </item>
     </enum>
-    <unknown width="0h:7">
+    <unknown width="1h">
       <meta>
         <name>Unknown data</name>
       </meta>
@@ -6460,107 +6486,15 @@
         <done/>
       </meta>
     </int>
-    <enum width="1h">
+    <int width="1h" format="unsigned" default="0" min="0" max="50">
       <meta>
         <name>Time Zone</name>
-        <description>How about encoding it as a singed integer in multiples of 5min? Also, UTC+13h were you drunk?</description>
-        <firmware>3.05</firmware>
+        <brief>Specifies the time zone as an offset in multiples of 30min.</brief>
+        <description>Starting at UTC-12:00. That is, 0=UTC-12:00, 1=UTC-11:30, ..., 24=UTC, ..., 50=UTC+13:00</description>
+        <firmware>4.00</firmware>
         <done/>
       </meta>
-      <item value="0">
-        <name>UTC-12:00h</name>
-      </item>
-      <item value="1">
-        <name>UTC-11:00h</name>
-      </item>
-      <item value="2">
-        <name>UTC-10:00h</name>
-      </item>
-      <item value="3">
-        <name>UTC-09:00h</name>
-      </item>
-      <item value="4">
-        <name>UTC-08:00h</name>
-      </item>
-      <item value="5">
-        <name>UTC-07:00h</name>
-      </item>
-      <item value="6">
-        <name>UTC-06:00h</name>
-      </item>
-      <item value="7">
-        <name>UTC-05:00h</name>
-      </item>
-      <item value="8">
-        <name>UTC-04:00h</name>
-      </item>
-      <item value="9">
-        <name>UTC-03:30h</name>
-      </item>
-      <item value="10">
-        <name>UTC-02:00h</name>
-      </item>
-      <item value="11">
-        <name>UTC-01:00h</name>
-      </item>
-      <item value="12">
-        <name>UTC</name>
-      </item>
-      <item value="13">
-        <name>UTC+01:00h</name>
-      </item>
-      <item value="14">
-        <name>UTC+02:00h</name>
-      </item>
-      <item value="15">
-        <name>UTC+03:00h</name>
-      </item>
-      <item value="16">
-        <name>UTC+03:30h</name>
-      </item>
-      <item value="17">
-        <name>UTC+04:00h</name>
-      </item>
-      <item value="18">
-        <name>UTC+04:30h</name>
-      </item>
-      <item value="19">
-        <name>UTC+05:00h</name>
-      </item>
-      <item value="20">
-        <name>UTC+05:30h</name>
-      </item>
-      <item value="21">
-        <name>UTC+05:45h</name>
-      </item>
-      <item value="22">
-        <name>UTC+06:00h</name>
-      </item>
-      <item value="23">
-        <name>UTC+07:00h</name>
-      </item>
-      <item value="24">
-        <name>UTC+08:00h</name>
-      </item>
-      <item value="25">
-        <name>UTC+08:30h</name>
-      </item>
-      <item value="26">
-        <name>UTC+09:00h</name>
-      </item>
-      <item value="27">
-        <name>UTC+10:00h</name>
-      </item>
-      <item value="28">
-        <name>UTC+11:00h</name>
-      </item>
-      <item value="29">
-        <name>UTC+12:00h</name>
-      </item>
-      <item value="30">
-        <name>UTC+13:00h</name>
-      </item>
-    </enum>
+    </int>
     <enum width="1h">
       <meta>
         <name>Talk permit tone</name>
@@ -8468,7 +8402,7 @@
         <name>Backlight duration RX</name>
         <brief>Specifies the duration of the backlight during RX.</brief>
         <description>The duration is specified in seconds. Valid values are [1,30] seconds. If set to 0 the backlight stays on.</description>
-        <firmware>3.05</firmware>
+        <firmware>4.00</firmware>
         <done/>
       </meta>
     </int>
@@ -10060,30 +9994,7 @@
         <brief>Specifies how often the so-called voice header is repeated. Valid values are 2, ..., 8.</brief>
       </meta>
     </int>
-    <int width="1h" format="unsigned" default="0">
-      <meta>
-        <name>Satellite fixed location index</name>
-        <brief>Specifies the location source for the satellite prediction.</brief>
-        <description>Speicfies the index +1 of the fixed location (APRS settings). If set to 0, the GPS location is used.</description>
-        <firmware>3.05</firmware>
-        <done/>
-      </meta>
-    </int>
-    <unknown width="1h">
-      <meta>
-        <name>Unknown data</name>
-      </meta>
-    </unknown>
-    <int width="1h" format="unsigned" default="0">
-      <meta>
-        <name>Satellite FM channel squelch</name>
-        <brief>Encodes the squelch level for all satellite FM channels.</brief>
-        <description>Valid values are [0,5], where 0=open.</description>
-        <firmware>3.05</firmware>
-        <done/>
-      </meta>
-    </int>
-    <unknown width="18eh">
+    <unknown width="191h">
       <meta>
         <name>Unknown data</name>
       </meta>
