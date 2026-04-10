@@ -617,17 +617,10 @@
             <name>Both</name>
           </item>
         </enum>
-        <unused width="0h:2">
-          <meta>
-            <name>Unused data</name>
-            <firmware>3.04</firmware>
-            <done/>
-          </meta>00</unused>
-        <enum width="0h:2">
+        <enum width="0h:4">
           <meta>
             <name>Optional Signaling</name>
-            <short-name>Opt Sig</short-name>
-            <firmware>3.04</firmware>
+            <firmware>4.00</firmware>
             <done/>
           </meta>
           <item value="0">
@@ -643,12 +636,10 @@
             <name>five-tone</name>
           </item>
         </enum>
-        <unknown width="0h:2">
+        <unused width="0h:2">
           <meta>
-            <name>Unknown data</name>
-            <firmware>3.04</firmware>
-          </meta>
-        </unknown>
+            <name>Unused data</name>
+          </meta>00</unused>
         <enum width="0h:2">
           <meta>
             <name>Admit Criterium</name>
@@ -713,7 +704,8 @@
         </int>
         <int width="1h" format="unsigned">
           <meta>
-            <name>Colorcode</name>
+            <name>Color code</name>
+            <brief>Specifies the RX color code.</brief>
             <firmware>3.04</firmware>
             <done/>
           </meta>
