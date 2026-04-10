@@ -569,13 +569,16 @@
             <name>Carrier</name>
           </item>
           <item value="1">
-            <name>CTCSS/DSC</name>
+            <name>CTCSS/DCS</name>
           </item>
           <item value="2">
             <name>Optional Signaling</name>
           </item>
           <item value="3">
-            <name>CTCSS/DSC and Optional Signaling</name>
+            <name>CTCSS/DCS and Optional Signaling</name>
+          </item>
+          <item value="4">
+            <name>CTCSS/DCS or Optional Signaling</name>
           </item>
         </enum>
         <unused width="0h:2">

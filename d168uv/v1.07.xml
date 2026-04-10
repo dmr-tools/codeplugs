@@ -881,6 +881,7 @@
         <enum width="1h">
           <meta>
             <name>FM APRS PTT mode</name>
+            <brief>Specifies, when to send the APRS information.</brief>
             <firmware>1.07</firmware>
             <done/>
           </meta>
@@ -888,7 +889,10 @@
             <name>Off</name>
           </item>
           <item value="1">
-            <name>On</name>
+            <name>Start of transmission</name>
+          </item>
+          <item value="2">
+            <name>End of transmission</name>
           </item>
         </enum>
         <enum width="1h">
@@ -901,10 +905,7 @@
             <name>Off</name>
           </item>
           <item value="1">
-            <name>Start of transmission</name>
-          </item>
-          <item value="2">
-            <name>End of transmission</name>
+            <name>On</name>
           </item>
         </enum>
         <int width="1h" format="unsigned" default="0">
