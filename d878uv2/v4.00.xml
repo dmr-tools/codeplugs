@@ -9739,7 +9739,7 @@
     <enum width="1h">
       <meta>
         <name>GPS Modes</name>
-        <firmware>3.05</firmware>
+        <firmware>4.00</firmware>
         <done/>
       </meta>
       <item value="0">
@@ -9749,7 +9749,19 @@
         <name>BDS</name>
       </item>
       <item value="2">
-        <name>Both</name>
+        <name>GPS+BDS</name>
+      </item>
+      <item value="3">
+        <name>GLONASS</name>
+      </item>
+      <item value="4">
+        <name>GPS+GLONASS</name>
+      </item>
+      <item value="5">
+        <name>BDS+GLONASS</name>
+      </item>
+      <item value="6">
+        <name>All</name>
       </item>
     </enum>
     <int width="1h" format="unsigned" default="37">
