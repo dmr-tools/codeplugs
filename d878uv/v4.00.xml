@@ -703,7 +703,8 @@
         </int>
         <int width="1h" format="unsigned">
           <meta>
-            <name>Colorcode</name>
+            <name>Color code</name>
+            <brief>Specifies the RX color code.</brief>
             <firmware>3.04</firmware>
             <done/>
           </meta>
@@ -716,12 +717,12 @@
             <done/>
           </meta>
         </int>
-        <unknown width="0h:1">
+        <unused width="0h:1">
           <meta>
-            <name>Unknown data</name>
-            <firmware>3.04</firmware>
-          </meta>
-        </unknown>
+            <name>Unused data</name>
+            <firmware>4.00</firmware>
+            <done/>
+          </meta>00</unused>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable APRS RX</name>
@@ -902,12 +903,15 @@
             <done/>
           </meta>
         </int>
-        <unknown width="1h">
+        <int width="1h" format="unsigned" default="0" min="0" max="15">
           <meta>
-            <name>Unknown data</name>
-            <firmware>3.04</firmware>
+            <name>DMR Encryption Key Index</name>
+            <brief>Specifies the DMR (basic) encryption key index +1.</brief>
+            <description>That is, 0=off, 1=index 0, ...</description>
+            <firmware>4.00</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </int>
         <unknown width="0h:2">
           <meta>
             <name>Unknown data</name>
