@@ -9409,21 +9409,12 @@
         <name>Over the air</name>
       </item>
     </enum>
-    <enum width="1h">
+    <unknown width="1h">
       <meta>
-        <name>Talker alias encoding</name>
-        <incomplete/>
+        <name>Unknown data</name>
+        <firmware>1.07</firmware>
       </meta>
-      <item value="0">
-        <name>ISO 7</name>
-      </item>
-      <item value="1">
-        <name>ISO 8</name>
-      </item>
-      <item value="2">
-        <name>Unicode</name>
-      </item>
-    </enum>
+    </unknown>
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
