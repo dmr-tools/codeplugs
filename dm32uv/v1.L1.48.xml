@@ -5013,7 +5013,8 @@
           <meta>
             <name>Admit Criterion</name>
             <short-name>Admit</short-name>
-            <brief>Specifies the FM admit criterion.</brief>
+            <brief>Specifies the FM and DMR admit criterion.</brief>
+            <description>The meaning depends on the channel type. Options, always and channel free are present in both.</description>
             <firmware>1.L1.48</firmware>
             <done/>
           </meta>
@@ -5383,7 +5384,7 @@
               <done/>
             </meta>
           </int>
-          <int width="4h" format="unsigned" endian="little" default="1073741824">
+          <int width="4h" format="bcd" endian="little" default="1073741824">
             <meta>
               <name>TX Frequency</name>
               <brief>Specifies the TX frequency.</brief>
@@ -5419,13 +5420,15 @@
               <name>DMR fixed</name>
             </item>
           </enum>
-          <unknown width="0h:1">
+          <int width="0h:1" format="unsigned" default="0" min="0" max="1">
             <meta>
-              <name>Unknown data</name>
+              <name>RX Only</name>
+              <short-name>RXO</short-name>
+              <brief>Disables transmission on the channel.</brief>
               <firmware>1.L1.48</firmware>
               <done/>
             </meta>
-          </unknown>
+          </int>
           <enum width="0h:2">
             <meta>
               <name>Transmit Power</name>
@@ -5502,7 +5505,8 @@
             <meta>
               <name>Admit Criterion</name>
               <short-name>Admit</short-name>
-              <brief>Specifies the FM admit criterion.</brief>
+              <brief>Specifies the FM and DMR admit criterion.</brief>
+              <description>The meaning depends on the channel type. Options, always and channel free are present in both.</description>
               <firmware>1.L1.48</firmware>
               <done/>
             </meta>
@@ -5582,15 +5586,12 @@
               <done/>
             </meta>
           </int>
-          <int width="0h:1" format="unsigned" default="0" min="0" max="1">
+          <unknown width="0h:1">
             <meta>
-              <name>RX only</name>
-              <short-name>RXO</short-name>
-              <brief>Disables transmissions on that channel.</brief>
+              <name>Unknown data</name>
               <firmware>1.L1.48</firmware>
-              <done/>
             </meta>
-          </int>
+          </unknown>
           <enum width="0h:1">
             <meta>
               <name>APRS Mode</name>
