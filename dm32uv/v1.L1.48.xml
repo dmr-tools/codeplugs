@@ -5168,11 +5168,18 @@
             <done/>
           </meta>
         </int>
-        <unknown width="1h:3">
+        <int width="1h" format="unsigned" default="0" min="0" max="32">
           <meta>
-            <name>Unknown data</name>
+            <name>Encryption Key Index</name>
+            <brief>Specifies the encryption key index -1.</brief>
+            <description>That is, 0=None, 1=key 0, ..., 32=key 31.</description>
             <firmware>1.L1.48</firmware>
             <done/>
+          </meta>
+        </int>
+        <unknown width="0h:3">
+          <meta>
+            <name>Unknown data</name>
           </meta>
         </unknown>
         <int width="0h:1" format="unsigned" default="0" min="0" max="1">
@@ -5660,11 +5667,18 @@
               <done/>
             </meta>
           </int>
-          <unknown width="1h:3">
+          <int width="1h" format="unsigned" default="0" min="0" max="32">
             <meta>
-              <name>Unknown data</name>
+              <name>Encryption Key Index</name>
+              <brief>Specifies the encryption key index -1.</brief>
+              <description>That is, 0=None, 1=key 0, ..., 32=key 31.</description>
               <firmware>1.L1.48</firmware>
               <done/>
+            </meta>
+          </int>
+          <unknown width="0h:3">
+            <meta>
+              <name>Unknown data</name>
             </meta>
           </unknown>
           <int width="0h:1" format="unsigned" default="0" min="0" max="1">
