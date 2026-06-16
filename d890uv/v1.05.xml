@@ -802,6 +802,7 @@
         <unused width="8h">
           <meta>
             <name>Unused data</name>
+            <description>Has data. What todo?</description>
             <needs-review/>
           </meta>00000000</unused>
         <string format="unicode" width="16" pad="0">
@@ -1731,5 +1732,39 @@
           <needs-review/>
         </meta>00</unused>
     </element>
+  </repeat>
+  <repeat at="3180000h" step="40000h" min="0" max="1">
+    <meta>
+      <name>Message banks</name>
+      <description>No offset. What do we do?</description>
+      <needs-review/>
+    </meta>
+    <repeat min="1" max="100">
+      <meta>
+        <name>Message bank</name>
+        <needs-review/>
+      </meta>
+      <element>
+        <meta>
+          <name>Message</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+        <string format="unicode" width="100" pad="0">
+          <meta>
+            <name></name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="138h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </unused>
+      </element>
+    </repeat>
   </repeat>
 </codeplug>
