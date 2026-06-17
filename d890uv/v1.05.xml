@@ -1767,4 +1767,188 @@
       </element>
     </repeat>
   </repeat>
+  <repeat at="3400000h" min="0" max="100">
+    <meta>
+      <name>FM Channels</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>FM Channel</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>Frequency</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </int>
+      <string format="unicode" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+          <brief>FM channel name</brief>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1ch">
+        <meta>
+          <name>Unused data</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
+  <repeat at="3402000h" min="0" max="1">
+    <meta>
+      <name>FM Channel VFO</name>
+      <brief>FM channel VFO mode</brief>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>FM Channel VFO</name>
+        <done/>
+      </meta>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>Frequency</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </int>
+      <string format="unicode" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+          <brief>FM channel name</brief>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1ch">
+        <meta>
+          <name>Unused data</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </unused>
+    </element>
+  </repeat>
+  <element at="3402050h">
+    <meta>
+      <name>FM Channel Scan Bitmap</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <repeat n="100">
+      <meta>
+        <name>FM broadcast channel scan bits</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="signed">
+        <meta>
+          <name>Channel bit</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="3h:4">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="3600000h" step="40h" min="1" max="250">
+    <meta>
+      <name>Zone Names</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <string format="unicode" width="16" pad="0">
+      <meta>
+        <name>Zone Name</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </string>
+  </repeat>
+  <repeat at="3a00000h" step="40000h" min="0" max="1">
+    <meta>
+      <name>Contact banks</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <repeat min="0" max="10000">
+      <meta>
+        <name>Contact Bank</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Contact</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Call Type</name>
+            <brief>Specifies the call type of the contact.</brief>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Private Call</name>
+          </item>
+          <item value="1">
+            <name>Group Call</name>
+          </item>
+          <item value="2">
+            <name>All Call</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Call Alert</name>
+            <brief>Specifies the call alert type of the contact.</brief>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>None</name>
+          </item>
+          <item value="2">
+            <name>Online Alert</name>
+          </item>
+        </enum>
+        <int width="4h" format="bcd" endian="big">
+          <meta>
+            <name>DMR ID</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <string format="unicode" width="16" pad="0">
+          <meta>
+            <name>Name</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="a2h">
+          <meta>
+            <name>Unused data</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>000000000000000000000000000000000000</unused>
+      </element>
+    </repeat>
+  </repeat>
 </codeplug>
