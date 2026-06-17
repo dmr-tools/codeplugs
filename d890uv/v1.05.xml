@@ -1879,6 +1879,86 @@
       </meta>
     </string>
   </repeat>
+  <repeat at="3680000h" min="0" max="250">
+    <meta>
+      <name>Radio Ids</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Radio Id Element</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <int width="4h" format="bcd" endian="big">
+        <meta>
+          <name>DMR Id</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </int>
+      <string format="unicode" width="16" pad="0">
+        <meta>
+          <name>Name</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1ch">
+        <meta>
+          <name>Unused data</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>00</unused>
+    </element>
+  </repeat>
+  <element at="3684000h">
+    <meta>
+      <name>Primary ID</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <int width="4h" format="bcd" endian="big" default="0">
+      <meta>
+        <name>Primary DMR ID</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <string format="unicode" width="16" pad="0">
+      <meta>
+        <name>Primary radio name</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </string>
+    <unused width="2h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>00</unused>
+    <enum width="1h">
+      <meta>
+        <name>Used flag</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Unused</name>
+      </item>
+      <item value="1">
+        <name>Used</name>
+      </item>
+    </enum>
+    <unused width="19h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
   <repeat at="3a00000h" step="40000h" min="0" max="1">
     <meta>
       <name>Contact banks</name>
