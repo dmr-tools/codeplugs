@@ -3625,28 +3625,31 @@
       <meta>
         <name>Group call hang time</name>
         <brief>Specifies hang time in seconds. That is. 0=1s, ..., 29=30s, 30=30min, 31=infinite.</brief>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Private call hang time</name>
         <brief>Specifies hang time in seconds. That is. 0=1s, ..., 29=30s, 30=30min, 31=infinite.</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="2" min="2" max="10">
+      <meta>
+        <name>Voice Header Repetitions</name>
         <needs-review/>
       </meta>
     </int>
-    <unknown width="1h">
-      <meta>
-        <name>Unknown data</name>
-        <needs-review/>
-      </meta>
-    </unknown>
     <int width="1h" format="unsigned" default="5">
       <meta>
         <name>Preamble duration</name>
         <brief>Specifies the preamble duration in multiples of 60ms.</brief>
         <description>That is 0 = 0ms, ..., 40 = 2400ms.</description>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -3934,7 +3937,8 @@
       <meta>
         <name>Enable filter own Id</name>
         <brief>Filters own ID from list of missed calls.</brief>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -3962,7 +3966,8 @@
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable remote stun &amp; kill</name>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <unknown width="1h">
@@ -3974,7 +3979,8 @@
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable remote monitor</name>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
@@ -4892,7 +4898,8 @@
     <enum width="1h">
       <meta>
         <name>DMR monitor mode</name>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Off</name>
@@ -4907,7 +4914,8 @@
     <enum width="1h">
       <meta>
         <name>DMR monitor match CC</name>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Any</name>
@@ -4919,7 +4927,8 @@
     <enum width="1h">
       <meta>
         <name>DMR monitor match id</name>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Any</name>
@@ -4931,7 +4940,8 @@
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable DMR monitor slot hold</name>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
@@ -5466,7 +5476,8 @@
       <meta>
         <name>SMS standard</name>
         <brief>Specifies the SMS standard to use.</brief>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>Motorola</name>
@@ -5841,7 +5852,29 @@
         <needs-review/>
       </meta>
     </int>
-    <unknown width="24h">
+    <unknown width="1ah">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Manual Dial Grp Hold Time</name>
+        <brief>Specifies hold time in seconds. That is. 0=1s, ..., 29=30s, 30=30min, 31=infinite.</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Manual Dial Prv Hold Time</name>
+        <brief>Specifies hold time in seconds. That is. 0=1s, ..., 29=30s, 30=30min, 31=infinite.</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="8h">
       <meta>
         <name>Unknown data</name>
         <needs-review/>
@@ -5994,12 +6027,25 @@
         <done/>
       </meta>
     </int>
-    <unknown width="1h">
+    <enum width="1h">
       <meta>
-        <name>Unknown data</name>
-        <needs-review/>
+        <name>Reset Digital Protocol</name>
+        <brief>The digital protocol after resetting</brief>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
-    </unknown>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>DMR</name>
+      </item>
+      <item value="2">
+        <name>NXDN</name>
+        <description>Not implemented</description>
+        <firmware>?</firmware>
+      </item>
+    </enum>
     <enum width="1h">
       <meta>
         <name>Power On Volume Type</name>
