@@ -2609,8 +2609,9 @@
       <meta>
         <name>DMR mic gain</name>
         <brief>Specifies the DMR microphone gain.</brief>
-        <description>Valid values are [1, ..., 5], encoded as n + 1. That is, 0=1, ..., 4=5.</description>
-        <needs-review/>
+        <description>Valid values are [1..5, Auto], encoded as 0..4, 5=auto.</description>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
@@ -3954,7 +3955,8 @@
         <name>Max speaker volume</name>
         <brief>Specifies the maximum speaker volume.</brief>
         <description>Valid values are [Indoors, 1, ..., 8]. Where Indoors is encoded as 0.</description>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -4981,7 +4983,8 @@
         <name>Max head-phone volume</name>
         <brief>Encodes the maximum head-phone volume.</brief>
         <description>Valid values are [Indoors, 1, ..., 8]. Where Indoors is encoded as 0.</description>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0">
@@ -4999,7 +5002,8 @@
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Enable enhanced audio</name>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="4h" format="unsigned" endian="little">
@@ -5850,7 +5854,22 @@
         <done/>
       </meta>
     </int>
-    <unknown width="4h">
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Analog Mic Gain</name>
+        <brief>Analog mic gain 0..4, 5=auto, also for BT mic</brief>
+        <description>Valid values are [1..5, Auto], encoded as 0..4, 5=auto.</description>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="2h">
       <meta>
         <name>Unknown data</name>
         <needs-review/>
@@ -5930,7 +5949,92 @@
         </int>
       </repeat>
     </element>
-    <unknown width="22h">
+    <unknown width="9h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Dynamic Range Control</name>
+        <brief>DRC for RX AGC</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>RX Noise Reduction</name>
+        <brief>0=off,1..5</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>TX Noise Reduction</name>
+        <brief>0=off,1..5</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="9h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>NX Mic gain</name>
+        <brief>NXDN mic gain 0..4, 5=auto</brief>
+        <description>Currently not supported in Radio</description>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Power On Volume Type</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Preset</name>
+      </item>
+      <item value="1">
+        <name>Minimum</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Power On Volume</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
+        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>Speaker On TX</name>
+        <brief>Speaker on for RX channel on TX (default=off)</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="4h">
       <meta>
         <name>Unknown data</name>
         <needs-review/>
