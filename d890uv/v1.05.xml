@@ -6296,6 +6296,41 @@
         <done/>
       </meta>00</unused>
   </element>
+  <repeat at="3584000h" n="255">
+    <meta>
+      <name>ARC4 encryption keys</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>ARC4 encryption key</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned" default="0">
+        <meta>
+          <name>Key id</name>
+          <brief>Valid values 1-255. 0=Off.</brief>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="5h" format="bcd" endian="big" default="0">
+        <meta>
+          <name>Key bits</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="ah">
+        <meta>
+          <name>Unused data</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>00</unused>
+    </element>
+  </repeat>
   <repeat at="3585000h" n="32">
     <meta>
       <name>DMR Encryption Keys</name>
@@ -6331,6 +6366,60 @@
       </meta>
     </int>
   </repeat>
+  <element at="3585600h">
+    <meta>
+      <name>AES encryption key bitmap</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <repeat n="255">
+      <meta>
+        <name>AES key enable bits</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Key enable bit</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:1">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
+  <element at="3585620h">
+    <meta>
+      <name>ARC4 key bitmap</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <repeat n="255">
+      <meta>
+        <name>ARC4 enable bits</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned">
+        <meta>
+          <name>Key enable bit</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:1">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
   <repeat at="3600000h" step="40h" min="1" max="250">
     <meta>
       <name>Zone Names</name>
