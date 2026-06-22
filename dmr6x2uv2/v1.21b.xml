@@ -3492,6 +3492,34 @@
         <done/>
       </meta>00</unused>
   </element>
+  <element at="24c1360h">
+    <meta>
+      <name>Hidden zone bitmap</name>
+      <firmware>1.21b</firmware>
+      <done/>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Hidden zone bits</name>
+        <firmware>1.21b</firmware>
+        <done/>
+      </meta>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Hidden zone bit</name>
+          <brief>If enabled, the corresponding zone is hidden.</brief>
+          <firmware>1.21b</firmware>
+          <done/>
+        </meta>
+      </int>
+    </repeat>
+    <unused width="0h:6">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.21b</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
   <element at="24c1400h">
     <meta>
       <name>Alarm Settings</name>
