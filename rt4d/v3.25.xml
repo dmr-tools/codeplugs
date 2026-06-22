@@ -823,6 +823,300 @@
       </meta>
     </unknown>
   </element>
+  <repeat at="1000000h" n="1024">
+    <meta>
+      <name>Channel Bank</name>
+      <firmware>3.25</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Channel</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <unknown width="0h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <enum width="0h:1">
+        <meta>
+          <name>Channel Type</name>
+          <short-name>ChTy</short-name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Analog</name>
+        </item>
+        <item value="1">
+          <name>DMR</name>
+        </item>
+      </enum>
+      <unknown width="0h:2">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <enum width="0h:1">
+        <meta>
+          <name>DMR id source</name>
+          <short-name>IdSrc</short-name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Radio id</name>
+        </item>
+        <item value="1">
+          <name>Channel id</name>
+        </item>
+      </enum>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Enable dual-slot</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="0h:1">
+        <meta>
+          <name>Time slot</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>TS 1</name>
+        </item>
+        <item value="1">
+          <name>TS 2</name>
+        </item>
+      </enum>
+      <int width="0h:1" format="unsigned" default="0">
+        <meta>
+          <name>Promiscuous mode enable</name>
+          <short-name>Prom</short-name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:4" format="unsigned" default="1" min="0" max="15">
+        <meta>
+          <name>Color code</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="0h:4" format="unsigned" default="0" min="1" max="8">
+        <meta>
+          <name>FM scrabler index</name>
+          <brief>Specifies the index +1. If set to 0, no scrabler is selected.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="1h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <enum width="0h:2">
+        <meta>
+          <name>DMR Admit Criterion</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Allways</name>
+        </item>
+        <item value="1">
+          <name>Channel Free</name>
+        </item>
+        <item value="2">
+          <name>Color Code Idle</name>
+        </item>
+      </enum>
+      <enum width="0h:2">
+        <meta>
+          <name>FM admit criterium</name>
+        </meta>
+        <item value="0">
+          <name>Always</name>
+        </item>
+        <item value="1">
+          <name>Channel free</name>
+        </item>
+        <item value="2">
+          <name>CTCSS/DSC idle</name>
+        </item>
+      </enum>
+      <enum width="0h:3">
+        <meta>
+          <name>STE Mode</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>None</name>
+        </item>
+        <item value="1">
+          <name>55Hz 0°</name>
+        </item>
+        <item value="2">
+          <name>55Hz 120°</name>
+        </item>
+        <item value="3">
+          <name>55Hz 180°</name>
+        </item>
+        <item value="4">
+          <name>55Hz 240°</name>
+        </item>
+      </enum>
+      <unknown width="0h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <enum width="0h:1">
+        <meta>
+          <name>Bandwidth</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Wide</name>
+        </item>
+        <item value="1">
+          <name>Narrow</name>
+        </item>
+      </enum>
+      <enum width="0h:2">
+        <meta>
+          <name>Analog Demodulation</name>
+          <short-name>AnaDemod</short-name>
+          <brief>For analog channels, specifies the demodulation.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>FM</name>
+        </item>
+        <item value="1">
+          <name>AM</name>
+        </item>
+        <item value="2">
+          <name>SSB</name>
+        </item>
+      </enum>
+      <enum width="0h:3">
+        <meta>
+          <name>Subtone Type</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Normal</name>
+        </item>
+        <item value="1">
+          <name>Encrypt 1</name>
+        </item>
+        <item value="2">
+          <name>Encrypt 2</name>
+        </item>
+        <item value="3">
+          <name>Encrypt 3</name>
+        </item>
+        <item value="4">
+          <name>Mute code</name>
+        </item>
+      </enum>
+      <unknown width="8h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>RX Tone</name>
+          <brief>If 0, no RX tone is selected.</brief>
+          <description>The encoding is complex: The most significant nibble encodes the type 1=CTCSS, 2=DCS normal, 3=DCS inverted The remaining least significant 12bit encode the frequency in 0.1Hz or the DCS code in binary.</description>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>TX Tone</name>
+          <brief>If 0, no TX tone is selected.</brief>
+          <description>The encoding is complex: The most significant nibble encodes the type 1=CTCSS, 2=DCS normal, 3=DCS inverted The remaining least significant 12bit encode the frequency in 0.1Hz or the DCS code in binary.</description>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="2h" format="unsigned" endian="little">
+        <meta>
+          <name>Transmit Contact Index</name>
+          <brief>Specifies the index without any offset.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="1h" format="unsigned" default="0" min="1" max="250">
+        <meta>
+          <name>Group List Index</name>
+          <brief>Specifies the group list index +1. If set to 0, none is selected.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="1h" format="unsigned" default="0" min="1" max="255">
+        <meta>
+          <name>DMR encryption key index.</name>
+          <brief>Specifies the index +1. If set to 0, no key is selected.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little" default="0">
+        <meta>
+          <name>DMR Channel Id</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <int width="3h" format="bcd" endian="little" default="0">
+        <meta>
+          <name>Mute code</name>
+          <brief>6 digit BCD</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unknown width="2h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <string format="ascii" width="16" pad="255">
+        <meta>
+          <name>Name</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </string>
+    </element>
+  </repeat>
   <element at="2000000h">
     <meta>
       <name>Second Settings Block</name>
@@ -831,7 +1125,6 @@
     <unknown width="60h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned">
@@ -941,7 +1234,6 @@
     <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <int width="4h" format="unsigned" endian="little" default="43512500" min="0">
@@ -971,19 +1263,20 @@
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned" default="0" min="0" max="79">
       <meta>
         <name>FM Broadcast Standby Channel</name>
-        <needs-review/>
+        <firmware>3.25</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="0" min="0" max="1">
       <meta>
         <name>Enable FM Broadcast Standby</name>
-        <needs-review/>
+        <firmware>3.25</firmware>
+        <done/>
       </meta>
     </int>
     <enum width="1h">
@@ -1743,5 +2036,107 @@
         <name>Unknown data</name>
       </meta>
     </unknown>
+  </element>
+  <repeat at="7000000h" n="16">
+    <meta>
+      <name>Messages</name>
+      <firmware>3.25</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Message</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned" default="598" min="0">
+        <meta>
+          <name>Index</name>
+          <brief>Stores the 0-based index of the message. If set to ff, message is invalid.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <unused width="37h">
+        <meta>
+          <name>Unused data</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>ff</unused>
+      <string format="ascii" width="200" pad="255">
+        <meta>
+          <name>Text</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </string>
+    </element>
+  </repeat>
+  <element at="8000000h">
+    <meta>
+      <name>FM Broadcast Channel Bank</name>
+      <firmware>3.25</firmware>
+      <done/>
+    </meta>
+    <repeat n="80">
+      <meta>
+        <name>FM broadcast channels</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>FM broadcast channel</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Valid Flag</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Valid</name>
+          </item>
+          <item value="255">
+            <name>Invalid</name>
+          </item>
+        </enum>
+        <int width="2h" format="unsigned" endian="little" default="65535">
+          <meta>
+            <name>Frequency</name>
+            <brief>Specifies the frequency in multiples of 100kHz.</brief>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unknown width="1bh">
+          <meta>
+            <name>Unknown data</name>
+            <firmware>3.25</firmware>
+          </meta>
+        </unknown>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Name</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unknown width="2h">
+          <meta>
+            <name>Unknown data</name>
+            <firmware>3.25</firmware>
+          </meta>
+        </unknown>
+      </element>
+    </repeat>
+    <unused width="100h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>ff</unused>
   </element>
 </codeplug>
