@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--vi: set ts=2 sw=2:-->
+<codeplug>
+  <meta>
+    <name>Radtel RT-4D</name>
+    <brief>Corresponds to CPS version 2.07.</brief>
+    <firmware>3.22</firmware>
+  </meta>
+</codeplug>

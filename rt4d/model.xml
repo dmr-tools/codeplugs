@@ -78,4 +78,5 @@
 
   <firmware name="V3.16" released="2025-06-20" codeplug="v3.16.xml"/>
   <firmware name="V3.20" released="2025-11-19" codeplug="v3.20.xml"/>
+  <firmware name="V3.22" released="2026-02-10" codeplug="v3.22.xml"/>
 </model>
