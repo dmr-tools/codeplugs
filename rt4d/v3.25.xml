@@ -773,11 +773,243 @@
         <done/>
       </meta>
     </int>
-    <unknown width="1b1h">
+    <unknown width="67h">
       <meta>
         <name>Unknown data</name>
       </meta>
     </unknown>
+    <int width="1h" format="unsigned" default="1" min="0" max="20">
+      <meta>
+        <name>DTMF transmit delay</name>
+        <brief>Specified in multiples of 100ms.</brief>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="3" min="0" max="17">
+      <meta>
+        <name>DTMF tone duration</name>
+        <brief>Specified as 30ms + n*10ms.</brief>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="3" min="0" max="17">
+      <meta>
+        <name>DTMF Interval</name>
+        <brief>Specified as 30ms + n*10ms.</brief>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </int>
+    <enum width="1h">
+      <meta>
+        <name>DTMF transmission mode</name>
+        <brief>Specifies when to transmit DTMF code.</brief>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Off</name>
+      </item>
+      <item value="1">
+        <name>BOT</name>
+      </item>
+      <item value="2">
+        <name>EOT</name>
+      </item>
+      <item value="3">
+        <name>Both</name>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned" default="0" min="0" max="15">
+      <meta>
+        <name>DTMF code index</name>
+        <brief>Index is specified without any offset.</brief>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>DTMF Enable receive display</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="64" min="0" max="128">
+      <meta>
+        <name>DTMF transmit gain</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="22" min="0" max="128">
+      <meta>
+        <name>DTMF decode threshold</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned" default="0" min="0" max="1">
+      <meta>
+        <name>DTMF enable remote control</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="1h">
+      <meta>
+        <name>Unknown data</name>
+      </meta>
+    </unknown>
+    <repeat n="16">
+      <meta>
+        <name>DTMF codes</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>DTMF code</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="14" pad="255">
+          <meta>
+            <name>Code</name>
+            <brief>Just an ASCII string of 0-9, A-D, * and #.</brief>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad Byte</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>ff</unused>
+        <int width="1h" format="unsigned" default="0" min="0" max="14">
+          <meta>
+            <name>Length of code</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </int>
+      </element>
+    </repeat>
+    <element>
+      <meta>
+        <name>DTMF remote stun code</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="14" pad="255">
+        <meta>
+          <name>Code</name>
+          <brief>Just an ASCII string of 0-9, A-D, * and #.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>ff</unused>
+      <int width="1h" format="unsigned" default="0" min="0" max="14">
+        <meta>
+          <name>Length of code</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
+    <element>
+      <meta>
+        <name>DTMF remote kill code</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="14" pad="255">
+        <meta>
+          <name>Code</name>
+          <brief>Just an ASCII string of 0-9, A-D, * and #.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>ff</unused>
+      <int width="1h" format="unsigned" default="0" min="0" max="14">
+        <meta>
+          <name>Length of code</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
+    <element>
+      <meta>
+        <name>DTMF remote wake code</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="14" pad="255">
+        <meta>
+          <name>Code</name>
+          <brief>Just an ASCII string of 0-9, A-D, * and #.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>ff</unused>
+      <int width="1h" format="unsigned" default="0" min="0" max="14">
+        <meta>
+          <name>Length of code</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
+    <element>
+      <meta>
+        <name>DTMF remote monitor code</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <string format="ascii" width="14" pad="255">
+        <meta>
+          <name>Code</name>
+          <brief>Just an ASCII string of 0-9, A-D, * and #.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </string>
+      <unused width="1h">
+        <meta>
+          <name>Pad Byte</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>ff</unused>
+      <int width="1h" format="unsigned" default="0" min="0" max="14">
+        <meta>
+          <name>Length of code</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
     <int width="1h" format="unsigned" default="0" min="0" max="1">
       <meta>
         <name>Swap RX and TX Frequencies</name>
@@ -1120,7 +1352,8 @@
   <element at="2000000h">
     <meta>
       <name>Second Settings Block</name>
-      <needs-review/>
+      <firmware>3.25</firmware>
+      <done/>
     </meta>
     <unknown width="60h">
       <meta>
@@ -2037,6 +2270,251 @@
       </meta>
     </unknown>
   </element>
+  <element at="3000000h">
+    <meta>
+      <name>Zone Bank</name>
+      <firmware>3.25</firmware>
+      <done/>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Zones</name>
+        <brief>Holds all 256 zones.</brief>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Zone</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <int width="2h" format="unsigned" endian="little" default="0" min="0">
+          <meta>
+            <name>Default Channel Index VFO A</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="2h" format="unsigned" endian="little" default="0" min="0">
+          <meta>
+            <name>Default Channel Index VFO B</name>
+            <brief>Yes, again.</brief>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </int>
+        <string format="ascii" width="16" pad="255">
+          <meta>
+            <name>Zone name</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </string>
+        <repeat n="200">
+          <meta>
+            <name>Channels</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+          <int width="2h" format="unsigned" endian="little" default="65535">
+            <meta>
+              <name>Channel index</name>
+              <brief>If not used, set to ffffh.</brief>
+              <firmware>3.25</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+        <unused width="5ch">
+          <meta>
+            <name>Unused data</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </unused>
+      </element>
+    </repeat>
+    <unused width="c00h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
+  <element at="4000000h">
+    <meta>
+      <name>Contact bank</name>
+      <firmware>3.25</firmware>
+      <done/>
+    </meta>
+    <repeat n="10000">
+      <meta>
+        <name>Contacts</name>
+        <brief>The first one may be fixed to all call. With number aaaaaaaah.</brief>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Contact</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Contact Type</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Private Call</name>
+          </item>
+          <item value="1">
+            <name>Group Call</name>
+          </item>
+          <item value="2">
+            <name>All Call</name>
+          </item>
+        </enum>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>DMR ID</name>
+            <brief>Specifies the DMR ID in 8 digit BCD little endian!</brief>
+            <description>If call type is all-call, the stored number is aaaaaaaah.</description>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </int>
+        <string format="ascii" width="16" pad="0">
+          <meta>
+            <name>Contact Name</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </string>
+      </element>
+    </repeat>
+    <unused width="bb0h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>ff</unused>
+  </element>
+  <element at="5000000h">
+    <meta>
+      <name>Group List Bank</name>
+      <firmware>3.25</firmware>
+      <done/>
+    </meta>
+    <repeat n="250">
+      <meta>
+        <name>Group Lists</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Group List</name>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <string format="ascii" width="14" pad="255">
+          <meta>
+            <name>Name</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+        </string>
+        <unused width="2h">
+          <meta>
+            <name>Pad Chars</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>ffff</unused>
+        <repeat n="32">
+          <meta>
+            <name>Group Call Indices</name>
+            <firmware>3.25</firmware>
+            <done/>
+          </meta>
+          <int width="2h" format="unsigned" endian="little" default="65535">
+            <meta>
+              <name>Group Call Index</name>
+              <brief>Specifies the 0-based index of the group call. Set to ffffh, if not used.</brief>
+              <firmware>3.25</firmware>
+              <done/>
+            </meta>
+          </int>
+        </repeat>
+      </element>
+    </repeat>
+    <unused width="1e0h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+    </unused>
+  </element>
+  <repeat at="6000000h" n="256">
+    <meta>
+      <name>Encryption Keys</name>
+      <firmware>3.25</firmware>
+      <done/>
+    </meta>
+    <element>
+      <meta>
+        <name>Encryption Key</name>
+        <firmware>3.25</firmware>
+        <done/>
+      </meta>
+      <int width="1h" format="unsigned">
+        <meta>
+          <name>Key Index (LSB)</name>
+          <brief>Just the least signficant byte of the encryption key index + 1.</brief>
+          <description>This field is set, irrespective whether the key is valid or not.</description>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+      <enum width="1h">
+        <meta>
+          <name>Key Type</name>
+          <brief>Specifies the key type.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>ARC-4</name>
+        </item>
+        <item value="1">
+          <name>AES-128</name>
+        </item>
+        <item value="2">
+          <name>AES-256</name>
+        </item>
+      </enum>
+      <string format="ascii" width="14" pad="255">
+        <meta>
+          <name>Name</name>
+          <brief>Specifies the key name.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </string>
+      <int width="20h" format="unsigned" endian="big" default="0">
+        <meta>
+          <name>Key</name>
+          <brief>Stores the key data in big endian. Depending on the key type, the key might be 64/128/256 bits large.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+      </int>
+    </element>
+  </repeat>
   <repeat at="7000000h" n="16">
     <meta>
       <name>Messages</name>
