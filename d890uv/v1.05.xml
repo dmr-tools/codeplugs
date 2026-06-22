@@ -100,6 +100,7 @@
           <meta>
             <name>Channel mode</name>
             <brief>Specifies the mode of the channel.</brief>
+            <description>Channel Type</description>
             <firmware>1.05</firmware>
             <done/>
           </meta>
@@ -139,13 +140,13 @@
             <done/>
           </meta>
         </int>
-        <unused width="0h:1">
+        <int width="0h:1" format="unsigned">
           <meta>
-            <name>Unused data</name>
+            <name>Swap RX/TX</name>
             <firmware>1.05</firmware>
             <done/>
           </meta>
-        </unused>
+        </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Enable TX DCS</name>
@@ -567,15 +568,30 @@
             <name>CTCSS/DSC or Optional Signaling</name>
           </item>
         </enum>
-        <unused width="0h:4">
+        <enum width="0h:4">
           <meta>
-            <name>Unused data</name>
-            <needs-review/>
-          </meta>00</unused>
+            <name>PTT ID</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>off</name>
+          </item>
+          <item value="1">
+            <name>start</name>
+          </item>
+          <item value="2">
+            <name>end</name>
+          </item>
+          <item value="3">
+            <name>start &amp; end</name>
+          </item>
+        </enum>
         <unused width="0h:1">
           <meta>
             <name>Unused data</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>00</unused>
         <enum width="0h:3">
           <meta>
@@ -602,7 +618,8 @@
         <unused width="0h:2">
           <meta>
             <name>Unused data</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>00</unused>
         <enum width="0h:2">
           <meta>
@@ -634,7 +651,7 @@
         </int>
         <int width="1h" format="unsigned">
           <meta>
-            <name>Group List index</name>
+            <name>RX Group List index</name>
             <brief>RX Group</brief>
             <done/>
           </meta>
@@ -660,9 +677,9 @@
             <done/>
           </meta>
         </int>
-        <int width="1h" format="unsigned">
+        <int width="1h" format="unsigned" min="0" max="15">
           <meta>
-            <name>Colorcode</name>
+            <name>RX Colorcode</name>
             <firmware>1.05</firmware>
             <done/>
           </meta>
@@ -687,35 +704,45 @@
           </item>
           <item value="1">
             <name>Enhanced</name>
+            <description>AES or ARC4</description>
           </item>
         </enum>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Enable GPS RX</name>
-            <needs-review/>
+            <name>Enable APRS RX</name>
+            <brief>Enable RX for digital or analog APRS</brief>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable adaptive TDMA</name>
-            <needs-review/>
+            <brief>Ignore slot if CC matches, for Double Slot and Repeater mpde Slot suit in CPS</brief>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
-        <unused width="0h:1">
-          <meta>
-            <name>Unused data</name>
-            <needs-review/>
-          </meta>00</unused>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Enable simplex TDMA</name>
-            <needs-review/>
+            <name>Enable TS Split DCDM</name>
+            <brief>Use set TS for RX and other for TX</brief>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable Double Slot DCDM</name>
+            <brief>0 = Single, 1 = Double</brief>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable SMS Confirmation</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <enum width="0h:1">
@@ -731,12 +758,13 @@
             <name>Time Slot 2</name>
           </item>
         </enum>
-        <unknown width="1h">
+        <int width="1h" format="unsigned">
           <meta>
-            <name>Unknown data</name>
+            <name>AES Key Index</name>
             <firmware>1.05</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </int>
         <unused width="10h">
           <meta>
             <name>Unused data</name>
@@ -745,13 +773,29 @@
         <unused width="1h">
           <meta>
             <name>Pad Byte</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>00</unused>
-        <unused width="0h:3">
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>DMR Ignore CRC</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="0h:1">
           <meta>
             <name>Unused data</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>00</unused>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Idle TX</name>
+            <brief>Enable switch TS if set TS is occupied</brief>
+            <done/>
+          </meta>
+        </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Auto Scan</name>
@@ -768,20 +812,25 @@
         </int>
         <int width="0h:1" format="unsigned" default="0">
           <meta>
-            <name>Unknown</name>
-            <needs-review/>
+            <name>Exclude From Roaming</name>
+            <brief>Exclude channel from roaming</brief>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
-            <name>Enable Through Mode</name>
-            <needs-review/>
+            <name>Enable Direct Mode</name>
+            <brief>0 = Repeater, 1 = Simplex(Singleslot?), Double slot or Split</brief>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Enable ranging</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <enum width="1h">
@@ -826,35 +875,255 @@
             <needs-review/>
           </meta>
         </int>
-        <unused width="0h:5">
+        <unused width="0h:2">
           <meta>
             <name>Unused data</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>00</unused>
+        <enum width="0h:1">
+          <meta>
+            <name>Extended Encryption Type</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>AES</name>
+          </item>
+          <item value="1">
+            <name>ARC4</name>
+          </item>
+        </enum>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Send Talker Alias</name>
+            <brief>Send talker alias for DMR/NXDN</brief>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <unused width="0h:1">
+          <meta>
+            <name>Unused data</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </unused>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>SMS forbid</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Random Key</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <int width="0h:1" format="unsigned">
           <meta>
             <name>Multiple Keys</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
-        <unused width="8h">
+        <unused width="1h">
           <meta>
             <name>Unused data</name>
             <description>Has data. What todo?</description>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>00000000</unused>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>ARC4 Key Index</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <enum width="1h">
+          <meta>
+            <name>Scrambler Set</name>
+            <brief>Analog scrambler</brief>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>Off</name>
+          </item>
+          <item value="1">
+            <name>3.5k</name>
+          </item>
+          <item value="2">
+            <name>3.39k</name>
+          </item>
+          <item value="3">
+            <name>3.3k</name>
+          </item>
+          <item value="4">
+            <name>3.29k</name>
+          </item>
+          <item value="5">
+            <name>3.2k</name>
+          </item>
+          <item value="6">
+            <name>3.1k</name>
+          </item>
+          <item value="7">
+            <name>3.0k</name>
+          </item>
+          <item value="8">
+            <name>2.9k</name>
+          </item>
+          <item value="9">
+            <name>2.8k</name>
+          </item>
+          <item value="10">
+            <name>2.7k</name>
+          </item>
+          <item value="11">
+            <name>2.6k</name>
+          </item>
+          <item value="12">
+            <name>2.5k</name>
+          </item>
+          <item value="13">
+            <name>4.095k</name>
+          </item>
+          <item value="14">
+            <name>3.458k</name>
+          </item>
+          <item value="15">
+            <name>Custom</name>
+          </item>
+        </enum>
+        <enum width="1h">
+          <meta>
+            <name>Custom Scrambler</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+          <item value="0">
+            <name>1.3k</name>
+          </item>
+          <item value="1">
+            <name>1.4k</name>
+          </item>
+          <item value="2">
+            <name>1.5k</name>
+          </item>
+          <item value="3">
+            <name>1.6k</name>
+          </item>
+          <item value="4">
+            <name>1.7k</name>
+          </item>
+          <item value="5">
+            <name>1.8k</name>
+          </item>
+          <item value="6">
+            <name>1.9k</name>
+          </item>
+          <item value="7">
+            <name>2.0k</name>
+          </item>
+          <item value="8">
+            <name>2.1k</name>
+          </item>
+          <item value="9">
+            <name>2.2k</name>
+          </item>
+          <item value="10">
+            <name>2.3k</name>
+          </item>
+          <item value="11">
+            <name>2.4k</name>
+          </item>
+          <item value="12">
+            <name>2.5k</name>
+          </item>
+          <item value="13">
+            <name>2.6k</name>
+          </item>
+          <item value="14">
+            <name>2.7k</name>
+          </item>
+          <item value="15">
+            <name>2.8k</name>
+          </item>
+          <item value="16">
+            <name>2.9k</name>
+          </item>
+          <item value="17">
+            <name>3.0k</name>
+          </item>
+          <item value="18">
+            <name>3.1k</name>
+          </item>
+          <item value="19">
+            <name>3.2k</name>
+          </item>
+          <item value="20">
+            <name>3.3k</name>
+          </item>
+          <item value="21">
+            <name>3.4k</name>
+          </item>
+          <item value="22">
+            <name>3.5k</name>
+          </item>
+          <item value="23">
+            <name>3.6k</name>
+          </item>
+          <item value="24">
+            <name>3.7k</name>
+          </item>
+          <item value="25">
+            <name>3.8k</name>
+          </item>
+          <item value="26">
+            <name>3.9k</name>
+          </item>
+          <item value="27">
+            <name>4.0k</name>
+          </item>
+          <item value="28">
+            <name>4.1k</name>
+          </item>
+        </enum>
+        <int width="1h" format="signed">
+          <meta>
+            <name>5Tone BOT</name>
+            <brief>-1 = custom</brief>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="signed">
+          <meta>
+            <name>5Tone EOT</name>
+            <brief>-1 = custom</brief>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned">
+          <meta>
+            <name>QDC1200 Index</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="1h" format="unsigned" min="0" max="15">
+          <meta>
+            <name>TX Colorcode</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
         <string format="unicode" width="16" pad="0">
           <meta>
             <name>Name</name>
@@ -862,12 +1131,13 @@
             <done/>
           </meta>
         </string>
-        <unknown width="1ch">
+        <unused width="1ch">
           <meta>
-            <name>Unknown data</name>
-            <needs-review/>
+            <name>Unused data</name>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
-        </unknown>
+        </unused>
       </element>
     </repeat>
   </repeat>
@@ -3815,7 +4085,8 @@
     <enum width="1h">
       <meta>
         <name>TBST</name>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
       <item value="0">
         <name>1000 Hz</name>
@@ -4979,7 +5250,8 @@
       <meta>
         <name>FM Call hold time</name>
         <brief>Specifies the hold time in seconds. Valid values are 0s, ..., 30s.</brief>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
@@ -5070,7 +5342,8 @@
       <meta>
         <name>Enable answer sub channel</name>
         <brief>If enabled, a sub-channel call can be answered when pressing PTT within 5s.</brief>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned" default="255">
@@ -5540,7 +5813,8 @@
       <meta>
         <name>Send FM own ID</name>
         <brief>Is called &quot;Addressbook is send with own code&quot; in CPS.</brief>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
@@ -5720,9 +5994,10 @@
     <int width="1h" format="unsigned" default="0">
       <meta>
         <name>Mute duration</name>
-        <brief>Specifies the duration of a mute in minutes, triggered by a function key.</brief>
+        <brief>Specifies the duration of a mute in minutes, triggered by a function key. 1..256 s</brief>
         <description>The duration is specified as t = 1min + 1min * n. That is 0=1min, ..., 255 = 256min.</description>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
     </int>
     <int width="1h" format="unsigned">
@@ -5852,10 +6127,22 @@
         <needs-review/>
       </meta>
     </int>
-    <unknown width="1ah">
+    <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+      </meta>
+    </unknown>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>NOAA Alert</name>
+        <brief>Listen for NOAA on sub channel and start alarm sound for 3 min if TBST in RX</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="17h">
+      <meta>
+        <name>Unknown data</name>
       </meta>
     </unknown>
     <int width="1h" format="unsigned">
@@ -5874,10 +6161,46 @@
         <done/>
       </meta>
     </int>
-    <unknown width="8h">
+    <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
+      </meta>
+    </unknown>
+    <enum width="1h">
+      <meta>
+        <name>Encryption Type</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <item value="0">
+        <name>Common</name>
+        <description>only between Anytone radios</description>
+      </item>
+      <item value="1">
+        <name>AES/ARC4</name>
+        <description>Motorola compatible</description>
+      </item>
+    </enum>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>TOT Predict</name>
+        <brief>Signal TOT 5 s in advance with a beep</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>TX Power Control</name>
+        <brief>Lower TX power if strong RX signal</brief>
+        <description>Called &quot;TxPow Agc&quot; in CPS</description>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="4h">
+      <meta>
+        <name>Unknown data</name>
       </meta>
     </unknown>
     <int width="1h" format="unsigned">
@@ -5890,7 +6213,6 @@
     <unknown width="1h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned">
@@ -5905,7 +6227,6 @@
     <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <element>
@@ -5982,7 +6303,15 @@
         </int>
       </repeat>
     </element>
-    <unknown width="9h">
+    <int width="1h" format="unsigned" min="0" max="9">
+      <meta>
+        <name>NOAA Channel</name>
+        <brief>Channel +1</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="8h">
       <meta>
         <name>Unknown data</name>
         <needs-review/>
@@ -6066,10 +6395,25 @@
         <done/>
       </meta>
     </int>
-    <unknown width="4h">
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>NOAA Monitor</name>
+        <brief>Monitor always open</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="1h" format="unsigned">
+      <meta>
+        <name>NOAA Scan</name>
+        <brief>Scan for best NOAA channel</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unknown width="2h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <int width="1h" format="unsigned">
@@ -6083,7 +6427,6 @@
     <unknown width="4h">
       <meta>
         <name>Unknown data</name>
-        <needs-review/>
       </meta>
     </unknown>
     <unused width="a0h">
