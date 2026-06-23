@@ -7,9 +7,10 @@
     <firmware>3.25</firmware>
     <done/>
   </meta>
-  <element at="0h">
+  <element at="2000h">
     <meta>
       <name>First Settings Block</name>
+      <brief>Corresponds to the segment index 0.</brief>
       <firmware>3.22</firmware>
       <done/>
     </meta>
@@ -1055,9 +1056,10 @@
       </meta>
     </unknown>
   </element>
-  <repeat at="1000000h" n="1024">
+  <repeat at="c000h" n="1024">
     <meta>
       <name>Channel Bank</name>
+      <brief>Corresponds to the segment index 1.</brief>
       <firmware>3.25</firmware>
       <done/>
     </meta>
@@ -1349,9 +1351,10 @@
       </string>
     </element>
   </repeat>
-  <element at="2000000h">
+  <element at="1c000h">
     <meta>
       <name>Second Settings Block</name>
+      <brief>Corresponds to the segment index 2.</brief>
       <firmware>3.25</firmware>
       <done/>
     </meta>
@@ -2270,9 +2273,10 @@
       </meta>
     </unknown>
   </element>
-  <element at="3000000h">
+  <element at="1e000h">
     <meta>
       <name>Zone Bank</name>
+      <brief>Corresponds to the segment index 3.</brief>
       <firmware>3.25</firmware>
       <done/>
     </meta>
@@ -2343,9 +2347,10 @@
       </meta>
     </unused>
   </element>
-  <element at="4000000h">
+  <element at="5e000h">
     <meta>
       <name>Contact bank</name>
+      <brief>Corresponds to the segment index 4.</brief>
       <firmware>3.25</firmware>
       <done/>
     </meta>
@@ -2403,9 +2408,10 @@
         <done/>
       </meta>ff</unused>
   </element>
-  <element at="5000000h">
+  <element at="c6000h">
     <meta>
       <name>Group List Bank</name>
+      <brief>Corresponds to the segment index 5.</brief>
       <firmware>3.25</firmware>
       <done/>
     </meta>
@@ -2459,9 +2465,10 @@
       </meta>
     </unused>
   </element>
-  <repeat at="6000000h" n="256">
+  <repeat at="d0000h" n="256">
     <meta>
       <name>Encryption Keys</name>
+      <brief>Corresponds to the segment index 6.</brief>
       <firmware>3.25</firmware>
       <done/>
     </meta>
@@ -2515,9 +2522,10 @@
       </int>
     </element>
   </repeat>
-  <repeat at="7000000h" n="16">
+  <repeat at="d6000h" n="16">
     <meta>
       <name>Messages</name>
+      <brief>Corresponds to the segment index 7.</brief>
       <firmware>3.25</firmware>
       <done/>
     </meta>
@@ -2550,9 +2558,10 @@
       </string>
     </element>
   </repeat>
-  <element at="8000000h">
+  <element at="f0000h">
     <meta>
       <name>FM Broadcast Channel Bank</name>
+      <brief>Corresponds to the segment index 8.</brief>
       <firmware>3.25</firmware>
       <done/>
     </meta>
