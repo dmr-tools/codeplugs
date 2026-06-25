@@ -1150,7 +1150,12 @@
           <done/>
         </meta>
       </int>
-      <unknown width="1h:1">
+      <unknown width="1h">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <unknown width="0h:1">
         <meta>
           <name>Unknown data</name>
         </meta>
@@ -1265,11 +1270,23 @@
           <name>Mute code</name>
         </item>
       </enum>
-      <unknown width="8h:1">
+      <unknown width="0h:1">
         <meta>
           <name>Unknown data</name>
         </meta>
       </unknown>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>RX Frequency</name>
+          <brief>Specifies in multiples of 10Hz.</brief>
+        </meta>
+      </int>
+      <int width="4h" format="unsigned" endian="little">
+        <meta>
+          <name>TX Frequency</name>
+          <brief>Specifies in multiples of 10Hz.</brief>
+        </meta>
+      </int>
       <int width="2h" format="unsigned" endian="little" default="0">
         <meta>
           <name>RX Tone</name>
