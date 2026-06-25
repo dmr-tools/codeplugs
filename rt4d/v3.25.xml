@@ -1082,10 +1082,10 @@
           <done/>
         </meta>
         <item value="0">
-          <name>Analog</name>
+          <name>DMR</name>
         </item>
         <item value="1">
-          <name>DMR</name>
+          <name>Analog</name>
         </item>
       </enum>
       <unknown width="0h:2">
