@@ -7719,4 +7719,144 @@
       </element>
     </repeat>
   </repeat>
+  <element at="7000000h">
+    <meta>
+      <name>Call-sign Database Limits</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <int width="4h" format="unsigned" endian="little" default="0">
+      <meta>
+        <name>Entry Count</name>
+        <brief>Specifies the number of entries in the call-sign database.</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <int width="4h" format="unsigned" endian="little">
+      <meta>
+        <name>End-of-database address</name>
+        <brief>Absolute memory address of the end-of-database.</brief>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+    </int>
+    <unused width="8h">
+      <meta>
+        <name>Unused data</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>00</unused>
+  </element>
+  <repeat at="7080000h" step="8000h" max="15">
+    <meta>
+      <name>Contact Map Bank</name>
+      <firmware>1.05</firmware>
+      <done/>
+    </meta>
+    <repeat min="0" max="500000">
+      <meta>
+        <name>Contact Map</name>
+        <firmware>1.05</firmware>
+        <done/>
+      </meta>
+      <element>
+        <meta>
+          <name>Contact Map Entry</name>
+          <firmware>1.05</firmware>
+          <done/>
+        </meta>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>DMR ID and Group Call Flag</name>
+            <brief>DMR Id (bcd8be &lt;&lt; 1) | GCF</brief>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="4h" format="unsigned" endian="little">
+          <meta>
+            <name>Contact Index</name>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+      </element>
+    </repeat>
+  </repeat>
+  <repeat at="7900000h" step="80000h" max="500">
+    <meta>
+      <name>Call-sign DB Banks</name>
+      <needs-review/>
+    </meta>
+    <repeat min="0" max="1000">
+      <meta>
+        <name>Call-sign database bank</name>
+        <needs-review/>
+      </meta>
+      <element>
+        <meta>
+          <name>Call-sign database entry</name>
+          <needs-review/>
+        </meta>
+        <enum width="1h">
+          <meta>
+            <name>Call Type</name>
+            <needs-review/>
+          </meta>
+          <item value="0">
+            <name>Private Call</name>
+          </item>
+          <item value="1">
+            <name>Group Call</name>
+          </item>
+          <item value="2">
+            <name>All Call</name>
+          </item>
+        </enum>
+        <int width="4h" format="bcd" endian="big" default="0">
+          <meta>
+            <name>DMR ID</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <unknown width="0h:3">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <int width="0h:1" format="unsigned" default="0">
+          <meta>
+            <name>Friend Flag</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <unknown width="0h:2">
+          <meta>
+            <name>Unknown data</name>
+            <needs-review/>
+          </meta>
+        </unknown>
+        <int width="0h:2" format="unsigned" default="0">
+          <meta>
+            <name>Ring Tone</name>
+            <needs-review/>
+          </meta>
+        </int>
+        <string format="ascii" width="93" pad="0">
+          <meta>
+            <name>Description</name>
+            <brief>A 0-separated list of strings. Containing name, city, call, state, country, comment.</brief>
+            <needs-review/>
+          </meta>
+        </string>
+        <unused width="1h">
+          <meta>
+            <name>Pad byte</name>
+            <needs-review/>
+          </meta>00</unused>
+      </element>
+    </repeat>
+  </repeat>
 </codeplug>
