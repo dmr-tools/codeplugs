@@ -2033,20 +2033,23 @@
     <meta>
       <name>Roaming channel bank</name>
       <brief>Encodes a bank of up to 250 roaming channels.</brief>
-      <needs-review/>
+      <firmware>1.05</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>Roaming channel</name>
         <brief>Encodes a single roaming channel.</brief>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
       <int width="4h" format="bcd" endian="big">
         <meta>
           <name>RX frequency</name>
           <brief>Specifies the RX frequency.</brief>
           <description>The frequency is stored in multiples of 10Hz.</description>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>
       </int>
       <int width="4h" format="bcd" endian="big">
@@ -2054,22 +2057,25 @@
           <name>TX frequency</name>
           <brief>Encodes the transmit frequency.</brief>
           <description>The frequency is encoded in multiples of 10Hz.</description>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>
       </int>
-      <int width="1h" format="unsigned" default="0">
+      <int width="1h" format="unsigned" default="0" min="0" max="22">
         <meta>
           <name>Color code override</name>
-          <brief>Specifies the color code to override the current channels setting with.</brief>
+          <brief>Specifies the color code to override the current channels setting with. 16=no use</brief>
           <description>If set to 16 (10h), there is no override.</description>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>
       </int>
       <enum width="1h">
         <meta>
           <name>Time slot override</name>
           <brief>Specifies if and how the current channels time slot gets overridden.</brief>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>
         <item value="0">
           <name>Time Slot 1</name>
@@ -2082,16 +2088,18 @@
           <description>If selected, the current channels time slot will not be overridden.</description>
         </item>
       </enum>
-      <string format="ascii" width="16" pad="0">
+      <string format="unicode" width="16" pad="0">
         <meta>
           <name>Name</name>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>
       </string>
-      <unused width="6h">
+      <unused width="16h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
@@ -2099,37 +2107,43 @@
     <meta>
       <name>Roaming zone bank</name>
       <brief>A collection of up to 64 roaming zones.</brief>
-      <needs-review/>
+      <firmware>1.05</firmware>
+      <done/>
     </meta>
     <element>
       <meta>
         <name>Roaming zone</name>
         <brief>Encodes a single roaming.</brief>
-        <needs-review/>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
       <repeat n="64">
         <meta>
           <name>Roaming channel indices</name>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>
         <int width="1h" format="unsigned">
           <meta>
             <name>Roaming channel index</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
       </repeat>
-      <string format="ascii" width="16" pad="0">
+      <string format="unicode" width="16" pad="0">
         <meta>
           <name>Name</name>
           <brief>Specifies the name of the roaming zone.</brief>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>
       </string>
-      <unused width="30h">
+      <unused width="20h">
         <meta>
           <name>Unused data</name>
-          <needs-review/>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>00</unused>
     </element>
   </repeat>
@@ -7748,7 +7762,7 @@
         <done/>
       </meta>00</unused>
   </element>
-  <repeat at="7080000h" step="8000h" max="15">
+  <repeat at="7080000h" step="80000h" min="0" max="15">
     <meta>
       <name>Contact Map Bank</name>
       <firmware>1.05</firmware>
@@ -7784,7 +7798,7 @@
       </element>
     </repeat>
   </repeat>
-  <repeat at="7900000h" step="80000h" max="500">
+  <repeat at="7900000h" step="80000h" min="0" max="500">
     <meta>
       <name>Call-sign DB Banks</name>
       <needs-review/>
@@ -7802,7 +7816,8 @@
         <enum width="1h">
           <meta>
             <name>Call Type</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
           <item value="0">
             <name>Private Call</name>
@@ -7814,12 +7829,6 @@
             <name>All Call</name>
           </item>
         </enum>
-        <int width="4h" format="bcd" endian="big" default="0">
-          <meta>
-            <name>DMR ID</name>
-            <needs-review/>
-          </meta>
-        </int>
         <unknown width="0h:3">
           <meta>
             <name>Unknown data</name>
@@ -7829,7 +7838,8 @@
         <int width="0h:1" format="unsigned" default="0">
           <meta>
             <name>Friend Flag</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <unknown width="0h:2">
@@ -7841,14 +7851,23 @@
         <int width="0h:2" format="unsigned" default="0">
           <meta>
             <name>Ring Tone</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
+          </meta>
+        </int>
+        <int width="4h" format="bcd" endian="big" default="0">
+          <meta>
+            <name>DMR ID</name>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </int>
         <string format="ascii" width="93" pad="0">
           <meta>
             <name>Description</name>
             <brief>A 0-separated list of strings. Containing name, city, call, state, country, comment.</brief>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>
         </string>
         <unused width="1h">
@@ -7859,4 +7878,14 @@
       </element>
     </repeat>
   </repeat>
+  <unused at="18000000h" width="fa0h">
+    <meta>
+      <name>Unused data</name>
+      <needs-review/>
+    </meta>ff</unused>
+  <unused at="18080000h" width="80h">
+    <meta>
+      <name>Unused data</name>
+      <needs-review/>
+    </meta>ff</unused>
 </codeplug>
