@@ -7762,13 +7762,13 @@
         <done/>
       </meta>00</unused>
   </element>
-  <repeat at="7080000h" step="80000h" min="0" max="15">
+  <repeat at="7080000h" step="80000h" min="0" max="16">
     <meta>
       <name>Contact Map Bank</name>
       <firmware>1.05</firmware>
       <done/>
     </meta>
-    <repeat min="0" max="500000">
+    <repeat min="0" max="32000">
       <meta>
         <name>Contact Map</name>
         <firmware>1.05</firmware>
@@ -7801,17 +7801,22 @@
   <repeat at="7900000h" step="80000h" min="0" max="500">
     <meta>
       <name>Call-sign DB Banks</name>
-      <needs-review/>
+      <firmware>1.05</firmware>
+      <done/>
     </meta>
     <repeat min="0" max="1000">
       <meta>
         <name>Call-sign database bank</name>
-        <needs-review/>
+        <brief>The number of repetitions is not set as the size of the elements are variable. It is just limited to 30d40h byte size.</brief>
+        <firmware>1.05</firmware>
+        <done/>
       </meta>
       <element>
         <meta>
           <name>Call-sign database entry</name>
-          <needs-review/>
+          <brief>The element is actually of variable size.</brief>
+          <firmware>1.05</firmware>
+          <done/>
         </meta>
         <enum width="1h">
           <meta>
@@ -7862,7 +7867,7 @@
             <done/>
           </meta>
         </int>
-        <string format="ascii" width="93" pad="0">
+        <string format="unicode" width="93" pad="0">
           <meta>
             <name>Description</name>
             <brief>A 0-separated list of strings. Containing name, city, call, state, country, comment.</brief>
@@ -7873,7 +7878,8 @@
         <unused width="1h">
           <meta>
             <name>Pad byte</name>
-            <needs-review/>
+            <firmware>1.05</firmware>
+            <done/>
           </meta>00</unused>
       </element>
     </repeat>
