@@ -1088,11 +1088,24 @@
           <name>Analog</name>
         </item>
       </enum>
-      <unknown width="0h:2">
+      <enum width="0h:2">
         <meta>
-          <name>Unknown data</name>
+          <name>RX/TX</name>
+          <short-name>TRX</short-name>
+          <brief>Selects if RX and/or TX is allowed.</brief>
+          <firmware>3.25</firmware>
+          <done/>
         </meta>
-      </unknown>
+        <item value="0">
+          <name>RX+TX</name>
+        </item>
+        <item value="1">
+          <name>RX Only</name>
+        </item>
+        <item value="2">
+          <name>TX Only</name>
+        </item>
+      </enum>
       <enum width="0h:1">
         <meta>
           <name>DMR id source</name>
