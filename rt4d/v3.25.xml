@@ -1347,7 +1347,7 @@
           <done/>
         </meta>
       </int>
-      <int width="4h" format="unsigned" endian="little" default="0">
+      <int width="4h" format="bcd" endian="little" default="0">
         <meta>
           <name>DMR Channel Id</name>
           <firmware>3.25</firmware>
