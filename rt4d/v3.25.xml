@@ -1163,7 +1163,26 @@
           <done/>
         </meta>
       </int>
-      <unknown width="1h">
+      <unknown width="0h:1">
+        <meta>
+          <name>Unknown data</name>
+        </meta>
+      </unknown>
+      <enum width="0h:1">
+        <meta>
+          <name>Power</name>
+          <brief>Specifies the transmit power.</brief>
+          <firmware>3.25</firmware>
+          <done/>
+        </meta>
+        <item value="0">
+          <name>Low</name>
+        </item>
+        <item value="1">
+          <name>High</name>
+        </item>
+      </enum>
+      <unknown width="0h:6">
         <meta>
           <name>Unknown data</name>
         </meta>
@@ -2360,7 +2379,7 @@
             </meta>
           </int>
         </repeat>
-        <unused width="5ch">
+        <unused width="64h">
           <meta>
             <name>Unused data</name>
             <firmware>3.25</firmware>
@@ -2369,7 +2388,7 @@
         </unused>
       </element>
     </repeat>
-    <unused width="c00h">
+    <unused width="430h">
       <meta>
         <name>Unused data</name>
         <firmware>3.25</firmware>
