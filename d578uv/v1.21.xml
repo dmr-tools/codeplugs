@@ -1069,12 +1069,17 @@
             <name>4.1k</name>
           </item>
         </enum>
-        <unknown width="1h">
+        <unknown width="0h:7">
           <meta>
             <name>Unknown data</name>
-            <firmware>1.21</firmware>
           </meta>
         </unknown>
+        <int width="0h:1" format="unsigned">
+          <meta>
+            <name>Enable Encryption</name>
+            <brief>Enables encryption for this particular channel. A key must be associated with the channel.</brief>
+          </meta>
+        </int>
         <unknown width="0h:1">
           <meta>
             <name>Unknown data</name>
